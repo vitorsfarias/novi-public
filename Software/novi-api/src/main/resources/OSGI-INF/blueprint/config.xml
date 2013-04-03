@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!-- Author: Blazej Pietrzak [blazej.pietrzak@man.poznan.pl] -->
+<!-- Author: Adianto Wibisono[adianto.wibisono@uva.nl] -->
+
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cm="http://aries.apache.org/blueprint/xmlns/blueprint-cm/v1.0.0">
+	
+
+<!--  REQUEST HANDLER BEANS  -->
+
+   <service ref="requestHandlerBean" 
+   			interface="eu.novi.api.request.handler.RequestHandler">
+   			<service-properties>
+				<!-- All service interfaces are available for Distributed OSGi -->
+				<entry key="service.exported.interfaces" value="*" />
+				<entry key="service.exported.configs" value="org.apache.cxf.rs" />
+				<entry key="service.exported.intents" value="HTTP" />
+				<entry key="org.apache.cxf.rs.httpservice.context" value="/request" />
+				<entry key="testbed" value="${testbed}" />
+			</service-properties>
+   </service>
+   
+   <!--  REQUEST HANDLER BEANS  -->
+
+   <service ref="resourcesViewBean" 
+            interface="eu.novi.api.request.handler.ResourcesView">
+            <service-properties>
+                <!-- All service interfaces are available for Distributed OSGi -->
+                <entry key="service.exported.interfaces" value="*" />
+                <entry key="service.exported.configs" value="org.apache.cxf.rs" />
+                <entry key="service.exported.intents" value="HTTP" />
+                <entry key="org.apache.cxf.rs.httpservice.context" value="/resources" />
+                <entry key="testbed" value="${testbed}" />
+            </service-properties>
+   </service>
+  
+   <!--  REQUEST HANDLER BEANS  -->
+
+   <service ref="monitoringServiceBean" 
+            interface="eu.novi.api.request.handler.MonitoringService">
+            <service-properties>
+                <!-- All service interfaces are available for Distributed OSGi -->
+                <entry key="service.exported.interfaces" value="*" />
+                <entry key="service.exported.configs" value="org.apache.cxf.rs" />
+                <entry key="service.exported.intents" value="HTTP" />
+                <entry key="org.apache.cxf.rs.httpservice.context" value="/slice" />
+                <entry key="testbed" value="${testbed}" />
+            </service-properties>
+   </service>
+
+ 
+   <!-- mock RequestHandlerMock service   
+   <service ref="requestHandlerMockBean" 
+   			interface="eu.novi.api.request.handler.RequestHandlerMock">
+   			<service-properties>
+				<entry key="service.exported.interfaces" value="*" />
+				<entry key="service.exported.configs" value="org.apache.cxf.rs" />
+				<entry key="service.exported.intents" value="HTTP" />
+				<entry key="org.apache.cxf.rs.httpservice.context" value="/requestMock" />
+				<entry key="testbed" value="${testbed}" />
+			</service-properties>
+   </service>-->
+   <!-- mock bean 
+    <bean id="requestHandlerMockBean" class="eu.novi.api.request.handler.impl.RequestHandlerMockImpl">
+	</bean>
+	-->
+    <bean id="resourcesViewBean" class="eu.novi.api.request.handler.impl.ResourcesViewImpl">
+     
+        <property name="resourceDiscoveryAPI">
+            <ref component-id="refResourceDiscoveryAPI" />
+        </property>
+
+    </bean>
+   
+
+	<!-- This is the bean that put the OWL received from the requestHandler 
+		endpoint into the Queue -->
+	<bean id="requestHandlerBean" class="eu.novi.api.request.handler.impl.RequestHandlerImpl">
+		<property name="requestProducer">
+			<ref component-id="refRequestProducer" />
+		</property>
+		<property name="authenticationAPI">
+			<ref component-id="refAuthenticationAPI" />
+		</property>
+		<property name="resourceDiscoveryAPI">
+			<ref component-id="refResourceDiscoveryAPI" />
+		</property>
+		<property name="requestHandlerAPI">
+			<ref component-id="refRequestHandlerAPI" />
+		</property>
+	</bean>
+
+    <!--  for monitoring services -->
+	<bean id="monitoringServiceBean" class="eu.novi.api.request.handler.impl.MonitoringServiceImpl">		
+		<property name="authenticationAPI">
+			<ref component-id="refAuthenticationAPI" />
+		</property>
+		<property name="monitoringServiceAPI">
+			<ref component-id="refMonitoringServiceAPI" />
+		</property>		
+	</bean>
+
+
+	<!-- This is the request producer used in the above request Handler Bean -->
+	<bean id="refRequestProducer" class="eu.novi.api.request.queue.RequestQueueProducer"
+		init-method="initialize">
+		<property name="brokerURL" value="failover://(tcp://localhost:61616,tcp://localhost:61616)?initialReconnectDelay=100" />
+		<property name="requestHandlerQueue" value="NOVI_REQUEST_HANDLER_QUEUE" />
+	</bean>
+
+	<!-- Reference to IMRepository Util provided by im-example/AlibabaSampleCode -->
+	<reference id="repUtil" interface="eu.novi.im.util.IMRepositoryUtil" />
+
+			<!-- A listener which tries to call RIS -->
+	<bean id="refRequestListener" class="eu.novi.api.request.queue.RequestQueueListener"
+		init-method="initialize">
+		<property name="brokerURL" value="failover://(tcp://localhost:61616,tcp://localhost:61616)?initialReconnectDelay=100" />
+        <property name="pollSize"  value="5" />
+        <property name="requestHandlerQueue" value="NOVI_REQUEST_HANDLER_QUEUE" />
+		<property name="repositoryUtil" ref="repUtil" />
+
+
+		<property name="resourceMappingAPI">
+			<ref component-id="refResourceMappingAPI" />
+		</property>
+		<property name="remoteResourceMappingAPI">
+			<ref component-id="refRemResourceMappingAPI" />
+		</property>
+		<property name="resourceDiscoveryAPI">
+			<ref component-id="refResourceDiscoveryAPI" />
+		</property>
+		
+	</bean>
+	
+	<service ref="refRequestListener">
+		<interfaces>
+			<value>eu.novi.api.request.queue.RequestListener</value>
+		</interfaces>
+		
+		<service-properties>
+		    <entry key="service.exported.interfaces" value="*" />
+		    <entry key="testbed" value="${testbed}" />
+	    </service-properties> 
+	</service>
+	
+	
+	
+	
+	<reference id="refAuthenticationAPI" interface="eu.novi.policyAA.interfaces.InterfaceForAPI" />
+  	<reference id="refResourceMappingAPI" interface="eu.novi.mapping.IRMInterface" />
+	<reference id="refRemResourceMappingAPI" interface="eu.novi.mapping.RemoteIRM" />
+  	<reference id="refResourceDiscoveryAPI" interface="eu.novi.resources.discovery.NoviApiCalls" />
+  	<reference id="refRequestHandlerAPI" interface="eu.novi.requesthandler.sfa.FederatedTestbed" />
+	<reference id="refMonitoringServiceAPI" interface="eu.novi.monitoring.MonSrv" />  	
+    <reference id="refFeedbackHandler" interface="eu.novi.feedback.FeedbackHandler" />
+  
+  	<bean id="novi-api-feedbackBean" class="eu.novi.api.request.handler.impl.NoviApiFeedbackHandlerImpl">
+		<property name="feedbackHandler" ref="refFeedbackHandler" />
+	</bean>
+	
+	
+	<service ref="novi-api-feedbackBean" 
+   			interface="eu.novi.api.request.handler.NoviApiFeedbackHandler">
+   			<service-properties>
+				<!-- All service interfaces are available for Distributed OSGi -->
+				<entry key="service.exported.interfaces" value="*" />
+				<entry key="service.exported.configs" value="org.apache.cxf.rs" />
+				<entry key="service.exported.intents" value="HTTP" />
+				<entry key="org.apache.cxf.rs.httpservice.context" value="/requestHandlerFeedback" />
+				<entry key="testbed" value="${testbed}" />
+			</service-properties>
+   </service>
+   
+	
+	
+</blueprint>

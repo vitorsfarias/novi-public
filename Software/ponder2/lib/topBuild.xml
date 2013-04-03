@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- =================================
+		Ponder2 end-user ant file
+		================================= -->
+<project name="Ponder2" default="run" basedir=".">
+
+	<property name="apt.generated" value=".apt_generated" />
+	<property name="dist" value="dist" />
+	<property name="sources" value="src" />
+	<property name="bin" value=".bin" />
+	<property name="doc" value="doc" />
+	<property name="lib" value="lib" />
+	<property name="antlr-version" value="3.1.3"/>
+	<property name="antlr.jar" value="antlr-runtime.jar" />
+	<property name="2p.zip" value="2p-2.1.zip" />
+	<property name="2p.jar" value="2p.jar" />
+
+	<path id="classpath">
+		<pathelement location="${bin}" />
+    <fileset dir="${lib}">
+      <include name="**/*.jar"/>
+    </fileset>
+	</path>
+
+	<pathconvert property="p2.codebase" targetos="unix">
+		<path path="${basedir}/${lib}/ponder2.jar" />
+		<filtermapper>
+			<replacestring from=" " to="%20" />
+		</filtermapper>
+	</pathconvert>
+
+	<pathconvert property="p2comms.codebase" targetos="unix">
+		<path path="${basedir}/${lib}/ponder2comms.jar" />
+		<filtermapper>
+			<replacestring from=" " to="%20" />
+		</filtermapper>
+	</pathconvert>
+
+	<pathconvert property="qdparser.codebase" targetos="unix">
+		<path path="${basedir}/${lib}/qdparser.jar" />
+		<filtermapper>
+			<replacestring from=" " to="%20" />
+		</filtermapper>
+	</pathconvert>
+
+	<target name="boot" if="boot">
+		<property name="bootarg" value="-boot ${boot}" />
+	</target>
+
+	<target name="address" if="address">
+		<property name="addressarg" value="-address ${address}" />
+	</target>
+
+
+	<!-- =================================
+		target: antlr.exists
+		================================= -->
+	<target name="antlr.exists">
+		<available property="antlr.exists" file="${lib}/${antlr.jar}" />
+	</target>
+
+	<!-- =================================
+		target: antlr
+		================================= -->
+	<target name="antlr" depends="antlr.exists" unless="antlr.exists">
+		<echo message="ANTLR is required for the PonderTalk compiler" />
+		<mkdir dir="${lib}" />
+		<get src="http://www.antlr.org/download/antlr-runtime-${antlr-version}.jar" dest="${lib}/${antlr.jar}" usetimestamp="true" />
+	</target>
+
+	<!-- =================================
+	 target: tuprolog.exists
+	 ================================= -->
+	<target name="tuprolog.exists">
+		<available property="tuprolog.exists" file="${lib}/${2p.jar}" />
+	</target>
+
+	<!-- =================================
+	 target: tuprolog
+	 ================================= -->
+	<target name="tuprolog" depends="tuprolog.exists" unless="tuprolog.exists">
+		<echo>TUProlog is required for authorisation policies</echo>
+		<echo>to ignore this step use -Dtuprolog=ignore</echo>
+		<mkdir dir="${lib}" />
+		<get src="http://downloads.sourceforge.net/tuprolog/${2p.zip}" dest="${lib}/${2p.zip}" usetimestamp="true" />
+		<unzip src="${lib}/${2p.zip}" dest="${lib}">
+			<patternset>
+				<include name="${lib}/2p.jar" />
+			</patternset>
+			<mapper type="flatten" />
+		</unzip>
+	</target>
+
+	<!-- ================================= 
+	 target: rmiregistry             
+	 ================================= -->
+	<target name="rmiregistry" if="rmi" description="--> checks that rmiregistry is running or starts it. Invoke with -Drmi=name">
+		<java classname="net.ponder2.comms.rmi.CheckRMI" fork="true">
+			<classpath>
+				<pathelement location="${lib}/ponder2comms.jar" />
+			</classpath>
+			<jvmarg value="-Djava.security.policy=jar:file://${p2comms.codebase}!/net/ponder2/comms/java.policy" />
+		</java>
+	</target>
+
+	<target name="rmi" if="rmi" depends="rmiregistry">
+		<property name="rmiarg" value="-address rmi://localhost/${rmi}" />
+	</target>
+
+	<!-- =================================
+	 target: build
+	================================= -->
+	<target name="build" depends="antlr,tuprolog" description="--> compiles everything and copies documentation to ./doc">
+		<mkdir dir="${apt.generated}" />
+		<mkdir dir="${bin}" />
+		<echo message="== Ignore following multiple creation and Override warnings ==" />
+		<apt compile="true" preprocessdir="${apt.generated}" srcdir="${sources}" destdir="${bin}" classpathref="classpath" />
+		<echo message="== Ignore preceeding multiple creation and Override warnings ==" />
+		<copy todir="${bin}">
+			<fileset dir="${sources}" includes="resource/**" />
+		</copy>
+		<mkdir dir="${doc}/user" />
+		<copy todir="${doc}/user">
+			<fileset dir="${apt.generated}/doc" />
+		</copy>
+	</target>
+
+	<!-- =================================
+          target: run
+         ================================= -->
+	<target name="run" depends="build,boot,rmi" description="--> runs the Ponder2 SMC. Options: -Drmi=name -Dboot=file.p2 -Daddress=proto://address">
+		<java classname="net.ponder2.SelfManagedCell" classpathref="classpath" fork="true">
+			<jvmarg value="-Djava.security.policy=jar:file://${p2comms.codebase}!/net/ponder2/comms/java.policy" />
+			<jvmarg value="-Djava.rmi.server.codebase=file://${p2.codebase} file://${p2comms.codebase} file://${qdparser.codebase}" />
+			<arg line="${bootarg} ${rmiarg} ${addressarg}" />
+		</java>
+	</target>
+
+	<!-- =================================
+          target: empty
+         ================================= -->
+	<target name="empty" depends="boot" description="--> runs the SMC without the bootstrap code">
+		<antcall target="run">
+			<param name="bootarg" value="-boot - ${bootarg}" />
+		</antcall>
+	</target>
+
+</project>

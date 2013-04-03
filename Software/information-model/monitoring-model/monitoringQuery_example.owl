@@ -1,0 +1,286 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY im "http://fp7-novi.eu/im.owl#" >
+    <!ENTITY unit "http://fp7-novi.eu/unit.owl#" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY monitoring_stat "http://fp7-novi.eu/monitoring_stat.owl#" >
+    <!ENTITY monitoring_query "http://fp7-novi.eu/monitoring_query.owl#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY monitoring_features "http://fp7-novi.eu/monitoring_features.owl#" >
+    <!ENTITY monitoring_parameter "http://fp7-novi.eu/monitoring_parameter.owl#" >
+    <!ENTITY smilax1 "http://fp7-novi.eu/im.owl#smilax1.man.poznan.pl:" >
+]>
+
+
+<rdf:RDF xmlns="http://fp7-novi.eu/monitoringQuery_example.owl#"
+     xml:base="http://fp7-novi.eu/monitoringQuery_example.owl"
+     xmlns:smilax1="&im;smilax1.man.poznan.pl:"
+     xmlns:monitoring_features="http://fp7-novi.eu/monitoring_features.owl#"
+     xmlns:im="http://fp7-novi.eu/im.owl#"
+     xmlns:unit="http://fp7-novi.eu/unit.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:monitoring_stat="http://fp7-novi.eu/monitoring_stat.owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:monitoring_query="http://fp7-novi.eu/monitoring_query.owl#"
+     xmlns:monitoring_parameter="http://fp7-novi.eu/monitoring_parameter.owl#">
+    <owl:Ontology rdf:about="http://fp7-novi.eu/monitoringQuery_example.owl">
+        <owl:imports rdf:resource="http://fp7-novi.eu/monitoring_query.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#PlanetLab_smilax1.man.poznan.pl -->
+
+    <owl:NamedIndividual rdf:about="&im;PlanetLab_smilax1.man.poznan.pl">
+        <rdf:type rdf:resource="&im;Node"/>
+        <rdf:type rdf:resource="&im;Resource"/>
+        <im:hasLogicalRouters rdf:datatype="&xsd;integer">0</im:hasLogicalRouters>
+        <im:hasAvailableLogicalRouters rdf:datatype="&xsd;integer">0</im:hasAvailableLogicalRouters>
+        <im:exclusive rdf:datatype="&xsd;boolean">false</im:exclusive>
+        <im:hrn></im:hrn>
+        <im:hostname>smilax1.man.poznan.pl</im:hostname>
+        <im:hardwareType>plab-pc</im:hardwareType>
+        <im:hasInboundInterface rdf:resource="&im;smilax1.man.poznan.pl:eth0-in"/>
+        <im:hasOutboundInterface rdf:resource="&im;smilax1.man.poznan.pl:eth0-out"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#boundResources -->
+
+    <owl:NamedIndividual rdf:about="&im;boundResources">
+        <rdf:type rdf:resource="&im;Group"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#reqCPU -->
+
+    <owl:NamedIndividual rdf:about="&im;reqCPU">
+        <rdf:type rdf:resource="&im;CPU"/>
+        <im:hasAvailableCores rdf:datatype="&xsd;integer">0</im:hasAvailableCores>
+        <im:hasCores rdf:datatype="&xsd;integer">2</im:hasCores>
+        <im:hasCPUSpeed rdf:datatype="&xsd;float">2.0</im:hasCPUSpeed>
+        <im:exclusive rdf:datatype="&xsd;boolean">false</im:exclusive>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#reqDisk -->
+
+    <owl:NamedIndividual rdf:about="&im;reqDisk">
+        <rdf:type rdf:resource="&im;Storage"/>
+        <im:hasAvailableStorageSize rdf:datatype="&xsd;float">0.0</im:hasAvailableStorageSize>
+        <im:hasStorageSize rdf:datatype="&xsd;float">10.0</im:hasStorageSize>
+        <im:exclusive rdf:datatype="&xsd;boolean">false</im:exclusive>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#reqMem -->
+
+    <owl:NamedIndividual rdf:about="&im;reqMem">
+        <rdf:type rdf:resource="&im;Memory"/>
+        <im:hasAvailableMemorySize rdf:datatype="&xsd;float">0.0</im:hasAvailableMemorySize>
+        <im:hasMemorySize rdf:datatype="&xsd;float">1.0</im:hasMemorySize>
+        <im:exclusive rdf:datatype="&xsd;boolean">false</im:exclusive>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#slice_1992460072 -->
+
+    <owl:NamedIndividual rdf:about="&im;slice_1992460072">
+        <rdf:type rdf:resource="&im;Group"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#smilax1.man.poznan.pl:eth0-in -->
+
+    <owl:NamedIndividual rdf:about="&im;smilax1.man.poznan.pl:eth0-in">
+        <rdf:type rdf:resource="&im;Interface"/>
+        <rdf:type rdf:resource="&im;NetworkElement"/>
+        <rdf:type rdf:resource="&im;Resource"/>
+        <im:hasAvailableCapacity rdf:datatype="&xsd;float">0.0</im:hasAvailableCapacity>
+        <im:hasCapacity rdf:datatype="&xsd;float">0.0</im:hasCapacity>
+        <im:exclusive rdf:datatype="&xsd;boolean">false</im:exclusive>
+        <im:hasNetmask></im:hasNetmask>
+        <im:connectedTo rdf:resource="&im;PlanetLab_smilax1.man.poznan.pl"/>
+        <im:hasIPv4Address rdf:resource="http://fp7-novi.eu/monitoringQuery_example.owl#IP_smilax1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#smilax1.man.poznan.pl:eth0-out -->
+
+    <owl:NamedIndividual rdf:about="&im;smilax1.man.poznan.pl:eth0-out">
+        <rdf:type rdf:resource="&im;Interface"/>
+        <rdf:type rdf:resource="&im;NetworkElement"/>
+        <rdf:type rdf:resource="&im;Resource"/>
+        <im:hasCapacity rdf:datatype="&xsd;float">0.0</im:hasCapacity>
+        <im:hasAvailableCapacity rdf:datatype="&xsd;float">0.0</im:hasAvailableCapacity>
+        <im:exclusive rdf:datatype="&xsd;boolean">false</im:exclusive>
+        <im:hasNetmask></im:hasNetmask>
+        <im:connectedTo rdf:resource="&im;PlanetLab_smilax1.man.poznan.pl"/>
+        <im:hasIPv4Address rdf:resource="http://fp7-novi.eu/monitoringQuery_example.owl#IP_smilax1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoringQuery_example.owl#IP_smilax1 -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/monitoringQuery_example.owl#IP_smilax1">
+        <rdf:type rdf:resource="&unit;IPAddress"/>
+        <unit:hasValue>150.254.160.19</unit:hasValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoringQuery_example.owl#Last5Samples -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/monitoringQuery_example.owl#Last5Samples">
+        <rdf:type rdf:resource="&monitoring_stat;Tail"/>
+        <monitoring_parameter:hasParameter rdf:resource="http://fp7-novi.eu/monitoringQuery_example.owl#SOP_tail5"/>
+        <monitoring_stat:hasSample rdf:resource="&monitoring_query;UnmodifiedExtractOfFeatureSamples"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoringQuery_example.owl#MaxOfLast5 -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/monitoringQuery_example.owl#MaxOfLast5">
+        <rdf:type rdf:resource="&monitoring_stat;Maximum"/>
+        <monitoring_stat:hasSample rdf:resource="http://fp7-novi.eu/monitoringQuery_example.owl#Last5Samples"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoringQuery_example.owl#MaxOfLast5UsedMemory -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/monitoringQuery_example.owl#MaxOfLast5UsedMemory">
+        <rdf:type rdf:resource="&monitoring_query;SampleManipulationQuery"/>
+        <monitoring_stat:hasSample rdf:resource="http://fp7-novi.eu/monitoringQuery_example.owl#MaxOfLast5"/>
+        <monitoring_query:hasProcessid rdf:resource="http://fp7-novi.eu/monitoringQuery_example.owl#dummy_pid"/>
+        <monitoring_features:hasFeature rdf:resource="&monitoring_features;UsedMemory"/>
+        <monitoring_query:hasFormatter rdf:resource="&monitoring_query;Formatter_CSV"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoringQuery_example.owl#SOP_tail5 -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/monitoringQuery_example.owl#SOP_tail5">
+        <rdf:type rdf:resource="&monitoring_stat;SOP_tail"/>
+        <rdf:type rdf:resource="&unit;Countable"/>
+        <monitoring_parameter:paramName>tail</monitoring_parameter:paramName>
+        <unit:hasValue>5</unit:hasValue>
+        <monitoring_parameter:hasType rdf:resource="&monitoring_parameter;Integer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoringQuery_example.owl#dummy_pid -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/monitoringQuery_example.owl#dummy_pid">
+        <rdf:type rdf:resource="&monitoring_query;ProcessIdentifier"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoringQuery_example.owl#last3samples_largerthan_averageplusvariance -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/monitoringQuery_example.owl#last3samples_largerthan_averageplusvariance">
+        <rdf:type rdf:resource="&monitoring_stat;IsPositive"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoringQuery_example.owl#measureMaxOfTheLast5MemoryInformation -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/monitoringQuery_example.owl#measureMaxOfTheLast5MemoryInformation">
+        <rdf:type rdf:resource="&monitoring_query;BundleQuery"/>
+        <monitoring_query:hasResource rdf:resource="&im;PlanetLab_smilax1.man.poznan.pl"/>
+        <monitoring_stat:hasSample rdf:resource="http://fp7-novi.eu/monitoringQuery_example.owl#MaxOfLast5"/>
+        <monitoring_features:hasFeature rdf:resource="&monitoring_features;FreeMemory"/>
+        <monitoring_query:hasFormatter rdf:resource="&monitoring_query;Formatter_JSON"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoringQuery_example.owl#measureMemoryInformation -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/monitoringQuery_example.owl#measureMemoryInformation">
+        <rdf:type rdf:resource="&monitoring_query;BundleQuery"/>
+        <monitoring_query:hasResource rdf:resource="&im;PlanetLab_smilax1.man.poznan.pl"/>
+        <monitoring_features:hasFeature rdf:resource="&monitoring_features;FreeMemory"/>
+        <monitoring_query:hasFormatter rdf:resource="&monitoring_query;Formatter_JSON"/>
+        <monitoring_stat:hasSample rdf:resource="&monitoring_query;UnmodifiedExtractOfFeatureSamples"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoringQuery_example.owl#measureMemoryInformationSlice -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/monitoringQuery_example.owl#measureMemoryInformationSlice">
+        <rdf:type rdf:resource="&monitoring_query;BundleQuery"/>
+        <monitoring_query:hasResource rdf:resource="&im;PlanetLab_smilax1.man.poznan.pl"/>
+        <monitoring_features:hasFeature rdf:resource="&monitoring_features;FreeMemory"/>
+        <monitoring_query:hasFormatter rdf:resource="&monitoring_query;Formatter_CSV"/>
+        <monitoring_stat:hasSample rdf:resource="&monitoring_query;UnmodifiedExtractOfFeatureSamples"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoringQuery_example.owl#minoflast3 -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/monitoringQuery_example.owl#minoflast3">
+        <rdf:type rdf:resource="&monitoring_stat;Minimum"/>
+        <monitoring_stat:hasSample rdf:resource="http://fp7-novi.eu/monitoringQuery_example.owl#Last5Samples"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoringQuery_example.owl#sliceID -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/monitoringQuery_example.owl#sliceID">
+        <rdf:type rdf:resource="&monitoring_query;QueryParameter"/>
+        <rdf:type rdf:resource="&unit;NameOfSomething"/>
+        <monitoring_parameter:paramName>SliceName</monitoring_parameter:paramName>
+        <unit:hasValue>-1</unit:hasValue>
+        <monitoring_parameter:hasType rdf:resource="&monitoring_parameter;String"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.3.1957) http://owlapi.sourceforge.net -->
+

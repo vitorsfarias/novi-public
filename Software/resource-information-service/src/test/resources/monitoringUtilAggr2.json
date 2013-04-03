@@ -1,0 +1,276 @@
+[{"http://fp7-novi.eu/monitoring_features.owl#MemoryUtilization" : {
+   "TYPE" : "meminfo",
+   "ID" : 1431,
+   "HDR" : {
+      "NAME" : "DataHeader 1432",
+      "HDRINFO" : [
+         {
+            "NAME" : "Run",
+            "DIMENTSION" : "Countable",
+            "UNIT" : "piece"
+            },
+         {
+            "FEATURE": "http://fp7-novi.eu/monitoring_features.owl#MemoryUtilization",
+            "NAME" : "MemoryUtilization",
+            "DIMENTSION" : "InformationUtilization",
+            "UNIT" : "unitless"
+            }
+      ]
+      },
+   "DATA" : [
+      [ 1, 0.985240372199 ]
+   ]
+}},
+{"http://fp7-novi.eu/monitoring_features.owl#CPUUtilization" : {
+   "TYPE" : "cpuload",
+   "ID" : 1434,
+   "HDR" : {
+      "NAME" : "DataHeader 1435",
+      "HDRINFO" : [
+         {
+            "NAME" : "Run",
+            "DIMENTSION" : "Countable",
+            "UNIT" : "piece"
+            },
+         {
+            "FEATURE": "http://fp7-novi.eu/monitoring_features.owl#CPUUtilization",
+            "NAME" : "CPUUtilization",
+            "DIMENTSION" : "Utilization",
+            "UNIT" : "unitless"
+            }
+      ]
+      },
+   "DATA" : [
+      [ 1, 1.0 ]
+   ]
+}},
+{"http://fp7-novi.eu/monitoring_features.owl#DiskUtilization" : {
+   "TYPE" : "diskinfo",
+   "ID" : 1437,
+   "HDR" : {
+      "NAME" : "DataHeader 1438",
+      "HDRINFO" : [
+         {
+            "NAME" : "Run",
+            "DIMENTSION" : "Countable",
+            "UNIT" : "piece"
+            },
+         {
+            "FEATURE": "http://fp7-novi.eu/monitoring_features.owl#DiskUtilization",
+            "NAME" : "DiskUtilization",
+            "DIMENTSION" : "Utilization",
+            "UNIT" : "unitless"
+            }
+      ]
+      },
+   "DATA" : [
+      [ 1, 0.010857056515 ]
+   ]
+}},
+{"http://fp7-novi.eu/monitoring_features.owl#MemoryUtilization" : {
+   "TYPE" : "meminfo",
+   "ID" : 1440,
+   "HDR" : {
+      "NAME" : "DataHeader 1441",
+      "HDRINFO" : [
+         {
+            "NAME" : "Run",
+            "DIMENTSION" : "Countable",
+            "UNIT" : "piece"
+            },
+         {
+            "FEATURE": "http://fp7-novi.eu/monitoring_features.owl#MemoryUtilization",
+            "NAME" : "MemoryUtilization",
+            "DIMENTSION" : "InformationUtilization",
+            "UNIT" : "unitless"
+            }
+      ]
+      },
+   "DATA" : [
+      [ 1, 0.980543764879 ]
+   ]
+}},
+{"http://fp7-novi.eu/monitoring_features.owl#MemoryUtilization" : {
+   "TYPE" : "meminfo",
+   "ID" : 1443,
+   "HDR" : {
+      "NAME" : "DataHeader 1444",
+      "HDRINFO" : [
+         {
+            "NAME" : "Run",
+            "DIMENTSION" : "Countable",
+            "UNIT" : "piece"
+            },
+         {
+            "FEATURE": "http://fp7-novi.eu/monitoring_features.owl#MemoryUtilization",
+            "NAME" : "MemoryUtilization",
+            "DIMENTSION" : "InformationUtilization",
+            "UNIT" : "unitless"
+            }
+      ]
+      },
+   "DATA" : [
+      [ 1, 0.933839929254 ]
+   ]
+}},
+{"http://fp7-novi.eu/monitoring_features.owl#DiskUtilization" : {
+   "TYPE" : "diskinfo",
+   "ID" : 1446,
+   "HDR" : {
+      "NAME" : "DataHeader 1447",
+      "HDRINFO" : [
+         {
+            "NAME" : "Run",
+            "DIMENTSION" : "Countable",
+            "UNIT" : "piece"
+            },
+         {
+            "FEATURE": "http://fp7-novi.eu/monitoring_features.owl#DiskUtilization",
+            "NAME" : "DiskUtilization",
+            "DIMENTSION" : "Utilization",
+            "UNIT" : "unitless"
+            }
+      ]
+      },
+   "DATA" : [
+      [ 1, 0.0131100611337 ]
+   ]
+}},
+{"http://fp7-novi.eu/monitoring_features.owl#CPUUtilization" : {
+   "TYPE" : "cpuload",
+   "ID" : 1449,
+   "HDR" : {
+      "NAME" : "DataHeader 1450",
+      "HDRINFO" : [
+         {
+            "NAME" : "Run",
+            "DIMENTSION" : "Countable",
+            "UNIT" : "piece"
+            },
+         {
+            "FEATURE": "http://fp7-novi.eu/monitoring_features.owl#CPUUtilization",
+            "NAME" : "CPUUtilization",
+            "DIMENTSION" : "Utilization",
+            "UNIT" : "unitless"
+            }
+      ]
+      },
+   "DATA" : [
+      [ 1, 0.5 ]
+   ]
+}},
+{"http://fp7-novi.eu/monitoring_features.owl#DiskUtilization" : {
+   "TYPE" : "diskinfo",
+   "ID" : 1452,
+   "HDR" : {
+      "NAME" : "DataHeader 1453",
+      "HDRINFO" : [
+         {
+            "NAME" : "Run",
+            "DIMENTSION" : "Countable",
+            "UNIT" : "piece"
+            },
+         {
+            "FEATURE": "http://fp7-novi.eu/monitoring_features.owl#DiskUtilization",
+            "NAME" : "DiskUtilization",
+            "DIMENTSION" : "Utilization",
+            "UNIT" : "unitless"
+            }
+      ]
+      },
+   "DATA" : [
+      [ 1, 0.731232723279 ]
+   ]
+}},
+{"http://fp7-novi.eu/monitoring_features.owl#DiskUtilization" : {
+   "TYPE" : "diskinfo",
+   "ID" : 1455,
+   "HDR" : {
+      "NAME" : "DataHeader 1456",
+      "HDRINFO" : [
+         {
+            "NAME" : "Run",
+            "DIMENTSION" : "Countable",
+            "UNIT" : "piece"
+            },
+         {
+            "FEATURE": "http://fp7-novi.eu/monitoring_features.owl#DiskUtilization",
+            "NAME" : "DiskUtilization",
+            "DIMENTSION" : "Utilization",
+            "UNIT" : "unitless"
+            }
+      ]
+      },
+   "DATA" : [
+      [ 1, 0.0615866183695 ]
+   ]
+}},
+{"http://fp7-novi.eu/monitoring_features.owl#CPUUtilization" : {
+   "TYPE" : "cpuload",
+   "ID" : 1458,
+   "HDR" : {
+      "NAME" : "DataHeader 1459",
+      "HDRINFO" : [
+         {
+            "NAME" : "Run",
+            "DIMENTSION" : "Countable",
+            "UNIT" : "piece"
+            },
+         {
+            "FEATURE": "http://fp7-novi.eu/monitoring_features.owl#CPUUtilization",
+            "NAME" : "CPUUtilization",
+            "DIMENTSION" : "Utilization",
+            "UNIT" : "unitless"
+            }
+      ]
+      },
+   "DATA" : [
+      [ 1, 1.0 ]
+   ]
+}},
+{"http://fp7-novi.eu/monitoring_features.owl#MemoryUtilization" : {
+   "TYPE" : "meminfo",
+   "ID" : 1461,
+   "HDR" : {
+      "NAME" : "DataHeader 1462",
+      "HDRINFO" : [
+         {
+            "NAME" : "Run",
+            "DIMENTSION" : "Countable",
+            "UNIT" : "piece"
+            },
+         {
+            "FEATURE": "http://fp7-novi.eu/monitoring_features.owl#MemoryUtilization",
+            "NAME" : "MemoryUtilization",
+            "DIMENTSION" : "InformationUtilization",
+            "UNIT" : "unitless"
+            }
+      ]
+      },
+   "DATA" : [
+      [ 1, 0.521419627485 ]
+   ]
+}},
+{"http://fp7-novi.eu/monitoring_features.owl#CPUUtilization" : {
+   "TYPE" : "cpuload",
+   "ID" : 1464,
+   "HDR" : {
+      "NAME" : "DataHeader 1465",
+      "HDRINFO" : [
+         {
+            "NAME" : "Run",
+            "DIMENTSION" : "Countable",
+            "UNIT" : "piece"
+            },
+         {
+            "FEATURE": "http://fp7-novi.eu/monitoring_features.owl#CPUUtilization",
+            "NAME" : "CPUUtilization",
+            "DIMENTSION" : "Utilization",
+            "UNIT" : "unitless"
+            }
+      ]
+      },
+   "DATA" : [
+      [ 1, 1.0 ]
+   ]
+}}]

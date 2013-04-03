@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!-- Author: Blazej Pietrzak [blazej.pietrzak@man.poznan.pl] -->
+
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+  
+  <bean id="cm" class="eu.novi.sfa.federica.ComponentManagerImpl" />
+  <bean id="am" class="eu.novi.sfa.federica.AggregateManagerImpl" />
+  <bean id="sm" class="eu.novi.sfa.federica.SliceManagerImpl" />
+   
+  <service ref="cm" interface="eu.novi.sfa.ComponentManager">
+    <service-properties>
+      <!-- All service interfaces are available for Distributed OSGi -->
+      <entry key="service.exported.interfaces" value="*" />
+    
+      <entry key="testbed" value="FEDERICA" />
+    </service-properties>
+  </service>
+  
+  <service ref="am" interface="eu.novi.sfa.AggregateManager">
+    <service-properties>
+      <!-- All service interfaces are available for Distributed OSGi -->
+      <entry key="service.exported.interfaces" value="*" />
+    
+      <entry key="testbed" value="FEDERICA" />
+    </service-properties>
+  </service>
+  
+  <service ref="sm" interface="eu.novi.sfa.SliceManager">
+    <service-properties>
+      <!-- All service interfaces are available for Distributed OSGi -->
+      <entry key="service.exported.interfaces" value="*" />
+    
+      <entry key="testbed" value="FEDERICA" />
+    </service-properties>
+  </service>
+
+</blueprint>

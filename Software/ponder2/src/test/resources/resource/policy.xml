@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ponder2 SYSTEM "../../ponder2.dtd">
+<ponder2 source="policy.p2" line="1:7">
+	<assign name="newdom" line="1:7">
+		<send line="1:10">
+			<use name="root/factory/domain" line="1:10"/>
+		</send>
+	</assign>
+	<assign name="newpol" line="2:7">
+		<send line="2:10">
+			<use name="root/factory/ecapolicy" line="2:10"/>
+		</send>
+	</assign>
+	<assign name="newevent" line="3:9">
+		<send line="3:12">
+			<use name="root/factory/event" line="3:12"/>
+		</send>
+	</assign>
+	<send line="5:0">
+		<use name="root" line="5:0"/>
+		<message type="keyword" name="at:put:" args="2" line="5:5">
+			<arg name="at:" line="5:5">
+				<send line="5:9">
+					<string value="dom1" line="5:9"/>
+				</send>
+			</arg>
+			<arg name="put:" line="5:5">
+				<send line="5:21">
+					<use name="newdom" line="5:21"/>
+					<message type="unary" name="create" line="5:28"/>
+				</send>
+			</arg>
+		</message>
+	</send>
+	<send line="6:0">
+		<use name="root" line="6:0"/>
+		<message type="keyword" name="at:put:" args="2" line="6:5">
+			<arg name="at:" line="6:5">
+				<send line="6:9">
+					<string value="dom2" line="6:9"/>
+				</send>
+			</arg>
+			<arg name="put:" line="6:5">
+				<send line="6:21">
+					<use name="newdom" line="6:21"/>
+					<message type="unary" name="create" line="6:28"/>
+				</send>
+			</arg>
+		</message>
+	</send>
+	<send line="12:0">
+		<use name="root/event" line="12:0"/>
+		<message type="keyword" name="at:put:" args="2" line="12:11">
+			<arg name="at:" line="12:11">
+				<send line="12:15">
+					<string value="slaEvent" line="12:15"/>
+				</send>
+			</arg>
+			<arg name="put:" line="12:11">
+				<send line="12:33">
+					<send line="12:33">
+						<use name="newevent" line="12:33"/>
+						<message type="keyword" name="create:" args="1" line="12:42">
+							<arg name="create:" line="12:42">
+								<send line="12:53">
+									<array line="12:53">
+										<string value="vomember" line="12:53"/>
+										<string value="reputation" line="12:64"/>
+									</array>
+								</send>
+							</arg>
+						</message>
+					</send>
+				</send>
+			</arg>
+		</message>
+	</send>
+	<send line="19:0">
+		<use name="root/dom1" line="19:0"/>
+		<message type="keyword" name="at:put:" args="2" line="19:11">
+			<arg name="at:" line="19:11">
+				<send line="19:15">
+					<string value="pol1" line="19:15"/>
+				</send>
+			</arg>
+			<arg name="put:" line="19:11">
+				<send line="21:33">
+					<send line="21:33">
+						<send line="21:33">
+							<use name="newpol" line="21:33"/>
+							<message type="unary" name="create" line="21:40"/>
+						</send>
+						<message type="keyword" name="event:" args="1" line="22:46">
+							<arg name="event:" line="22:46">
+								<send line="22:53">
+									<use name="root/event/slaEvent" line="22:53"/>
+								</send>
+							</arg>
+						</message>
+						<message type="keyword" name="action:" args="1" line="23:47">
+							<arg name="action:" line="23:47">
+								<send line="23:58">
+									<block line="23:58">
+										<bargs args="1" line="23:58">
+											<barg name="vomember" line="23:58"/>
+										</bargs>
+										<ponder2 source="policy.p2" line="24:62">
+											<send line="24:62">
+												<use name="root" line="24:62"/>
+												<message type="keyword" name="print:" args="1" line="24:67">
+													<arg name="print:" line="24:67">
+														<send line="24:74">
+															<string value="Performing pol1 action with arg " line="24:74"/>
+															<message type="binary" name="+" args="1" line="24:109">
+																<arg name="+" line="24:109">
+																	<send line="24:111">
+																		<use name="vomember" line="24:111"/>
+																	</send>
+																</arg>
+															</message>
+														</send>
+													</arg>
+												</message>
+											</send>
+											<send line="25:62">
+												<use name="root" line="25:62"/>
+												<message type="keyword" name="print:" args="1" line="25:67">
+													<arg name="print:" line="25:67">
+														<send line="25:74">
+															<string value="root/pdp/btpdp removeAccess: " line="25:74"/>
+															<message type="binary" name="+" args="1" line="25:106">
+																<arg name="+" line="25:106">
+																	<send line="25:108">
+																		<use name="vomember" line="25:108"/>
+																	</send>
+																</arg>
+															</message>
+														</send>
+													</arg>
+												</message>
+											</send>
+										</ponder2>
+									</block>
+								</send>
+							</arg>
+						</message>
+						<message type="keyword" name="action:" args="1" line="27:46">
+							<arg name="action:" line="27:46">
+								<send line="27:57">
+									<block line="27:57">
+										<bargs args="2" line="27:57">
+											<barg name="vomember" line="27:57"/>
+											<barg name="reputation" line="27:67"/>
+										</bargs>
+										<ponder2 source="policy.p2" line="28:62">
+											<send line="28:62">
+												<use name="root" line="28:62"/>
+												<message type="keyword" name="print:" args="1" line="28:67">
+													<arg name="print:" line="28:67">
+														<send line="28:74">
+															<send line="28:74">
+																<send line="28:74">
+																	<string value="root/gvoa/main log: Removed " line="28:74"/>
+																	<message type="binary" name="+" args="1" line="28:105">
+																		<arg name="+" line="28:105">
+																			<send line="28:107">
+																				<use name="vomember" line="28:107"/>
+																			</send>
+																		</arg>
+																	</message>
+																</send>
+																<message type="binary" name="+" args="1" line="28:116">
+																	<arg name="+" line="28:116">
+																		<send line="28:118">
+																			<string value=". Reputation " line="28:118"/>
+																		</send>
+																	</arg>
+																</message>
+															</send>
+															<message type="binary" name="+" args="1" line="28:134">
+																<arg name="+" line="28:134">
+																	<send line="28:136">
+																		<use name="reputation" line="28:136"/>
+																	</send>
+																</arg>
+															</message>
+														</send>
+													</arg>
+												</message>
+											</send>
+										</ponder2>
+									</block>
+								</send>
+							</arg>
+						</message>
+						<message type="unary" name="self" line="31:46"/>
+					</send>
+				</send>
+			</arg>
+		</message>
+	</send>
+	<send line="36:1">
+		<use name="root/dom1/pol1" line="36:1"/>
+		<message type="keyword" name="active:" args="1" line="36:16">
+			<arg name="active:" line="36:16">
+				<send line="36:24">
+					<boolean value="true" line="36:24"/>
+				</send>
+			</arg>
+		</message>
+	</send>
+	<send line="38:1">
+		<use name="root/event/slaEvent" line="38:1"/>
+		<message type="keyword" name="create:" args="1" line="38:21">
+			<arg name="create:" line="38:21">
+				<send line="38:31">
+					<array line="38:31">
+						<string value="UoK" line="38:31"/>
+						<number value="15" line="38:37"/>
+					</array>
+				</send>
+			</arg>
+		</message>
+	</send>
+	<assign name="newSLApolicy" line="44:13">
+		<send line="0:0">
+			<block line="0:0">
+				<bargs args="0" line="0:0"/>
+				<ponder2 source="policy.p2" line="45:34">
+					<send line="45:34">
+						<send line="45:34">
+							<use name="newpol" line="45:34"/>
+							<message type="unary" name="create" line="45:41"/>
+						</send>
+						<message type="keyword" name="event:" args="1" line="46:46">
+							<arg name="event:" line="46:46">
+								<send line="46:53">
+									<use name="root/event/slaEvent" line="46:53"/>
+								</send>
+							</arg>
+						</message>
+						<message type="keyword" name="action:" args="1" line="47:46">
+							<arg name="action:" line="47:46">
+								<send line="47:57">
+									<block line="47:57">
+										<bargs args="1" line="47:57">
+											<barg name="vomember" line="47:57"/>
+										</bargs>
+										<ponder2 source="policy.p2" line="48:62">
+											<send line="48:62">
+												<use name="root/pdp/btpdp" line="48:62"/>
+												<message type="keyword" name="removeAccess:" args="1" line="48:77">
+													<arg name="removeAccess:" line="48:77">
+														<send line="48:91">
+															<use name="vomember" line="48:91"/>
+														</send>
+													</arg>
+												</message>
+											</send>
+										</ponder2>
+									</block>
+								</send>
+							</arg>
+						</message>
+						<message type="keyword" name="action:" args="1" line="50:46">
+							<arg name="action:" line="50:46">
+								<send line="50:57">
+									<block line="50:57">
+										<bargs args="2" line="50:57">
+											<barg name="vomember" line="50:57"/>
+											<barg name="reputation" line="50:67"/>
+										</bargs>
+										<ponder2 source="policy.p2" line="51:62">
+											<send line="51:62">
+												<use name="root/gvoa/main" line="51:62"/>
+												<message type="keyword" name="log:" args="1" line="51:77">
+													<arg name="log:" line="51:77">
+														<send line="51:82">
+															<send line="51:82">
+																<send line="51:82">
+																	<string value="Removed " line="51:82"/>
+																	<message type="binary" name="+" args="1" line="51:93">
+																		<arg name="+" line="51:93">
+																			<send line="51:95">
+																				<use name="vomember" line="51:95"/>
+																			</send>
+																		</arg>
+																	</message>
+																</send>
+																<message type="binary" name="+" args="1" line="51:104">
+																	<arg name="+" line="51:104">
+																		<send line="51:106">
+																			<string value=". Reputation " line="51:106"/>
+																		</send>
+																	</arg>
+																</message>
+															</send>
+															<message type="binary" name="+" args="1" line="51:122">
+																<arg name="+" line="51:122">
+																	<send line="51:124">
+																		<use name="reputation" line="51:124"/>
+																	</send>
+																</arg>
+															</message>
+														</send>
+													</arg>
+												</message>
+											</send>
+										</ponder2>
+									</block>
+								</send>
+							</arg>
+						</message>
+						<message type="unary" name="self" line="54:46"/>
+					</send>
+				</ponder2>
+			</block>
+		</send>
+	</assign>
+	<send line="65:0">
+		<use name="root/dom2" line="65:0"/>
+		<message type="keyword" name="at:put:" args="2" line="65:10">
+			<arg name="at:" line="65:10">
+				<send line="65:14">
+					<string value="pol1" line="65:14"/>
+				</send>
+			</arg>
+			<arg name="put:" line="65:10">
+				<send line="65:26">
+					<use name="newSLApolicy" line="65:26"/>
+					<message type="unary" name="value" line="65:39"/>
+				</send>
+			</arg>
+		</message>
+	</send>
+	<send line="66:0">
+		<use name="root/dom2" line="66:0"/>
+		<message type="keyword" name="at:put:" args="2" line="66:10">
+			<arg name="at:" line="66:10">
+				<send line="66:14">
+					<string value="pol2" line="66:14"/>
+				</send>
+			</arg>
+			<arg name="put:" line="66:10">
+				<send line="66:26">
+					<use name="newSLApolicy" line="66:26"/>
+					<message type="unary" name="value" line="66:39"/>
+				</send>
+			</arg>
+		</message>
+	</send>
+	<assign name="newSLApolicy" line="76:13">
+		<send line="76:19">
+			<block line="76:19">
+				<bargs args="1" line="76:19">
+					<barg name="trigger" line="76:19"/>
+				</bargs>
+				<ponder2 source="policy.p2" line="78:15">
+					<assign name="pol" line="78:15">
+						<send line="78:18">
+							<use name="newpol" line="78:18"/>
+							<message type="unary" name="create" line="78:25"/>
+						</send>
+					</assign>
+					<send line="79:11">
+						<use name="pol" line="79:11"/>
+						<message type="keyword" name="event:" args="1" line="79:15">
+							<arg name="event:" line="79:15">
+								<send line="79:22">
+									<use name="root/event/slaEvent" line="79:22"/>
+								</send>
+							</arg>
+						</message>
+					</send>
+					<send line="80:11">
+						<use name="pol" line="80:11"/>
+						<message type="keyword" name="condition:" args="1" line="80:15">
+							<arg name="condition:" line="80:15">
+								<send line="80:29">
+									<block line="80:29">
+										<bargs args="2" line="80:29">
+											<barg name="vomember" line="80:29"/>
+											<barg name="reputation" line="80:39"/>
+										</bargs>
+										<ponder2 source="policy.p2" line="80:53">
+											<send line="80:53">
+												<use name="reputation" line="80:53"/>
+												<message type="binary" name="&lt;" args="1" line="80:64">
+													<arg name="&lt;" line="80:64">
+														<send line="80:66">
+															<use name="trigger" line="80:66"/>
+														</send>
+													</arg>
+												</message>
+											</send>
+										</ponder2>
+									</block>
+								</send>
+							</arg>
+						</message>
+					</send>
+					<send line="81:11">
+						<use name="pol" line="81:11"/>
+						<message type="keyword" name="action:" args="1" line="81:15">
+							<arg name="action:" line="81:15">
+								<send line="81:26">
+									<block line="81:26">
+										<bargs args="1" line="81:26">
+											<barg name="vomember" line="81:26"/>
+										</bargs>
+										<ponder2 source="policy.p2" line="82:33">
+											<send line="82:33">
+												<send line="82:33">
+													<use name="root/pdps" line="82:33"/>
+													<message type="unary" name="list" line="82:43"/>
+												</send>
+												<message type="keyword" name="do:" args="1" line="82:48">
+													<arg name="do:" line="82:48">
+														<send line="82:55">
+															<block line="82:55">
+																<bargs args="2" line="82:55">
+																	<barg name="name" line="82:55"/>
+																	<barg name="pdp" line="82:61"/>
+																</bargs>
+																<ponder2 source="policy.p2" line="83:68">
+																	<send line="83:68">
+																		<use name="pdp" line="83:68"/>
+																		<message type="keyword" name="removeAccess:" args="1"
+																			line="83:72">
+																			<arg name="removeAccess:" line="83:72">
+																				<send line="83:86">
+																					<use name="vomember" line="83:86"/>
+																				</send>
+																			</arg>
+																		</message>
+																	</send>
+																</ponder2>
+															</block>
+														</send>
+													</arg>
+												</message>
+											</send>
+										</ponder2>
+									</block>
+								</send>
+							</arg>
+						</message>
+					</send>
+					<send line="87:11">
+						<use name="pol" line="87:11"/>
+					</send>
+				</ponder2>
+			</block>
+		</send>
+	</assign>
+	<send line="91:0">
+		<use name="root/policy" line="91:0"/>
+		<message type="keyword" name="at:put:" args="2" line="91:12">
+			<arg name="at:" line="91:12">
+				<send line="91:16">
+					<string value="obligpol" line="91:16"/>
+				</send>
+			</arg>
+			<arg name="put:" line="91:12">
+				<send line="91:34">
+					<send line="91:34">
+						<use name="newSLApolicy" line="91:34"/>
+						<message type="keyword" name="value:" args="1" line="91:47">
+							<arg name="value:" line="91:47">
+								<send line="91:54">
+									<number value="20" line="91:54"/>
+								</send>
+							</arg>
+						</message>
+					</send>
+				</send>
+			</arg>
+		</message>
+	</send>
+	<send line="94:0">
+		<use name="root/policy/obligpol" line="94:0"/>
+		<message type="keyword" name="active:" args="1" line="94:21">
+			<arg name="active:" line="94:21">
+				<send line="94:29">
+					<boolean value="true" line="94:29"/>
+				</send>
+			</arg>
+		</message>
+	</send>
+	<send line="99:0">
+		<use name="root/event/slaEvent" line="99:0"/>
+		<message type="keyword" name="create:" args="1" line="99:20">
+			<arg name="create:" line="99:20">
+				<send line="99:30">
+					<array line="99:30">
+						<string value="UoK" line="99:30"/>
+						<number value="30" line="99:36"/>
+					</array>
+				</send>
+			</arg>
+		</message>
+	</send>
+	<send line="102:0">
+		<use name="root/event/slaEvent" line="102:0"/>
+		<message type="keyword" name="create:" args="1" line="102:20">
+			<arg name="create:" line="102:20">
+				<send line="102:30">
+					<array line="102:30">
+						<string value="UoK" line="102:30"/>
+						<number value="10" line="102:36"/>
+					</array>
+				</send>
+			</arg>
+		</message>
+	</send>
+</ponder2>

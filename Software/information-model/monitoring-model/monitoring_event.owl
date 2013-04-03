@@ -1,0 +1,151 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://fp7-novi.eu/monitoring_event.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     ontologyIRI="http://fp7-novi.eu/monitoring_event.owl">
+    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="im" IRI="http://fp7-novi.eu/im.owl#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="monitoring_event" IRI="http://fp7-novi.eu/monitoring_event.owl#"/>
+    <Import>http://fp7-novi.eu/monitoring_query.owl</Import>
+    <Import>http://fp7-novi.eu/monitoring_task.owl</Import>
+    <Import>http://fp7-novi.eu/monitoring_features.owl#</Import>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal datatypeIRI="&xsd;string">Part of the NOVI Information Model (IM). Defines and classifies concepts that are necessary to describe monitoring services, their parametrization and the representation of the results.</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="#author"/>
+        <Literal datatypeIRI="&xsd;string">Mátray, Péter (matray@complex.elte.hu)</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="#author"/>
+        <Literal datatypeIRI="&xsd;string">Stéger, József (steger@complex.elte.hu)</Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="#ConditionalNotSatisfiedEvent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MonitorEvent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MonitorEventAtMeasurementStage"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NoToolConfiguredToMeasureFeature"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SamplesMissingEvent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ToolUnavailableEvent"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#message"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DB"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Float"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Integer"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#REST"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SOAPClient"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SSH"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Slice"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#String"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Substrate"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#UsernamePassword"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#UsernameRSAKey"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#author"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#ConditionalNotSatisfiedEvent"/>
+        <Class IRI="#MonitorEvent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MonitorEventAtMeasurementStage"/>
+        <Class IRI="#MonitorEvent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MonitorEventAtMeasurementStage"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="http://fp7-novi.eu/monitoring_features.owl#hasFeature"/>
+            <Class IRI="http://fp7-novi.eu/monitoring_features.owl#MonitoredFeature"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MonitorEventAtMeasurementStage"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="http://fp7-novi.eu/monitoring_query.owl#hasResource"/>
+            <Class abbreviatedIRI="im:Resource"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MonitorEventAtMeasurementStage"/>
+        <DataMaxCardinality cardinality="1">
+            <DataProperty IRI="#message"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NoToolConfiguredToMeasureFeature"/>
+        <Class IRI="#MonitorEventAtMeasurementStage"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SamplesMissingEvent"/>
+        <Class IRI="#MonitorEventAtMeasurementStage"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ToolUnavailableEvent"/>
+        <Class IRI="#MonitorEventAtMeasurementStage"/>
+    </SubClassOf>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#message"/>
+    </FunctionalDataProperty>
+    <DataPropertyRange>
+        <DataProperty IRI="#message"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.3.1957) http://owlapi.sourceforge.net -->
+

@@ -1,0 +1,17 @@
+// Load our factory
+root/factory at: "sampleobject" put: (root load: "SampleObject").
+
+// Send it a message to create an instance, keep it in a variable
+so := root/factory/sampleobject create.
+
+// Store it into the domain structure
+root at: "sampleobject" put: so.
+
+// Use it with either the variable or the domain name
+text := "A line of text".
+root print: "Adding: " + text.
+so at: "test1" put: text.
+so at: "test2" put: root.
+so at: "test3" put: so.
+result := root/sampleobject at: "test1".
+root print: "Retrieved: " + result.

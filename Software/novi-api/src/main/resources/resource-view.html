@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+<title>NOVI Slice viewere based on InfraViz alpha</title>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="http://d3js.org/d3.v2.js"></script>
+
+<STYLE type="text/css">
+
+h3 { 
+   text-align:center;
+}
+
+.main {
+   text-align:center; 
+   padding-left:100px;
+}
+
+img.header {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+ }
+
+
+circle.node {
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
+line.link {
+  stroke: #999;
+  stroke-opacity: .6;
+}
+</STYLE>
+
+
+<script type="text/javascript">
+var dbg;
+$(document).ready(function(){
+
+	/*
+		obtain licl url
+	*/
+	var baseURL = "../view";
+	
+
+    var w = 800,
+        h = 800;
+
+	var imfTypes = [
+		{type:"node", url:(baseURL + "/slices"), x:100, y:100, color:"#1f77b4"},
+		{type:"node", url:(baseURL + "/slivers"), x:100, y:300, color:"#771fb4"},
+		{type:"node", url:(baseURL + "/nodes"), x:100, y:500, color:"#b41f77"},
+        {type:"link", url:(baseURL + "/vlinks")},
+		{type:"link", url:(baseURL + "/links")}
+	];
+	
+
+    var vis = d3.select("#chart").append("svg:svg")
+            .attr("width", w)
+            .attr("height", h);
+
+    var force = d3.layout.force()
+            .charge(-60)
+			.linkDistance(30)
+			.size([w, h])
+			.on("tick",layeredLayout);
+
+    var nodes = [];
+    var nodeNames = [];
+    var links = [];
+    var linkNames = [];
+
+	
+
+    {
+        
+        var servicecount = 0;
+        
+        var receivedNodes = [];
+        var receivedNodeNames = [];
+        var receivedLinks = [];
+        var receivedLinkNames = [];
+
+		/*
+			call the services to retrieve the JSON
+		*/
+        imfTypes.forEach(function(service) {
+        	console.log("calling service: " + service.url);
+	        d3.json(service.url, function(data) {
+	            if (data != null) {
+	            	if (service.type == "node") {
+	                	receivedNodes = receivedNodes.concat(data.nodes);	                	
+	                	console.log("answer received from service: "+ service.url + " " + data.nodes.length + " nodes");
+	                	
+	                	/* 
+	                		create links based on implementedBy relations
+	                	*/
+	                	data.nodes.forEach(function(src) {
+	                		var implCount = 0;
+							
+							src.implementedBy.forEach(function(dest) {
+								console.log(src.id + " is implementedBy " + dest);
+								implLink = new Object();
+								implLink.id = src.id + "Impl" + implCount;
+								implLink.sourcenode = src.id;
+								implLink.sinknode = dest;
+								receivedLinks.push(implLink);
+								implCount++;
+							});
+	                	});
+	                	
+					} else if (service.type == "link") {
+						receivedLinks = receivedLinks.concat(data.links);
+						console.log("answer received from service: " + service.url + " " + data.links.length + " links"); 
+					}
+	            } else {
+	                console.log("error while accessing service: " + service.url);
+	            }
+	            servicecount++;
+	            
+	            if (servicecount == imfTypes.length) {
+		            var changed = false;
+		
+		            if (ProcessNodes(receivedNodes, receivedNodeNames)) {
+		                changed = true;
+		            }
+		
+			    if (ProcessLinks(receivedLinks, receivedLinkNames)) {
+		                changed = true;
+		            }
+		            // only call Redraw when something has changed
+		            if (changed) {
+		                Redraw();
+		            }
+		            servicecount = 0;
+	            }
+	            
+	        });
+		});
+    } 
+
+    /*
+        Processes all incoming nodes and removes old nodes
+     */
+    function ProcessNodes(receivedNodes, receivedNodeNames) {
+        var changed = false;
+
+        receivedNodes.forEach(function(receivedNode) {
+            if ($.inArray(receivedNode.id, nodeNames) == -1) {
+                console.log("adding node: " + receivedNode.id);
+                nodeNames.push(receivedNode.id);
+                nodes.push(receivedNode);
+                changed = true;
+            }
+            receivedNodeNames.push(receivedNode.id);
+        });
+        
+        nodes.forEach(function(node, i) {
+            if ($.inArray(node.id, receivedNodeNames) == -1) {
+                console.log("removing node: " + node.id);
+                nodes.splice(i, 1);
+                nodeNames.splice(i, 1);
+                changed = true;
+            }
+        });
+
+        return changed;
+    };
+
+    /*
+        Processes all incoming links and removes old links
+     */
+    function ProcessLinks(receivedLinks, receivedLinkNames) {
+        var changed = false;
+        receivedLinks.forEach(function(receivedlink) {
+            if ($.inArray(receivedlink.id, linkNames) == -1) {
+                console.log("adding link: " + receivedlink.id);
+                // find the source and target nodes for this link
+                linkNames.push(receivedlink.id);
+                links.push(receivedlink);
+                changed = true;
+            }
+            receivedLinkNames.push(receivedlink.id);
+        });
+
+
+        links.forEach(function(link, i) {
+            if ($.inArray(link.id, receivedLinkNames) == -1) {
+                console.log("removing link: " + link.id);
+                links.splice(i, 1);
+                linkNames.splice(i, 1);
+                changed = true;
+            }
+        });
+        return changed;
+    };
+
+
+    function Redraw() {
+        console.log("Redraw()");
+
+        /*
+        find nodes for each link
+         */
+        links.forEach(function(link) {
+            var sourceIndex = $.inArray(link.sourcenode, nodeNames);
+            var targetIndex = $.inArray(link.sinknode, nodeNames);
+            if (sourceIndex == -1) {
+                console.log("source of link could not be found:" + link.sourcenode);
+            } else if (targetIndex == -1) {
+                console.log("target of link could not be found:" + link.sinknode);
+            } else {
+                link.source = sourceIndex;
+                link.target = targetIndex;
+            }
+
+
+        });
+
+        force.nodes(nodes)
+                .links(links)
+                .start();
+
+
+        var link = vis.selectAll("line.link")
+                .data(links);
+
+        link.enter().append("line")
+                .attr("class", "link")
+                .style("stroke-width", 2);
+
+        link.exit().remove();
+
+        var node = vis.selectAll("circle.node")
+                .data(nodes);
+
+        node.enter().append("svg:circle")
+                .attr("class", "node")
+                .attr("r", 8)
+                .style("fill", function(d) { return imfTypes[d.type].color; })
+                .style("stroke-width", 1.5)
+                .call(force.drag);
+
+        node.exit().remove();
+
+        node.append("title")
+                .text(function(d) { return d.id; });
+                
+        node.on("click", function(d) {
+        	var nodeurl = baseURL + "id/" + d.encodedid;
+        	console.log("following url" + nodeurl);
+        	window.open(nodeurl, "_blank");
+        });        
+		
+	
+    };
+
+    function layeredLayout(e) {
+        var k = 0.5 * e.alpha;
+		
+		
+		console.log(nodes);
+        nodes.forEach(function(o, i) {
+            o.y += ((imfTypes[o.type].y) - o.y) * k;
+            o.x += ((imfTypes[o.type].x) - o.x) * k;
+        });
+
+        vis.selectAll("line.link").attr("x1", function(d) { return d.source.x; })
+                .attr("y1", function(d) { return d.source.y; })
+                .attr("x2", function(d) { return d.target.x; })
+                .attr("y2", function(d) { return d.target.y; });
+
+
+        vis.selectAll("circle.node")
+            .attr("cx", function(d) { return d.x; })
+            .attr("cy", function(d) { return d.y; });
+
+    }
+
+	function radialLayout(e){
+		var  link = vis.selectAll(".link");
+		var node  = vis.selectAll(".node");
+		
+		  link.attr("x1", function(d) { return d.source.x; })
+			  .attr("y1", function(d) { return d.source.y; })
+			  .attr("x2", function(d) { return d.target.x; })
+			  .attr("y2", function(d) { return d.target.y; });
+
+			node.attr("cx", function(d) { return d.x; })
+				.attr("cy", function(d) { return d.y; });
+
+	}
+});
+
+
+</script>
+
+
+</head>
+  
+<body>
+  <img class="header" src="http://www.fp7-novi.eu/images/stories/novi-img.png">
+  <h3> Resources View </h3>
+  
+  <div id="chart" class="main"></div>
+  
+</body>
+
+</html>

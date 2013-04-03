@@ -1,0 +1,1101 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY fp7-novi "http://fp7-novi.eu/" >
+    <!ENTITY unit "http://fp7-novi.eu/unit.owl#" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY swrl "http://www.w3.org/2003/11/swrl#" >
+    <!ENTITY swrlb "http://www.w3.org/2003/11/swrlb#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY ont "http://www.co-ode.org/ontologies/ont.owl#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY protege "http://protege.stanford.edu/plugins/owl/protege#" >
+    <!ENTITY xsp "http://www.owl-ontologies.com/2005/08/07/xsp.owl#" >
+]>
+
+
+<rdf:RDF xmlns="&fp7-novi;im.owl#"
+     xml:base="&fp7-novi;im.owl"
+     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+     xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+     xmlns:fp7-novi="http://fp7-novi.eu/"
+     xmlns:unit="&fp7-novi;unit.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:ont="http://www.co-ode.org/ontologies/ont.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#connectedTo -->
+
+    <owl:ObjectProperty rdf:about="&fp7-novi;im.owl#connectedTo">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&fp7-novi;im.owl#Interface"/>
+                    <rdf:Description rdf:about="&fp7-novi;im.owl#Node"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&fp7-novi;im.owl#Interface"/>
+                    <rdf:Description rdf:about="&fp7-novi;im.owl#Node"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#contains -->
+
+    <owl:ObjectProperty rdf:about="&fp7-novi;im.owl#contains">
+        <rdfs:range rdf:resource="&fp7-novi;im.owl#Resource"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&fp7-novi;im.owl#Group"/>
+                    <rdf:Description rdf:about="&fp7-novi;im.owl#Path"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#hasComponent -->
+
+    <owl:ObjectProperty rdf:about="&fp7-novi;im.owl#hasComponent">
+        <rdfs:domain rdf:resource="&fp7-novi;im.owl#Node"/>
+        <rdfs:range rdf:resource="&fp7-novi;im.owl#NodeComponent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#hasIPv4Address -->
+
+    <owl:ObjectProperty rdf:about="&fp7-novi;im.owl#hasIPv4Address">
+        <rdfs:domain rdf:resource="&fp7-novi;im.owl#Interface"/>
+        <rdfs:range rdf:resource="&fp7-novi;unit.owl#IPAddress"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#hasInboundInterface -->
+
+    <owl:ObjectProperty rdf:about="&fp7-novi;im.owl#hasInboundInterface">
+        <rdfs:range rdf:resource="&fp7-novi;im.owl#Interface"/>
+        <rdfs:domain rdf:resource="&fp7-novi;im.owl#Node"/>
+        <owl:inverseOf rdf:resource="&fp7-novi;im.owl#isInboundInterfaceOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#hasLifetime -->
+
+    <owl:ObjectProperty rdf:about="&fp7-novi;im.owl#hasLifetime">
+        <rdfs:range rdf:resource="&fp7-novi;im.owl#Lifetime"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&fp7-novi;im.owl#Group"/>
+                    <rdf:Description rdf:about="&fp7-novi;im.owl#Resource"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#hasLoginIPv4Address -->
+
+    <owl:ObjectProperty rdf:about="&fp7-novi;im.owl#hasLoginIPv4Address">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&fp7-novi;unit.owl#IPAddress"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&fp7-novi;im.owl#LoginComponent"/>
+                    <rdf:Description rdf:about="&fp7-novi;im.owl#LoginService"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#hasOutboundInterface -->
+
+    <owl:ObjectProperty rdf:about="&fp7-novi;im.owl#hasOutboundInterface">
+        <rdfs:range rdf:resource="&fp7-novi;im.owl#Interface"/>
+        <rdfs:domain rdf:resource="&fp7-novi;im.owl#Node"/>
+        <owl:inverseOf rdf:resource="&fp7-novi;im.owl#isOutboundInterfaceOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#hasPrivateSinkAddress -->
+
+    <owl:ObjectProperty rdf:about="&fp7-novi;im.owl#hasPrivateSinkAddress">
+        <rdfs:domain rdf:resource="&fp7-novi;im.owl#NSwitch"/>
+        <rdfs:range rdf:resource="&fp7-novi;unit.owl#IPAddress"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#hasPrivateSourceAddress -->
+
+    <owl:ObjectProperty rdf:about="&fp7-novi;im.owl#hasPrivateSourceAddress">
+        <rdfs:domain rdf:resource="&fp7-novi;im.owl#NSwitch"/>
+        <rdfs:range rdf:resource="&fp7-novi;unit.owl#IPAddress"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#hasService -->
+
+    <owl:ObjectProperty rdf:about="&fp7-novi;im.owl#hasService">
+        <rdfs:domain rdf:resource="&fp7-novi;im.owl#Node"/>
+        <rdfs:range rdf:resource="&fp7-novi;im.owl#Service"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#hasSink -->
+
+    <owl:ObjectProperty rdf:about="&fp7-novi;im.owl#hasSink">
+        <rdfs:range rdf:resource="&fp7-novi;im.owl#Interface"/>
+        <owl:inverseOf rdf:resource="&fp7-novi;im.owl#isSink"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&fp7-novi;im.owl#Link"/>
+                    <rdf:Description rdf:about="&fp7-novi;im.owl#Path"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#hasSource -->
+
+    <owl:ObjectProperty rdf:about="&fp7-novi;im.owl#hasSource">
+        <rdfs:range rdf:resource="&fp7-novi;im.owl#Interface"/>
+        <owl:inverseOf rdf:resource="&fp7-novi;im.owl#isSource"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&fp7-novi;im.owl#Link"/>
+                    <rdf:Description rdf:about="&fp7-novi;im.owl#Path"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#implementedBy -->
+
+    <owl:ObjectProperty rdf:about="&fp7-novi;im.owl#implementedBy">
+        <owl:inverseOf rdf:resource="&fp7-novi;im.owl#implements"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&fp7-novi;im.owl#Interface"/>
+                    <rdf:Description rdf:about="&fp7-novi;im.owl#Node"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&fp7-novi;im.owl#Interface"/>
+                    <rdf:Description rdf:about="&fp7-novi;im.owl#Node"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#implements -->
+
+    <owl:ObjectProperty rdf:about="&fp7-novi;im.owl#implements">
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&fp7-novi;im.owl#Interface"/>
+                    <rdf:Description rdf:about="&fp7-novi;im.owl#Node"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&fp7-novi;im.owl#Interface"/>
+                    <rdf:Description rdf:about="&fp7-novi;im.owl#Node"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#inPath -->
+
+    <owl:ObjectProperty rdf:about="&fp7-novi;im.owl#inPath">
+        <rdfs:comment>Should be reconsidered.</rdfs:comment>
+        <rdfs:range rdf:resource="&fp7-novi;im.owl#Path"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&fp7-novi;im.owl#NetworkElement"/>
+                    <rdf:Description rdf:about="&fp7-novi;im.owl#Node"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#isContainedIn -->
+
+    <owl:ObjectProperty rdf:about="&fp7-novi;im.owl#isContainedIn">
+        <rdfs:range rdf:resource="&fp7-novi;im.owl#Group"/>
+        <rdfs:domain rdf:resource="&fp7-novi;im.owl#Resource"/>
+        <owl:inverseOf rdf:resource="&fp7-novi;im.owl#contains"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#isInboundInterfaceOf -->
+
+    <owl:ObjectProperty rdf:about="&fp7-novi;im.owl#isInboundInterfaceOf">
+        <rdfs:domain rdf:resource="&fp7-novi;im.owl#Interface"/>
+        <rdfs:range rdf:resource="&fp7-novi;im.owl#Node"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#isOutboundInterfaceOf -->
+
+    <owl:ObjectProperty rdf:about="&fp7-novi;im.owl#isOutboundInterfaceOf">
+        <rdfs:domain rdf:resource="&fp7-novi;im.owl#Interface"/>
+        <rdfs:range rdf:resource="&fp7-novi;im.owl#Node"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#isSink -->
+
+    <owl:ObjectProperty rdf:about="&fp7-novi;im.owl#isSink">
+        <rdfs:domain rdf:resource="&fp7-novi;im.owl#Interface"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&fp7-novi;im.owl#Link"/>
+                    <rdf:Description rdf:about="&fp7-novi;im.owl#Path"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#isSource -->
+
+    <owl:ObjectProperty rdf:about="&fp7-novi;im.owl#isSource">
+        <rdfs:domain rdf:resource="&fp7-novi;im.owl#Interface"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&fp7-novi;im.owl#Link"/>
+                    <rdf:Description rdf:about="&fp7-novi;im.owl#Path"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#locatedAt -->
+
+    <owl:ObjectProperty rdf:about="&fp7-novi;im.owl#locatedAt">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&fp7-novi;im.owl#Location"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&fp7-novi;im.owl#Node"/>
+                    <rdf:Description rdf:about="&fp7-novi;im.owl#Service"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#next -->
+
+    <owl:ObjectProperty rdf:about="&fp7-novi;im.owl#next">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&fp7-novi;im.owl#NetworkElement"/>
+                    <rdf:Description rdf:about="&fp7-novi;im.owl#Node"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&fp7-novi;im.owl#NetworkElement"/>
+                    <rdf:Description rdf:about="&fp7-novi;im.owl#Node"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#provisionedBy -->
+
+    <owl:ObjectProperty rdf:about="&fp7-novi;im.owl#provisionedBy">
+        <rdfs:domain rdf:resource="&fp7-novi;im.owl#Link"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&fp7-novi;im.owl#Link"/>
+                    <rdf:Description rdf:about="&fp7-novi;im.owl#Path"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#switchedTo -->
+
+    <owl:ObjectProperty rdf:about="&fp7-novi;im.owl#switchedTo">
+        <rdfs:range rdf:resource="&fp7-novi;im.owl#Interface"/>
+        <rdfs:domain rdf:resource="&fp7-novi;im.owl#Interface"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#canFederate -->
+
+    <owl:DatatypeProperty rdf:about="&fp7-novi;im.owl#canFederate">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&fp7-novi;im.owl#Interface"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#diskImage -->
+
+    <owl:DatatypeProperty rdf:about="&fp7-novi;im.owl#diskImage">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&fp7-novi;im.owl#VirtualNode"/>
+        <rdfs:range rdf:resource="&xsd;anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#endTime -->
+
+    <owl:DatatypeProperty rdf:about="&fp7-novi;im.owl#endTime">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&fp7-novi;im.owl#Lifetime"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#exclusive -->
+
+    <owl:DatatypeProperty rdf:about="&fp7-novi;im.owl#exclusive">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&fp7-novi;im.owl#Resource"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#hardwareType -->
+
+    <owl:DatatypeProperty rdf:about="&fp7-novi;im.owl#hardwareType">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&fp7-novi;im.owl#Node"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#hasAvailableCapacity -->
+
+    <owl:DatatypeProperty rdf:about="&fp7-novi;im.owl#hasAvailableCapacity">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&fp7-novi;im.owl#NetworkElement"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#hasAvailableCores -->
+
+    <owl:DatatypeProperty rdf:about="&fp7-novi;im.owl#hasAvailableCores">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&fp7-novi;im.owl#CPU"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#hasAvailableLogicalRouters -->
+
+    <owl:DatatypeProperty rdf:about="&fp7-novi;im.owl#hasAvailableLogicalRouters">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&fp7-novi;im.owl#Node"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#hasAvailableMemorySize -->
+
+    <owl:DatatypeProperty rdf:about="&fp7-novi;im.owl#hasAvailableMemorySize">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&fp7-novi;im.owl#Memory"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#hasAvailableStorageSize -->
+
+    <owl:DatatypeProperty rdf:about="&fp7-novi;im.owl#hasAvailableStorageSize">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&fp7-novi;im.owl#Storage"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#hasCPUSpeed -->
+
+    <owl:DatatypeProperty rdf:about="&fp7-novi;im.owl#hasCPUSpeed">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&fp7-novi;im.owl#CPU"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#hasCapacity -->
+
+    <owl:DatatypeProperty rdf:about="&fp7-novi;im.owl#hasCapacity">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&fp7-novi;im.owl#NetworkElement"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#hasCores -->
+
+    <owl:DatatypeProperty rdf:about="&fp7-novi;im.owl#hasCores">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&fp7-novi;im.owl#CPU"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#hasGRETunnelID -->
+
+    <owl:DatatypeProperty rdf:about="&fp7-novi;im.owl#hasGRETunnelID">
+        <rdfs:domain rdf:resource="&fp7-novi;im.owl#NSwitch"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#hasLogicalRouters -->
+
+    <owl:DatatypeProperty rdf:about="&fp7-novi;im.owl#hasLogicalRouters">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&fp7-novi;im.owl#Node"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#hasLoginProtocol -->
+
+    <owl:DatatypeProperty rdf:about="&fp7-novi;im.owl#hasLoginProtocol">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:comment>values are for example SSHv1, SSHv2, Telnet, etc.</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&fp7-novi;im.owl#LoginComponent"/>
+                    <rdf:Description rdf:about="&fp7-novi;im.owl#LoginService"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#hasMemorySize -->
+
+    <owl:DatatypeProperty rdf:about="&fp7-novi;im.owl#hasMemorySize">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&fp7-novi;im.owl#Memory"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#hasName -->
+
+    <owl:DatatypeProperty rdf:about="&fp7-novi;im.owl#hasName">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#hasNetmask -->
+
+    <owl:DatatypeProperty rdf:about="&fp7-novi;im.owl#hasNetmask">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&fp7-novi;im.owl#Interface"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#hasOS -->
+
+    <owl:DatatypeProperty rdf:about="&fp7-novi;im.owl#hasOS">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&fp7-novi;im.owl#VirtualNode"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#hasStorageSize -->
+
+    <owl:DatatypeProperty rdf:about="&fp7-novi;im.owl#hasStorageSize">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&fp7-novi;im.owl#Storage"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#hasVLANID -->
+
+    <owl:DatatypeProperty rdf:about="&fp7-novi;im.owl#hasVLANID">
+        <rdfs:domain rdf:resource="&fp7-novi;im.owl#NSwitch"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#hasVXLANID -->
+
+    <owl:DatatypeProperty rdf:about="&fp7-novi;im.owl#hasVXLANID">
+        <rdfs:domain rdf:resource="&fp7-novi;im.owl#NSwitch"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#hasVendor -->
+
+    <owl:DatatypeProperty rdf:about="&fp7-novi;im.owl#hasVendor">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&fp7-novi;im.owl#VirtualNode"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#hasVirtualizationEnvironment -->
+
+    <owl:DatatypeProperty rdf:about="&fp7-novi;im.owl#hasVirtualizationEnvironment">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&fp7-novi;im.owl#VirtualNode"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#hostname -->
+
+    <owl:DatatypeProperty rdf:about="&fp7-novi;im.owl#hostname">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&fp7-novi;im.owl#Node"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#hrn -->
+
+    <owl:DatatypeProperty rdf:about="&fp7-novi;im.owl#hrn">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&fp7-novi;im.owl#Node"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#id -->
+
+    <owl:DatatypeProperty rdf:about="&fp7-novi;im.owl#id">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#latitude -->
+
+    <owl:DatatypeProperty rdf:about="&fp7-novi;im.owl#latitude">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&fp7-novi;im.owl#Location"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#longitude -->
+
+    <owl:DatatypeProperty rdf:about="&fp7-novi;im.owl#longitude">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&fp7-novi;im.owl#Location"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#startTime -->
+
+    <owl:DatatypeProperty rdf:about="&fp7-novi;im.owl#startTime">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&fp7-novi;im.owl#Lifetime"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#virtualRole -->
+
+    <owl:DatatypeProperty rdf:about="&fp7-novi;im.owl#virtualRole">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&fp7-novi;im.owl#VirtualNode"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#hasValue -->
+
+    <owl:DatatypeProperty rdf:about="&fp7-novi;unit.owl#hasValue">
+        <rdfs:domain rdf:resource="&fp7-novi;unit.owl#IPAddress"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#hasLoginPassword -->
+
+    <owl:DatatypeProperty rdf:about="&ont;hasLoginPassword">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&fp7-novi;im.owl#LoginComponent"/>
+                    <rdf:Description rdf:about="&fp7-novi;im.owl#LoginService"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#hasLoginPort -->
+
+    <owl:DatatypeProperty rdf:about="&ont;hasLoginPort">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:comment>initially will be always port 22</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;int"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&fp7-novi;im.owl#LoginComponent"/>
+                    <rdf:Description rdf:about="&fp7-novi;im.owl#LoginService"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#hasLoginUsername -->
+
+    <owl:DatatypeProperty rdf:about="&ont;hasLoginUsername">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&fp7-novi;im.owl#LoginComponent"/>
+                    <rdf:Description rdf:about="&fp7-novi;im.owl#LoginService"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#BidirectionalInterface -->
+
+    <owl:Class rdf:about="&fp7-novi;im.owl#BidirectionalInterface">
+        <rdfs:subClassOf rdf:resource="&fp7-novi;im.owl#Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#BidirectionalLink -->
+
+    <owl:Class rdf:about="&fp7-novi;im.owl#BidirectionalLink">
+        <rdfs:subClassOf rdf:resource="&fp7-novi;im.owl#Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#CPU -->
+
+    <owl:Class rdf:about="&fp7-novi;im.owl#CPU">
+        <rdfs:subClassOf rdf:resource="&fp7-novi;im.owl#NodeComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#DiskImage -->
+
+    <owl:Class rdf:about="&fp7-novi;im.owl#DiskImage">
+        <rdfs:subClassOf rdf:resource="&fp7-novi;im.owl#NodeComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#Group -->
+
+    <owl:Class rdf:about="&fp7-novi;im.owl#Group"/>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#Interface -->
+
+    <owl:Class rdf:about="&fp7-novi;im.owl#Interface">
+        <rdfs:subClassOf rdf:resource="&fp7-novi;im.owl#NetworkElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#Lifetime -->
+
+    <owl:Class rdf:about="&fp7-novi;im.owl#Lifetime"/>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#Link -->
+
+    <owl:Class rdf:about="&fp7-novi;im.owl#Link">
+        <rdfs:subClassOf rdf:resource="&fp7-novi;im.owl#NetworkElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#Location -->
+
+    <owl:Class rdf:about="&fp7-novi;im.owl#Location"/>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#LoginComponent -->
+
+    <owl:Class rdf:about="&fp7-novi;im.owl#LoginComponent">
+        <rdfs:subClassOf rdf:resource="&fp7-novi;im.owl#NodeComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#LoginService -->
+
+    <owl:Class rdf:about="&fp7-novi;im.owl#LoginService">
+        <rdfs:subClassOf rdf:resource="&fp7-novi;im.owl#Service"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#Memory -->
+
+    <owl:Class rdf:about="&fp7-novi;im.owl#Memory">
+        <rdfs:subClassOf rdf:resource="&fp7-novi;im.owl#NodeComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#MemoryService -->
+
+    <owl:Class rdf:about="&fp7-novi;im.owl#MemoryService">
+        <rdfs:subClassOf rdf:resource="&fp7-novi;im.owl#Service"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#NSwitch -->
+
+    <owl:Class rdf:about="&fp7-novi;im.owl#NSwitch">
+        <rdfs:subClassOf rdf:resource="&fp7-novi;im.owl#Link"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#NSwitchService -->
+
+    <owl:Class rdf:about="&fp7-novi;im.owl#NSwitchService">
+        <rdfs:subClassOf rdf:resource="&fp7-novi;im.owl#Service"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#NetworkElement -->
+
+    <owl:Class rdf:about="&fp7-novi;im.owl#NetworkElement">
+        <rdfs:subClassOf rdf:resource="&fp7-novi;im.owl#Resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#Node -->
+
+    <owl:Class rdf:about="&fp7-novi;im.owl#Node">
+        <rdfs:subClassOf rdf:resource="&fp7-novi;im.owl#Resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#NodeComponent -->
+
+    <owl:Class rdf:about="&fp7-novi;im.owl#NodeComponent">
+        <rdfs:subClassOf rdf:resource="&fp7-novi;im.owl#Resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#Path -->
+
+    <owl:Class rdf:about="&fp7-novi;im.owl#Path">
+        <rdfs:subClassOf rdf:resource="&fp7-novi;im.owl#NetworkElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#Platform -->
+
+    <owl:Class rdf:about="&fp7-novi;im.owl#Platform">
+        <rdfs:subClassOf rdf:resource="&fp7-novi;im.owl#Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#ProcessingService -->
+
+    <owl:Class rdf:about="&fp7-novi;im.owl#ProcessingService">
+        <rdfs:subClassOf rdf:resource="&fp7-novi;im.owl#Service"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#Reservation -->
+
+    <owl:Class rdf:about="&fp7-novi;im.owl#Reservation">
+        <rdfs:subClassOf rdf:resource="&fp7-novi;im.owl#Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#Resource -->
+
+    <owl:Class rdf:about="&fp7-novi;im.owl#Resource"/>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#Service -->
+
+    <owl:Class rdf:about="&fp7-novi;im.owl#Service"/>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#Storage -->
+
+    <owl:Class rdf:about="&fp7-novi;im.owl#Storage">
+        <rdfs:subClassOf rdf:resource="&fp7-novi;im.owl#NodeComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#StorageService -->
+
+    <owl:Class rdf:about="&fp7-novi;im.owl#StorageService">
+        <rdfs:subClassOf rdf:resource="&fp7-novi;im.owl#Service"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#SwitchingMatrix -->
+
+    <owl:Class rdf:about="&fp7-novi;im.owl#SwitchingMatrix">
+        <rdfs:subClassOf rdf:resource="&fp7-novi;im.owl#NodeComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#Topology -->
+
+    <owl:Class rdf:about="&fp7-novi;im.owl#Topology">
+        <rdfs:subClassOf rdf:resource="&fp7-novi;im.owl#Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#VirtualLink -->
+
+    <owl:Class rdf:about="&fp7-novi;im.owl#VirtualLink">
+        <rdfs:subClassOf rdf:resource="&fp7-novi;im.owl#Link"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#VirtualNode -->
+
+    <owl:Class rdf:about="&fp7-novi;im.owl#VirtualNode">
+        <rdfs:subClassOf rdf:resource="&fp7-novi;im.owl#Node"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#IPAddress -->
+
+    <owl:Class rdf:about="&fp7-novi;unit.owl#IPAddress"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#Federica -->
+
+    <owl:NamedIndividual rdf:about="&fp7-novi;im.owl#Federica">
+        <rdf:type rdf:resource="&fp7-novi;im.owl#Platform"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#PlanetLab -->
+
+    <owl:NamedIndividual rdf:about="&fp7-novi;im.owl#PlanetLab">
+        <rdf:type rdf:resource="&fp7-novi;im.owl#Platform"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.3.1824) http://owlapi.sourceforge.net -->
+

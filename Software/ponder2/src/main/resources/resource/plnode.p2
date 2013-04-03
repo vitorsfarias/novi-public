@@ -1,0 +1,13 @@
+event := root/factory/event create: #("name" "platform").
+root/event at: "createPlanetLabNode" put: event.
+
+root/factory at: "PlNode" put: (root load: "PlNode").
+root at: "PlNodesdomain" put: root/factory/domain create.
+
+policy := root/factory/ecapolicy create.
+policy event: root/event/createPlanetLabNode;
+	action: [ :name :platform |
+			   root print:"creating a "+ platform + " Node with name" + name.
+			   root/PlNodesdomain at: name put: (root/factory/PlNode create: name platform: platform)].
+root/policy at: "createPlanetLabNode" put: policy.
+policy active: true.

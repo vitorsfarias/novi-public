@@ -1,0 +1,19 @@
+event := root/factory/event create: #("uri").
+root/event at: "createRole" put: event.
+
+root/factory at: "Role" put: (root load: "RoleMO").
+root at: "Rolesdomain" put: root/factory/domain create.
+
+policy := root/factory/ecapolicy create.
+policy event: root/event/createRole;
+	action: [ :uri |
+			   root print:"creating a RoleMO with uri " + uri .
+			   root/Rolesdomain at: uri put: (root/factory/Role create: uri)].
+root/policy at: "createRole" put: policy.
+policy active: true.
+
+root/event/createRole create: #("PlanetLabUser").
+root/event/createRole create: #("FedericaUser").
+root/event/createRole create: #("PlanetLabPI").
+root/event/createRole create: #("FedericaPower").
+root/event/createRole create: #("PlanetLabUserBlack").

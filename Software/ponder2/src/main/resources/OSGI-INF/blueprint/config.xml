@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!-- Author: Yiannos Kryftis [ykryftis@netmode.ece.ntua.gr] -->
+
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+	xmlns:cm="http://aries.apache.org/blueprint/xmlns/blueprint-cm/v1.0.0">
+  
+ <cm:property-placeholder persistent-id="eu.novi.ponder2"/>
+ <!-- POLICY SERVICE -->
+	<!-- A class that makes the communication with policy service -->
+	<bean id="policyServiceCom"	class="eu.novi.ponder2.interactions.CallstoIRM">
+		<property name="policyServiceCalls" ref="refPolicyInterfaceForPonder2" />
+	</bean>
+
+<!-- Reference to interfaceforponder2 provided by Policy Manager -->
+<reference id="refPolicyInterfaceForPonder2" interface="eu.novi.policy.interfaces.interfaceforponder2" />
+	 
+ <bean id="refStartPonder2" class="eu.novi.ponder2.StartStopPonder2SMC" init-method="start">
+ 	<property name="testbed" value="${testbed}" />
+</bean>
+
+    <service ref="refStartPonder2">
+     <interfaces>
+      <value>eu.novi.ponder2.SMCStartInterface</value>
+    </interfaces> 
+    <service-properties>
+			<!-- All service interfaces are available for Distributed OSGi -->
+			<entry key="service.exported.interfaces" value="*" />
+			<entry key="testbed" value="${testbed}" />
+		</service-properties>
+  </service> 
+  
+  
+  	
+   
+</blueprint>

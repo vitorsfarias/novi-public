@@ -1,0 +1,1463 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://fp7-novi.eu/im.owl#"
+     xml:base="http://fp7-novi.eu/im.owl"
+     xmlns:psnc="http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/2/9-"
+     xmlns:planetlab2-novi="http://fp7-novi.eu/im.owl#planetlab2-novi.lab.netmode.ece.ntua.gr:"
+     xmlns:dfn2="http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/2-"
+     xmlns:psnc2="http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/0/0-"
+     xmlns:smilax1="http://fp7-novi.eu/im.owl#urn:publicid:IDN+novi.eu+path+psnc.poz.router1.ge-0/2/9-smilax1.man.poznan.pl:"
+     xmlns:im="http://fp7-novi.eu/im.owl#"
+     xmlns:interface="http://fp7-novi.eu/im.owl#urn:publicid:IDN+federica.eu+interface+dfn.erl.router1.ge-0/1/2-urn:publicid:IDN+federica.eu+interface+"
+     xmlns:smilax12="http://fp7-novi.eu/im.owl#urn:publicid:IDN+novi.eu+link+psnc.poz.router1.ge-0/2/9-smilax1.man.poznan.pl:"
+     xmlns:smilax13="http://fp7-novi.eu/im.owl#smilax1.man.poznan.pl:"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:planetlab2-novi3="http://fp7-novi.eu/im.owl#urn:publicid:IDN+novi.eu+path+psnc.poz.router1.ge-0/2/9-planetlab2-novi.lab.netmode.ece.ntua.gr:"
+     xmlns:planetlab2-novi2="http://fp7-novi.eu/im.owl#urn:publicid:IDN+novi.eu+link+psnc.poz.router1.ge-0/2/9-planetlab2-novi.lab.netmode.ece.ntua.gr:"
+     xmlns:dfn="http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/0-">
+    <owl:Ontology rdf:about="http://fp7-novi.eu/im.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#comment"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#connectedTo -->
+
+    <owl:ObjectProperty rdf:about="http://fp7-novi.eu/im.owl#connectedTo"/>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#contains -->
+
+    <owl:ObjectProperty rdf:about="http://fp7-novi.eu/im.owl#contains"/>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#hasComponent -->
+
+    <owl:ObjectProperty rdf:about="http://fp7-novi.eu/im.owl#hasComponent"/>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#hasInboundInterface -->
+
+    <owl:ObjectProperty rdf:about="http://fp7-novi.eu/im.owl#hasInboundInterface"/>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#hasOutboundInterface -->
+
+    <owl:ObjectProperty rdf:about="http://fp7-novi.eu/im.owl#hasOutboundInterface"/>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#implementedBy -->
+
+    <owl:ObjectProperty rdf:about="http://fp7-novi.eu/im.owl#implementedBy"/>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#inPath -->
+
+    <owl:ObjectProperty rdf:about="http://fp7-novi.eu/im.owl#inPath"/>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#isSink -->
+
+    <owl:ObjectProperty rdf:about="http://fp7-novi.eu/im.owl#isSink"/>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#isSource -->
+
+    <owl:ObjectProperty rdf:about="http://fp7-novi.eu/im.owl#isSource"/>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#next -->
+
+    <owl:ObjectProperty rdf:about="http://fp7-novi.eu/im.owl#next"/>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#provisionedBy -->
+
+    <owl:ObjectProperty rdf:about="http://fp7-novi.eu/im.owl#provisionedBy"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#diskImage -->
+
+    <owl:DatatypeProperty rdf:about="http://fp7-novi.eu/im.owl#diskImage"/>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#exclusive -->
+
+    <owl:DatatypeProperty rdf:about="http://fp7-novi.eu/im.owl#exclusive"/>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#hardwareType -->
+
+    <owl:DatatypeProperty rdf:about="http://fp7-novi.eu/im.owl#hardwareType"/>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#hasAvailableCapacity -->
+
+    <owl:DatatypeProperty rdf:about="http://fp7-novi.eu/im.owl#hasAvailableCapacity"/>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#hasAvailableCores -->
+
+    <owl:DatatypeProperty rdf:about="http://fp7-novi.eu/im.owl#hasAvailableCores"/>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#hasAvailableLogicalRouters -->
+
+    <owl:DatatypeProperty rdf:about="http://fp7-novi.eu/im.owl#hasAvailableLogicalRouters"/>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#hasAvailableMemorySize -->
+
+    <owl:DatatypeProperty rdf:about="http://fp7-novi.eu/im.owl#hasAvailableMemorySize"/>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#hasAvailableStorageSize -->
+
+    <owl:DatatypeProperty rdf:about="http://fp7-novi.eu/im.owl#hasAvailableStorageSize"/>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#hasCPUSpeed -->
+
+    <owl:DatatypeProperty rdf:about="http://fp7-novi.eu/im.owl#hasCPUSpeed"/>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#hasCapacity -->
+
+    <owl:DatatypeProperty rdf:about="http://fp7-novi.eu/im.owl#hasCapacity"/>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#hasCores -->
+
+    <owl:DatatypeProperty rdf:about="http://fp7-novi.eu/im.owl#hasCores"/>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#hasGRETunnelID -->
+
+    <owl:DatatypeProperty rdf:about="http://fp7-novi.eu/im.owl#hasGRETunnelID"/>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#hasIPv4Address -->
+
+    <owl:DatatypeProperty rdf:about="http://fp7-novi.eu/im.owl#hasIPv4Address"/>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#hasLogicalRouters -->
+
+    <owl:DatatypeProperty rdf:about="http://fp7-novi.eu/im.owl#hasLogicalRouters"/>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#hasMemorySize -->
+
+    <owl:DatatypeProperty rdf:about="http://fp7-novi.eu/im.owl#hasMemorySize"/>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#hasNetmask -->
+
+    <owl:DatatypeProperty rdf:about="http://fp7-novi.eu/im.owl#hasNetmask"/>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#hasOS -->
+
+    <owl:DatatypeProperty rdf:about="http://fp7-novi.eu/im.owl#hasOS"/>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#hasPrivateSinkAddress -->
+
+    <owl:DatatypeProperty rdf:about="http://fp7-novi.eu/im.owl#hasPrivateSinkAddress"/>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#hasPrivateSourceAddress -->
+
+    <owl:DatatypeProperty rdf:about="http://fp7-novi.eu/im.owl#hasPrivateSourceAddress"/>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#hasStorageSize -->
+
+    <owl:DatatypeProperty rdf:about="http://fp7-novi.eu/im.owl#hasStorageSize"/>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#hasVLANID -->
+
+    <owl:DatatypeProperty rdf:about="http://fp7-novi.eu/im.owl#hasVLANID"/>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#hasVendor -->
+
+    <owl:DatatypeProperty rdf:about="http://fp7-novi.eu/im.owl#hasVendor"/>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#hasVirtualizationEnvironment -->
+
+    <owl:DatatypeProperty rdf:about="http://fp7-novi.eu/im.owl#hasVirtualizationEnvironment"/>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#hostname -->
+
+    <owl:DatatypeProperty rdf:about="http://fp7-novi.eu/im.owl#hostname"/>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#hrn -->
+
+    <owl:DatatypeProperty rdf:about="http://fp7-novi.eu/im.owl#hrn"/>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#virtualRole -->
+
+    <owl:DatatypeProperty rdf:about="http://fp7-novi.eu/im.owl#virtualRole"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#CPU -->
+
+    <owl:Class rdf:about="http://fp7-novi.eu/im.owl#CPU"/>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#Interface -->
+
+    <owl:Class rdf:about="http://fp7-novi.eu/im.owl#Interface"/>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#Link -->
+
+    <owl:Class rdf:about="http://fp7-novi.eu/im.owl#Link"/>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#Memory -->
+
+    <owl:Class rdf:about="http://fp7-novi.eu/im.owl#Memory"/>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#NSwitch -->
+
+    <owl:Class rdf:about="http://fp7-novi.eu/im.owl#NSwitch"/>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#Node -->
+
+    <owl:Class rdf:about="http://fp7-novi.eu/im.owl#Node"/>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#Path -->
+
+    <owl:Class rdf:about="http://fp7-novi.eu/im.owl#Path"/>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#Storage -->
+
+    <owl:Class rdf:about="http://fp7-novi.eu/im.owl#Storage"/>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#Topology -->
+
+    <owl:Class rdf:about="http://fp7-novi.eu/im.owl#Topology"/>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#VirtualLink -->
+
+    <owl:Class rdf:about="http://fp7-novi.eu/im.owl#VirtualLink"/>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#VirtualNode -->
+
+    <owl:Class rdf:about="http://fp7-novi.eu/im.owl#VirtualNode"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#FEDERICA_dfn.erl.router1 -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#FEDERICA_dfn.erl.router1">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Node"/>
+        <hrn rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hrn>
+        <hasAvailableLogicalRouters rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAvailableLogicalRouters>
+        <hasLogicalRouters rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasLogicalRouters>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <hardwareType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">genericNetworkDevice</hardwareType>
+        <hostname rdf:datatype="http://www.w3.org/2001/XMLSchema#string">router1.erl.de</hostname>
+        <rdfs:comment xml:lang="en">Position : [2315,1241]</rdfs:comment>
+        <hasInboundInterface rdf:resource="http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/0-in"/>
+        <hasOutboundInterface rdf:resource="http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/0-out"/>
+        <hasInboundInterface rdf:resource="http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/2-in"/>
+        <hasOutboundInterface rdf:resource="http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/2-out"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#FEDERICA_dfn.erl.vserver1 -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#FEDERICA_dfn.erl.vserver1">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Node"/>
+        <hrn rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hrn>
+        <hasLogicalRouters rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasLogicalRouters>
+        <hasAvailableLogicalRouters rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAvailableLogicalRouters>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <hardwareType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pc</hardwareType>
+        <hostname rdf:datatype="http://www.w3.org/2001/XMLSchema#string">vserver1.erl.de</hostname>
+        <rdfs:comment xml:lang="en">Position : [3199,1179]</rdfs:comment>
+        <hasInboundInterface rdf:resource="http://fp7-novi.eu/im.owl#dfn.erl.vserver1.vmnic1-in"/>
+        <hasOutboundInterface rdf:resource="http://fp7-novi.eu/im.owl#dfn.erl.vserver1.vmnic1-out"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#FEDERICA_psnc.poz.router1 -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#FEDERICA_psnc.poz.router1">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Node"/>
+        <hrn rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hrn>
+        <hasAvailableLogicalRouters rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAvailableLogicalRouters>
+        <hasLogicalRouters rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasLogicalRouters>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <hardwareType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">genericNetworkDevice</hardwareType>
+        <hostname rdf:datatype="http://www.w3.org/2001/XMLSchema#string">psnc.poz.router1</hostname>
+        <rdfs:comment xml:lang="en">Position : [758,1157]</rdfs:comment>
+        <hasInboundInterface rdf:resource="http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/0/0-in"/>
+        <hasOutboundInterface rdf:resource="http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/0/0-out"/>
+        <hasInboundInterface rdf:resource="http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/2/9-in"/>
+        <hasOutboundInterface rdf:resource="http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/2/9-out"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#PlanetLab_planetlab2-novi.lab.netmode.ece.ntua.gr -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#PlanetLab_planetlab2-novi.lab.netmode.ece.ntua.gr">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Node"/>
+        <hrn rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hrn>
+        <hasAvailableLogicalRouters rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAvailableLogicalRouters>
+        <hasLogicalRouters rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasLogicalRouters>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <hardwareType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">plab-pc</hardwareType>
+        <hostname rdf:datatype="http://www.w3.org/2001/XMLSchema#string">planetlab2-novi.lab.netmode.ece.ntua.gr</hostname>
+        <rdfs:comment xml:lang="en">Position : [39,1195]</rdfs:comment>
+        <hasInboundInterface rdf:resource="http://fp7-novi.eu/im.owl#planetlab2-novi.lab.netmode.ece.ntua.gr:eth0-in"/>
+        <hasOutboundInterface rdf:resource="http://fp7-novi.eu/im.owl#planetlab2-novi.lab.netmode.ece.ntua.gr:eth0-out"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#PlanetLab_smilax1.man.poznan.pl -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#PlanetLab_smilax1.man.poznan.pl">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Node"/>
+        <hrn rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hrn>
+        <hasLogicalRouters rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasLogicalRouters>
+        <hasAvailableLogicalRouters rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAvailableLogicalRouters>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <hardwareType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">plab-pc</hardwareType>
+        <hostname rdf:datatype="http://www.w3.org/2001/XMLSchema#string">smilax1.man.poznan.pl</hostname>
+        <rdfs:comment xml:lang="en">Position : [1522,1238]</rdfs:comment>
+        <hasInboundInterface rdf:resource="http://fp7-novi.eu/im.owl#smilax1.man.poznan.pl:eth0-in"/>
+        <hasOutboundInterface rdf:resource="http://fp7-novi.eu/im.owl#smilax1.man.poznan.pl:eth0-out"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/0-in -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/0-in">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+        <hasNetmask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasNetmask>
+        <hasIPv4Address rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasIPv4Address>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasCapacity>
+        <hasAvailableCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasAvailableCapacity>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <rdfs:comment xml:lang="en">Position : [2329,1773]</rdfs:comment>
+        <connectedTo rdf:resource="http://fp7-novi.eu/im.owl#FEDERICA_dfn.erl.router1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/0-out -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/0-out">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+        <hasNetmask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasNetmask>
+        <hasIPv4Address rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasIPv4Address>
+        <hasAvailableCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasAvailableCapacity>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasCapacity>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <rdfs:comment xml:lang="en">Position : [2588,1773]</rdfs:comment>
+        <connectedTo rdf:resource="http://fp7-novi.eu/im.owl#FEDERICA_dfn.erl.router1"/>
+        <isSource rdf:resource="http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/0-psnc.poz.router1.ge-0/0/0"/>
+        <next rdf:resource="http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/0-psnc.poz.router1.ge-0/0/0"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/0-psnc.poz.router1.ge-0/0/0 -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/0-psnc.poz.router1.ge-0/0/0">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Link"/>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasCapacity>
+        <hasAvailableCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasAvailableCapacity>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <rdfs:comment xml:lang="en">Position : [2129,2226]</rdfs:comment>
+        <next rdf:resource="http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/0/0-in"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/2-dfn.erl.vserver1.vmnic1 -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/2-dfn.erl.vserver1.vmnic1">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Link"/>
+        <hasAvailableCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasAvailableCapacity>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasCapacity>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <rdfs:comment xml:lang="en">Position : [2862,1730]</rdfs:comment>
+        <next rdf:resource="http://fp7-novi.eu/im.owl#dfn.erl.vserver1.vmnic1-in"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/2-in -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/2-in">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+        <hasIPv4Address rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasIPv4Address>
+        <hasNetmask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasNetmask>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasCapacity>
+        <hasAvailableCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasAvailableCapacity>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <rdfs:comment xml:lang="en">Position : [2319,1508]</rdfs:comment>
+        <connectedTo rdf:resource="http://fp7-novi.eu/im.owl#FEDERICA_dfn.erl.router1"/>
+        <isSink rdf:resource="http://fp7-novi.eu/im.owl#dfn.erl.vserver1.vmnic1-dfn.erl.router1.ge-0/1/2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/2-out -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/2-out">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+        <hasNetmask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasNetmask>
+        <hasIPv4Address rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasIPv4Address>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasCapacity>
+        <hasAvailableCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasAvailableCapacity>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <rdfs:comment xml:lang="en">Position : [2601,1509]</rdfs:comment>
+        <connectedTo rdf:resource="http://fp7-novi.eu/im.owl#FEDERICA_dfn.erl.router1"/>
+        <isSource rdf:resource="http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/2-dfn.erl.vserver1.vmnic1"/>
+        <next rdf:resource="http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/2-dfn.erl.vserver1.vmnic1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#dfn.erl.vserver1.vmnic1-dfn.erl.router1.ge-0/1/2 -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#dfn.erl.vserver1.vmnic1-dfn.erl.router1.ge-0/1/2">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Link"/>
+        <hasAvailableCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasAvailableCapacity>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasCapacity>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <rdfs:comment xml:lang="en">Position : [2931,1950]</rdfs:comment>
+        <next rdf:resource="http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/2-in"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#dfn.erl.vserver1.vmnic1-in -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#dfn.erl.vserver1.vmnic1-in">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+        <hasIPv4Address rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasIPv4Address>
+        <hasNetmask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasNetmask>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasCapacity>
+        <hasAvailableCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasAvailableCapacity>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <rdfs:comment xml:lang="en">Position : [3109,1481]</rdfs:comment>
+        <connectedTo rdf:resource="http://fp7-novi.eu/im.owl#FEDERICA_dfn.erl.vserver1"/>
+        <isSink rdf:resource="http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/2-dfn.erl.vserver1.vmnic1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#dfn.erl.vserver1.vmnic1-out -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#dfn.erl.vserver1.vmnic1-out">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+        <hasIPv4Address rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasIPv4Address>
+        <hasNetmask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasNetmask>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasCapacity>
+        <hasAvailableCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasAvailableCapacity>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <rdfs:comment xml:lang="en">Position : [3377,1477]</rdfs:comment>
+        <connectedTo rdf:resource="http://fp7-novi.eu/im.owl#FEDERICA_dfn.erl.vserver1"/>
+        <isSource rdf:resource="http://fp7-novi.eu/im.owl#dfn.erl.vserver1.vmnic1-dfn.erl.router1.ge-0/1/2"/>
+        <next rdf:resource="http://fp7-novi.eu/im.owl#dfn.erl.vserver1.vmnic1-dfn.erl.router1.ge-0/1/2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#fixBoundRequest -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#fixBoundRequest">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Topology"/>
+        <rdfs:comment xml:lang="en">Position : [1131,-1]</rdfs:comment>
+        <contains rdf:resource="http://fp7-novi.eu/im.owl#link1-lrouter-sliver1"/>
+        <contains rdf:resource="http://fp7-novi.eu/im.owl#link1-sliver1-lrouter"/>
+        <contains rdf:resource="http://fp7-novi.eu/im.owl#link2-lrouter-sliver2"/>
+        <contains rdf:resource="http://fp7-novi.eu/im.owl#link2-sliver2-lrouter"/>
+        <contains rdf:resource="http://fp7-novi.eu/im.owl#link3-lrouter-lrouter2"/>
+        <contains rdf:resource="http://fp7-novi.eu/im.owl#link4-lrouter2-vm1"/>
+        <contains rdf:resource="http://fp7-novi.eu/im.owl#link4-vm1-lrouter2"/>
+        <contains rdf:resource="http://fp7-novi.eu/im.owl#lrouter"/>
+        <contains rdf:resource="http://fp7-novi.eu/im.owl#lrouter2"/>
+        <contains rdf:resource="http://fp7-novi.eu/im.owl#sliver1"/>
+        <contains rdf:resource="http://fp7-novi.eu/im.owl#sliver2"/>
+        <contains rdf:resource="http://fp7-novi.eu/im.owl#vm1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#link1-lrouter-sliver1 -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#link1-lrouter-sliver1">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#VirtualLink"/>
+        <hasAvailableCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasAvailableCapacity>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasCapacity>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <rdfs:comment xml:lang="en">Position : [286,661]</rdfs:comment>
+        <provisionedBy rdf:resource="http://fp7-novi.eu/im.owl#urn:publicid:IDN+novi.eu+path+psnc.poz.router1.ge-0/2/9-planetlab2-novi.lab.netmode.ece.ntua.gr:eth0"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#link1-sliver1-lrouter -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#link1-sliver1-lrouter">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#VirtualLink"/>
+        <hasAvailableCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasAvailableCapacity>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasCapacity>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <rdfs:comment xml:lang="en">Position : [294,896]</rdfs:comment>
+        <provisionedBy rdf:resource="http://fp7-novi.eu/im.owl#urn:publicid:IDN+novi.eu+path+planetlab2-novi.lab.netmode.ece.ntua.gr:eth0-psnc.poz.router1.ge-0/2/9"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#link2-lrouter-sliver2 -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#link2-lrouter-sliver2">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#VirtualLink"/>
+        <hasAvailableCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasAvailableCapacity>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasCapacity>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <rdfs:comment xml:lang="en">Position : [1216,885]</rdfs:comment>
+        <provisionedBy rdf:resource="http://fp7-novi.eu/im.owl#urn:publicid:IDN+novi.eu+path+psnc.poz.router1.ge-0/2/9-smilax1.man.poznan.pl:eth0"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#link2-sliver2-lrouter -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#link2-sliver2-lrouter">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#VirtualLink"/>
+        <hasAvailableCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasAvailableCapacity>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasCapacity>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <rdfs:comment xml:lang="en">Position : [1216,645]</rdfs:comment>
+        <provisionedBy rdf:resource="http://fp7-novi.eu/im.owl#urn:publicid:IDN+novi.eu+path+smilax1.man.poznan.pl:eth0-psnc.poz.router1.ge-0/2/9"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#link3-lrouter-lrouter2 -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#link3-lrouter-lrouter2">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#VirtualLink"/>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasCapacity>
+        <hasAvailableCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasAvailableCapacity>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <rdfs:comment xml:lang="en">Position : [2083,750]</rdfs:comment>
+        <provisionedBy rdf:resource="http://fp7-novi.eu/im.owl#urn:publicid:IDN+federica.eu+interface+psnc.poz.router1.ge-0/0/0-urn:publicid:IDN+federica.eu+interface+dfn.erl.router1.ge-0/1/0"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#link3-lrouter2-router -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#link3-lrouter2-router">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#VirtualLink"/>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasCapacity>
+        <hasAvailableCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasAvailableCapacity>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <rdfs:comment xml:lang="en">Position : [2084,987]</rdfs:comment>
+        <provisionedBy rdf:resource="http://fp7-novi.eu/im.owl#urn:publicid:IDN+federica.eu+interface+dfn.erl.router1.ge-0/1/0-urn:publicid:IDN+federica.eu+interface+psnc.poz.router1.ge-0/0/0"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#link4-lrouter2-vm1 -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#link4-lrouter2-vm1">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#VirtualLink"/>
+        <hasAvailableCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasAvailableCapacity>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasCapacity>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <rdfs:comment xml:lang="en">Position : [2673,667]</rdfs:comment>
+        <provisionedBy rdf:resource="http://fp7-novi.eu/im.owl#urn:publicid:IDN+federica.eu+interface+dfn.erl.router1.ge-0/1/2-urn:publicid:IDN+federica.eu+interface+dfn.erl.vserver1.vmnic1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#link4-vm1-lrouter2 -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#link4-vm1-lrouter2">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#VirtualLink"/>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasCapacity>
+        <hasAvailableCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasAvailableCapacity>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <rdfs:comment xml:lang="en">Position : [2688,875]</rdfs:comment>
+        <provisionedBy rdf:resource="http://fp7-novi.eu/im.owl#urn:publicid:IDN+federica.eu+interface+dfn.erl.vserver1.vmnic1-urn:publicid:IDN+federica.eu+interface+dfn.erl.router1.ge-0/1/2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#lrouter -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#lrouter">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#VirtualNode"/>
+        <hardwareType rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hardwareType>
+        <hrn rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hrn>
+        <hasOS rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasOS>
+        <hasVendor rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasVendor>
+        <hasVirtualizationEnvironment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasVirtualizationEnvironment>
+        <hostname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hostname>
+        <diskImage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">0</diskImage>
+        <hasLogicalRouters rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasLogicalRouters>
+        <hasAvailableLogicalRouters rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAvailableLogicalRouters>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <virtualRole rdf:datatype="http://www.w3.org/2001/XMLSchema#string">router</virtualRole>
+        <rdfs:comment xml:lang="en">Position : [782,168]</rdfs:comment>
+        <implementedBy rdf:resource="http://fp7-novi.eu/im.owl#FEDERICA_psnc.poz.router1"/>
+        <hasInboundInterface rdf:resource="http://fp7-novi.eu/im.owl#lrouter.if0-in"/>
+        <hasOutboundInterface rdf:resource="http://fp7-novi.eu/im.owl#lrouter.if0-out"/>
+        <hasInboundInterface rdf:resource="http://fp7-novi.eu/im.owl#lrouter.if1-in"/>
+        <hasOutboundInterface rdf:resource="http://fp7-novi.eu/im.owl#lrouter.if1-out"/>
+        <hasInboundInterface rdf:resource="http://fp7-novi.eu/im.owl#lrouter.if2-in"/>
+        <hasOutboundInterface rdf:resource="http://fp7-novi.eu/im.owl#lrouter.if2-out"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#lrouter.if0-in -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#lrouter.if0-in">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+        <hasIPv4Address rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasIPv4Address>
+        <hasNetmask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasNetmask>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasCapacity>
+        <hasAvailableCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasAvailableCapacity>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <rdfs:comment xml:lang="en">Position : [587,877]</rdfs:comment>
+        <isSink rdf:resource="http://fp7-novi.eu/im.owl#link1-sliver1-lrouter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#lrouter.if0-out -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#lrouter.if0-out">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+        <hasIPv4Address rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasIPv4Address>
+        <hasNetmask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasNetmask>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasCapacity>
+        <hasAvailableCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasAvailableCapacity>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <rdfs:comment xml:lang="en">Position : [661,577]</rdfs:comment>
+        <isSource rdf:resource="http://fp7-novi.eu/im.owl#link1-lrouter-sliver1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#lrouter.if1-in -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#lrouter.if1-in">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+        <hasIPv4Address rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasIPv4Address>
+        <hasNetmask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasNetmask>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasCapacity>
+        <hasAvailableCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasAvailableCapacity>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <rdfs:comment xml:lang="en">Position : [1812,999]</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#lrouter.if1-out -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#lrouter.if1-out">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+        <hasAvailableCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasAvailableCapacity>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasCapacity>
+        <hasIPv4Address rdf:datatype="http://www.w3.org/2001/XMLSchema#string">192.168.37.2</hasIPv4Address>
+        <hasNetmask rdf:datatype="http://www.w3.org/2001/XMLSchema#string">255.255.255.248</hasNetmask>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <rdfs:comment xml:lang="en">Position : [902,879]</rdfs:comment>
+        <isSource rdf:resource="http://fp7-novi.eu/im.owl#link3-lrouter-lrouter2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#lrouter.if2-in -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#lrouter.if2-in">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasCapacity>
+        <hasAvailableCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasAvailableCapacity>
+        <hasIPv4Address rdf:datatype="http://www.w3.org/2001/XMLSchema#string">192.168.37.2</hasIPv4Address>
+        <hasNetmask rdf:datatype="http://www.w3.org/2001/XMLSchema#string">255.255.255.248</hasNetmask>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <rdfs:comment xml:lang="en">Position : [899,576]</rdfs:comment>
+        <isSink rdf:resource="http://fp7-novi.eu/im.owl#link2-sliver2-lrouter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#lrouter.if2-out -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#lrouter.if2-out">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+        <hasAvailableCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasAvailableCapacity>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasCapacity>
+        <hasIPv4Address rdf:datatype="http://www.w3.org/2001/XMLSchema#string">192.168.37.2</hasIPv4Address>
+        <hasNetmask rdf:datatype="http://www.w3.org/2001/XMLSchema#string">255.255.255.248</hasNetmask>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <rdfs:comment xml:lang="en">Position : [902,879]</rdfs:comment>
+        <isSource rdf:resource="http://fp7-novi.eu/im.owl#link2-lrouter-sliver2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#lrouter2 -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#lrouter2">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#VirtualNode"/>
+        <hasVirtualizationEnvironment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasVirtualizationEnvironment>
+        <hasVendor rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasVendor>
+        <hostname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hostname>
+        <hrn rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hrn>
+        <hasOS rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasOS>
+        <hardwareType rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hardwareType>
+        <diskImage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">0</diskImage>
+        <hasAvailableLogicalRouters rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAvailableLogicalRouters>
+        <hasLogicalRouters rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasLogicalRouters>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <virtualRole rdf:datatype="http://www.w3.org/2001/XMLSchema#string">router</virtualRole>
+        <rdfs:comment xml:lang="en">Position : [2156,-2]</rdfs:comment>
+        <implementedBy rdf:resource="http://fp7-novi.eu/im.owl#FEDERICA_dfn.erl.router1"/>
+        <hasInboundInterface rdf:resource="http://fp7-novi.eu/im.owl#lrouter2.if0-in"/>
+        <hasOutboundInterface rdf:resource="http://fp7-novi.eu/im.owl#lrouter2.if0-out"/>
+        <hasInboundInterface rdf:resource="http://fp7-novi.eu/im.owl#lrouter2.if1-in"/>
+        <hasOutboundInterface rdf:resource="http://fp7-novi.eu/im.owl#lrouter2.if1-out"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#lrouter2.if0-in -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#lrouter2.if0-in">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+        <hasNetmask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasNetmask>
+        <hasIPv4Address rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasIPv4Address>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasCapacity>
+        <hasAvailableCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasAvailableCapacity>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <rdfs:comment xml:lang="en">Position : [2351,739]</rdfs:comment>
+        <isSink rdf:resource="http://fp7-novi.eu/im.owl#link3-lrouter-lrouter2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#lrouter2.if0-out -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#lrouter2.if0-out">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+        <hasIPv4Address rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasIPv4Address>
+        <hasNetmask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasNetmask>
+        <hasAvailableCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasAvailableCapacity>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasCapacity>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <rdfs:comment xml:lang="en">Position : [2351,971]</rdfs:comment>
+        <isSource rdf:resource="http://fp7-novi.eu/im.owl#link3-lrouter2-router"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#lrouter2.if1-in -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#lrouter2.if1-in">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+        <hasIPv4Address rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasIPv4Address>
+        <hasNetmask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasNetmask>
+        <hasAvailableCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasAvailableCapacity>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasCapacity>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <rdfs:comment xml:lang="en">Position : [2122,394]</rdfs:comment>
+        <isSink rdf:resource="http://fp7-novi.eu/im.owl#link4-vm1-lrouter2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#lrouter2.if1-out -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#lrouter2.if1-out">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+        <hasIPv4Address rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasIPv4Address>
+        <hasNetmask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasNetmask>
+        <hasAvailableCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasAvailableCapacity>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasCapacity>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <rdfs:comment xml:lang="en">Position : [2383,402]</rdfs:comment>
+        <isSource rdf:resource="http://fp7-novi.eu/im.owl#link4-lrouter2-vm1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#planetlab2-novi.lab.netmode.ece.ntua.gr:eth0-in -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#planetlab2-novi.lab.netmode.ece.ntua.gr:eth0-in">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+        <hasAvailableCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasAvailableCapacity>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasCapacity>
+        <hasIPv4Address rdf:datatype="http://www.w3.org/2001/XMLSchema#string">147.102.22.67</hasIPv4Address>
+        <hasNetmask rdf:datatype="http://www.w3.org/2001/XMLSchema#string">255.255.255.192</hasNetmask>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <rdfs:comment xml:lang="en">Position : [19,1536]</rdfs:comment>
+        <connectedTo rdf:resource="http://fp7-novi.eu/im.owl#PlanetLab_planetlab2-novi.lab.netmode.ece.ntua.gr"/>
+        <isSink rdf:resource="http://fp7-novi.eu/im.owl#urn:publicid:IDN+novi.eu+link+psnc.poz.router1.ge-0/2/9-planetlab2-novi.lab.netmode.ece.ntua.gr:eth0"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#planetlab2-novi.lab.netmode.ece.ntua.gr:eth0-out -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#planetlab2-novi.lab.netmode.ece.ntua.gr:eth0-out">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+        <hasAvailableCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasAvailableCapacity>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasCapacity>
+        <hasIPv4Address rdf:datatype="http://www.w3.org/2001/XMLSchema#string">147.102.22.67</hasIPv4Address>
+        <hasNetmask rdf:datatype="http://www.w3.org/2001/XMLSchema#string">255.255.255.192</hasNetmask>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <rdfs:comment xml:lang="en">Position : [5,1826]</rdfs:comment>
+        <connectedTo rdf:resource="http://fp7-novi.eu/im.owl#PlanetLab_planetlab2-novi.lab.netmode.ece.ntua.gr"/>
+        <isSource rdf:resource="http://fp7-novi.eu/im.owl#urn:publicid:IDN+novi.eu+link+planetlab2-novi.lab.netmode.ece.ntua.gr:eth0-psnc.poz.router1.ge-0/2/9"/>
+        <next rdf:resource="http://fp7-novi.eu/im.owl#urn:publicid:IDN+novi.eu+link+planetlab2-novi.lab.netmode.ece.ntua.gr:eth0-psnc.poz.router1.ge-0/2/9"/>
+        <inPath rdf:resource="http://fp7-novi.eu/im.owl#urn:publicid:IDN+novi.eu+path+planetlab2-novi.lab.netmode.ece.ntua.gr:eth0-psnc.poz.router1.ge-0/2/9"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/0/0-dfn.erl.router1.ge-0/1/0 -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/0/0-dfn.erl.router1.ge-0/1/0">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Link"/>
+        <hasAvailableCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasAvailableCapacity>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasCapacity>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <rdfs:comment xml:lang="en">Position : [2117,2008]</rdfs:comment>
+        <next rdf:resource="http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/0-in"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/0/0-in -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/0/0-in">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+        <hasIPv4Address rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasIPv4Address>
+        <hasNetmask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasNetmask>
+        <hasAvailableCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasAvailableCapacity>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasCapacity>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <rdfs:comment xml:lang="en">Position : [1805,2017]</rdfs:comment>
+        <connectedTo rdf:resource="http://fp7-novi.eu/im.owl#FEDERICA_psnc.poz.router1"/>
+        <isSink rdf:resource="http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/0-psnc.poz.router1.ge-0/0/0"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/0/0-out -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/0/0-out">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+        <hasNetmask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasNetmask>
+        <hasIPv4Address rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasIPv4Address>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasCapacity>
+        <hasAvailableCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasAvailableCapacity>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <rdfs:comment xml:lang="en">Position : [1806,1754]</rdfs:comment>
+        <connectedTo rdf:resource="http://fp7-novi.eu/im.owl#FEDERICA_psnc.poz.router1"/>
+        <next rdf:resource="http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/0/0-dfn.erl.router1.ge-0/1/0"/>
+        <isSource rdf:resource="http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/0/0-dfn.erl.router1.ge-0/1/0"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/2/9-in -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/2/9-in">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+        <hasIPv4Address rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasIPv4Address>
+        <hasNetmask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasNetmask>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasCapacity>
+        <hasAvailableCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasAvailableCapacity>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <rdfs:comment xml:lang="en">Position : [740,1817]</rdfs:comment>
+        <connectedTo rdf:resource="http://fp7-novi.eu/im.owl#FEDERICA_psnc.poz.router1"/>
+        <isSink rdf:resource="http://fp7-novi.eu/im.owl#urn:publicid:IDN+novi.eu+link+planetlab2-novi.lab.netmode.ece.ntua.gr:eth0-psnc.poz.router1.ge-0/2/9"/>
+        <isSink rdf:resource="http://fp7-novi.eu/im.owl#urn:publicid:IDN+novi.eu+link+psnc.poz.router1.ge-0/2/9-smilax1.man.poznan.pl:eth0"/>
+        <inPath rdf:resource="http://fp7-novi.eu/im.owl#urn:publicid:IDN+novi.eu+path+planetlab2-novi.lab.netmode.ece.ntua.gr:eth0-psnc.poz.router1.ge-0/2/9"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/2/9-out -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/2/9-out">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+        <hasIPv4Address rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasIPv4Address>
+        <hasNetmask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasNetmask>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasCapacity>
+        <hasAvailableCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasAvailableCapacity>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <rdfs:comment xml:lang="en">Position : [764,1486]</rdfs:comment>
+        <connectedTo rdf:resource="http://fp7-novi.eu/im.owl#FEDERICA_psnc.poz.router1"/>
+        <isSource rdf:resource="http://fp7-novi.eu/im.owl#urn:publicid:IDN+novi.eu+link+psnc.poz.router1.ge-0/2/9-planetlab2-novi.lab.netmode.ece.ntua.gr:eth0"/>
+        <next rdf:resource="http://fp7-novi.eu/im.owl#urn:publicid:IDN+novi.eu+link+psnc.poz.router1.ge-0/2/9-planetlab2-novi.lab.netmode.ece.ntua.gr:eth0"/>
+        <isSource rdf:resource="http://fp7-novi.eu/im.owl#urn:publicid:IDN+novi.eu+link+smilax1.man.poznan.pl:eth0-psnc.poz.router1.ge-0/2/9"/>
+        <next rdf:resource="http://fp7-novi.eu/im.owl#urn:publicid:IDN+novi.eu+link+smilax1.man.poznan.pl:eth0-psnc.poz.router1.ge-0/2/9"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#reqCPU -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#reqCPU">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#CPU"/>
+        <hasAvailableCores rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAvailableCores>
+        <hasCores rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hasCores>
+        <hasCPUSpeed rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2.0</hasCPUSpeed>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <rdfs:comment xml:lang="en">Position : [1860,303]</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#reqDisk -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#reqDisk">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Storage"/>
+        <hasAvailableStorageSize rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasAvailableStorageSize>
+        <hasStorageSize rdf:datatype="http://www.w3.org/2001/XMLSchema#float">10.0</hasStorageSize>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <rdfs:comment xml:lang="en">Position : [1859,511]</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#reqMem -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#reqMem">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Memory"/>
+        <hasAvailableMemorySize rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasAvailableMemorySize>
+        <hasMemorySize rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</hasMemorySize>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <rdfs:comment xml:lang="en">Position : [1833,94]</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#sliver1 -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#sliver1">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#VirtualNode"/>
+        <hardwareType rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hardwareType>
+        <hasVendor rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasVendor>
+        <hostname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hostname>
+        <hasVirtualizationEnvironment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasVirtualizationEnvironment>
+        <hrn rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hrn>
+        <hasOS rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasOS>
+        <diskImage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">0</diskImage>
+        <hasAvailableLogicalRouters rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAvailableLogicalRouters>
+        <hasLogicalRouters rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasLogicalRouters>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <virtualRole rdf:datatype="http://www.w3.org/2001/XMLSchema#string">plab-vserver</virtualRole>
+        <rdfs:comment xml:lang="en">Position : [16,159]</rdfs:comment>
+        <implementedBy rdf:resource="http://fp7-novi.eu/im.owl#PlanetLab_planetlab2-novi.lab.netmode.ece.ntua.gr"/>
+        <hasComponent rdf:resource="http://fp7-novi.eu/im.owl#reqCPU"/>
+        <hasComponent rdf:resource="http://fp7-novi.eu/im.owl#reqDisk"/>
+        <hasComponent rdf:resource="http://fp7-novi.eu/im.owl#reqMem"/>
+        <hasInboundInterface rdf:resource="http://fp7-novi.eu/im.owl#sliver1-if0-in"/>
+        <hasOutboundInterface rdf:resource="http://fp7-novi.eu/im.owl#sliver1-if0-out"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#sliver1-if0-in -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#sliver1-if0-in">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+        <hasAvailableCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasAvailableCapacity>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasCapacity>
+        <hasIPv4Address rdf:datatype="http://www.w3.org/2001/XMLSchema#string">192.168.37.3</hasIPv4Address>
+        <hasNetmask rdf:datatype="http://www.w3.org/2001/XMLSchema#string">255.255.255.248</hasNetmask>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <rdfs:comment xml:lang="en">Position : [4,618]</rdfs:comment>
+        <isSink rdf:resource="http://fp7-novi.eu/im.owl#link1-lrouter-sliver1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#sliver1-if0-out -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#sliver1-if0-out">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasCapacity>
+        <hasAvailableCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasAvailableCapacity>
+        <hasIPv4Address rdf:datatype="http://www.w3.org/2001/XMLSchema#string">192.168.37.3</hasIPv4Address>
+        <hasNetmask rdf:datatype="http://www.w3.org/2001/XMLSchema#string">255.255.255.248</hasNetmask>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <rdfs:comment xml:lang="en">Position : [4,868]</rdfs:comment>
+        <isSource rdf:resource="http://fp7-novi.eu/im.owl#link1-sliver1-lrouter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#sliver2 -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#sliver2">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#VirtualNode"/>
+        <hrn rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hrn>
+        <hasVendor rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasVendor>
+        <hasOS rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasOS>
+        <hasVirtualizationEnvironment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasVirtualizationEnvironment>
+        <hardwareType rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hardwareType>
+        <hostname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hostname>
+        <diskImage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">0</diskImage>
+        <hasAvailableLogicalRouters rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAvailableLogicalRouters>
+        <hasLogicalRouters rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasLogicalRouters>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <virtualRole rdf:datatype="http://www.w3.org/2001/XMLSchema#string">plab-vserver</virtualRole>
+        <rdfs:comment xml:lang="en">Position : [1554,135]</rdfs:comment>
+        <implementedBy rdf:resource="http://fp7-novi.eu/im.owl#PlanetLab_smilax1.man.poznan.pl"/>
+        <hasComponent rdf:resource="http://fp7-novi.eu/im.owl#reqCPU"/>
+        <hasComponent rdf:resource="http://fp7-novi.eu/im.owl#reqDisk"/>
+        <hasComponent rdf:resource="http://fp7-novi.eu/im.owl#reqMem"/>
+        <hasInboundInterface rdf:resource="http://fp7-novi.eu/im.owl#sliver2-if1-in"/>
+        <hasOutboundInterface rdf:resource="http://fp7-novi.eu/im.owl#sliver2-if1-out"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#sliver2-if1-in -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#sliver2-if1-in">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasCapacity>
+        <hasAvailableCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasAvailableCapacity>
+        <hasIPv4Address rdf:datatype="http://www.w3.org/2001/XMLSchema#string">192.168.37.4</hasIPv4Address>
+        <hasNetmask rdf:datatype="http://www.w3.org/2001/XMLSchema#string">255.255.255.248</hasNetmask>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <rdfs:comment xml:lang="en">Position : [1534,873]</rdfs:comment>
+        <isSink rdf:resource="http://fp7-novi.eu/im.owl#link2-lrouter-sliver2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#sliver2-if1-out -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#sliver2-if1-out">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasCapacity>
+        <hasAvailableCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasAvailableCapacity>
+        <hasIPv4Address rdf:datatype="http://www.w3.org/2001/XMLSchema#string">192.168.37.4</hasIPv4Address>
+        <hasNetmask rdf:datatype="http://www.w3.org/2001/XMLSchema#string">255.255.255.248</hasNetmask>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <rdfs:comment xml:lang="en">Position : [1534,576]</rdfs:comment>
+        <isSource rdf:resource="http://fp7-novi.eu/im.owl#link2-sliver2-lrouter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#smilax1.man.poznan.pl:eth0-in -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#smilax1.man.poznan.pl:eth0-in">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+        <hasNetmask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasNetmask>
+        <hasAvailableCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasAvailableCapacity>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasCapacity>
+        <hasIPv4Address rdf:datatype="http://www.w3.org/2001/XMLSchema#string">150.254.160.19</hasIPv4Address>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <rdfs:comment xml:lang="en">Position : [1546,1822]</rdfs:comment>
+        <connectedTo rdf:resource="http://fp7-novi.eu/im.owl#PlanetLab_smilax1.man.poznan.pl"/>
+        <isSink rdf:resource="http://fp7-novi.eu/im.owl#urn:publicid:IDN+novi.eu+link+smilax1.man.poznan.pl:eth0-psnc.poz.router1.ge-0/2/9"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#smilax1.man.poznan.pl:eth0-out -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#smilax1.man.poznan.pl:eth0-out">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+        <hasNetmask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasNetmask>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasCapacity>
+        <hasAvailableCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasAvailableCapacity>
+        <hasIPv4Address rdf:datatype="http://www.w3.org/2001/XMLSchema#string">150.254.160.19</hasIPv4Address>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <rdfs:comment xml:lang="en">Position : [1461,1558]</rdfs:comment>
+        <connectedTo rdf:resource="http://fp7-novi.eu/im.owl#PlanetLab_smilax1.man.poznan.pl"/>
+        <isSource rdf:resource="http://fp7-novi.eu/im.owl#urn:publicid:IDN+novi.eu+link+psnc.poz.router1.ge-0/2/9-smilax1.man.poznan.pl:eth0"/>
+        <next rdf:resource="http://fp7-novi.eu/im.owl#urn:publicid:IDN+novi.eu+link+psnc.poz.router1.ge-0/2/9-smilax1.man.poznan.pl:eth0"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#urn:publicid:IDN+federica.eu+interface+dfn.erl.router1.ge-0/1/0-urn:publicid:IDN+federica.eu+interface+psnc.poz.router1.ge-0/0/0 -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#urn:publicid:IDN+federica.eu+interface+dfn.erl.router1.ge-0/1/0-urn:publicid:IDN+federica.eu+interface+psnc.poz.router1.ge-0/0/0">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Path"/>
+        <hasAvailableCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasAvailableCapacity>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasCapacity>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <rdfs:comment xml:lang="en">Position : [2026,1575]</rdfs:comment>
+        <contains rdf:resource="http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/0-out"/>
+        <contains rdf:resource="http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/0-psnc.poz.router1.ge-0/0/0"/>
+        <contains rdf:resource="http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/0/0-in"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#urn:publicid:IDN+federica.eu+interface+dfn.erl.router1.ge-0/1/2-urn:publicid:IDN+federica.eu+interface+dfn.erl.vserver1.vmnic1 -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#urn:publicid:IDN+federica.eu+interface+dfn.erl.router1.ge-0/1/2-urn:publicid:IDN+federica.eu+interface+dfn.erl.vserver1.vmnic1">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Path"/>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasCapacity>
+        <hasAvailableCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasAvailableCapacity>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <rdfs:comment xml:lang="en">Position : [2701,1112]</rdfs:comment>
+        <contains rdf:resource="http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/2-dfn.erl.vserver1.vmnic1"/>
+        <contains rdf:resource="http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/2-out"/>
+        <contains rdf:resource="http://fp7-novi.eu/im.owl#dfn.erl.vserver1.vmnic1-in"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#urn:publicid:IDN+federica.eu+interface+dfn.erl.vserver1.vmnic1-urn:publicid:IDN+federica.eu+interface+dfn.erl.router1.ge-0/1/2 -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#urn:publicid:IDN+federica.eu+interface+dfn.erl.vserver1.vmnic1-urn:publicid:IDN+federica.eu+interface+dfn.erl.router1.ge-0/1/2">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Path"/>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasCapacity>
+        <hasAvailableCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasAvailableCapacity>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <rdfs:comment xml:lang="en">Position : [2839,1340]</rdfs:comment>
+        <contains rdf:resource="http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/2-in"/>
+        <contains rdf:resource="http://fp7-novi.eu/im.owl#dfn.erl.vserver1.vmnic1-dfn.erl.router1.ge-0/1/2"/>
+        <contains rdf:resource="http://fp7-novi.eu/im.owl#dfn.erl.vserver1.vmnic1-out"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#urn:publicid:IDN+federica.eu+interface+psnc.poz.router1.ge-0/0/0-urn:publicid:IDN+federica.eu+interface+dfn.erl.router1.ge-0/1/0 -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#urn:publicid:IDN+federica.eu+interface+psnc.poz.router1.ge-0/0/0-urn:publicid:IDN+federica.eu+interface+dfn.erl.router1.ge-0/1/0">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Path"/>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasCapacity>
+        <hasAvailableCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasAvailableCapacity>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <rdfs:comment xml:lang="en">Position : [2011,1372]</rdfs:comment>
+        <contains rdf:resource="http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/0-in"/>
+        <contains rdf:resource="http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/0/0-dfn.erl.router1.ge-0/1/0"/>
+        <contains rdf:resource="http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/0/0-out"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#urn:publicid:IDN+novi.eu+link+planetlab2-novi.lab.netmode.ece.ntua.gr:eth0-psnc.poz.router1.ge-0/2/9 -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#urn:publicid:IDN+novi.eu+link+planetlab2-novi.lab.netmode.ece.ntua.gr:eth0-psnc.poz.router1.ge-0/2/9">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#NSwitch"/>
+        <hasPrivateSourceAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasPrivateSourceAddress>
+        <hasGRETunnelID rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasGRETunnelID>
+        <hasPrivateSinkAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasPrivateSinkAddress>
+        <hasAvailableCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasAvailableCapacity>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasCapacity>
+        <hasVLANID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3702</hasVLANID>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <rdfs:comment xml:lang="en">Position : [372,1939]</rdfs:comment>
+        <next rdf:resource="http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/2/9-in"/>
+        <inPath rdf:resource="http://fp7-novi.eu/im.owl#urn:publicid:IDN+novi.eu+path+planetlab2-novi.lab.netmode.ece.ntua.gr:eth0-psnc.poz.router1.ge-0/2/9"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#urn:publicid:IDN+novi.eu+link+psnc.poz.router1.ge-0/2/9-planetlab2-novi.lab.netmode.ece.ntua.gr:eth0 -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#urn:publicid:IDN+novi.eu+link+psnc.poz.router1.ge-0/2/9-planetlab2-novi.lab.netmode.ece.ntua.gr:eth0">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#NSwitch"/>
+        <hasGRETunnelID rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasGRETunnelID>
+        <hasPrivateSinkAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasPrivateSinkAddress>
+        <hasPrivateSourceAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasPrivateSourceAddress>
+        <hasAvailableCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasAvailableCapacity>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasCapacity>
+        <hasVLANID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3701</hasVLANID>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <rdfs:comment xml:lang="en">Position : [369,1602]</rdfs:comment>
+        <next rdf:resource="http://fp7-novi.eu/im.owl#planetlab2-novi.lab.netmode.ece.ntua.gr:eth0-in"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#urn:publicid:IDN+novi.eu+link+psnc.poz.router1.ge-0/2/9-smilax1.man.poznan.pl:eth0 -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#urn:publicid:IDN+novi.eu+link+psnc.poz.router1.ge-0/2/9-smilax1.man.poznan.pl:eth0">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#NSwitch"/>
+        <hasPrivateSinkAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasPrivateSinkAddress>
+        <hasPrivateSourceAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasPrivateSourceAddress>
+        <hasGRETunnelID rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasGRETunnelID>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasCapacity>
+        <hasAvailableCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasAvailableCapacity>
+        <hasVLANID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3701</hasVLANID>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <rdfs:comment xml:lang="en">Position : [1155,1587]</rdfs:comment>
+        <next rdf:resource="http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/2/9-out"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#urn:publicid:IDN+novi.eu+link+smilax1.man.poznan.pl:eth0-psnc.poz.router1.ge-0/2/9 -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#urn:publicid:IDN+novi.eu+link+smilax1.man.poznan.pl:eth0-psnc.poz.router1.ge-0/2/9">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#NSwitch"/>
+        <hasGRETunnelID rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasGRETunnelID>
+        <hasPrivateSinkAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasPrivateSinkAddress>
+        <hasPrivateSourceAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasPrivateSourceAddress>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasCapacity>
+        <hasAvailableCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasAvailableCapacity>
+        <hasVLANID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3701</hasVLANID>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <rdfs:comment xml:lang="en">Position : [1143,1994]</rdfs:comment>
+        <next rdf:resource="http://fp7-novi.eu/im.owl#smilax1.man.poznan.pl:eth0-in"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#urn:publicid:IDN+novi.eu+path+planetlab2-novi.lab.netmode.ece.ntua.gr:eth0-psnc.poz.router1.ge-0/2/9 -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#urn:publicid:IDN+novi.eu+path+planetlab2-novi.lab.netmode.ece.ntua.gr:eth0-psnc.poz.router1.ge-0/2/9">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Path"/>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasCapacity>
+        <hasAvailableCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasAvailableCapacity>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <rdfs:comment xml:lang="en">Position : [389,1348]</rdfs:comment>
+        <contains rdf:resource="http://fp7-novi.eu/im.owl#planetlab2-novi.lab.netmode.ece.ntua.gr:eth0-out"/>
+        <contains rdf:resource="http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/2/9-in"/>
+        <contains rdf:resource="http://fp7-novi.eu/im.owl#urn:publicid:IDN+novi.eu+link+planetlab2-novi.lab.netmode.ece.ntua.gr:eth0-psnc.poz.router1.ge-0/2/9"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#urn:publicid:IDN+novi.eu+path+psnc.poz.router1.ge-0/2/9-planetlab2-novi.lab.netmode.ece.ntua.gr:eth0 -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#urn:publicid:IDN+novi.eu+path+psnc.poz.router1.ge-0/2/9-planetlab2-novi.lab.netmode.ece.ntua.gr:eth0">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Path"/>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasCapacity>
+        <hasAvailableCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasAvailableCapacity>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <rdfs:comment xml:lang="en">Position : [344,1135]</rdfs:comment>
+        <contains rdf:resource="http://fp7-novi.eu/im.owl#planetlab2-novi.lab.netmode.ece.ntua.gr:eth0-in"/>
+        <contains rdf:resource="http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/2/9-out"/>
+        <contains rdf:resource="http://fp7-novi.eu/im.owl#urn:publicid:IDN+novi.eu+link+psnc.poz.router1.ge-0/2/9-planetlab2-novi.lab.netmode.ece.ntua.gr:eth0"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#urn:publicid:IDN+novi.eu+path+psnc.poz.router1.ge-0/2/9-smilax1.man.poznan.pl:eth0 -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#urn:publicid:IDN+novi.eu+path+psnc.poz.router1.ge-0/2/9-smilax1.man.poznan.pl:eth0">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Path"/>
+        <hasAvailableCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasAvailableCapacity>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasCapacity>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <rdfs:comment xml:lang="en">Position : [1189,1345]</rdfs:comment>
+        <contains rdf:resource="http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/2/9-in"/>
+        <contains rdf:resource="http://fp7-novi.eu/im.owl#smilax1.man.poznan.pl:eth0-in"/>
+        <contains rdf:resource="http://fp7-novi.eu/im.owl#urn:publicid:IDN+novi.eu+link+smilax1.man.poznan.pl:eth0-psnc.poz.router1.ge-0/2/9"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#urn:publicid:IDN+novi.eu+path+smilax1.man.poznan.pl:eth0-psnc.poz.router1.ge-0/2/9 -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#urn:publicid:IDN+novi.eu+path+smilax1.man.poznan.pl:eth0-psnc.poz.router1.ge-0/2/9">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Path"/>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasCapacity>
+        <hasAvailableCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasAvailableCapacity>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <rdfs:comment xml:lang="en">Position : [1177,1145]</rdfs:comment>
+        <contains rdf:resource="http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/2/9-in"/>
+        <contains rdf:resource="http://fp7-novi.eu/im.owl#smilax1.man.poznan.pl:eth0-out"/>
+        <contains rdf:resource="http://fp7-novi.eu/im.owl#urn:publicid:IDN+novi.eu+link+psnc.poz.router1.ge-0/2/9-smilax1.man.poznan.pl:eth0"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#vm1 -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#vm1">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#VirtualNode"/>
+        <virtualRole rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></virtualRole>
+        <hasOS rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasOS>
+        <hasVendor rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasVendor>
+        <hardwareType rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hardwareType>
+        <hasVirtualizationEnvironment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasVirtualizationEnvironment>
+        <hrn rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hrn>
+        <hostname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hostname>
+        <diskImage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">0</diskImage>
+        <hasLogicalRouters rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasLogicalRouters>
+        <hasAvailableLogicalRouters rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAvailableLogicalRouters>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <rdfs:comment xml:lang="en">Position : [2683,6]</rdfs:comment>
+        <implementedBy rdf:resource="http://fp7-novi.eu/im.owl#FEDERICA_dfn.erl.vserver1"/>
+        <hasInboundInterface rdf:resource="http://fp7-novi.eu/im.owl#vm1-if1-in"/>
+        <hasOutboundInterface rdf:resource="http://fp7-novi.eu/im.owl#vm1-if1-out"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#vm1-if1-in -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#vm1-if1-in">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+        <hasIPv4Address rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasIPv4Address>
+        <hasNetmask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasNetmask>
+        <hasAvailableCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasAvailableCapacity>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasCapacity>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <rdfs:comment xml:lang="en">Position : [2653,400]</rdfs:comment>
+        <isSink rdf:resource="http://fp7-novi.eu/im.owl#link4-lrouter2-vm1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#vm1-if1-out -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/im.owl#vm1-if1-out">
+        <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+        <hasIPv4Address rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasIPv4Address>
+        <hasNetmask rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></hasNetmask>
+        <hasAvailableCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasAvailableCapacity>
+        <hasCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasCapacity>
+        <exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+        <rdfs:comment xml:lang="en">Position : [2909,399]</rdfs:comment>
+        <isSource rdf:resource="http://fp7-novi.eu/im.owl#link4-vm1-lrouter2"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version [Not Released]) http://owlapi.sourceforge.net -->
+

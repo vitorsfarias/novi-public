@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!-- Author: Blazej Pietrzak [blazej.pietrzak@man.poznan.pl] -->
+<!-- Author: Piotr Pikusa [pikusa@man.poznan.pl] -->
+<!-- Author: chariklis Pittaras [c.pittaras@uva.nl] -->
+
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+	xmlns:cm="http://aries.apache.org/blueprint/xmlns/blueprint-cm/v1.0.0">
+
+  <cm:property-placeholder persistent-id="eu.novi.ris"/>
+
+  <!--  for the FIA demo
+  <bean id="rd" class="eu.novi.resources.discovery.impl.ResourceDiscoveryImpl" >
+    <property name="testbed" value="${testbed}" />
+    <property name="resourcesTypes" ref="resourceTypesList" />  
+  	<property name="fedNode" ref="fedN" />
+  	<property name="fedRouter" ref="fedR" />
+  	<property name="plNode" ref="plN" />
+  </bean>
+  
+  <reference-list id="resourceTypesList" interface="eu.novi.resources.Resource"  member-type="service-object" /> 
+  
+  <reference id="fedR" interface="eu.novi.resources.Resource" filter="(testbed=FEDERICA)(type=ROUTER)"/>
+  <reference id="fedN" interface="eu.novi.resources.Resource" filter="(testbed=FEDERICA)(type=NODE)"/>
+  <reference id="plN" interface="eu.novi.resources.Resource" filter="(testbed=PlanetLab)(type=NODE)"/>
+  
+  <service ref="rd" interface="eu.novi.resources.discovery.ResourceDiscovery">
+      <service-properties>
+           All service interfaces are available for Distributed OSGi 
+	  <entry key="service.exported.interfaces" value="*" />
+
+  	  <entry key="testbed" value="${testbed}" />
+      </service-properties>
+  </service>
+  -->
+  	
+	<!-- the class that provide the threads and schedulers -->
+	<bean id="refPeriodicUpdate" class="eu.novi.resources.discovery.scheduler.PeriodicUpdate">
+		<property name="scheduler" ref="refScheduler" />
+	</bean>
+	<reference id="refScheduler" interface="java.util.concurrent.ScheduledExecutorService"/> 
+
+
+	<!-- POLICY SERVICE -->
+	<!-- A class that makes the communication with policy service -->
+	<bean id="policyServCommun"
+		class="eu.novi.resources.discovery.database.communic.PolicyServCommun">
+		<property name="policyServiceCalls" ref="refSInterfaceForRIS" />
+	</bean> 
+	<!-- Reference to InterfaceForRIS provided by Policy Manager -->
+	<reference id="refSInterfaceForRIS" interface="eu.novi.policyAA.interfaces.InterfaceForRIS" /> 
+
+
+	<!-- REQUEST HANDLER -->
+	<!-- A class that makes the communication with request handler -->
+	<bean id="testbedCommunication"
+		class="eu.novi.resources.discovery.database.communic.TestbedCommunication">
+		<property name="calls2TestbedFromRH" ref="refFederatedTestbed" />
+	</bean>
+	<!-- Reference to FAFederatedTestbed provided by Request Handler (federation-sfa) -->
+	<reference id="refFederatedTestbed" interface="eu.novi.requesthandler.sfa.FederatedTestbed" />
+	
+	<!-- MONITORING SERVICE -->
+	<!-- A class that makes the communication with monitoring service -->
+	<bean id="monitoringServCommun"
+		class="eu.novi.resources.discovery.database.communic.MonitoringServCommun">
+		<property name="monServ" ref="refMonServ" />
+		<property name="plSfademoKeyPath" value="${plSfademoKeyPath}" />
+		<property name="plRootKeyPath" value="${plRootKeyPath}" />
+		<property name="testbed" value="${testbed}" />
+	</bean>
+	<!-- Reference to MonSrvprovided by monitoring service -->
+	<reference id="refMonServ" interface="eu.novi.monitoring.MonSrv" />
+	
+	
+	
+
+	<!-- REMOTE RIS ???
+	 A class that makes the communication with the remote RISs 
+	<bean id="remoteRis"
+		class="eu.novi.resources.discovery.remote.discovery.RemoteRisDiscoveryImpl">
+		<property name="remoteRis" ref="refRemoteRis" />
+		<property name="testbed" value="${testbed}" />
+	</bean> -->
+
+
+	<!-- ###################################### RIS ###################################################### -->
+
+
+	
+	<!-- Contain the testbed information -->
+	<bean id="refTestbeds" class="eu.novi.resources.discovery.util.Testbeds">
+		<property name="testbed" value="${testbed}" />
+	</bean>
+	
+	
+	
+	
+
+	<!-- The services that RIS provides to remote RISs -->
+	<bean id="refRemoteRIS"
+		class="eu.novi.resources.discovery.remote.serve.RemoteRisServeImpl">
+		<property name="testbed" value="${testbed}" />
+	</bean>
+	<service ref="refRemoteRIS"
+		interface="eu.novi.resources.discovery.remote.serve.RemoteRisServe">
+		<service-properties>
+			<!-- All service interfaces are available for Distributed OSGi -->
+			<entry key="service.exported.interfaces" value="*" />
+			<entry key="org.apache.cxf.ws.databinding" value="jaxb" /> 
+			<entry key="testbed" value="${testbed}" />
+		</service-properties>
+	</service>
+	
+	
+
+	<!--  This list of remote RIS is going to be  provided for IRMCalls -->
+    <reference-list id="refListRemoteRIS" interface="eu.novi.resources.discovery.remote.serve.RemoteRisServe"  member-type="service-object" availability="optional" />
+   
+	<!-- The services that RIS provides to IRM -->
+	<bean id="refIRMcall" class="eu.novi.resources.discovery.impl.IRMCallsImpl">
+		<property name="testbed" value="${testbed}" />
+		<property name="userFeedback"  ref="refUserFeedback"/>
+		<!--property name="remoteRISList" ref="refListRemoteRIS" /-->
+	</bean>
+	<service ref="refIRMcall" interface="eu.novi.resources.discovery.IRMCalls"/>
+	
+
+	<!-- No more delete processor, this is refactored to NoviApiCalls 
+	<bean id="DeleteRequestBean" class="eu.novi.resources.discovery.impl.DeleteProcessorImpl">
+
+	</bean>
+	-->
+	
+	
+	
+	<!-- The services that RIS provides to NOVI-API-->
+	<bean id="refNoviApiCall" class="eu.novi.resources.discovery.impl.NoviApiCallsImpl">
+		<property name="testbed" value="${testbed}" />
+		<property name="userFeedback"  ref="refUserFeedback"/>
+		<property name="remoteRISList" ref="refListRemoteRIS" />
+	</bean>
+	<service ref="refNoviApiCall" interface="eu.novi.resources.discovery.NoviApiCalls"/>
+	
+	<!-- The services that RIS provides to Policy-->
+	<bean id="refPolicyCall" class="eu.novi.resources.discovery.impl.PolicyCallsImpl">
+		<property name="testbed" value="${testbed}" />
+	</bean>
+	<service ref="refPolicyCall" interface="eu.novi.resources.discovery.PolicyCalls"/>
+	
+	
+	
+	
+	<bean id="refRISDiscovery" class="eu.novi.resources.discovery.remote.discovery.RemoteRisDiscoveryImpl">
+		<property name="testbed" value="${testbed}"/>
+		<property name="remoteRISList" ref="refListRemoteRIS"/>
+	</bean>
+
+
+	<service ref="refRISDiscovery" interface="eu.novi.resources.discovery.remote.discovery.RemoteRisDiscovery">
+		<service-properties>
+			<!-- All service interfaces are available for Distributed OSGi -->
+			<entry key="service.exported.interfaces" value="*" />
+			<entry key="org.apache.cxf.ws.databinding" value="jaxb" /> 
+			<entry key="testbed" value="${testbed}" />
+		</service-properties>
+	</service>	
+
+    <reference id="refUserFeedback" interface="eu.novi.feedback.event.ReportEvent" />
+    
+    <!-- Start and stop the database service - initialization of the system -->
+	<bean id="refStartStopDBService" class="eu.novi.resources.discovery.impl.StartStopDBService"
+		init-method="initTestDatabase" destroy-method="destroyDatabase">
+		<property name="testbed" value="${testbed}" />
+		<property name="remoteRISList" ref="refListRemoteRIS" />
+	</bean>
+
+	<!-- No longer using request listener since we will be calling directly from novi API 
+	<reference id="refRequestListener" interface="eu.novi.api.request.queue.RequestListener" />  
+     -->
+     
+</blueprint>

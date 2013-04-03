@@ -1,0 +1,114 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>eu.novi</groupId>
+		<artifactId>parent</artifactId>
+		<version>0.1.0-SNAPSHOT</version>
+		<relativePath>../parent/</relativePath>
+	</parent>
+	<artifactId>information-model</artifactId>
+	<packaging>bundle</packaging>
+
+
+
+	<name>information-model</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<dependencies>
+		<!--dependency>
+			<groupId>org.openrdf.sesame</groupId>
+			<artifactId>sesame-runtime-osgi</artifactId>
+			<version>${sesame.version}</version>
+		</dependency-->
+		<dependency>
+			<groupId>eu.novi</groupId>
+			<artifactId>alibaba-osgi</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+	
+		<!-- added solely for shutdown bug. Without this, if alibaba-osgi is shutdown first this bundle can't destroy object repositories -->	
+		<!--dependency>
+			<groupId>info.aduna.commons</groupId>
+			<artifactId>aduna-commons-io</artifactId>
+			<version>2.10.0</version>
+			<scope>provided</scope>
+		</dependency -->
+	<!--	<dependency>
+			<groupId>org.openrdf.alibaba</groupId>
+			<artifactId>alibaba-repository-query</artifactId>
+			<version>${alibaba.version}</version>
+			<scope>provided</scope>
+		</dependency> -->
+				<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>${commons-logging.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+    		<artifactId>slf4j-log4j12</artifactId>
+    		<version>${slf4j-log4j12.version}</version>
+		</dependency>
+
+
+	</dependencies>
+	<repositories>
+
+		<repository>
+			<id>aduna-opensource.releases</id>
+			<name>Aduna Open Source - Maven releases</name>
+			<url>http://repo.aduna-software.org/maven2/releases</url>
+		</repository>
+		<repository>
+			<id>maven2-repository.dev.java.net</id>
+			<name>Java.net Repository for Maven</name>
+			<url>http://download.java.net/maven/2/</url>
+		</repository>
+		<repository>
+			<id>projectlombok.org</id>
+			<url>http://projectlombok.org/mavenrepo</url>
+		</repository>
+		<repository>
+			<id>jboss</id>
+			<url>http://repository.jboss.org/maven2/</url>
+		</repository>
+	</repositories>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<configuration>
+				
+					<instructions>
+						<Import-Package>*</Import-Package>
+						<Export-Package>eu.novi.im.core, 
+								eu.novi.im.core.impl, 
+								eu.novi.im.util, 
+								eu.novi.im.policy, 
+								eu.novi.im.policy.impl, 
+								eu.novi.im.unit, 
+								eu.novi.im.unit.impl
+						</Export-Package>
+					</instructions>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

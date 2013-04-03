@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml>
+	<!--# This is the initial set-up and includes all elements that we do not want to show -->
+	<xml>
+		<!--# Domain structure -->
+		<use name="/">
+			<add name="Timer">
+				<use name="/template/domain">
+					<create/>
+				</use>
+			</add>
+		</use>
+	</xml>
+	<xml>
+		<!--# Import the TimeManager type so that we can create instances of it-->
+		<use name="/template">
+			<add name="tick">
+				<import name="managedobject.TickManager"/>
+			</add>
+		</use>
+	</xml>
+	<xml>
+		<!--# Create an event type that will signal the tick 
+			
+			event: tick(tick count) 
+		-->
+		<use name="/event">
+			<add name="tick">
+				<use name="/template/event">
+					<create>
+						<arg name="count"/>
+					</create>
+				</use>
+			</add>
+		</use>
+	</xml>
+	<xml>
+		<!--# Create an instance of the ticker-->
+		<use name="/Timer">
+			<add name="ticker">
+				<use name="/template/tick">
+					<create>
+						<tick event="/event/tick" delay="10" repeat="5">
+							!tick;
+						</tick>
+					</create>
+				</use>
+			</add>
+		</use>
+	</xml>
+</xml>

@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE rdf:RDF [
+    <!ENTITY unit "http://fp7-novi.eu/unit.owl#" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY monitoring_query "http://fp7-novi.eu/monitoring_query.owl#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY monitoring_features "http://fp7-novi.eu/monitoring_features.owl#" >
+    <!ENTITY monitoring_parameter "http://fp7-novi.eu/monitoring_parameter.owl#" >
+]>
+<rdf:RDF xmlns="http://fp7-novi.eu/monitoringQuery_example.owl#"
+     xml:base="http://fp7-novi.eu/monitoringQuery_example.owl"
+     xmlns:unit="http://fp7-novi.eu/unit.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:monitoring_features="http://fp7-novi.eu/monitoring_features.owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:monitoring_query="http://fp7-novi.eu/monitoring_query.owl#"
+     xmlns:monitoring_parameter="http://fp7-novi.eu/monitoring_parameter.owl#">
+    <owl:Ontology rdf:about="http://fp7-novi.eu/monitoringQuery_example.owl">
+        <owl:imports rdf:resource="http://fp7-novi.eu/monitoring_query.owl"/>
+    </owl:Ontology>
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/monitoringQuery_example.owl#PQ_Host_novilab.elte.hu">
+        <rdf:type rdf:resource="&monitoring_query;QueryParameter"/>
+        <monitoring_parameter:paramValue>157.181.175.243</monitoring_parameter:paramValue>
+        <monitoring_parameter:paramName>SourceAddress</monitoring_parameter:paramName>
+        <rdfs:comment>this parameter in the future should not be stated explicitely, since it is bound to the Resource (to be imported from the core ontology)   </rdfs:comment>
+        <monitoring_parameter:hasType rdf:resource="&monitoring_parameter;String"/>
+        <monitoring_parameter:hasDimension rdf:resource="&unit;ipaddress"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/monitoringQuery_example.owl#measureMemoryInformation">
+        <rdf:type rdf:resource="&monitoring_query;BundleQuery"/>
+        <monitoring_query:hasParameter rdf:resource="http://fp7-novi.eu/monitoringQuery_example.owl#PQ_Host_novilab.elte.hu"/>
+        <monitoring_query:hasFeature rdf:resource="&monitoring_features;FreeMemory"/>
+    </owl:NamedIndividual>
+</rdf:RDF>

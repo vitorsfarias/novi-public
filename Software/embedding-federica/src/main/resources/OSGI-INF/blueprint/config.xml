@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!-- Author: Blazej Pietrzak [blazej.pietrzak@man.poznan.pl] -->
+<!-- Author: Álvaro Monje [alvaro.monje@entel.upc.edu] -->
+<!-- Author: Chrysa Papagianni [chrisap@noc.ntua.grl] -->
+
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+  
+	<bean id="federica-Algorithm" class="eu.novi.mapping.embedding.federica.EmbeddingAlgorithmFEDERICA">
+		<property name="resourceDiscovery" ref="refIRMcall"/>
+		<property name="logService" ref="refLogService"/>
+		<property name="userFeedback"  ref="refUserFeedback"/> 
+	</bean>
+  
+  
+	<service ref="federica-Algorithm"> 
+		<interfaces>
+			<value>eu.novi.mapping.embedding.EmbeddingAlgorithmInterface</value>
+		</interfaces>
+		<service-properties>
+			<entry key="testbed" value="FEDERICA"/>
+		</service-properties>
+	</service>
+   
+	<!-- Reference to osgi Log Service -->
+	<reference id="refLogService" interface="org.osgi.service.log.LogService"/>
+    	<!-- Reference to osgi RIS Service -->
+  	<reference id="refIRMcall" interface="eu.novi.resources.discovery.IRMCalls"/>
+	<!-- Reference to osgi User Feedback -->
+	<reference id="refUserFeedback" interface="eu.novi.feedback.event.ReportEvent"/>
+
+</blueprint>
+

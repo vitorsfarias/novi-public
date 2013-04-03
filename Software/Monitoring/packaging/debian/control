@@ -1,0 +1,13 @@
+Source: novi-ms-gui
+Section: unknown
+Priority: extra
+Maintainer: Stéger József <steger@complex.elte.hu>
+Build-Depends: debhelper (>= 8.0.0)
+Standards-Version: 3.9.2
+Homepage: http://fp7-novi.eu
+
+Package: novi-ms-gui
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, python-suds, python-rdfxml
+Description: Application to manage monitoring measurements in the slice
+ Some nice longer description is still to be added

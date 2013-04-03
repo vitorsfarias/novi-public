@@ -1,0 +1,515 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY im "http://fp7-novi.eu/im.owl#" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY NOVIPolicyService "http://fp7-novi.eu/NOVIPolicyService.owl#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://fp7-novi.eu/NOVIPolicyService.owl#"
+     xml:base="http://fp7-novi.eu/NOVIPolicyService.owl"
+     xmlns:NOVIPolicyService="http://fp7-novi.eu/NOVIPolicyService.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:im="http://fp7-novi.eu/im.owl#">
+    <owl:Ontology rdf:about="http://fp7-novi.eu/NOVIPolicyService.owl">
+        <owl:imports rdf:resource="file:.///novi-im.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntitiesProperties -->
+
+    <owl:ObjectProperty rdf:about="&NOVIPolicyService;ManagedEntitiesProperties">
+        <rdfs:label xml:lang="en">ManagedEntitiesProperties</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/NOVIPolicyService.owl#ManagementDomainProperties -->
+
+    <owl:ObjectProperty rdf:about="&NOVIPolicyService;ManagementDomainProperties">
+        <rdfs:label xml:lang="en">ManagementDomainProperties</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/NOVIPolicyService.owl#NOVIUserProperties -->
+
+    <owl:ObjectProperty rdf:about="&NOVIPolicyService;NOVIUserProperties">
+        <rdfs:label xml:lang="en">NOVIUserProperties</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/NOVIPolicyService.owl#PolicyActionProperties -->
+
+    <owl:ObjectProperty rdf:about="&NOVIPolicyService;PolicyActionProperties">
+        <rdfs:label xml:lang="en">PolicyActionProperties</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/NOVIPolicyService.owl#PolicyObjectProperties -->
+
+    <owl:ObjectProperty rdf:about="&NOVIPolicyService;PolicyObjectProperties">
+        <rdfs:label xml:lang="en">PolicyObjectProperties</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/NOVIPolicyService.owl#hasAction -->
+
+    <owl:ObjectProperty rdf:about="&NOVIPolicyService;hasAction">
+        <rdfs:label xml:lang="en">hasAction</rdfs:label>
+        <rdfs:range rdf:resource="&NOVIPolicyService;ManagedEntityMethod"/>
+        <rdfs:domain rdf:resource="&NOVIPolicyService;PolicyAction"/>
+        <rdfs:subPropertyOf rdf:resource="&NOVIPolicyService;PolicyActionProperties"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&owl;topDataProperty"/>
+                <owl:someValuesFrom rdf:resource="&xsd;anyURI"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/NOVIPolicyService.owl#hasCondition -->
+
+    <owl:ObjectProperty rdf:about="&NOVIPolicyService;hasCondition">
+        <rdfs:label xml:lang="en">hasCondition</rdfs:label>
+        <rdfs:range rdf:resource="&NOVIPolicyService;ManagedEntityProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&NOVIPolicyService;PolicyActionProperties"/>
+        <rdfs:domain rdf:resource="&NOVIPolicyService;PolicyCondition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/NOVIPolicyService.owl#hasEvent -->
+
+    <owl:ObjectProperty rdf:about="&NOVIPolicyService;hasEvent">
+        <rdfs:label xml:lang="en">hasEvent</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&NOVIPolicyService;PolicyActionProperties"/>
+        <rdfs:domain rdf:resource="&NOVIPolicyService;PolicyEvent"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&owl;topDataProperty"/>
+                <owl:someValuesFrom rdf:resource="&xsd;anyURI"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/NOVIPolicyService.owl#hasMethods -->
+
+    <owl:ObjectProperty rdf:about="&NOVIPolicyService;hasMethods">
+        <rdfs:label xml:lang="en">hasMethods</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&NOVIPolicyService;ManagedEntitiesProperties"/>
+        <rdfs:domain rdf:resource="&NOVIPolicyService;ManagedEntity"/>
+        <rdfs:range rdf:resource="&NOVIPolicyService;ManagedEntityMethod"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/NOVIPolicyService.owl#hasNoviRole -->
+
+    <owl:ObjectProperty rdf:about="&NOVIPolicyService;hasNoviRole">
+        <rdfs:label xml:lang="en">hasNOVIRole</rdfs:label>
+        <rdfs:domain rdf:resource="&NOVIPolicyService;NOVIUser"/>
+        <rdfs:subPropertyOf rdf:resource="&NOVIPolicyService;NOVIUserProperties"/>
+        <rdfs:range rdf:resource="&NOVIPolicyService;Role"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/NOVIPolicyService.owl#hasPolicyAction -->
+
+    <owl:ObjectProperty rdf:about="&NOVIPolicyService;hasPolicyAction">
+        <rdfs:label xml:lang="en">hasPolicyAction</rdfs:label>
+        <rdfs:domain rdf:resource="&NOVIPolicyService;Policy"/>
+        <rdfs:range rdf:resource="&NOVIPolicyService;PolicyAction"/>
+        <rdfs:subPropertyOf rdf:resource="&NOVIPolicyService;PolicyObjectProperties"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/NOVIPolicyService.owl#hasPolicyCondition -->
+
+    <owl:ObjectProperty rdf:about="&NOVIPolicyService;hasPolicyCondition">
+        <rdfs:label xml:lang="en">hasPolicyCondition</rdfs:label>
+        <rdfs:domain rdf:resource="&NOVIPolicyService;Policy"/>
+        <rdfs:range rdf:resource="&NOVIPolicyService;PolicyCondition"/>
+        <rdfs:subPropertyOf rdf:resource="&NOVIPolicyService;PolicyObjectProperties"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/NOVIPolicyService.owl#hasPolicyEvent -->
+
+    <owl:ObjectProperty rdf:about="&NOVIPolicyService;hasPolicyEvent">
+        <rdfs:label xml:lang="en">hasPolicyEvent</rdfs:label>
+        <rdfs:domain rdf:resource="&NOVIPolicyService;Policy"/>
+        <rdfs:range rdf:resource="&NOVIPolicyService;PolicyEvent"/>
+        <rdfs:subPropertyOf rdf:resource="&NOVIPolicyService;PolicyObjectProperties"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/NOVIPolicyService.owl#hasPolicySubject -->
+
+    <owl:ObjectProperty rdf:about="&NOVIPolicyService;hasPolicySubject">
+        <rdfs:label xml:lang="en">hasPolicySubject</rdfs:label>
+        <rdfs:range rdf:resource="&NOVIPolicyService;ManagedEntity"/>
+        <rdfs:domain rdf:resource="&NOVIPolicyService;Policy"/>
+        <rdfs:subPropertyOf rdf:resource="&NOVIPolicyService;PolicyObjectProperties"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/NOVIPolicyService.owl#hasPolicyTarget -->
+
+    <owl:ObjectProperty rdf:about="&NOVIPolicyService;hasPolicyTarget">
+        <rdfs:label xml:lang="en">hasPolicyTarget</rdfs:label>
+        <rdfs:range rdf:resource="&NOVIPolicyService;ManagedEntity"/>
+        <rdfs:domain rdf:resource="&NOVIPolicyService;Policy"/>
+        <rdfs:subPropertyOf rdf:resource="&NOVIPolicyService;PolicyObjectProperties"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/NOVIPolicyService.owl#hasProperties -->
+
+    <owl:ObjectProperty rdf:about="&NOVIPolicyService;hasProperties">
+        <rdfs:label xml:lang="en">hasProperties</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&NOVIPolicyService;ManagedEntitiesProperties"/>
+        <rdfs:domain rdf:resource="&NOVIPolicyService;ManagedEntity"/>
+        <rdfs:range rdf:resource="&NOVIPolicyService;ManagedEntityProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/NOVIPolicyService.owl#hasUserPlatform -->
+
+    <owl:ObjectProperty rdf:about="&NOVIPolicyService;hasUserPlatform">
+        <rdfs:label xml:lang="en">hasUserPlatform</rdfs:label>
+        <rdfs:domain rdf:resource="&NOVIPolicyService;NOVIUser"/>
+        <rdfs:subPropertyOf rdf:resource="&NOVIPolicyService;NOVIUserProperties"/>
+        <rdfs:range rdf:resource="&im;Platform"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/NOVIPolicyService.owl#includes -->
+
+    <owl:ObjectProperty rdf:about="&NOVIPolicyService;includes">
+        <rdfs:label xml:lang="en">includes</rdfs:label>
+        <rdfs:range rdf:resource="&NOVIPolicyService;ManagedEntity"/>
+        <rdfs:domain rdf:resource="&NOVIPolicyService;ManagementDomain"/>
+        <rdfs:subPropertyOf rdf:resource="&NOVIPolicyService;ManagementDomainProperties"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntityDataProperties -->
+
+    <owl:DatatypeProperty rdf:about="&NOVIPolicyService;ManagedEntityDataProperties">
+        <rdfs:label xml:lang="en">ManagedEntityDataProperties</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/NOVIPolicyService.owl#RoleProperties -->
+
+    <owl:DatatypeProperty rdf:about="&NOVIPolicyService;RoleProperties">
+        <rdfs:label xml:lang="en">RoleProperties</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/NOVIPolicyService.owl#hasAuthenticationStatus -->
+
+    <owl:DatatypeProperty rdf:about="&NOVIPolicyService;hasAuthenticationStatus">
+        <rdfs:label xml:lang="en">hasAuthenticationStatus</rdfs:label>
+        <rdfs:domain rdf:resource="&NOVIPolicyService;NOVIUser"/>
+        <rdfs:subPropertyOf rdf:resource="&NOVIPolicyService;RoleProperties"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/NOVIPolicyService.owl#hasRoleInPlatform -->
+
+    <owl:DatatypeProperty rdf:about="&NOVIPolicyService;hasRoleInPlatform">
+        <rdfs:label xml:lang="en">hasRoleInPlatform</rdfs:label>
+        <rdfs:domain rdf:resource="&NOVIPolicyService;NOVIUser"/>
+        <rdfs:subPropertyOf rdf:resource="&NOVIPolicyService;RoleProperties"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/NOVIPolicyService.owl#hasUserID -->
+
+    <owl:DatatypeProperty rdf:about="&NOVIPolicyService;hasUserID">
+        <rdfs:label xml:lang="en">hasUserID</rdfs:label>
+        <rdfs:domain rdf:resource="&NOVIPolicyService;NOVIUser"/>
+        <rdfs:subPropertyOf rdf:resource="&NOVIPolicyService;RoleProperties"/>
+        <rdfs:range rdf:resource="&xsd;anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#topDataProperty -->
+
+    <owl:DatatypeProperty rdf:about="&owl;topDataProperty"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://fp7-novi.eu/NOVIPolicyService.owl#AuthorizationPolicy -->
+
+    <owl:Class rdf:about="&NOVIPolicyService;AuthorizationPolicy">
+        <rdfs:label xml:lang="en">AuthorizationPolicy</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&NOVIPolicyService;Policy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/NOVIPolicyService.owl#ECAPolicy -->
+
+    <owl:Class rdf:about="&NOVIPolicyService;ECAPolicy">
+        <rdfs:label xml:lang="en">ECAPolicy</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&NOVIPolicyService;Policy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity -->
+
+    <owl:Class rdf:about="&NOVIPolicyService;ManagedEntity">
+        <rdfs:label xml:lang="en">ManagedEntity</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntityMethod -->
+
+    <owl:Class rdf:about="&NOVIPolicyService;ManagedEntityMethod">
+        <rdfs:label xml:lang="en">ManagedEntityMethod</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntityProperty -->
+
+    <owl:Class rdf:about="&NOVIPolicyService;ManagedEntityProperty">
+        <rdfs:label xml:lang="en">ManagedEntityProperty</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/NOVIPolicyService.owl#ManagementDomain -->
+
+    <owl:Class rdf:about="&NOVIPolicyService;ManagementDomain">
+        <rdfs:label xml:lang="en">ManagementDomain</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&NOVIPolicyService;ManagedEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/NOVIPolicyService.owl#MissionPolicy -->
+
+    <owl:Class rdf:about="&NOVIPolicyService;MissionPolicy">
+        <rdfs:label xml:lang="en">MissionPolicy</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&NOVIPolicyService;Policy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/NOVIPolicyService.owl#NOVIUser -->
+
+    <owl:Class rdf:about="&NOVIPolicyService;NOVIUser">
+        <rdfs:label xml:lang="en">NOVIUser</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/NOVIPolicyService.owl#Policy -->
+
+    <owl:Class rdf:about="&NOVIPolicyService;Policy">
+        <rdfs:label xml:lang="en">Policy</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&NOVIPolicyService;ManagedEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/NOVIPolicyService.owl#PolicyAction -->
+
+    <owl:Class rdf:about="&NOVIPolicyService;PolicyAction">
+        <rdfs:label xml:lang="en">PolicyAction</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/NOVIPolicyService.owl#PolicyCondition -->
+
+    <owl:Class rdf:about="&NOVIPolicyService;PolicyCondition">
+        <rdfs:label xml:lang="en">PolicyCondition</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/NOVIPolicyService.owl#PolicyEvent -->
+
+    <owl:Class rdf:about="&NOVIPolicyService;PolicyEvent">
+        <rdfs:label xml:lang="en">PolicyEvent</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/NOVIPolicyService.owl#PolicySubject -->
+
+    <owl:Class rdf:about="&NOVIPolicyService;PolicySubject">
+        <rdfs:label xml:lang="en">PolicySubject</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&NOVIPolicyService;ManagedEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/NOVIPolicyService.owl#PolicyTarget -->
+
+    <owl:Class rdf:about="&NOVIPolicyService;PolicyTarget">
+        <rdfs:label xml:lang="en">PolicyTarget</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&NOVIPolicyService;ManagedEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/NOVIPolicyService.owl#RBACPolicy -->
+
+    <owl:Class rdf:about="&NOVIPolicyService;RBACPolicy">
+        <rdfs:label xml:lang="en">RBACPolicy</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&NOVIPolicyService;Policy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/NOVIPolicyService.owl#Role -->
+
+    <owl:Class rdf:about="&NOVIPolicyService;Role">
+        <rdfs:label xml:lang="en">Role</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&NOVIPolicyService;ManagedEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#Group -->
+
+    <owl:Class rdf:about="&im;Group"/>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#Platform -->
+
+    <owl:Class rdf:about="&im;Platform">
+        <rdfs:label xml:lang="en">Platform</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&im;Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#Resource -->
+
+    <owl:Class rdf:about="&im;Resource">
+        <rdfs:label xml:lang="en">Resource</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&NOVIPolicyService;ManagedEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/im.owl#Service -->
+
+    <owl:Class rdf:about="&im;Service">
+        <rdfs:label xml:lang="en">Service</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&NOVIPolicyService;ManagedEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <owl:Class rdf:about="&owl;Thing"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.3.22702) http://owlapi.sourceforge.net -->
+

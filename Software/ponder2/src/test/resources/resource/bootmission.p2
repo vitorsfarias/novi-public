@@ -1,0 +1,103 @@
+// Mission Bootstrap Code
+
+root print: "Mission Bootstrap".
+
+//root trace: true.
+
+root/factory at: "interface" put: (root load: "mission.Interface").
+root/factory at: "mission" put: (root load: "mission.Mission").
+root/factory at: "missionController" put: (root load: "mission.MissionController").
+
+root at: "mission" put: root/factory/domain create.
+root at: "interface" put: root/factory/domain create.
+root at: "role" put: root/factory/domain create.
+
+// Create the default Mission Controller for local Interfaces
+missioncontroller := 
+	root/factory/missionController 
+		domainFactory: root/factory/domain 
+		policyFactory: root/factory/ecapolicy.
+root/mission at: "missioncontroller" put: missioncontroller.
+
+// Create a dummy interface to use as a default
+root/mission at: "interface" put: root/factory/interface create.
+
+// Domain structure for roles/missions
+// root
+//      + role
+//              + patient                                       One per Role
+//                            + interface                      Our i/f offered to others of this role
+//                            + mission                        Our mission to be loaded remotely
+//                            + number                        Sequence number for naming
+//                            + patient1                       An instantiated role
+//                                         + interface         Remote interface for the role
+//                                         + mission           Remote mission after instantiation
+//                            + patient2                       An instantiated role
+//                                         + interface         Remote interface for the role
+//                                         + mission           Remote mission after instantiation
+
+// Create some mission related helper code
+
+// Create a new role type for remote entities
+block := [ :role :interface :mission |
+					domain :=  root/factory/domain create.
+					domain at: "interface" put: interface.
+					domain at: "mission" put: mission.
+					roledomain := root/role at: role put: domain.
+					// Set the count to zero
+					roledomain at: "number" put: 0.
+				].
+root/mission at: "createrole" put: block.
+	
+// Create a new policy for newly assigned entity
+block := [ :role :localinterface :remoteinterface |
+					policy := root/factory/ecapolicy create.
+					policy
+						event: root/event/roleassigned;
+						condition: [ :role | role == "patient" ];
+						action: [ :role :roledomain :newdomain |
+										root print: "Loading mission controller for role " + role.
+										interfaces := #( localinterface roledomain/interface remoteinterface newdomain/interface  ).
+										root print: "Controller is " + newdomain/interface/missioncontroller.
+										mission := newdomain/interface/missioncontroller load: roledomain/mission with: interfaces.
+										roledomain at: "mission" put: mission.
+									];
+						active: true.
+						root/policy at: role put: policy.
+				].
+root/mission at: "createassignedpolicy" put: block.
+
+// Create Mission specific event types
+
+// New SMC event
+// smc is the name of the type of the smc?
+// smcinterface is the interface of the remote smc
+event := root/factory/event create: #( "type"  "smcinterface").
+root/event at: "newsmc" put: event.
+
+// Role Assigned event
+// role is the role name
+event := root/factory/event create: #( "role" "roledomain" "newdomain").
+root/event at: "roleassigned" put: event.
+
+// Create some generic policies for mission handling
+
+policy := root/factory/ecapolicy create.
+policy
+	event: root/event/newsmc;
+	action: [ :type :smcinterface |
+					root print: "Received newsmc event for " + type.
+					roledomain := root/role at: type.
+					number := roledomain/number + 1.
+					newname := type + number.
+					roledomain at: "number" put: number.
+					newdomain := root/factory/domain create.
+					newdomain at: "interface" put: smcinterface.
+					roledomain at: newname put: newdomain.
+					
+					root/event/roleassigned create: #( type roledomain newdomain).
+				];
+	active: true.
+root/policy at: "newsmc" put: policy.
+
+					

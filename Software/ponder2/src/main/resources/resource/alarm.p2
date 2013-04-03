@@ -1,0 +1,13 @@
+event := root/factory/event create: #("name").
+root/event at: "createAlarm" put: event.
+
+root/factory at: "Alarm" put: (root load: "AlarmClock").
+root at: "Alarmsdomain" put: root/factory/domain create.
+
+policy := root/factory/ecapolicy create.
+policy event: root/event/createAlarm;
+	action: [ :name |
+			   root print:"creating an Alarm with name " + name.
+			   root/Alarmsdomain at: name put: (root/factory/Alarm create: name)].
+root/policy at: "createAlarm" put: policy.
+policy active: true.

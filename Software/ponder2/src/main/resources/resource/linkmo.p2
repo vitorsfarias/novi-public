@@ -1,0 +1,24 @@
+event := root/factory/event create: #("name" "hrn" "node1" "node2").
+root/event at: "createLink" put: event.
+root/factory at: "Link" put: (root load: "LinkMO").
+root at: "Linksdomain" put: root/factory/domain create.
+policy := root/factory/ecapolicy create.
+policy event: root/event/createLink;
+	action: [ :name :hrn :node1 :node2 |
+			   root print:"creating a LinkMO with name " + name + " hrn" + hrn + " that connects "+ node1 +	" and " + node2.
+			   root/Linksdomain at: name put: (root/factory/Link create: name hrn: hrn node1: node1 node2: node2)].
+root/policy at: "createLink" put: policy.
+policy active: true.
+
+event2 := root/factory/event create: #("namefailure").
+root/event at: "linkfailure" put: event2.
+root/factory at: "Link" put: (root load: "LinkMO").
+policy2 := root/factory/ecapolicy create.
+policy2 event: root/event/linkfailure;
+ action: [ :namefailure |
+      root print:"linkfailure " + namefailure.
+      root/Linksdomain remove: namefailure.
+      root/factory/Link linkfailure: namefailure.
+      ].
+root/policy at: "linkfailure" put: policy2.
+policy2 active: true.

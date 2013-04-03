@@ -1,0 +1,290 @@
+'''
+Created on Sep 1, 2011
+
+@author: steger, jozsef
+@organization: ELTE
+@contact: steger@complex.elte.hu
+@author: laki, sandor
+'''
+
+from threading import Lock, RLock
+from DataProcessing.DataHeader import DataHeaderCell, DataHeader, DataError
+from DataProcessing.Unit import UnitManager
+from DataProcessing.DataSource import DataSource
+
+
+class Data(DataSource):
+    '''
+    @author: steger, jozsef
+    @summary: 
+    This class contains the data in a tabular format. 
+    All items in the same column are data of the same kind 
+    whereas all data in the same record (row) are correlated.
+    
+    Contents of cells of a given column are either single items or Data objects 
+    as dictated by the header of the table.
+    
+    New records can be added using the Record class, for which template generator is provided by this class.
+    
+    DataReaders and other consumers can register Events at new data insertion or at clear.
+    '''
+    
+    class Record(object):
+        '''
+        @author: steger, jozsef
+        @summary: 
+        This class represents a given set of records that can be appended to a Data table. 
+        It provides useful methods manipulate data within the record.
+        '''
+        def __init__(self, unitmanager, dataheader, size = 1):
+            '''
+            @summary: Constructor
+            @param unitmanager: necessary to handle conversion
+            @type unitmanager: UnitManager
+            @param dataheader: the record conforms to the data header provided here
+            @type dataheader: DataHeader
+            @param size: the number of items to handle at once, default is 1
+            @type size: integer 
+            '''
+            self.um = unitmanager
+            self.record = {}
+            self.units = {}
+            self.subheaders = {}
+            self.subrecords = {}
+            self.size = size
+            self.names = dataheader._cellnames
+            for name, cell in dataheader._cells.iteritems():
+                if isinstance(cell, DataHeaderCell):
+                    self.record[name] = [ None ] * self.size
+                    self.units[name] = cell.unit
+                elif isinstance(cell, DataHeader):
+                    self.subheaders[name] = cell
+                else:
+                    raise DataError("Data header declaration is wrong")
+        
+        def __str__(self):
+            return "<DataRecord %s, size: %d (%s; %s)>: " % (id(self), self.size, ','.join(self.record.keys()), ','.join(self.subheaders.keys()))
+        
+        def clear(self, size = None):
+            '''
+            @summary: Clean the record containers and optionally resize the container
+            @note: if DataRecord container is resized, sub record pointers are invalidated
+            @param size: the requested new size of the container, default is None, which means keep the original size
+            @type size: integer
+            '''
+            if size is None:
+                for name in self.record.keys():
+                    self.record[name] = [ None ] * self.size
+                    if self.subrecords.has_key(name):
+                        for r in self.subrecords[name]:
+                            r.clear()
+            else:
+                self.size = size
+                for name in self.record.keys():
+                    self.record[name] = [ None ] * self.size
+                self.subrecords.clear()
+                    
+        def getRecordTemplates(self, name, sizes = None):
+            '''
+            @summary: Sub record templates are pointing to table valued cells. This method allocates container to those data structures.
+            @param name: the column name, that point to table valued columns
+            @type name: string
+            @param sizes: a list of integers that indicate the sizes of each sub tables. Default is None, which means the allocation of single row containers
+            @type sizes: list/tuple of integers or None
+            @return: a list of Record containers with size items
+            @rtype: a list of Record
+            @raise DataError: column name not found / wrong record sizes
+            '''
+            if sizes == None:
+                sizes = [1] * self.size
+            if len(sizes) != self.size:
+                raise DataError("wrong record sizes requested")
+            if not self.subheaders.has_key(name):
+                raise DataError("Cannot find column name: %s" % name)
+            hdr = self.subheaders[name]
+            self.subrecords[name] = []
+            while len(sizes):
+                self.subrecords[name].append( Data.Record(unitmanager = self.um, dataheader = hdr, size = sizes.pop(0)) )
+            return self.subrecords[name]
+            
+        def update(self, name, values, unit = None):
+            '''
+            @summary: Update a the column with the new value and make sure the unit is converted to the current unit of the model
+            @param name: the name of the column
+            @type name: string
+            @param values: a list of data values to update the cells
+            @type values: list
+            @param unit: the unit of the values in the list, default is None, which means it is the same as the current unit stated in the unit model
+            @type unit: string or None
+            @raise DataError: missing column name / table valued cells / size mismatch
+            '''
+            if not self.record.has_key(name):
+                raise DataError("Record has no column named %s" % name)
+            if not self.units.has_key(name):
+                raise DataError("Cannot update column named %s (table valued cells)" % name)
+            if len(values) != self.size:
+                raise DataError("The size of values don't match expected %d and got %d" % (len(values), self.size))
+            if unit is None:
+                self.record[name] = values[:]
+            elif isinstance(unit, UnitManager.Unit):
+                myunit = self.units[name]
+                if unit == myunit:
+                    self.record[name] = values[:]
+                else:
+                    self.record[name] = [ self.um.convert(value = quantity, from_unit = unit, to_unit = myunit) for quantity in values ]
+            else:
+                raise DataError("wrong type of unit")
+        
+        def updateMany(self, names, values, units = None):
+            '''
+            @summary: Update more columns with a single call
+            @param names: a list of the non-table valued columns to update
+            @type names: list/tuple of string
+            @param values: a matrix of data values
+            @type values: list of list of value
+            @param units: a list of units corresponding to each columns, default is None, meaning everything is expected to be in the current unit
+            @type units: list/tuple of sting or None
+            @raise DataError: size mismatch / unknown column name
+            '''
+            names = list(names)
+            if len(values) != self.size:
+                raise DataError("The size of values don't match %d" % self.size)
+            for name in names:
+                if not self.record.has_key(name):
+                    raise DataError("Record has no column named %s" % name)
+            transpose = dict( map(lambda n: (n, []), names) )
+            s = len(names)
+            idxs = range(s)
+            while len(values):
+                value = values.pop(0)
+                if len(value) == s:
+                    for idx in idxs:
+                        transpose[names[idx]].append(value.pop(0))
+                else:
+                    raise DataError("Record size does not match")
+            if units is None:
+                units = [ None ] * s
+            else:
+                units = list(units)
+            while len(names):
+                name = names.pop(0)
+                unit = units.pop(0)
+                self.update(name = name, values = transpose[name], unit = unit)
+            
+        def extract(self):
+            '''
+            @summary: Extract values stored in this record represented in a list in the order of names
+            @return: a list of values
+            @rtype: list
+            '''
+            retval = []
+            idx = 0
+            while idx < self.size:
+                rec = []
+                for name in self.names:
+                    if self.record.has_key(name):
+                        rec.append( self.record[name][idx] )
+                    elif self.subrecords.has_key(name):
+                        rec.append( self.subrecords[name][idx].extract() ) 
+                idx += 1
+                retval.append(tuple(rec))
+            return retval
+    
+    def __init__(self, unitmanager, header):
+        '''
+        @summary: Constructor
+        @param unitmanager: necessary to handle conversion
+        @type unitmanager: UnitManager
+        @param header: the header declaration of the data table
+        @type header: DataHeader
+        @raise DataError: raised upon wrong table header is given
+        '''
+        if not isinstance(header, DataHeader):
+            raise DataError("attempt to allocate table with a wrong header")
+        self.um = unitmanager
+        DataSource.__init__(self, self)
+        self.header = header
+        self._rawrecords = []
+        self._tail = 0
+        self._seq = 0
+        self._readlock = RLock()
+        self._writelock = Lock()
+        self._data = self
+
+    def __str__(self):
+        '''
+        @summary: returns the name of the table and the python object id
+        @return: abbreviated representation of the table
+        @rtype: string
+        '''
+        return "<Data: %s %s>" % (self.header.name, id(self))
+    
+    def __len__(self):
+        return len(self._rawrecords)
+
+    def __getitem__(self, k):
+        return self._rawrecords.__getitem__(k)
+    
+    @property
+    def data(self):
+        return self
+
+    @property
+    def readlock(self):
+        return self._readlock
+
+    @property
+    def writelock(self):
+        return self._writelock
+    
+    @property
+    def name(self):
+        '''
+        @summary: the name of the data is defined by the header
+        @return: the name of the header
+        @rtype: string
+        '''
+        return self.header.name
+
+    @property
+    def tail(self):
+        '''
+        @summary: Tail property indicates how many new records have been saved to the table in the last call
+        @return: number of new records
+        @rtype: integer
+        '''
+        return self._tail
+                 
+    def getTemplate(self, size = 1):
+        '''
+        @summary: Generate a helper class to extend the table with new values
+        @param size: the size of the new records wished to handle together, default is 1
+        @type size: integer
+        @return: an empty row with the structure dictated by the header of the table
+        @rtype: Record
+        '''
+        return self.Record(unitmanager = self.um, dataheader = self.header.getHeader(self.header.name), size = size)
+
+    def saveRecord(self, record):
+        '''
+        @summary: append values stored in the record to the table
+        @param record: a record with new data values
+        @type record: DataRecord
+        '''
+        #TODO: check if record is not corrupted
+        newrecords = record.extract()
+        self._tail = len(newrecords)
+        with self.writelock:
+            self._rawrecords.extend( newrecords )
+            self._onexpand()
+    
+    def clear(self):
+        '''
+        @summary: delete all data records stored
+        '''
+        with self.writelock:
+            self._rawrecords = []
+            self._tail = 0
+            self._seq = 0
+            self._onclear()
+    

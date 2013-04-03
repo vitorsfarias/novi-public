@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!-- Author: Yiannos Kryftis [ykryftis@netmode.ece.ntua.gr] -->
+
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+	xmlns:cm="http://aries.apache.org/blueprint/xmlns/blueprint-cm/v1.0.0">
+  
+     <service ref="eventHandlerBean" 
+   			interface="eu.novi.demoEvents.EventHandler">
+   			<service-properties>
+				<!-- All service interfaces are available for Distributed OSGi -->
+				<entry key="service.exported.interfaces" value="*" />
+				<entry key="service.exported.configs" value="org.apache.cxf.rs" />
+				<entry key="service.exported.intents" value="HTTP" />
+				<entry key="org.apache.cxf.rs.httpservice.context" value="/deliver" />
+				<entry key="testbed" value="${testbed}" />
+			</service-properties>
+   </service>
+   
+   
+	<!-- This is the bean that put the OWL received from the requestHandler 
+		endpoint into the Queue -->
+	<bean id="eventHandlerBean" class="eu.novi.demoEventsImpl.EventHandlerImpl">
+		<property name="interfaceForMonitor" ref="refInterfacefromMonitor" />
+	</bean>
+	
+	
+  <!-- Reference to InterfacefromMonitor provided by Policy-Manager-AA-->
+   <reference id="refInterfacefromMonitor" 	interface="eu.novi.policyAA.interfaces.InterfaceForMonitoring" /> 
+    
+</blueprint>

@@ -1,0 +1,139 @@
+'''
+Created on Feb 21, 2012
+
+@author: steger
+'''
+from DataProcessing.Parameter import ParameterList
+from Resource.resource import resource as coreresource
+from DataProcessing.DataFormatter import JsonFormatter, DumbFormatter
+
+class SingleQuery(object):
+    '''
+    @summary: represents a (feature, resource) pair, representing what and where to measure
+    The requested output format is also stored here 
+    Optionally some measurement specific parameters can be added and post processing can be applied
+    '''
+    def __init__(self):
+        self._feature = None
+        self._resource = None
+        self._samplechain = None
+        self._formatter = None
+        self._parameters = ParameterList()
+
+    @property
+    def resource(self):
+        return self._resource
+    @resource.setter
+    def resource(self, (resourceid, resource)):
+        if not isinstance(resource, coreresource):
+            raise Exception("%s is not a resource type" % resource)
+        self._resource = (resourceid, resource)
+    
+    @property
+    def feature(self):
+        return self._feature
+    @feature.setter
+    def feature(self, feature):
+        self._feature = feature
+
+    @property
+    def samplechain(self):
+        return self._samplechain
+    @samplechain.setter
+    def samplechain(self, samplechain):
+        self._samplechain = samplechain
+
+    @property
+    def formatter(self):
+        return self._formatter
+    @formatter.setter
+    def formatter(self, uri_formatter):
+        if str(uri_formatter).endswith("Formatter_JSON"):
+            self._formatter = JsonFormatter
+        elif str(uri_formatter).endswith("Formatter_CSV"):
+            self._formatter = DumbFormatter
+        else:
+            raise Exception("%s is not a formatter type" % uri_formatter)
+
+    @property
+    def paramlist(self):
+        return self._parameters
+    
+    def addParameter(self, parameter):
+        self._parameters.append(parameter)
+
+class QueryBundle(object):
+    '''
+    @summary: represents a collection of SingleQueries
+    '''
+    def __init__(self):
+        self.atoms = {}
+
+    def __len__(self):
+        return len(self.atoms)
+
+    def has_key(self, key):
+        return self.atoms.has_key(key)
+
+    def __iter__(self):
+        for q in self.atoms.itervalues():
+            yield q
+    
+    def getResource(self, resourceid):
+        for q in self:
+            if q.resource[0] == resourceid:
+                return q.resource[1]
+        return None
+
+    def add(self, reference, q):
+        if self.atoms.has_key(reference):
+            raise Exception("Duplicate MonitoringQuery entry")
+        if not isinstance(q, SingleQuery):
+            raise Exception("Wrong type")
+        self.atoms[reference] = q
+
+
+
+
+
+#class BundleQueryBundle(QueryBundle):
+#    def newQuery(self, key, feature, samplechain, resource, formatter):
+#        if self.atoms.has_key(key):
+#            raise Exception("Atomic query %s exists" % key)
+#        Q = MonitorQuery()
+#        Q.resource = resource 
+#        Q.feature = feature
+#        Q.samplechain = samplechain
+#        Q.formatter = formatter
+#        self.atoms[key] = Q
+            
+#    def addParameter(self, key, parameter):
+#        if not self.atoms.has_key(key):
+#            raise Exception("Atomic query %s does not exist" % key)
+#        self.atoms[key].addParameter(parameter)
+    
+
+#class AggregatorQuery(Query):
+#    def __init__(self):
+#        Query.__init__(self)
+#        self._processid = None
+    
+#    @property
+#    def processid(self):
+#        return self._processid
+#    @processid.setter
+#    def processid(self, processid):
+#        self._processid = processid
+
+
+
+#class SampleQuery(QueryBundle):
+#    def newQuery(self, key, processid, feature, samplechain, formatter):
+#        if self.atoms.has_key(key):
+#            raise Exception("Atomic query %s exists" % key)
+#        Q = AggregatorQuery()
+#        Q.processid = processid
+#        Q.feature = feature
+#        Q.samplechain = samplechain
+#        Q.formatter = formatter
+#        self.atoms[key] = Q

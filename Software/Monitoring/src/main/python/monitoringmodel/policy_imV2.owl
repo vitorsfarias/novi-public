@@ -1,0 +1,684 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://fp7-novi.eu/NOVIPolicyService.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     ontologyIRI="http://fp7-novi.eu/NOVIPolicyService.owl">
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="im" IRI="http://fp7-novi.eu/im.owl#"/>
+    <Prefix name="" IRI="http://fp7-novi.eu/NOVIPolicyService.owl#"/>
+    <Prefix name="NOVIPolicyService" IRI="http://fp7-novi.eu/NOVIPolicyService.owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Import>file:.///novi-im.owl</Import>
+    <Declaration>
+        <Class IRI="#AuthorizationPolicy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ECAPolicy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ManagedEntity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ManagedEntityMethod"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ManagedEntityProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ManagementDomain"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MissionPolicy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NOVIUser"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Policy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PolicyAction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PolicyCondition"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PolicyEvent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RBACPolicy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Role"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="im:Group"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="im:Platform"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="im:Resource"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="im:Service"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#AuthorizationPolicyObjectProperties"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#ECAPolicyObjectProperties"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#ManagedEntitiesProperties"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#ManagementDomainProperties"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#NOVIUserProperties"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#PolicyActionProperties"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#PolicyObjectProperties"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#attached"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasAction"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasCondition"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasEvent"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasMethods"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasNoviRole"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPolicyAction"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPolicyCondition"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPolicyEvent"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPolicySubject"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPolicyTarget"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasProperties"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasUserPlatform"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#includes"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isActive"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#ManagedEntityDataProperties"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#RoleProperties"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasAuthenticationStatus"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasFocus"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasRoleInPlatform"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasUserID"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#AuthorizationPolicy"/>
+        <Class IRI="#Policy"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ECAPolicy"/>
+        <Class IRI="#Policy"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ManagedEntity"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ManagedEntityMethod"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ManagedEntityProperty"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ManagementDomain"/>
+        <Class IRI="#ManagedEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MissionPolicy"/>
+        <Class IRI="#Policy"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NOVIUser"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Policy"/>
+        <Class IRI="#ManagedEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PolicyAction"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PolicyCondition"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PolicyEvent"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RBACPolicy"/>
+        <Class IRI="#Policy"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Role"/>
+        <Class IRI="#ManagedEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="im:Platform"/>
+        <Class abbreviatedIRI="im:Group"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="im:Resource"/>
+        <Class IRI="#ManagedEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="im:Service"/>
+        <Class IRI="#ManagedEntity"/>
+    </SubClassOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#attached"/>
+        <ObjectProperty IRI="#PolicyObjectProperties"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasAction"/>
+        <ObjectProperty IRI="#PolicyActionProperties"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasCondition"/>
+        <ObjectProperty IRI="#PolicyActionProperties"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasEvent"/>
+        <ObjectProperty IRI="#PolicyActionProperties"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasMethods"/>
+        <ObjectProperty IRI="#ManagedEntitiesProperties"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasNoviRole"/>
+        <ObjectProperty IRI="#NOVIUserProperties"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasPolicyAction"/>
+        <ObjectProperty IRI="#ECAPolicyObjectProperties"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasPolicyCondition"/>
+        <ObjectProperty IRI="#ECAPolicyObjectProperties"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasPolicyEvent"/>
+        <ObjectProperty IRI="#ECAPolicyObjectProperties"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasPolicySubject"/>
+        <ObjectProperty IRI="#AuthorizationPolicyObjectProperties"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasPolicyTarget"/>
+        <ObjectProperty IRI="#AuthorizationPolicyObjectProperties"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasProperties"/>
+        <ObjectProperty IRI="#ManagedEntitiesProperties"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasUserPlatform"/>
+        <ObjectProperty IRI="#NOVIUserProperties"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#includes"/>
+        <ObjectProperty IRI="#ManagementDomainProperties"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isActive"/>
+        <ObjectProperty IRI="#PolicyObjectProperties"/>
+    </SubObjectPropertyOf>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#attached"/>
+        <Class IRI="#Policy"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasAction"/>
+        <Class IRI="#PolicyAction"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasCondition"/>
+        <Class IRI="#PolicyCondition"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasEvent"/>
+        <Class IRI="#PolicyEvent"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasMethods"/>
+        <Class IRI="#ManagedEntity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasNoviRole"/>
+        <Class IRI="#NOVIUser"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPolicyAction"/>
+        <Class IRI="#ECAPolicy"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPolicyCondition"/>
+        <Class IRI="#ECAPolicy"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPolicyEvent"/>
+        <Class IRI="#ECAPolicy"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPolicySubject"/>
+        <Class IRI="#AuthorizationPolicy"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPolicyTarget"/>
+        <Class IRI="#AuthorizationPolicy"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasProperties"/>
+        <Class IRI="#ManagedEntity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasUserPlatform"/>
+        <Class IRI="#NOVIUser"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#includes"/>
+        <Class IRI="#ManagementDomain"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isActive"/>
+        <Class IRI="#Policy"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#attached"/>
+        <Class IRI="#ManagedEntity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasAction"/>
+        <Class IRI="#ManagedEntityMethod"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasAction"/>
+        <DataSomeValuesFrom>
+            <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+            <Datatype abbreviatedIRI="xsd:anyURI"/>
+        </DataSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasCondition"/>
+        <Class IRI="#ManagedEntityProperty"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasEvent"/>
+        <DataSomeValuesFrom>
+            <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+            <Datatype abbreviatedIRI="xsd:anyURI"/>
+        </DataSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasMethods"/>
+        <Class IRI="#ManagedEntityMethod"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasNoviRole"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="http://fp7-novi.eu/unit.owl#value"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPolicyAction"/>
+        <Class IRI="#ManagedEntityMethod"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPolicyAction"/>
+        <Class IRI="#PolicyEvent"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPolicyCondition"/>
+        <Class IRI="#PolicyCondition"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPolicyEvent"/>
+        <Class IRI="#ManagedEntityMethod"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPolicySubject"/>
+        <Class IRI="#ManagedEntity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPolicyTarget"/>
+        <Class IRI="#ManagedEntity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasProperties"/>
+        <Class IRI="#ManagedEntityProperty"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasUserPlatform"/>
+        <Class abbreviatedIRI="im:Platform"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#includes"/>
+        <Class IRI="#ManagedEntity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isActive"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="http://fp7-novi.eu/unit.owl#value"/>
+            <Datatype abbreviatedIRI="xsd:boolean"/>
+        </DataSomeValuesFrom>
+    </ObjectPropertyRange>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasAuthenticationStatus"/>
+        <DataProperty IRI="#RoleProperties"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasRoleInPlatform"/>
+        <DataProperty IRI="#RoleProperties"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasUserID"/>
+        <DataProperty IRI="#RoleProperties"/>
+    </SubDataPropertyOf>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasAuthenticationStatus"/>
+        <Class IRI="#NOVIUser"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasRoleInPlatform"/>
+        <Class IRI="#NOVIUser"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasUserID"/>
+        <Class IRI="#NOVIUser"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasAuthenticationStatus"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasFocus"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasRoleInPlatform"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasUserID"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#AuthorizationPolicy</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">AuthorizationPolicy</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ECAPolicy</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">ECAPolicy</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ManagedEntitiesProperties</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">ManagedEntitiesProperties</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ManagedEntity</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">ManagedEntity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ManagedEntityDataProperties</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">ManagedEntityDataProperties</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ManagedEntityMethod</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">ManagedEntityMethod</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ManagedEntityProperty</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">ManagedEntityProperty</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ManagementDomain</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">ManagementDomain</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ManagementDomainProperties</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">ManagementDomainProperties</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#MissionPolicy</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">MissionPolicy</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#NOVIUser</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">NOVIUser</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#NOVIUserProperties</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">NOVIUserProperties</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Policy</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Policy</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#PolicyAction</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">PolicyAction</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#PolicyActionProperties</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">PolicyActionProperties</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#PolicyCondition</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">PolicyCondition</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#PolicyEvent</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">PolicyEvent</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#PolicyObjectProperties</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">PolicyObjectProperties</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#RBACPolicy</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">RBACPolicy</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Role</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">NOVIRole</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#RoleProperties</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">UserProperties</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasAction</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">hasAction</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasAuthenticationStatus</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">hasAuthenticationStatus</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasCondition</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">hasCondition</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasEvent</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">hasEvent</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasMethods</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">hasMethods</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasNoviRole</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">hasRoleInPlatform</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasPolicyAction</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">hasPolicyAction</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasPolicyCondition</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">hasPolicyCondition</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasPolicyEvent</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">hasPolicyEvent</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasPolicySubject</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">hasPolicySubject</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasPolicyTarget</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">hasPolicyTarget</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasProperties</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">hasProperties</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasRoleInPlatform</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">hasRoleInPlatform</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasUserID</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">hasUserName</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasUserPlatform</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">hasUserPlatform</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#includes</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">includes</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>im:Platform</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Platform</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>im:Resource</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Resource</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>im:Service</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Service</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.2.3.1824) http://owlapi.sourceforge.net -->
+

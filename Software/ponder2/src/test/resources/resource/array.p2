@@ -1,0 +1,26 @@
+newdom := root/factory/domain.
+
+arraytest := #().
+root listNames do: [:name |  arraytest  add: ( root at: name) ].
+
+root print: "Array has " + arraytest size + " elements".
+
+(arraytest has: root/factory) ifTrue: [ root print: "has root/factory" ].
+(arraytest has: newdom) ifFalse: [ root print: "has not newdom" ].
+arraytest at: 2000 put: newdom.
+(arraytest has: newdom) ifTrue: [ root print: "has newdom" ].
+
+arraytest at: 3 put: 4.
+(arraytest has: 4) ifTrue: [ root print: "has 4" ] ifFalse: [ root print: "error can't find 4"].
+
+arraytest at: 3 put: "Hello".
+(arraytest has: "Hello") ifTrue: [ root print: "has Hello" ] ifFalse: [ root print: "error can't find Hello"].
+
+arraytest at: 3 put: true.
+(arraytest has: true) ifTrue: [ root print: "has true" ] ifFalse: [ root print: "error can't find true"].
+
+root at: "five" put: 5.
+(root has: "five") ifTrue: [ root print: "root has five" ] ifFalse: [ root print: "error can't find five"].
+(root hasObject: 5) ifTrue: [ root print: "root has 5" ] ifFalse: [ root print: "error can't find 5"].
+
+

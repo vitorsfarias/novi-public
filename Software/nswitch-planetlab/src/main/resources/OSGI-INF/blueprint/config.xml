@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!-- Author: Piotr Pikusa <pikusa@man.poznan.pl> -->
+
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+	xmlns:cm="http://aries.apache.org/blueprint/xmlns/blueprint-cm/v1.0.0">
+
+
+	<!-- Properties have to be placed in etc/eu.novi.resources.federica.cfg file on appropriate karaf instance 
+	<cm:property-placeholder persistent-id="eu.novi.nswitch.planetlab" /> -->
+	<bean id="nswitch-planetlab" class="eu.novi.nswitch.planetlab.NswitchPlanetlab">
+	</bean>
+	
+	<service ref="nswitch-planetlab">
+		<interfaces>
+			<value>eu.novi.nswitch.Nswitch</value>
+		</interfaces>
+		<service-properties>
+			<!-- All service interfaces are available for Distributed OSGi -->
+			<entry key="service.exported.interfaces" value="*" />
+			<entry key="testbed" value="PlanetLab" />
+		</service-properties>
+	</service>
+
+</blueprint>

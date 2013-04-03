@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!-- Author: Blazej Pietrzak [blazej.pietrzak@man.poznan.pl] -->
+
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+	xmlns:cm="http://aries.apache.org/blueprint/xmlns/blueprint-cm/v1.0.0">
+
+    <!-- File that stores component's configuration -->
+    <cm:property-placeholder persistent-id="eu.novi.monitoring" />
+	
+	<!-- Instantiate Java object of Service.SampleService class written in Python
+	     (JythonObjectFactory.createObject(Wiring.class, "Service.SampleService", ctx)) -->
+	<bean id="monitoringService" class="eu.novi.python.integration.JythonObjectFactory" factory-method="createObject">
+	    <argument value="eu.novi.monitoring.Wiring" />
+	    <argument value="Service.MonSrvImpl" />
+	    <argument ref="blueprintBundleContext" />
+	    
+	    <property name="testbed" value="${testbed}" />
+<!--	    <property name="userFeedback"  ref="refUserFeedback"/>-->
+	</bean>
+	
+	<reference-list id="refListMonSrv" interface="eu.novi.monitoring.MonSrv"  member-type="service-object" availability="optional" />
+
+	<!-- Register a distributed service -->
+	<service ref="monitoringService" interface="eu.novi.monitoring.MonSrv">
+	    <service-properties>
+		    <entry key="service.exported.interfaces" value="*" />
+		    <entry key="org.apache.cxf.ws.databinding" value="jaxb" />
+		    <entry key="testbed" value="${testbed}" />
+        </service-properties>
+	</service>
+
+	<bean id="refMonSrvDiscovery" class="eu.novi.monitoring.MonDiscoveryImpl">
+                <property name="testbed" value="${testbed}"/>
+                <property name="monSrvList" ref="refListMonSrv"/>
+        </bean>
+
+
+        <service ref="refMonSrvDiscovery" interface="eu.novi.monitoring.MonDiscovery">
+                <service-properties>
+                        <!-- All service interfaces are available for Distributed OSGi -->
+                        <entry key="service.exported.interfaces" value="*" />
+                        <entry key="testbed" value="${testbed}" />
+                </service-properties>
+        </service>
+
+<!--	<reference id="refUserFeedback" interface="eu.novi.feedback.event.ReportEvent" />-->
+
+        <!-- Get SampleService instances.
+             Unfortunately the filter (!(testbed=${testbed})) does not work, so filtering must be done inside addService method -->
+        <!--<reference-list interface="eu.novi.monitoring.MonSrv" availability="optional">
+                <reference-listener ref="monitoringService" bind-method="addService" unbind-method="removeService" />
+        </reference-list>-->
+</blueprint>

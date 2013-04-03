@@ -1,0 +1,102 @@
+// This is run in the PlanetLab side
+root print: "Setting up the PlanetLab".
+
+/////////////////////////////////////////////////////////
+/////The simple Events and Actions without Missions//////
+/////////////////////////////////////////////////////////
+
+// Event types we are going to use
+event := root/factory/event create: #("topo").
+root/event at: "createremotefindpartitioningcost" put: event.
+
+
+///////////////////////////////////////////////////////////
+
+
+// Create the PlanetLab Interface
+root print: "Interface Setup".
+
+myinterface := root/factory/interface create.
+myinterface event: "remotefindpartitioningcost" is: root/event/createremotefindpartitioningcost.
+myinterface providesEvent: "remotefindpartitioningcost".
+myinterface acceptsEvent: "findpartitioningcost".
+myinterface acceptsEvent: "remotefindpartitioningcost".
+myinterface providesEvent: "findpartitioningcost".
+
+//root/interface at: "plsideinterface" put: myinterface.
+
+// Remote Mission setup
+//root print: "Remote Mission Setup".
+
+// Empty mission
+mission := root/factory/mission create.
+
+mission interface: "FedericaInterface";
+		interface: "PlanetLabInterface";
+		
+policy: "p1" is: [ :policy :FedericaInterface :PlanetLabInterface |
+	policy
+		event: PlanetLabInterface/event/remotefindpartitioningcost;
+		action: [:topo|
+	          root print: "-----> Got the create event (remotefindpartitioningcost)".
+						PlanetLabInterface raise:"findpartitioningcost" with:#(topo).
+						FedericaInterface raise:"findpartitioningcost" with:#(topo).
+		]
+		];
+		onStart: [
+		root print: "MISSION ON AIR".
+			].
+
+
+//mission interface: "planetlabInterface";
+//policy: "p1" is: [ :policy :planetlabInterface |
+//	policy
+//		event: planetlabInterface/event/createPL;
+//		action: [root print: "-----> Got the create event".]
+//		].
+//root/mission at: "Mission1" put: mission.		
+//root print: "Running Mission".
+
+//interfaces := #("planetlabInterface" root/interface/plsideinterface ) asHash.
+//missionName := root/interface/plsideinterface/missioncontroller load: (root/mission/Mission1) with: interfaces.
+//root print: "Mission is named " + missionName.
+
+//root print: "Testing Events".
+//root/event/createPL create:#("Slicdd" 2).
+
+// Create the role for a remote !!!nurse!!!! (Federica). Interface is what we show, mission is what we load into other side
+root/mission/createrole value: "FedericaUser" value: myinterface value: mission.
+root print: "PlanetLab assigning interfaces".
+root/mission/createassignedpolicy value: "FedericaUser" value: "PlanetLabInterface" value: "FedericaInterface".
+// Create the role for a local User (PlanetLabUser).
+//root/mission/createrole value: "planetlabUser" value: myinterface value: mission.
+
+// Create the role for a remote doctor, could sue different interface and mission
+//root/mission/createrole value: "doctor" value: myinterface value: mission.
+
+// No mission loading policy here yet.
+
+
+//theinterface := (root import: \"root/role/PlanetLabUser/interface\" from: \"rmi://194.132.52.214:1113/Ponder2FED\".)
+	
+
+
+//federicaremote:= root import: "root/command" from: "rmi://83.212.96.153/FEDlisten".
+//theinterface := (root import: \"root/role/FedericaUser/interface\" from: \"rmi://147.102.13.74/PLlisten\".) 
+//federicaremote execute: "
+//	root/event/newsmc create: #(\"Federica\" (root import: \"root/role/FedericaUser/interface\" from: \"rmi://176.92.26.81/PLlisten\") ).
+//".
+
+// Set up ponderTalk interpreter
+//root at: "command" put: ((root load: "PonderTalk") create:"PLlisten").
+
+//=====================================================
+// For testing
+
+// Set up a policy to check the event that the mission produces
+//rxpolicy := root/factory/ecapolicy create.
+//rxpolicy
+//	event: root/event/createPlanetLabSlice;
+//	action: [ root print: "=====> Creation of the PL_SLICE" ];
+//	active: true.
+root print: "LOADED".

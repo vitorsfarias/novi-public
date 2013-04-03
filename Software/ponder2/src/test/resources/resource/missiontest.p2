@@ -1,0 +1,79 @@
+//Useful shortcuts
+domain := root/factory/domain.
+ecapolicy := root/factory/ecapolicy.
+event := root/factory/event.
+
+// Destination SMC setup
+root print: "Destination SMC Setup".
+
+// Events we are going to use
+root/event at: "bloodpressure" put: (event create: #( "value" )).
+root/event at: "temp" put: (event create: #( "value" )).
+root/event at: "alarm" put: event create.
+
+// Set up the Interface
+root print: "Interface Events Setup".
+myinterface := root/factory/interface create.
+
+myinterface event: "bp" is: root/event/bloodpressure.
+myinterface providesEvent: "bp".
+myinterface providesEvent: "temp". // Uses default   event: "temp" is: root/event/temp
+myinterface providesEvent: "alarm".
+myinterface acceptsEvent: "alarm".
+
+root/interface at: "myinterface" put: myinterface.
+
+
+//Remote SMC Setup
+root print: "Remote SMC Setup".
+
+// Mission setup
+root print: "Mission Setup".
+
+mission := root/factory/mission create.
+
+mission
+	interface: "patientInterface";
+    policy: "p1" is: [ :policy :patientInterface |
+        policy
+            event: patientInterface/event/bp;
+            condition: [ :value | value > 40 ];
+            action: [ root print: "=====> Got bp event". 
+            				patientInterface/event/alarm create.]
+    ];
+    policy: [ :policy :patientInterface |
+        policy
+            event: patientInterface/event/temp;
+            condition: [ :value | value > 26 ];
+            action: [ :value | root print: "=====> Got temperature of " + value.]
+    ].
+
+
+
+// Ok, now run the mission on the interface
+root print: "Running Mission".
+
+interfaces := #( "patientInterface" root/interface/myinterface ) asHash.
+missionName := myinterface/missionController load: mission with: interfaces.
+root print: "Mission is named " + missionName.
+
+//Test events going from the SMC via the interface to the mission
+root print: "Testing Events".
+root/event/temp create: #( 27 ).
+
+// Set up a policy to check the event that the mission produces
+rxpolicy := ecapolicy create.
+rxpolicy
+	event: root/event/alarm;
+	action: [ root print: "=====> Alarm raised by mission" ];
+	active: true.
+
+// Now trigger it
+root/event/bloodpressure create: #( 45 ).
+	
+
+
+
+
+
+

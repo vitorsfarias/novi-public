@@ -1,0 +1,55 @@
+// This is run in the Nurse
+root print: "Setting up the Nurse".
+
+// Create the Nurse Interface
+root print: "Interface Setup".
+
+event := root/factory/event.
+root/event at: "alarm" put: event create.
+
+// Set up a policy to pick up an alarm
+rxpolicy := root/factory/ecapolicy create.
+rxpolicy
+	event: root/event/alarm;
+	action: [ root print: "=====> Alarm raised by remote mission" ];
+	active: true.
+
+// Set up our interface
+myinterface := root/mission/interface.
+myinterface acceptsEvent: "alarm".
+					
+// Mission setup
+root print: "Mission Setup".
+
+mission := root/factory/mission create.
+
+mission
+	interface: "patientinterface";
+	interface: "nurseinterface";
+    policy: "p1" is: [ :policy :patientinterface :nurseinterface|
+        policy
+            event: patientinterface/event/bp;
+            condition: [ :value | value > 40 ];
+            action: [ root print: "=====> Got bp event". 
+            				patientinterface raise: "alarm".
+            				nurseinterface raise: "alarm".
+            			]
+    ];
+    policy: [ :policy :patientinterface |
+        policy
+            event: patientinterface/event/temp;
+            condition: [ :value | value > 26 ];
+            action: [ :value | root print: "=====> Got temperature of " + value.]
+    ].
+
+// Create the role for a remote patient
+root/mission/createrole value: "patient" value: myinterface value: mission.
+
+// Create mission loading policy. It will receive the assigned role event.
+// Args are role name, local and remote interface names for the mission	
+// The interface names must match the mission arguments, if used				
+root print: "Nurse assigning interfaces".
+root/mission/createassignedpolicy value: "patient" value: "nurseinterface" value: "patientinterface".
+
+// For testing
+root at: "command" put: (root load: "PonderTalk") create.

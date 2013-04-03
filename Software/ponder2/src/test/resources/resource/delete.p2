@@ -1,0 +1,11 @@
+before := root memory.
+
+root print: "Memory " + before + " bytes free".
+
+domain := root/factory/domain.
+1000000 do: [domain create ].
+
+after := root memory.
+root print: "Memory " + after + " bytes free".
+
+root print: "Used: " + (before  - after).

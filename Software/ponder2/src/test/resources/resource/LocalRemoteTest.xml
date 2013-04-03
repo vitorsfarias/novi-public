@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This must be started after starting another Ponder2 with -address rmi://localhost/P2Remote -->
+<xml>
+	<!-- 
+		# Create an event type in the remote system
+	-->
+	<use name="/event" location="rmi://localhost/P2Remote">
+		<add name="remoteevent">
+			<use name="/template/event">
+				<create>
+					<arg name="message"/>
+				</create>
+			</use>
+		</add>
+	</use>
+	<!-- 
+		# We will have one on the local system too
+	-->
+	<use name="/event">
+		<add name="localevent">
+			<use name="/template/event">
+				<create>
+					<arg name="message"/>
+				</create>
+			</use>
+		</add>
+	</use>
+	<!-- 
+		# Create a policy in the remote system
+		# When it is triggered it will send an event to this system.
+	-->
+	<use name="/policy" location="rmi://localhost/P2Remote">
+		<add name="testremote">
+			<use name="/template/policy">
+				<create type="obligation" event="/event/remoteevent" active="true">
+					<arg name="message"/>
+					<action>
+						Remote has event: !message;
+						<use name="/" local='0'>
+							<event name="localevent">From remote !message;</event>
+						</use>
+					</action>
+				</create>
+			</use>
+		</add>
+	</use>
+	<!-- 
+		# Create a policy in the local system
+		# When it is triggered it will print the event message.
+	-->
+	<use name="/policy" >
+		<add name="testlocal">
+			<use name="/template/policy">
+				<create type="obligation" event="/event/localevent" active="true">
+					<arg name="message"/>
+					<action>
+						Local has: !message;
+					</action>
+				</create>
+			</use>
+		</add>
+	</use>
+	<!-- 
+		Send the event to the remote
+	-->
+	<use name="/" location="rmi://localhost/P2Remote">
+		<event name="remoteevent">A message</event>
+	</use>
+</xml>

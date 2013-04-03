@@ -1,0 +1,10 @@
+
+num := 5.
+
+num := 5 * 6.
+
+root print: num.
+
+num := 3 * "5.6".
+
+root print: num.

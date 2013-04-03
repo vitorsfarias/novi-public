@@ -1,0 +1,380 @@
+@prefix novi: <http://fp7-novi.eu/im.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix unit: <http://fp7-novi.eu/unit.owl#> .
+
+novi:RequestTopology2 a owl:NamedIndividual;
+    novi:contains novi:lrouter,
+        novi:lrouter2,
+        <http://fp7-novi.eu/im.owl#lrouter2:if0-lrouter:if2>,
+        <http://fp7-novi.eu/im.owl#lrouter2:if1-vm1:eth0>,
+        <http://fp7-novi.eu/im.owl#lrouter:if0-sliver1:eth0>,
+        <http://fp7-novi.eu/im.owl#lrouter:if1-sliver2:eth0>,
+        <http://fp7-novi.eu/im.owl#lrouter:if2-lrouter2:if0>,
+        novi:sliver1,
+        <http://fp7-novi.eu/im.owl#sliver1:eth0-lrouter:if0>,
+        novi:sliver2,
+        <http://fp7-novi.eu/im.owl#sliver2:eth0-lrouter:if1>,
+        novi:vm1,
+        <http://fp7-novi.eu/im.owl#vm1:eth0-lrouter2:if1>;
+    novi:name "RequestTopology2" .
+
+<http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/0> a novi:BidirectionalInterface,
+        owl:NamedIndividual;
+    novi:contains <http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/0-in>,
+        <http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/0-out>;
+    novi:name "http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/0" .
+
+<http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/2> a novi:BidirectionalInterface,
+        owl:NamedIndividual;
+    novi:contains <http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/2-in>,
+        <http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/2-out>;
+    novi:name "http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/2" .
+
+<http://fp7-novi.eu/im.owl#dfn.erl.vserver1.vmnic1> a novi:BidirectionalInterface,
+        owl:NamedIndividual;
+    novi:contains <http://fp7-novi.eu/im.owl#dfn.erl.vserver1.vmnic1-in>,
+        <http://fp7-novi.eu/im.owl#dfn.erl.vserver1.vmnic1-out>;
+    novi:name "http://fp7-novi.eu/im.owl#dfn.erl.vserver1.vmnic1" .
+
+novi:lrouter-if0 a novi:BidirectionalInterface,
+        owl:NamedIndividual;
+    novi:contains novi:lrouter-if0-in,
+        novi:lrouter-if0-out;
+    novi:hasIPv4Address novi:lrouter-if0-address;
+    novi:name "if0" .
+
+novi:lrouter-if1 a novi:BidirectionalInterface,
+        owl:NamedIndividual;
+    novi:contains novi:lrouter-if1-in,
+        novi:lrouter-if1-out;
+    novi:hasIPv4Address novi:lrouter-if1-address;
+    novi:name "if1" .
+
+novi:lrouter-if2 a novi:BidirectionalInterface,
+        owl:NamedIndividual;
+    novi:contains novi:lrouter-if2-in,
+        novi:lrouter-if2-out;
+    novi:name "if2" .
+
+novi:lrouter2-if0 a novi:BidirectionalInterface,
+        owl:NamedIndividual;
+    novi:contains novi:lrouter2-if0-in,
+        novi:lrouter2-if0-out;
+    novi:name "if0" .
+
+novi:lrouter2-if1 a novi:BidirectionalInterface,
+        owl:NamedIndividual;
+    novi:contains novi:lrouter2-if1-in,
+        novi:lrouter2-if1-out;
+    novi:name "if1" .
+
+<http://fp7-novi.eu/im.owl#planetlab2-novi.lab.netmode.ece.ntua.gr:eth0> a novi:BidirectionalInterface,
+        owl:NamedIndividual;
+    novi:contains <http://fp7-novi.eu/im.owl#planetlab2-novi.lab.netmode.ece.ntua.gr:eth0-in>,
+        <http://fp7-novi.eu/im.owl#planetlab2-novi.lab.netmode.ece.ntua.gr:eth0-out>;
+    novi:name "http://fp7-novi.eu/im.owl#planetlab2-novi.lab.netmode.ece.ntua.gr:eth0" .
+
+<http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/0/0> a novi:BidirectionalInterface,
+        owl:NamedIndividual;
+    novi:contains <http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/0/0-in>,
+        <http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/0/0-out>;
+    novi:name "http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/0/0" .
+
+<http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/2/9> a novi:BidirectionalInterface,
+        owl:NamedIndividual;
+    novi:contains <http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/2/9-in>,
+        <http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/2/9-out>;
+    novi:name "http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/2/9" .
+
+novi:sliver1-eth0 a novi:BidirectionalInterface,
+        owl:NamedIndividual;
+    novi:contains novi:sliver1-eth0-in,
+        novi:sliver1-eth0-out;
+    novi:hasIPv4Address novi:sliver1-eth0-address;
+    novi:name "eth0" .
+
+novi:sliver2-eth0 a novi:BidirectionalInterface,
+        owl:NamedIndividual;
+    novi:contains novi:sliver2-eth0-in,
+        novi:sliver2-eth0-out;
+    novi:hasIPv4Address novi:sliver2-eth0-address;
+    novi:name "eth0" .
+
+<http://fp7-novi.eu/im.owl#smilax1.man.poznan.pl:eth0> a novi:BidirectionalInterface,
+        owl:NamedIndividual;
+    novi:contains <http://fp7-novi.eu/im.owl#smilax1.man.poznan.pl:eth0-in>,
+        <http://fp7-novi.eu/im.owl#smilax1.man.poznan.pl:eth0-out>;
+    novi:name "http://fp7-novi.eu/im.owl#smilax1.man.poznan.pl:eth0" .
+
+novi:vm1-eth0 a novi:BidirectionalInterface,
+        owl:NamedIndividual;
+    novi:contains novi:vm1-eth0-in,
+        novi:vm1-eth0-out;
+    novi:name "eth0" .
+
+<http://fp7-novi.eu/im.owl#FEDERICA_dfn.erl.router1> a novi:Node,
+        owl:NamedIndividual;
+    novi:hasInboundInterface <http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/0-in>,
+        <http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/2-in>;
+    novi:hasOutboundInterface <http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/0-out>,
+        <http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/2-out>;
+    novi:hostname "router1.erl.de";
+    novi:name "http://fp7-novi.eu/im.owl#FEDERICA_dfn.erl.router1" .
+
+<http://fp7-novi.eu/im.owl#FEDERICA_dfn.erl.vserver1> a novi:Node,
+        owl:NamedIndividual;
+    novi:hasInboundInterface <http://fp7-novi.eu/im.owl#dfn.erl.vserver1.vmnic1-in>;
+    novi:hasOutboundInterface <http://fp7-novi.eu/im.owl#dfn.erl.vserver1.vmnic1-out>;
+    novi:hostname "vserver1.erl.de";
+    novi:name "http://fp7-novi.eu/im.owl#FEDERICA_dfn.erl.vserver1" .
+
+<http://fp7-novi.eu/im.owl#FEDERICA_psnc.poz.router1> a novi:Node,
+        owl:NamedIndividual;
+    novi:hardwareType "router";
+    novi:hasInboundInterface <http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/0/0-in>,
+        <http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/2/9-in>;
+    novi:hasOutboundInterface <http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/0/0-out>,
+        <http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/2/9-out>;
+    novi:hostname "psnc.poz.router1";
+    novi:name "http://fp7-novi.eu/im.owl#FEDERICA_psnc.poz.router1" .
+
+<http://fp7-novi.eu/im.owl#PlanetLab_planetlab2-novi.lab.netmode.ece.ntua.gr> a novi:Node,
+        owl:NamedIndividual;
+    novi:hardwareType "i386";
+    novi:hasInboundInterface <http://fp7-novi.eu/im.owl#planetlab2-novi.lab.netmode.ece.ntua.gr:eth0-in>;
+    novi:hasOutboundInterface <http://fp7-novi.eu/im.owl#planetlab2-novi.lab.netmode.ece.ntua.gr:eth0-out>;
+    novi:hostname "planetlab2-novi.lab.netmode.ece.ntua.gr";
+    novi:name "http://fp7-novi.eu/im.owl#PlanetLab_planetlab2-novi.lab.netmode.ece.ntua.gr" .
+
+<http://fp7-novi.eu/im.owl#PlanetLab_smilax1.man.poznan.pl> a novi:Node,
+        owl:NamedIndividual;
+    novi:hardwareType "i386";
+    novi:hasInboundInterface <http://fp7-novi.eu/im.owl#smilax1.man.poznan.pl:eth0-in>;
+    novi:hasOutboundInterface <http://fp7-novi.eu/im.owl#smilax1.man.poznan.pl:eth0-out>;
+    novi:hostname "smilax1.man.poznan.pl";
+    novi:name "http://fp7-novi.eu/im.owl#PlanetLab_smilax1.man.poznan.pl" .
+
+novi:lrouter a novi:Node,
+        owl:NamedIndividual;
+    novi:hasInboundInterface novi:lrouter-if0-in,
+        novi:lrouter-if1-in,
+        novi:lrouter-if2-in;
+    novi:hasOutboundInterface novi:lrouter-if0-out,
+        novi:lrouter-if1-out,
+        novi:lrouter-if2-out;
+    novi:implementedBy <http://fp7-novi.eu/im.owl#FEDERICA_psnc.poz.router1>;
+    novi:name "lrouter" .
+
+novi:lrouter-if0-address a unit:IPAddress,
+        owl:NamedIndividual;
+    unit:hasNetmask "255.255.255.248";
+    unit:hasUnit unit:ipv4dotted;
+    unit:hasValue "192.168.37.1" .
+
+novi:lrouter-if1-address a unit:IPAddress,
+        owl:NamedIndividual;
+    unit:hasNetmask "255.255.255.248";
+    unit:hasUnit unit:ipv4dotted;
+    unit:hasValue "192.168.37.2" .
+
+novi:lrouter2 a novi:Node,
+        owl:NamedIndividual;
+    novi:hasInboundInterface novi:lrouter2-if0-in,
+        novi:lrouter2-if1-in;
+    novi:hasOutboundInterface novi:lrouter2-if0-out,
+        novi:lrouter2-if1-out;
+    novi:implementedBy <http://fp7-novi.eu/im.owl#FEDERICA_dfn.erl.router1>;
+    novi:name "lrouter2" .
+
+novi:sliver1 a novi:Node,
+        owl:NamedIndividual;
+    novi:hasInboundInterface novi:sliver1-eth0-in;
+    novi:hasOutboundInterface novi:sliver1-eth0-out;
+    novi:implementedBy <http://fp7-novi.eu/im.owl#PlanetLab_planetlab2-novi.lab.netmode.ece.ntua.gr>;
+    novi:name "sliver1" .
+
+novi:sliver1-eth0-address a unit:IPAddress,
+        owl:NamedIndividual;
+    unit:hasNetmask "255.255.255.248";
+    unit:hasUnit unit:ipv4dotted;
+    unit:hasValue "192.168.37.3" .
+
+novi:sliver2 a novi:Node,
+        owl:NamedIndividual;
+    novi:hasInboundInterface novi:sliver2-eth0-in;
+    novi:hasOutboundInterface novi:sliver2-eth0-out;
+    novi:implementedBy <http://fp7-novi.eu/im.owl#PlanetLab_smilax1.man.poznan.pl>;
+    novi:name "sliver2" .
+
+novi:sliver2-eth0-address a unit:IPAddress,
+        owl:NamedIndividual;
+    unit:hasNetmask "255.255.255.248";
+    unit:hasUnit unit:ipv4dotted;
+    unit:hasValue "192.168.37.4" .
+
+novi:vm1 a novi:Node,
+        owl:NamedIndividual;
+    novi:hasInboundInterface novi:vm1-eth0-in;
+    novi:hasOutboundInterface novi:vm1-eth0-out;
+    novi:implementedBy <http://fp7-novi.eu/im.owl#FEDERICA_dfn.erl.vserver1>;
+    novi:name "vm1" .
+
+<http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/2-in> a novi:Interface,
+        owl:NamedIndividual .
+
+<http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/2-out> a novi:Interface,
+        owl:NamedIndividual .
+
+<http://fp7-novi.eu/im.owl#dfn.erl.vserver1.vmnic1-in> a novi:Interface,
+        owl:NamedIndividual .
+
+<http://fp7-novi.eu/im.owl#dfn.erl.vserver1.vmnic1-out> a novi:Interface,
+        owl:NamedIndividual .
+
+novi:lrouter-if0-in a novi:Interface,
+        owl:NamedIndividual;
+    novi:implementedBy <http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/2/9-in>;
+    novi:isSink <http://fp7-novi.eu/im.owl#sliver1:eth0-lrouter:if0> .
+
+novi:lrouter-if0-out a novi:Interface,
+        owl:NamedIndividual;
+    novi:implementedBy <http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/2/9-out>;
+    novi:isSource <http://fp7-novi.eu/im.owl#lrouter:if0-sliver1:eth0> .
+
+novi:lrouter-if1-in a novi:Interface,
+        owl:NamedIndividual;
+    novi:implementedBy <http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/2/9-in>;
+    novi:isSink <http://fp7-novi.eu/im.owl#sliver2:eth0-lrouter:if1> .
+
+novi:lrouter-if1-out a novi:Interface,
+        owl:NamedIndividual;
+    novi:implementedBy <http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/2/9-out>;
+    novi:isSource <http://fp7-novi.eu/im.owl#lrouter:if1-sliver2:eth0> .
+
+novi:lrouter-if2-in a novi:Interface,
+        owl:NamedIndividual;
+    novi:implementedBy <http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/0/0-in>;
+    novi:isSink <http://fp7-novi.eu/im.owl#lrouter2:if0-lrouter:if2> .
+
+novi:lrouter-if2-out a novi:Interface,
+        owl:NamedIndividual;
+    novi:implementedBy <http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/0/0-out>;
+    novi:isSource <http://fp7-novi.eu/im.owl#lrouter:if2-lrouter2:if0> .
+
+novi:lrouter2-if0-in a novi:Interface,
+        owl:NamedIndividual;
+    novi:implementedBy <http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/0-in>;
+    novi:isSink <http://fp7-novi.eu/im.owl#lrouter:if2-lrouter2:if0> .
+
+novi:lrouter2-if0-out a novi:Interface,
+        owl:NamedIndividual;
+    novi:implementedBy <http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/0-out>;
+    novi:isSource <http://fp7-novi.eu/im.owl#lrouter2:if0-lrouter:if2> .
+
+novi:lrouter2-if1-in a novi:Interface,
+        owl:NamedIndividual;
+    novi:isSink <http://fp7-novi.eu/im.owl#vm1:eth0-lrouter2:if1> .
+
+novi:lrouter2-if1-out a novi:Interface,
+        owl:NamedIndividual;
+    novi:isSource <http://fp7-novi.eu/im.owl#lrouter2:if1-vm1:eth0> .
+
+novi:sliver1-eth0-in a novi:Interface,
+        owl:NamedIndividual;
+    novi:implementedBy <http://fp7-novi.eu/im.owl#planetlab2-novi.lab.netmode.ece.ntua.gr:eth0-in>;
+    novi:isSink <http://fp7-novi.eu/im.owl#lrouter:if0-sliver1:eth0> .
+
+novi:sliver1-eth0-out a novi:Interface,
+        owl:NamedIndividual;
+    novi:implementedBy <http://fp7-novi.eu/im.owl#planetlab2-novi.lab.netmode.ece.ntua.gr:eth0-out>;
+    novi:isSource <http://fp7-novi.eu/im.owl#sliver1:eth0-lrouter:if0> .
+
+novi:sliver2-eth0-in a novi:Interface,
+        owl:NamedIndividual;
+    novi:implementedBy <http://fp7-novi.eu/im.owl#smilax1.man.poznan.pl:eth0-in>;
+    novi:isSink <http://fp7-novi.eu/im.owl#lrouter:if1-sliver2:eth0> .
+
+novi:sliver2-eth0-out a novi:Interface,
+        owl:NamedIndividual;
+    novi:implementedBy <http://fp7-novi.eu/im.owl#smilax1.man.poznan.pl:eth0-out>;
+    novi:isSource <http://fp7-novi.eu/im.owl#sliver2:eth0-lrouter:if1> .
+
+novi:vm1-eth0-in a novi:Interface,
+        owl:NamedIndividual;
+    novi:isSink <http://fp7-novi.eu/im.owl#lrouter2:if1-vm1:eth0> .
+
+novi:vm1-eth0-out a novi:Interface,
+        owl:NamedIndividual;
+    novi:isSource <http://fp7-novi.eu/im.owl#vm1:eth0-lrouter2:if1> .
+
+<http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/0-in> a novi:Interface,
+        owl:NamedIndividual .
+
+<http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/0-out> a novi:Interface,
+        owl:NamedIndividual .
+
+<http://fp7-novi.eu/im.owl#lrouter2:if0-lrouter:if2> a novi:Link,
+        owl:NamedIndividual;
+    novi:name "lrouter2:if0-lrouter:if2" .
+
+<http://fp7-novi.eu/im.owl#lrouter2:if1-vm1:eth0> a novi:Link,
+        owl:NamedIndividual;
+    novi:name "lrouter2:if1-vm1:eth0" .
+
+<http://fp7-novi.eu/im.owl#lrouter:if0-sliver1:eth0> a novi:VirtualLink,
+        owl:NamedIndividual;
+    novi:name "lrouter:if0-sliver1:eth0";
+    novi:provisionedBy novi:nswitch-fed-pl-3701 .
+
+<http://fp7-novi.eu/im.owl#lrouter:if1-sliver2:eth0> a novi:VirtualLink,
+        owl:NamedIndividual;
+    novi:name "lrouter:if1-sliver2:eth0";
+    novi:provisionedBy novi:nswitch-fed-pl-3701 .
+
+<http://fp7-novi.eu/im.owl#lrouter:if2-lrouter2:if0> a novi:Link,
+        owl:NamedIndividual;
+    novi:name "lrouter:if2-lrouter2:if0" .
+
+<http://fp7-novi.eu/im.owl#planetlab2-novi.lab.netmode.ece.ntua.gr:eth0-in> a novi:Interface,
+        owl:NamedIndividual .
+
+<http://fp7-novi.eu/im.owl#planetlab2-novi.lab.netmode.ece.ntua.gr:eth0-out> a novi:Interface,
+        owl:NamedIndividual .
+
+<http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/0/0-in> a novi:Interface,
+        owl:NamedIndividual .
+
+<http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/0/0-out> a novi:Interface,
+        owl:NamedIndividual .
+
+<http://fp7-novi.eu/im.owl#sliver1:eth0-lrouter:if0> a novi:VirtualLink,
+        owl:NamedIndividual;
+    novi:name "sliver1:eth0-lrouter:if0";
+    novi:provisionedBy novi:nswitch-fed-pl-3701 .
+
+<http://fp7-novi.eu/im.owl#sliver2:eth0-lrouter:if1> a novi:VirtualLink,
+        owl:NamedIndividual;
+    novi:name "sliver2:eth0-lrouter:if1";
+    novi:provisionedBy novi:nswitch-fed-pl-3701 .
+
+<http://fp7-novi.eu/im.owl#smilax1.man.poznan.pl:eth0-in> a novi:Interface,
+        owl:NamedIndividual .
+
+<http://fp7-novi.eu/im.owl#smilax1.man.poznan.pl:eth0-out> a novi:Interface,
+        owl:NamedIndividual .
+
+<http://fp7-novi.eu/im.owl#vm1:eth0-lrouter2:if1> a novi:Link,
+        owl:NamedIndividual;
+    novi:name "vm1:eth0-lrouter2:if1" .
+
+novi:nswitch-fed-pl-3701 a novi:NSwitch,
+        owl:NamedIndividual;
+    novi:hasVLANID 3701;
+    novi:name "http://fp7-novi.eu/im.owl#nswitch-fed-pl-3701" .
+
+<http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/2/9-in> a novi:Interface,
+        owl:NamedIndividual .
+
+<http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/2/9-out> a novi:Interface,
+        owl:NamedIndividual .
+

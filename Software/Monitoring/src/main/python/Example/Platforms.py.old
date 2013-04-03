@@ -1,0 +1,9 @@
+'''
+Created on Nov 20, 2012
+
+@author: steger
+'''
+from Service.mock_framework import Framework
+
+baseurl = '../../information-model/monitoring-model'
+FRAMEWORK = Framework(baseurl, {'PlanetLab': '../../information-model/monitoring-model/config_planetlab.owl', 'FEDERICA': '../../information-model/monitoring-model/config_federica.owl'})

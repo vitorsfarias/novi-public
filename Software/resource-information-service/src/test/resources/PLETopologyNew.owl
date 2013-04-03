@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+	xmlns="http://fp7-novi.eu/im.owl#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:planetlab2-novi="http://fp7-novi.eu/im.owl#planetlab2-novi.lab.netmode.ece.ntua.gr:"
+	xmlns:novilab="http://fp7-novi.eu/im.owl#novilab.elte.hu:"
+	xmlns:returnTopology="http://fp7-novi.eu/im.owl#returnTopology@"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:smilax1="http://fp7-novi.eu/im.owl#smilax1.man.poznan.pl:"
+	xmlns:planetlab1-novi="http://fp7-novi.eu/im.owl#planetlab1-novi.lab.netmode.ece.ntua.gr:"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:im="http://fp7-novi.eu/im.owl#">
+<owl:Ontology rdf:about="http://fp7-novi.eu/imcore.owl">
+<owl:imports rdf:resource="https://dl.dropbox.com/u/13290647/novi-im/novi-im.owl"/>
+</owl:Ontology>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#PlanetLab">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Group"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Platform"/>
+	<contains rdf:resource="urn:publicid:IDN+novipl:novi+node+smilax1.man.poznan.pl"/>
+	<contains rdf:resource="urn:publicid:IDN+novipl:novi+node+smilax3.man.poznan.pl"/>
+	<contains rdf:resource="urn:publicid:IDN+novipl:novi+node+smilax2.man.poznan.pl"/>
+	<contains rdf:resource="urn:publicid:IDN+novipl:novi+node+planetlab2-novi.lab.netmode.ece.ntua.gr"/>
+	<contains rdf:resource="urn:publicid:IDN+novipl:novi+node+planetlab1-novi.lab.netmode.ece.ntua.gr"/>
+	<contains rdf:resource="urn:publicid:IDN+novipl:novi+node+smilax5.man.poznan.pl"/>
+	<contains rdf:resource="urn:publicid:IDN+novipl:novi+node+smilax4.man.poznan.pl"/>
+	<contains rdf:resource="urn:publicid:IDN+novipl:novi+node+dfn-novi-ple1.x-win.dfn.de"/>
+	<contains rdf:resource="urn:publicid:IDN+novipl:novi+node+novilab.elte.hu"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+novipl:novi+node+smilax1.man.poznan.pl">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Node"/>
+	<hardwareType>plab-pc</hardwareType>
+	<hasInboundInterface rdf:resource="urn:publicid:IDN+novipl+interface+node52:eth0-in"/>
+	<hasOutboundInterface rdf:resource="urn:publicid:IDN+novipl+interface+node52:eth0-out"/>
+	<hostname>smilax1.man.poznan.pl</hostname>
+	<hrn>novipl.novi.smilax1.man.poznan.pl</hrn>
+	<isContainedIn rdf:resource="http://fp7-novi.eu/im.owl#PlanetLab"/>
+	<isContainedIn rdf:resource="http://fp7-novi.eu/im.owl#returnTopology"/>
+	<locatedAt rdf:resource="http://fp7-novi.eu/im.owl#smilax1.man.poznan.pl-location"/>
+	<hasLifetime rdf:resource="urn:publicid:IDN+novipl:novi+node+smilax1.man.poznan.pl_monit_cache"/>
+	<hasComponent rdf:resource="urn:publicid:IDN+novipl:novi+node+smilax1.man.poznan.pl-cpu"/>
+	<hasComponent rdf:resource="urn:publicid:IDN+novipl:novi+node+smilax1.man.poznan.pl-mem"/>
+	<hasComponent rdf:resource="urn:publicid:IDN+novipl:novi+node+smilax1.man.poznan.pl-sto"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+novipl+interface+node52:eth0-in">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<isInboundInterfaceOf rdf:resource="urn:publicid:IDN+novipl:novi+node+smilax1.man.poznan.pl"/>
+	<canFederate rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</canFederate>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+novipl+interface+node52:eth0-out">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<isOutboundInterfaceOf rdf:resource="urn:publicid:IDN+novipl:novi+node+smilax1.man.poznan.pl"/>
+	<canFederate rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</canFederate>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#smilax1.man.poznan.pl-location">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Location"/>
+	<latitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">52.0</latitude>
+	<longitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">16.0</longitude>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+novipl:novi+node+smilax3.man.poznan.pl">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Node"/>
+	<hardwareType>plab-pc</hardwareType>
+	<hasInboundInterface rdf:resource="urn:publicid:IDN+novipl+interface+node54:eth0-in"/>
+	<hasOutboundInterface rdf:resource="urn:publicid:IDN+novipl+interface+node54:eth0-out"/>
+	<hostname>smilax3.man.poznan.pl</hostname>
+	<hrn>novipl.novi.smilax3.man.poznan.pl</hrn>
+	<isContainedIn rdf:resource="http://fp7-novi.eu/im.owl#PlanetLab"/>
+	<locatedAt rdf:resource="http://fp7-novi.eu/im.owl#smilax3.man.poznan.pl-location"/>
+	<hasLifetime rdf:resource="urn:publicid:IDN+novipl:novi+node+smilax3.man.poznan.pl_monit_cache"/>
+	<hasComponent rdf:resource="urn:publicid:IDN+novipl:novi+node+smilax3.man.poznan.pl-cpu"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+novipl+interface+node54:eth0-in">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<isInboundInterfaceOf rdf:resource="urn:publicid:IDN+novipl:novi+node+smilax3.man.poznan.pl"/>
+	<canFederate rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</canFederate>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+novipl+interface+node54:eth0-out">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<isOutboundInterfaceOf rdf:resource="urn:publicid:IDN+novipl:novi+node+smilax3.man.poznan.pl"/>
+	<canFederate rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</canFederate>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#smilax3.man.poznan.pl-location">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Location"/>
+	<latitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">52.0</latitude>
+	<longitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">16.0</longitude>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+novipl:novi+node+smilax2.man.poznan.pl">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Node"/>
+	<hardwareType>plab-pc</hardwareType>
+	<hasInboundInterface rdf:resource="urn:publicid:IDN+novipl+interface+node47:eth0-in"/>
+	<hasOutboundInterface rdf:resource="urn:publicid:IDN+novipl+interface+node47:eth0-out"/>
+	<hostname>smilax2.man.poznan.pl</hostname>
+	<hrn>novipl.novi.smilax2.man.poznan.pl</hrn>
+	<isContainedIn rdf:resource="http://fp7-novi.eu/im.owl#PlanetLab"/>
+	<locatedAt rdf:resource="http://fp7-novi.eu/im.owl#smilax2.man.poznan.pl-location"/>
+	<hasLifetime rdf:resource="urn:publicid:IDN+novipl:novi+node+smilax2.man.poznan.pl_monit_cache"/>
+	<hasComponent rdf:resource="urn:publicid:IDN+novipl:novi+node+smilax2.man.poznan.pl-cpu"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+novipl+interface+node47:eth0-in">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<isInboundInterfaceOf rdf:resource="urn:publicid:IDN+novipl:novi+node+smilax2.man.poznan.pl"/>
+	<canFederate rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</canFederate>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+novipl+interface+node47:eth0-out">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<isOutboundInterfaceOf rdf:resource="urn:publicid:IDN+novipl:novi+node+smilax2.man.poznan.pl"/>
+	<canFederate rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</canFederate>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#smilax2.man.poznan.pl-location">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Location"/>
+	<latitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">52.0</latitude>
+	<longitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">16.0</longitude>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+novipl:novi+node+planetlab2-novi.lab.netmode.ece.ntua.gr">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Node"/>
+	<hardwareType>plab-pc</hardwareType>
+	<hasInboundInterface rdf:resource="urn:publicid:IDN+novipl+interface+node49:eth0-in"/>
+	<hasOutboundInterface rdf:resource="urn:publicid:IDN+novipl+interface+node49:eth0-out"/>
+	<hostname>planetlab2-novi.lab.netmode.ece.ntua.gr</hostname>
+	<hrn>novipl.novi.planetlab2-novi.lab.netmode.ece.ntua.gr</hrn>
+	<isContainedIn rdf:resource="http://fp7-novi.eu/im.owl#PlanetLab"/>
+	<locatedAt rdf:resource="http://fp7-novi.eu/im.owl#planetlab2-novi.lab.netmode.ece.ntua.gr-location"/>
+	<hasLifetime rdf:resource="urn:publicid:IDN+novipl:novi+node+planetlab2-novi.lab.netmode.ece.ntua.gr_monit_cache"/>
+	<hasComponent rdf:resource="urn:publicid:IDN+novipl:novi+node+planetlab2-novi.lab.netmode.ece.ntua.gr-cpu"/>
+	<hasComponent rdf:resource="urn:publicid:IDN+novipl:novi+node+planetlab2-novi.lab.netmode.ece.ntua.gr-mem"/>
+	<hasComponent rdf:resource="urn:publicid:IDN+novipl:novi+node+planetlab2-novi.lab.netmode.ece.ntua.gr-sto"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+novipl+interface+node49:eth0-in">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<isInboundInterfaceOf rdf:resource="urn:publicid:IDN+novipl:novi+node+planetlab2-novi.lab.netmode.ece.ntua.gr"/>
+	<canFederate rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</canFederate>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+novipl+interface+node49:eth0-out">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<isOutboundInterfaceOf rdf:resource="urn:publicid:IDN+novipl:novi+node+planetlab2-novi.lab.netmode.ece.ntua.gr"/>
+	<canFederate rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</canFederate>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#planetlab2-novi.lab.netmode.ece.ntua.gr-location">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Location"/>
+	<latitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">52.0</latitude>
+	<longitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">16.0</longitude>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+novipl:novi+node+planetlab1-novi.lab.netmode.ece.ntua.gr">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Node"/>
+	<hardwareType>plab-pc</hardwareType>
+	<hasInboundInterface rdf:resource="urn:publicid:IDN+novipl+interface+node48:eth0-in"/>
+	<hasOutboundInterface rdf:resource="urn:publicid:IDN+novipl+interface+node48:eth0-out"/>
+	<hostname>planetlab1-novi.lab.netmode.ece.ntua.gr</hostname>
+	<hrn>novipl.novi.planetlab1-novi.lab.netmode.ece.ntua.gr</hrn>
+	<isContainedIn rdf:resource="http://fp7-novi.eu/im.owl#PlanetLab"/>
+	<locatedAt rdf:resource="http://fp7-novi.eu/im.owl#planetlab1-novi.lab.netmode.ece.ntua.gr-location"/>
+	<hasLifetime rdf:resource="urn:publicid:IDN+novipl:novi+node+planetlab1-novi.lab.netmode.ece.ntua.gr_monit_cache"/>
+	<hasComponent rdf:resource="urn:publicid:IDN+novipl:novi+node+planetlab1-novi.lab.netmode.ece.ntua.gr-cpu"/>
+	<hasComponent rdf:resource="urn:publicid:IDN+novipl:novi+node+planetlab1-novi.lab.netmode.ece.ntua.gr-mem"/>
+	<hasComponent rdf:resource="urn:publicid:IDN+novipl:novi+node+planetlab1-novi.lab.netmode.ece.ntua.gr-sto"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+novipl+interface+node48:eth0-in">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<isInboundInterfaceOf rdf:resource="urn:publicid:IDN+novipl:novi+node+planetlab1-novi.lab.netmode.ece.ntua.gr"/>
+	<canFederate rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</canFederate>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+novipl+interface+node48:eth0-out">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<isOutboundInterfaceOf rdf:resource="urn:publicid:IDN+novipl:novi+node+planetlab1-novi.lab.netmode.ece.ntua.gr"/>
+	<canFederate rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</canFederate>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#planetlab1-novi.lab.netmode.ece.ntua.gr-location">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Location"/>
+	<latitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">52.0</latitude>
+	<longitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">16.0</longitude>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+novipl:novi+node+smilax5.man.poznan.pl">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Node"/>
+	<hardwareType>plab-pc</hardwareType>
+	<hasInboundInterface rdf:resource="urn:publicid:IDN+novipl+interface+node56:eth0-in"/>
+	<hasOutboundInterface rdf:resource="urn:publicid:IDN+novipl+interface+node56:eth0-out"/>
+	<hostname>smilax5.man.poznan.pl</hostname>
+	<hrn>novipl.novi.smilax5.man.poznan.pl</hrn>
+	<isContainedIn rdf:resource="http://fp7-novi.eu/im.owl#PlanetLab"/>
+	<locatedAt rdf:resource="http://fp7-novi.eu/im.owl#smilax5.man.poznan.pl-location"/>
+	<hasLifetime rdf:resource="urn:publicid:IDN+novipl:novi+node+smilax5.man.poznan.pl_monit_cache"/>
+	<hasComponent rdf:resource="urn:publicid:IDN+novipl:novi+node+smilax5.man.poznan.pl-cpu"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+novipl+interface+node56:eth0-in">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<isInboundInterfaceOf rdf:resource="urn:publicid:IDN+novipl:novi+node+smilax5.man.poznan.pl"/>
+	<canFederate rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</canFederate>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+novipl+interface+node56:eth0-out">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<isOutboundInterfaceOf rdf:resource="urn:publicid:IDN+novipl:novi+node+smilax5.man.poznan.pl"/>
+	<canFederate rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</canFederate>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#smilax5.man.poznan.pl-location">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Location"/>
+	<latitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">52.0</latitude>
+	<longitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">16.0</longitude>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+novipl:novi+node+smilax4.man.poznan.pl">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Node"/>
+	<hardwareType>plab-pc</hardwareType>
+	<hasInboundInterface rdf:resource="urn:publicid:IDN+novipl+interface+node55:eth0-in"/>
+	<hasOutboundInterface rdf:resource="urn:publicid:IDN+novipl+interface+node55:eth0-out"/>
+	<hostname>smilax4.man.poznan.pl</hostname>
+	<hrn>novipl.novi.smilax4.man.poznan.pl</hrn>
+	<isContainedIn rdf:resource="http://fp7-novi.eu/im.owl#PlanetLab"/>
+	<locatedAt rdf:resource="http://fp7-novi.eu/im.owl#smilax4.man.poznan.pl-location"/>
+	<hasLifetime rdf:resource="urn:publicid:IDN+novipl:novi+node+smilax4.man.poznan.pl_monit_cache"/>
+	<hasComponent rdf:resource="urn:publicid:IDN+novipl:novi+node+smilax4.man.poznan.pl-cpu"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+novipl+interface+node55:eth0-in">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<isInboundInterfaceOf rdf:resource="urn:publicid:IDN+novipl:novi+node+smilax4.man.poznan.pl"/>
+	<canFederate rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</canFederate>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+novipl+interface+node55:eth0-out">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<isOutboundInterfaceOf rdf:resource="urn:publicid:IDN+novipl:novi+node+smilax4.man.poznan.pl"/>
+	<canFederate rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</canFederate>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#smilax4.man.poznan.pl-location">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Location"/>
+	<latitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">52.0</latitude>
+	<longitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">16.0</longitude>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+novipl:novi+node+dfn-novi-ple1.x-win.dfn.de">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Node"/>
+	<hardwareType>plab-pc</hardwareType>
+	<hasInboundInterface rdf:resource="urn:publicid:IDN+novipl+interface+node59:eth0-in"/>
+	<hasOutboundInterface rdf:resource="urn:publicid:IDN+novipl+interface+node59:eth0-out"/>
+	<hostname>dfn-novi-ple1.x-win.dfn.de</hostname>
+	<hrn>novipl.novi.dfn-novi-ple1.x-win.dfn.de</hrn>
+	<isContainedIn rdf:resource="http://fp7-novi.eu/im.owl#PlanetLab"/>
+	<isContainedIn rdf:resource="http://fp7-novi.eu/im.owl#returnTopology"/>
+	<locatedAt rdf:resource="http://fp7-novi.eu/im.owl#dfn-novi-ple1.x-win.dfn.de-location"/>
+	<hasLifetime rdf:resource="urn:publicid:IDN+novipl:novi+node+dfn-novi-ple1.x-win.dfn.de_monit_cache"/>
+	<hasComponent rdf:resource="urn:publicid:IDN+novipl:novi+node+dfn-novi-ple1.x-win.dfn.de-cpu"/>
+	<hasComponent rdf:resource="urn:publicid:IDN+novipl:novi+node+dfn-novi-ple1.x-win.dfn.de-mem"/>
+	<hasComponent rdf:resource="urn:publicid:IDN+novipl:novi+node+dfn-novi-ple1.x-win.dfn.de-sto"/>
+	<implements rdf:resource="http://fp7-novi.eu/im.owl#sliver1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+novipl+interface+node59:eth0-in">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<isInboundInterfaceOf rdf:resource="urn:publicid:IDN+novipl:novi+node+dfn-novi-ple1.x-win.dfn.de"/>
+	<canFederate rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</canFederate>
+	<hasIPv4Address rdf:resource="urn:publicid:IDN+novipl+interface+node59:eth0-in-ip"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+novipl+interface+node59:eth0-out">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<isOutboundInterfaceOf rdf:resource="urn:publicid:IDN+novipl:novi+node+dfn-novi-ple1.x-win.dfn.de"/>
+	<canFederate rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</canFederate>
+	<hasIPv4Address rdf:resource="urn:publicid:IDN+novipl+interface+node59:eth0-out-ip"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#dfn-novi-ple1.x-win.dfn.de-location">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Location"/>
+	<latitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">52.0</latitude>
+	<longitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">16.0</longitude>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+novipl:novi+node+novilab.elte.hu">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Node"/>
+	<hardwareType>plab-pc</hardwareType>
+	<hasInboundInterface rdf:resource="urn:publicid:IDN+novipl+interface+node50:eth0-in"/>
+	<hasOutboundInterface rdf:resource="urn:publicid:IDN+novipl+interface+node50:eth0-out"/>
+	<hostname>novilab.elte.hu</hostname>
+	<hrn>novipl.novi.novilab.elte.hu</hrn>
+	<isContainedIn rdf:resource="http://fp7-novi.eu/im.owl#PlanetLab"/>
+	<locatedAt rdf:resource="http://fp7-novi.eu/im.owl#novilab.elte.hu-location"/>
+	<hasLifetime rdf:resource="urn:publicid:IDN+novipl:novi+node+novilab.elte.hu_monit_cache"/>
+	<hasComponent rdf:resource="urn:publicid:IDN+novipl:novi+node+novilab.elte.hu-cpu"/>
+	<hasComponent rdf:resource="urn:publicid:IDN+novipl:novi+node+novilab.elte.hu-mem"/>
+	<hasComponent rdf:resource="urn:publicid:IDN+novipl:novi+node+novilab.elte.hu-sto"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+novipl+interface+node50:eth0-in">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<isInboundInterfaceOf rdf:resource="urn:publicid:IDN+novipl:novi+node+novilab.elte.hu"/>
+	<canFederate rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</canFederate>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+novipl+interface+node50:eth0-out">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<isOutboundInterfaceOf rdf:resource="urn:publicid:IDN+novipl:novi+node+novilab.elte.hu"/>
+	<canFederate rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</canFederate>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#novilab.elte.hu-location">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Location"/>
+	<latitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">52.0</latitude>
+	<longitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">16.0</longitude>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+novipl:novi+node+smilax3.man.poznan.pl_monit_cache">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Lifetime"/>
+	<startTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2013-01-24T15:59:10.475Z</startTime>
+	<endTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2013-01-24T16:00:10.475Z</endTime>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+novipl:novi+node+smilax3.man.poznan.pl-cpu">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#CPU"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+novipl:novi+node+novilab.elte.hu_monit_cache">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Lifetime"/>
+	<startTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2013-01-24T15:59:10.280Z</startTime>
+	<endTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2013-01-24T16:00:10.280Z</endTime>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+novipl:novi+node+novilab.elte.hu-cpu">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#CPU"/>
+	<hasAvailableCores rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasAvailableCores>
+	<hasCPUSpeed rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2.992</hasCPUSpeed>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+novipl:novi+node+novilab.elte.hu-mem">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Memory"/>
+	<hasAvailableMemorySize rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.02334</hasAvailableMemorySize>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+novipl:novi+node+novilab.elte.hu-sto">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Storage"/>
+	<hasAvailableStorageSize rdf:datatype="http://www.w3.org/2001/XMLSchema#float">11.425532</hasAvailableStorageSize>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+novipl:novi+node+smilax1.man.poznan.pl_monit_cache">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Lifetime"/>
+	<startTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2013-01-24T15:59:09.480Z</startTime>
+	<endTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2013-01-24T16:00:09.480Z</endTime>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+novipl:novi+node+smilax1.man.poznan.pl-cpu">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#CPU"/>
+	<hasAvailableCores rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasAvailableCores>
+	<hasCPUSpeed rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.995</hasCPUSpeed>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+novipl:novi+node+smilax1.man.poznan.pl-mem">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Memory"/>
+	<hasAvailableMemorySize rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.146956</hasAvailableMemorySize>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+novipl:novi+node+smilax1.man.poznan.pl-sto">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Storage"/>
+	<hasAvailableStorageSize rdf:datatype="http://www.w3.org/2001/XMLSchema#float">12.490664</hasAvailableStorageSize>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+novipl:novi+node+planetlab1-novi.lab.netmode.ece.ntua.gr_monit_cache">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Lifetime"/>
+	<startTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2013-01-24T15:59:10.385Z</startTime>
+	<endTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2013-01-24T16:00:10.385Z</endTime>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+novipl:novi+node+planetlab1-novi.lab.netmode.ece.ntua.gr-cpu">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#CPU"/>
+	<hasAvailableCores rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasAvailableCores>
+	<hasCPUSpeed rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2.311</hasCPUSpeed>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+novipl:novi+node+planetlab1-novi.lab.netmode.ece.ntua.gr-mem">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Memory"/>
+	<hasAvailableMemorySize rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0097</hasAvailableMemorySize>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+novipl:novi+node+planetlab1-novi.lab.netmode.ece.ntua.gr-sto">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Storage"/>
+	<hasAvailableStorageSize rdf:datatype="http://www.w3.org/2001/XMLSchema#float">12.866524</hasAvailableStorageSize>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+novipl:novi+node+smilax5.man.poznan.pl_monit_cache">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Lifetime"/>
+	<startTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2013-01-24T15:59:10.575Z</startTime>
+	<endTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2013-01-24T16:00:10.576Z</endTime>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+novipl:novi+node+smilax5.man.poznan.pl-cpu">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#CPU"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+novipl:novi+node+planetlab2-novi.lab.netmode.ece.ntua.gr_monit_cache">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Lifetime"/>
+	<startTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2013-01-24T15:59:10.331Z</startTime>
+	<endTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2013-01-24T16:00:10.331Z</endTime>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+novipl:novi+node+planetlab2-novi.lab.netmode.ece.ntua.gr-cpu">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#CPU"/>
+	<hasAvailableCores rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasAvailableCores>
+	<hasCPUSpeed rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2.311</hasCPUSpeed>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+novipl:novi+node+planetlab2-novi.lab.netmode.ece.ntua.gr-mem">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Memory"/>
+	<hasAvailableMemorySize rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.007212</hasAvailableMemorySize>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+novipl:novi+node+planetlab2-novi.lab.netmode.ece.ntua.gr-sto">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Storage"/>
+	<hasAvailableStorageSize rdf:datatype="http://www.w3.org/2001/XMLSchema#float">12.887112</hasAvailableStorageSize>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+novipl:novi+node+smilax4.man.poznan.pl_monit_cache">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Lifetime"/>
+	<startTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2013-01-24T15:59:10.439Z</startTime>
+	<endTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2013-01-24T16:00:10.439Z</endTime>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+novipl:novi+node+smilax4.man.poznan.pl-cpu">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#CPU"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+novipl:novi+node+smilax2.man.poznan.pl_monit_cache">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Lifetime"/>
+	<startTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2013-01-24T15:59:10.613Z</startTime>
+	<endTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2013-01-24T16:00:10.613Z</endTime>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+novipl:novi+node+smilax2.man.poznan.pl-cpu">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#CPU"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+novipl:novi+node+dfn-novi-ple1.x-win.dfn.de_monit_cache">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Lifetime"/>
+	<startTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2013-01-24T15:59:10.513Z</startTime>
+	<endTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2013-01-24T16:00:10.513Z</endTime>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+novipl:novi+node+dfn-novi-ple1.x-win.dfn.de-cpu">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#CPU"/>
+	<hasAvailableCores rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</hasAvailableCores>
+	<hasCPUSpeed rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2.4</hasCPUSpeed>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+novipl:novi+node+dfn-novi-ple1.x-win.dfn.de-mem">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Memory"/>
+	<hasAvailableMemorySize rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.2122</hasAvailableMemorySize>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+novipl:novi+node+dfn-novi-ple1.x-win.dfn.de-sto">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Storage"/>
+	<hasAvailableStorageSize rdf:datatype="http://www.w3.org/2001/XMLSchema#float">12.630616</hasAvailableStorageSize>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#returnTopology">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Group"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Topology"/>
+	<contains rdf:resource="urn:publicid:IDN+novipl:novi+node+smilax1.man.poznan.pl"/>
+	<contains rdf:resource="urn:publicid:IDN+novipl:novi+node+planetlab2-novi.lab.netmode.ece.ntua.gr"/>
+	<contains rdf:resource="urn:publicid:IDN+novipl:novi+node+planetlab1-novi.lab.netmode.ece.ntua.gr"/>
+	<contains rdf:resource="urn:publicid:IDN+novipl:novi+node+dfn-novi-ple1.x-win.dfn.de"/>
+	<contains rdf:resource="urn:publicid:IDN+novipl:novi+node+novilab.elte.hu"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#reqCPU1">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#CPU"/>
+	<hasAvailableCores rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasAvailableCores>
+	<hasCPUSpeed rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasCPUSpeed>
+	<exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+	<hasCores rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hasCores>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#reqDisk1">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Storage"/>
+	<hasAvailableStorageSize rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasAvailableStorageSize>
+	<exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+	<hasStorageSize rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasStorageSize>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#reqMem1">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Memory"/>
+	<hasAvailableMemorySize rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasAvailableMemorySize>
+	<exclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</exclusive>
+	<hasMemorySize rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hasMemorySize>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#partialBoundTopology">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Group"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Topology"/>
+	<contains rdf:resource="http://fp7-novi.eu/im.owl#sliver1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#unboundResources">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Group"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Topology"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#test">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Group"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Topology"/>
+	<contains rdf:resource="http://fp7-novi.eu/im.owl#sliver1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+novipl+interface+node59:eth0-in-ip">
+	<rdf:type rdf:resource="http://fp7-novi.eu/unit.owl#IPAddress"/>
+	<hasValue xmlns="http://fp7-novi.eu/unit.owl#">188.1.240.194</hasValue>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+novipl+interface+node59:eth0-out-ip">
+	<rdf:type rdf:resource="http://fp7-novi.eu/unit.owl#IPAddress"/>
+	<hasValue xmlns="http://fp7-novi.eu/unit.owl#">188.1.240.194</hasValue>
+</rdf:Description>
+
+</rdf:RDF>

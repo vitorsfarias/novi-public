@@ -1,0 +1,768 @@
+<?xml version="1.0"?>
+<rdf:RDF
+	xmlns="http://fp7-novi.eu/im.owl#"
+xml:base="http://fp7-novi.eu/im.owl"
+xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+xmlns:unit="http://fp7-novi.eu/unit.owl#"
+xmlns:owl="http://www.w3.org/2002/07/owl#"
+xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<owl:Ontology rdf:about="http://fp7-novi.eu/imcore.owl">
+<owl:imports rdf:resource="https://dl.dropbox.com/u/13290647/novi-im/novi-im.owl"/>
+</owl:Ontology>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#req1">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Group"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Topology"/>
+	<autoUpdateOnfailure xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</autoUpdateOnfailure>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#req1-life">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Lifetime"/>
+	<endTime xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-03-20T17:58:14.446Z</endTime>
+	<startTime xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2013-03-20T17:58:14.444Z</startTime>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#req1">
+	<hasLifetime xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#req1-life"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#vm1">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Node"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#VirtualNode"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Resource"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#Memory-vm1">
+	<rdf:type rdf:resource="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#NodeComponent"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Memory"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Resource"/>
+	<hasMemorySize xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#float">6.007905</hasMemorySize>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#vm1">
+	<hasComponent xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#Memory-vm1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#Storage-vm1">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Storage"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#NodeComponent"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Resource"/>
+	<hasStorageSize xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#float">3.4583616</hasStorageSize>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#vm1">
+	<hasComponent xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#Storage-vm1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#CPU-vm1">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#CPU"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#NodeComponent"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Resource"/>
+	<hasCPUSpeed xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.8616534</hasCPUSpeed>
+	<hasCores xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasCores>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#vm1">
+	<hasComponent xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#CPU-vm1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#vm1.if2-in">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#NetworkElement"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Resource"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#virtualLink3">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#NetworkElement"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#VirtualLink"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Link"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Resource"/>
+	<hasCapacity xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.5759773</hasCapacity>
+	<hasSink xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#vm1.if2-in"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#vm3.if1-out">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#NetworkElement"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Resource"/>
+	<isSource xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#virtualLink3"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#virtualLink3">
+	<hasSource xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#vm3.if1-out"/>
+	<isContainedIn xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#req1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#vm1.if2-in">
+	<isSink xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#virtualLink3"/>
+	<isInboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#vm1"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#vm1">
+	<hasInboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#vm1.if2-in"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#vm1.if2-out">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#NetworkElement"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Resource"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#virtualLink3-rev">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#NetworkElement"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#VirtualLink"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Link"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Resource"/>
+	<hasCapacity xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.5759773</hasCapacity>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#vm3.if1-in">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#NetworkElement"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Resource"/>
+	<isSink xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#virtualLink3-rev"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#virtualLink3-rev">
+	<hasSink xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#vm3.if1-in"/>
+	<hasSource xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#vm1.if2-out"/>
+	<isContainedIn xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#req1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#vm1.if2-out">
+	<isSource xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#virtualLink3-rev"/>
+	<isOutboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#vm1"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#vm1">
+	<hasOutboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#vm1.if2-out"/>
+	<hostname xmlns="http://fp7-novi.eu/im.owl#">vm1</hostname>
+	<isContainedIn xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#req1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#req1">
+	<contains xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#vm1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#vm0">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Node"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#VirtualNode"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Resource"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#Memory-vm0">
+	<rdf:type rdf:resource="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#NodeComponent"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Memory"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Resource"/>
+	<hasMemorySize xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#float">3.1827188</hasMemorySize>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#vm0">
+	<hasComponent xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#Memory-vm0"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#CPU-vm0">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#CPU"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#NodeComponent"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Resource"/>
+	<hasCPUSpeed xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#float">3.0173776</hasCPUSpeed>
+	<hasCores xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasCores>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#vm0">
+	<hasComponent xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#CPU-vm0"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#Storage-vm0">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Storage"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#NodeComponent"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Resource"/>
+	<hasStorageSize xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#float">20.815477</hasStorageSize>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#vm0">
+	<hasComponent xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#Storage-vm0"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#vm0.if2-in">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#NetworkElement"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Resource"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#virtualLink4">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#NetworkElement"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#VirtualLink"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Link"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Resource"/>
+	<hasCapacity xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#float">27.520433</hasCapacity>
+	<hasSink xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#vm0.if2-in"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#vm3.if2-out">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#NetworkElement"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Resource"/>
+	<isSource xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#virtualLink4"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#vm3">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Node"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#VirtualNode"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Resource"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#CPU-vm3">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#CPU"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#NodeComponent"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Resource"/>
+	<hasCPUSpeed xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.1223016</hasCPUSpeed>
+	<hasCores xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasCores>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#vm3">
+	<hasComponent xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#CPU-vm3"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#Memory-vm3">
+	<rdf:type rdf:resource="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#NodeComponent"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Memory"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Resource"/>
+	<hasMemorySize xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#float">4.847428</hasMemorySize>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#vm3">
+	<hasComponent xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#Memory-vm3"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#Storage-vm3">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Storage"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#NodeComponent"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Resource"/>
+	<hasStorageSize xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#float">11.67731</hasStorageSize>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#vm3">
+	<hasComponent xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#Storage-vm3"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#vm3.if2-in">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#NetworkElement"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Resource"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#virtualLink4-rev">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#NetworkElement"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#VirtualLink"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Link"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Resource"/>
+	<hasCapacity xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#float">27.520433</hasCapacity>
+	<hasSink xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#vm3.if2-in"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#vm0.if2-out">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#NetworkElement"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Resource"/>
+	<isSource xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#virtualLink4-rev"/>
+	<isOutboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#vm0"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#virtualLink4-rev">
+	<hasSource xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#vm0.if2-out"/>
+	<isContainedIn xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#req1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#vm3.if2-in">
+	<isSink xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#virtualLink4-rev"/>
+	<isInboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#vm3"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#vm3">
+	<hasInboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#vm3.if2-in"/>
+	<hasOutboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#vm3.if2-out"/>
+	<hostname xmlns="http://fp7-novi.eu/im.owl#">vm3</hostname>
+	<isContainedIn xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#req1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#vm3.if2-out">
+	<isOutboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#vm3"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#virtualLink4">
+	<hasSource xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#vm3.if2-out"/>
+	<isContainedIn xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#req1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#vm0.if2-in">
+	<isSink xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#virtualLink4"/>
+	<isInboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#vm0"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#vm0">
+	<hasInboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#vm0.if2-in"/>
+	<hasOutboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#vm0.if2-out"/>
+	<hostname xmlns="http://fp7-novi.eu/im.owl#">vm0</hostname>
+	<isContainedIn xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#req1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#req1">
+	<contains xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#vm0"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#vm2">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Node"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#VirtualNode"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Resource"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#CPU-vm2">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#CPU"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#NodeComponent"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Resource"/>
+	<hasCPUSpeed xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.8603594</hasCPUSpeed>
+	<hasCores xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasCores>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#vm2">
+	<hasComponent xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#CPU-vm2"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#Storage-vm2">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Storage"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#NodeComponent"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Resource"/>
+	<hasStorageSize xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#float">11.585656</hasStorageSize>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#vm2">
+	<hasComponent xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#Storage-vm2"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#Memory-vm2">
+	<rdf:type rdf:resource="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#NodeComponent"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Memory"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Resource"/>
+	<hasMemorySize xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#float">4.927176</hasMemorySize>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#vm2">
+	<hasComponent xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#Memory-vm2"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#vm2.if2-in">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#NetworkElement"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Resource"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#virtualLink5">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#NetworkElement"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#VirtualLink"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Link"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Resource"/>
+	<hasCapacity xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#float">17.403336</hasCapacity>
+	<hasSink xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#vm2.if2-in"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#vm4.if2-out">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#NetworkElement"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Resource"/>
+	<isSource xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#virtualLink5"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#vm4">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Node"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#VirtualNode"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Resource"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#CPU-vm4">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#CPU"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#NodeComponent"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Resource"/>
+	<hasCPUSpeed xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#float">3.8301785</hasCPUSpeed>
+	<hasCores xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hasCores>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#vm4">
+	<hasComponent xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#CPU-vm4"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#Memory-vm4">
+	<rdf:type rdf:resource="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#NodeComponent"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Memory"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Resource"/>
+	<hasMemorySize xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.817695</hasMemorySize>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#vm4">
+	<hasComponent xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#Memory-vm4"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#Storage-vm4">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Storage"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#NodeComponent"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Resource"/>
+	<hasStorageSize xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.9638777</hasStorageSize>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#vm4">
+	<hasComponent xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#Storage-vm4"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#vm4.if2-in">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#NetworkElement"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Resource"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#virtualLink5-rev">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#NetworkElement"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#VirtualLink"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Link"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Resource"/>
+	<hasCapacity xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#float">17.403336</hasCapacity>
+	<hasSink xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#vm4.if2-in"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#vm2.if2-out">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#NetworkElement"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Resource"/>
+	<isSource xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#virtualLink5-rev"/>
+	<isOutboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#vm2"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#virtualLink5-rev">
+	<hasSource xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#vm2.if2-out"/>
+	<isContainedIn xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#req1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#vm4.if2-in">
+	<isSink xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#virtualLink5-rev"/>
+	<isInboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#vm4"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#vm4">
+	<hasInboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#vm4.if2-in"/>
+	<hasOutboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#vm4.if2-out"/>
+	<hostname xmlns="http://fp7-novi.eu/im.owl#">vm4</hostname>
+	<isContainedIn xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#req1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#vm4.if2-out">
+	<isOutboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#vm4"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#virtualLink5">
+	<hasSource xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#vm4.if2-out"/>
+	<isContainedIn xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#req1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#vm2.if2-in">
+	<isSink xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#virtualLink5"/>
+	<isInboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#vm2"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#vm2">
+	<hasInboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#vm2.if2-in"/>
+	<hasOutboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#vm2.if2-out"/>
+	<hostname xmlns="http://fp7-novi.eu/im.owl#">vm2</hostname>
+	<isContainedIn xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#req1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#req1">
+	<contains xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#vm2"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#virtualLink1">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#NetworkElement"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#VirtualLink"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Link"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Resource"/>
+	<hasCapacity xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#float">19.776861</hasCapacity>
+	<hasSink xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#vm1.if2-in"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#vm2.if1-out">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#NetworkElement"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Resource"/>
+	<isSource xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#virtualLink1"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#virtualLink1">
+	<hasSource xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#vm2.if1-out"/>
+	<isContainedIn xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#req1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#req1">
+	<contains xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#virtualLink1"/>
+	<contains xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#virtualLink3-rev"/>
+	<contains xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#virtualLink3"/>
+	<contains xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#vm4"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#virtualLink2-rev">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#NetworkElement"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#VirtualLink"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Link"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Resource"/>
+	<hasCapacity xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#float">29.833195</hasCapacity>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#vm4.if1-in">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#NetworkElement"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Resource"/>
+	<isSink xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#virtualLink2-rev"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#virtualLink2-rev">
+	<hasSink xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#vm4.if1-in"/>
+	<hasSource xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#vm1.if2-out"/>
+	<isContainedIn xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#req1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#req1">
+	<contains xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#virtualLink2-rev"/>
+	<contains xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#virtualLink5"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#virtualLink6-rev">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#NetworkElement"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#VirtualLink"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Link"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Resource"/>
+	<hasCapacity xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#float">26.328266</hasCapacity>
+	<hasSink xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#vm3.if2-in"/>
+	<hasSource xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#vm4.if2-out"/>
+	<isContainedIn xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#req1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#req1">
+	<contains xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#virtualLink6-rev"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#virtualLink1-rev">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#NetworkElement"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#VirtualLink"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Link"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Resource"/>
+	<hasCapacity xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#float">19.776861</hasCapacity>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#vm2.if1-in">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#NetworkElement"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Resource"/>
+	<isSink xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#virtualLink1-rev"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#virtualLink1-rev">
+	<hasSink xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#vm2.if1-in"/>
+	<hasSource xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#vm1.if2-out"/>
+	<isContainedIn xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#req1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#req1">
+	<contains xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#virtualLink1-rev"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#virtualLink0">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#NetworkElement"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#VirtualLink"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Link"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Resource"/>
+	<hasCapacity xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#float">21.039438</hasCapacity>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#vm1.if1-in">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#NetworkElement"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Resource"/>
+	<isSink xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#virtualLink0"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#virtualLink0">
+	<hasSink xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#vm1.if1-in"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#vm0.if1-out">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#NetworkElement"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Resource"/>
+	<isSource xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#virtualLink0"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#virtualLink0">
+	<hasSource xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#vm0.if1-out"/>
+	<isContainedIn xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#req1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#req1">
+	<contains xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#virtualLink0"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#virtualLink2">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#NetworkElement"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#VirtualLink"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Link"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Resource"/>
+	<hasCapacity xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#float">29.833195</hasCapacity>
+	<hasSink xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#vm1.if2-in"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#vm4.if1-out">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#NetworkElement"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Resource"/>
+	<isSource xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#virtualLink2"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#virtualLink2">
+	<hasSource xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#vm4.if1-out"/>
+	<isContainedIn xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#req1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#req1">
+	<contains xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#virtualLink2"/>
+	<contains xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#virtualLink5-rev"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#virtualLink0-rev">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#NetworkElement"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#VirtualLink"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Link"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Resource"/>
+	<hasCapacity xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#float">21.039438</hasCapacity>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#vm0.if1-in">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#NetworkElement"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Resource"/>
+	<isSink xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#virtualLink0-rev"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#virtualLink0-rev">
+	<hasSink xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#vm0.if1-in"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#vm1.if1-out">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#NetworkElement"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Resource"/>
+	<isSource xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#virtualLink0-rev"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#virtualLink0-rev">
+	<hasSource xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#vm1.if1-out"/>
+	<isContainedIn xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#req1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#req1">
+	<contains xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#virtualLink0-rev"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#virtualLink6">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#NetworkElement"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#VirtualLink"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Link"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Resource"/>
+	<hasCapacity xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#float">26.328266</hasCapacity>
+	<hasSink xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#vm4.if2-in"/>
+	<hasSource xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#vm3.if2-out"/>
+	<isContainedIn xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#req1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#req1">
+	<contains xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#virtualLink6"/>
+	<contains xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#virtualLink4"/>
+	<contains xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#vm3"/>
+	<contains xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#virtualLink4-rev"/>
+</rdf:Description>
+
+</rdf:RDF>

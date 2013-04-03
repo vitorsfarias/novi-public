@@ -1,0 +1,100 @@
+newdom := root/factory/domain.
+newpol := root/factory/ecapolicy.
+newevent := root/factory/event.
+
+root at: "dom1" put: newdom create.
+root at: "dom2" put: newdom create.
+
+// This uses an array #(...) to give the argument names. Could use multiple arg: but
+// I want the create thing to be atomic.  We don''t want to be able to add args to the
+// event willy-nilly.
+
+root/event at: "slaEvent" put: ( newevent create: #( "vomember" "reputation" )).
+
+// Here is a policy with two actions. Multiple actions can be executed concurrently.
+// If sequential ordering is required then put all the statements into one action.
+
+// This uses a suggested layout where keywords are laid out vertically
+
+root/dom1	 at: "pol1"
+                     put: (
+                                (newpol create)
+                                              event: root/event/slaEvent;
+             	                              action: [ :vomember |
+                                                              root print: "Performing pol1 action with arg " + vomember.
+                                                              root print: "root/pdp/btpdp removeAccess: " + vomember
+                                                           ];
+                                              action: [ :vomember :reputation |
+                                                              root print: "root/gvoa/main log: Removed " + vomember + ". Reputation " + reputation
+                                                           ];
+                                              // No-op to return this object
+                                              self
+                             ).
+                              
+// Activate the policy
+
+ root/dom1/pol1 active: true.
+ 
+ root/event/slaEvent create: #("UoK" 15).
+
+// Now, let''s say we  want to create the above policy several times
+// We can create a block that when executed returns a newly created policy.
+// We simply put the complete policy creation stuff above into a block and evalute it later
+
+newSLApolicy := [
+                                 (newpol create)
+                                              event: root/event/slaEvent;
+                                              action: [ :vomember |
+                                                              root/pdp/btpdp removeAccess: vomember
+                                                           ];
+                                              action: [ :vomember :reputation |
+                                                              root/gvoa/main log: "Removed " + vomember + ". Reputation " + reputation
+                                                           ];
+                                              // No-op to return this object
+                                              self
+                               ].
+                               
+// Now the policy can be created more than once
+// Blocks are executed with the unary message "value" 
+// or keyword message "value:", "value: value:", "value: value: value:" etc 
+// depending upon the arguments required.
+
+// Too many values is ok, too few, throws an error
+// Let''s create root/dom2/pol1 and root/dom2/pol2
+
+root/dom2 at: "pol1" put: newSLApolicy value.
+root/dom2 at: "pol2" put: newSLApolicy value.
+
+// What about conditions?
+// Now, let's say we always want the same kind of policy but a slightly different trigger value in each policy.
+// We can create a block with an argument,  that when executed returns a newly created policy with
+// a specilised condition.
+
+// This example sends messages in separate statements rather than cascading them together.
+// Pourquoi pas?
+
+newSLApolicy := [ :trigger |
+
+           pol := newpol create.
+           pol event: root/event/slaEvent.
+           pol condition: [ :vomember :reputation |  reputation < trigger ].
+           pol action: [ :vomember	 | 
+                                 root print: "--- Removing access to " + vomember.
+                               ].          
+           // Return the new policy. Last statement of a block is the return value
+           pol.
+     ].
+
+// Create policy with threshold of 20
+root/policy at: "obligpol" put: ( newSLApolicy value: 20 ).
+
+// make it active
+root/policy/obligpol active: true.
+
+//root trace: true.
+
+// Does not activate last policy
+root/event/slaEvent create: #("UoK" 30).
+
+// Does activate last policy
+root/event/slaEvent create: #("UoK" 10).

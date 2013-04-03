@@ -1,0 +1,41 @@
+<rspec xmlns="http://sorch.netmode.ntua.gr/ws/RSpec" xmlns:cc="http://sorch.netmode.ntua.gr/ws/RSpec/ext/federica" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="manifest" xsi:schemaLocation="http://sorch.netmode.ntua.gr/ws/RSpec http://sorch.netmode.ntua.gr/ws/RSpec/manifest.xsd http://sorch.netmode.ntua.gr/ws/RSpec/ext http://sorch.netmode.ntua.gr/ws/RSpec/ext/federica/manifest.xsd">
+<node client_id="lrouter12345" component_id="urn:publicid:IDN+federica.eu+node+psnc.poz.vserver2" component_manager_id="urn:publicid:IDN+federica.eu+authority+cm" exclusive="false" sliver_id="urn:publicid:IDN+federica.eu+sliver+federica.eu.testDfnPsnc">
+	<hardware_type name="pc"/>
+	<sliver_type name="vm">
+		<cc:compute_capacity cpuSpeed="2" diskSize="10485760" guestOS="otherLinuxGuest" numCpuCores="1" ramSize="2048"/>
+		<disk_image name="urn:publicid:IDN+federica.eu+image+ubuntu-12.04.1-desktop-i386.iso"/>
+	</sliver_type>
+	<services>
+		<login authentication="ssh-keys" cc:key="f3d3r1c4VN" hostname="194.132.52.210/27" port="22" user="slice_user"/>
+	</services>
+	<interface cc:exclusive="false" client_id="federica.eu.testDfnPsnc.management.interface2934" component_id="urn:publicid:IDN+federica.eu+interface+psnc.poz.vserver2.vmnic1" mac_address="inaccessible"/>
+	<interface cc:exclusive="false" client_id="federica.eu.testDfnPsnc.public.interface" component_id="urn:publicid:IDN+federica.eu+interface+psnc.poz.vserver2.vmnic0" mac_address="inaccessible"/>
+</node>
+
+
+
+<node client_id="lrouter2800" component_id="urn:publicid:IDN+federica.eu+node+psnc.poz.router1" component_manager_id="urn:publicid:IDN+federica.eu+authority+cm" exclusive="false" sliver_id="urn:publicid:IDN+federica.eu+sliver+novi-psnc-router2945">
+	<hardware_type name="genericNetworkDevice"/>
+	<sliver_type name="router"/>
+	<services>
+		<login authentication="ssh-keys" cc:key="f3d3r1c4VN" hostname="194.132.52.4" port="22" user="novi-psnc-router2945-user"/>
+	</services>
+	<interface cc:exclusive="false" client_id="router.psnc.if0" component_id="urn:publicid:IDN+federica.eu+interface+dfn.erl.router1.ge-0/0/0" mac_address="inaccessible">
+		<ip address="192.168.168.34" netmask="255.255.255.224" type="ipv4"/>
+	</interface>
+</node>
+
+
+<link client_id="vlink0" sliver_id="urn:publicid:IDN+federica.eu+sliver+vm.if0.dfn.erl.vserver2.vmnic1.2945-router.dfn.if0.dfn.erl.router1.ge-0/1/4.2945" vlantag="2945">
+	<component_manager name="urn:publicid:IDN+federica.eu+authority+cm"/>
+	<interface_ref client_id="vm.if0"/>
+	<interface_ref client_id="router.dfn.if0"/>
+</link>
+
+<link client_id="vlink1" sliver_id="urn:publicid:IDN+federica.eu+sliver+router.dfn.if1.dfn.erl.router1.ge-0/1/0.2945-router.psnc.if0.dfn.erl.router1.ge-0/0/0.2945" vlantag="2945">
+	<component_manager name="urn:publicid:IDN+federica.eu+authority+cm"/>
+	<interface_ref client_id="router.dfn.if1"/>
+	<interface_ref client_id="router.psnc.if0"/>
+</link>
+
+</rspec>

@@ -1,0 +1,92 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+   <groupId>eu.novi</groupId>
+   <artifactId>parent</artifactId>
+   <version>0.1.0-SNAPSHOT</version>
+   <relativePath>../parent/</relativePath>
+  </parent>
+  <packaging>bundle</packaging>
+  <artifactId>mail-osgi</artifactId>
+  <name>mail OSGI bundle</name>
+  
+  <properties>
+        <import.packages>*</import.packages>
+        <private.packages>!*</private.packages>
+        <symbolic.name>${pom.groupId}.${pom.artifactId}</symbolic.name>
+        <embed-dep>*;scope=provided;inline=true;type=!pom</embed-dep>
+        <unpack-bundle>false</unpack-bundle>
+  </properties>
+  
+  <dependencies>
+
+<!--  <dependency>
+	<groupId>org.apache.geronimo.specs</groupId>
+	<artifactId>geronimo-activation_1.0.2_spec</artifactId>
+	<version>1.2</version>
+</dependency> -->
+
+  
+<dependency>
+ <groupId>org.apache.geronimo.specs</groupId>
+ <artifactId>geronimo-javamail_1.4_spec</artifactId>
+ <version>1.7.1</version>
+</dependency>
+
+<dependency>
+ <groupId>org.apache.geronimo.javamail</groupId>
+ <artifactId>geronimo-javamail_1.4_provider</artifactId>
+ <version>1.8.1</version>
+</dependency>
+
+	<dependency>
+			<groupId>org.apache.servicemix.specs</groupId>
+			<artifactId>org.apache.servicemix.specs.jsr311-api-1.0</artifactId>
+			<version>1.9.0</version>
+		</dependency>
+		
+
+<dependency>
+			<groupId>eu.novi</groupId>
+			<artifactId>feedback</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+<!--<dependency>
+		<groupId>org.apache.servicemix.bundles</groupId>
+		<artifactId>
+			org.apache.servicemix.bundles.javax.mail
+		</artifactId>
+		<version>1.4.1_5</version>
+		<type>bundle</type>
+	</dependency> -->
+	<!-- <dependency>
+	<groupId>org.apache.geronimo.specs</groupId>
+	<artifactId>geronimo-javamail_1.4_spec</artifactId>
+	<version>1.7.1</version> 
+</dependency>-->
+ </dependencies>
+ 
+ 
+ <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <configuration>
+   <unpackBundle>${unpack.bundle}</unpackBundle>
+   <instructions>
+    <Bundle-Name>mail OSGI Bundle</Bundle-Name>
+    <Bundle-Description>This bundle exposes the required package from javax.mail as OSGI Bundle</Bundle-Description>
+    <Export-Package>eu.novi.mail.mailclient</Export-Package>
+	<Import-Package>${import.packages}</Import-Package>
+    <Private-Package>${private.packages}</Private-Package>
+    <Embed-Dependency>${embed-dep}</Embed-Dependency>
+    <!--<_exportcontents>alice.tuprolog.*</_exportcontents>-->
+   </instructions>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+ 
+</project>

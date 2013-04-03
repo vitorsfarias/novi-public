@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rspec xmlns="http://sorch.netmode.ntua.gr/ws/RSpec"
+	xmlns:cc="http://sorch.netmode.ntua.gr/ws/RSpec/ext/federica"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://sorch.netmode.ntua.gr/ws/RSpec
+      http://sorch.netmode.ntua.gr/ws/RSpec/request.xsd
+      http://sorch.netmode.ntua.gr/ws/RSpec/ext 
+      http://sorch.netmode.ntua.gr/ws/RSpec/ext/federica/vm.xsd
+     http://sorch.netmode.ntua.gr/ws/RSpec/ext /federica/manifest.xsd" 
+    type="manifest">
+      
+	<!--vm1-->
+	<node client_id="vm12999" exclusive="false" component_manager_id="urn:publicid:IDN+federica.eu+authority+cm" component_id="urn:publicid:IDN+federica.eu+node+garr.mil.vnode1" sliver_id="urn:publicid:IDN+federica.eu+sliver+0801" >
+		<hardware_type name="pc" />
+		<sliver_type name="vm">
+			<cc:compute_capacity  cpuSpeed="1000000" numCpuCores="1" ramSize="256000" diskSize="16000000" guestOS="Freebsd" />
+			<disk_image name="urn:publicid:IDN+resources.mil.it+image+federica-ops//FBSD72-STD" />
+		</sliver_type>
+		<services>
+			<login authentication="ssh-keys" hostname="vnode1.mil.it" port="22" />
+			<login authentication="vnc" hostname="vnode1.mil.it" port="5900" key="d+PH2joLRfy0oDl3FF6dme8clmLcyt…"  />
+		</services>
+		<interface client_id="vm1:if0" component_id="urn:publicid:IDN+federica.eu+interface+garr.mil.vnode1:eth2" cc:exclusive="false" mac_address="13:11:22:33:44:55" /> <!--to garr.mil.router1-->
+   </node>
+</rspec>

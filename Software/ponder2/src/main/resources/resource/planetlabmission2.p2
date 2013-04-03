@@ -1,0 +1,118 @@
+// This is run in the PlanetLab side
+root print: "Setting up the PlanetLab2".
+
+/////////////////////////////////////////////////////////
+/////The simple Events and Actions without Missions//////
+/////////////////////////////////////////////////////////
+
+// Event types we are going to use
+event := root/factory/event create: #("topo").
+event2 := root/factory/event create: #("vnode" "topo").
+root/event at: "createRemoteVNode" put:event2.
+root/event at: "createRemoteTopology" put: event.
+event10 := root/factory/event create: #("vnode" "topo").
+root/event at: "removeRemoteVNode" put: event10.
+event11 := root/factory/event create: #("topo").
+root/event at: "removeRemoteTopology" put: event11.
+
+///////////////////////////////////////////////////////////
+
+
+// Create the PlanetLab Interface
+root print: "Interface Setup".
+
+myinterface := root/factory/interface create.
+//myinterface event: "remotefindpartitioningcost" is: root/event/createremotefindpartitioningcost.
+myinterface providesEvent: "createRemoteTopology".
+myinterface acceptsEvent: "createRemoteTopology".
+
+myinterface providesEvent: "createRemoteVNode".
+myinterface acceptsEvent: "createRemoteVNode".
+
+myinterface providesEvent: "removeRemoteVNode".
+myinterface acceptsEvent: "removeRemoteVNode".
+
+myinterface providesEvent: "removeRemoteTopology".
+myinterface acceptsEvent: "removeRemoteTopology".
+
+myinterface providesEvent: "getquota".
+myinterface acceptsEvent: "getquota".
+
+myinterface providesEvent: "addToNumberOfRemoteVNodesIgot".
+myinterface acceptsEvent: "addToNumberOfRemoteVNodesIgot".
+
+myinterface providesEvent: "addToNumberOfRemoteVNodesIprovide".
+myinterface acceptsEvent: "addToNumberOfRemoteVNodesIprovide".
+
+myinterface providesEvent: "createTopology".
+myinterface acceptsEvent: "createTopology".
+
+myinterface providesEvent: "createVNode".
+myinterface acceptsEvent: "createVNode".
+
+
+//root/interface at: "plsideinterface" put: myinterface.
+
+// Remote Mission setup
+//root print: "Remote Mission Setup".
+
+// Empty mission
+mission := root/factory/mission create.
+
+mission interface: "FedericaInterface";
+		interface: "PlanetLabInterface";
+		
+policy: "p1" is: [ :policy :FedericaInterface :PlanetLabInterface |
+	policy
+		event: PlanetLabInterface/event/createRemoteTopology;
+		action: [:topo|
+	          root print: "-----> Got the create event (newRemoteTopology)".
+				   FedericaInterface raise:"createTopology" with:#(topo).
+		]
+		];
+policy: "p2" is: [ :policy :FedericaInterface :PlanetLabInterface |
+	policy
+		event: PlanetLabInterface/event/createRemoteVNode;
+		action: [:vnode :topo|
+	          root print: "-----> Got the create event (newRemoteVNode)".
+				   FedericaInterface raise:"createVNode" with:#(vnode topo).
+				   FedericaInterface raise:"addToNumberOfRemoteVNodesIprovide".
+				   PlanetLabInterface raise:"addToNumberOfRemoteVNodesIgot".
+		]
+		];
+policy: "p10" is: [ :policy :FedericaInterface :PlanetLabInterface |
+	policy
+		event: PlanetLabInterface/event/removeRemoteVNode;
+		action: [:vnode :topo|
+	          root print: "-----> Got the remove event (removeRemoteVNode)".
+				   FedericaInterface raise:"removeVNode" with:#(vnode topo).
+		]
+		];
+policy: "p11" is: [ :policy :FedericaInterface :PlanetLabInterface |
+	policy
+		event: PlanetLabInterface/event/removeRemoteTopology;
+		action: [:topo|
+	          root print: "-----> Got the remove event (removeRemoteTopology)".
+				   FedericaInterface raise:"removeTopology" with:#(topo).
+		]
+		];
+//policy: "p3" is: [ :policy :FedericaInterface :PlanetLabInterface |
+//	policy
+//		event: PlanetLabInterface/event/quotaForRemoteVNodes;
+//		action: [
+//			root print: "-----> Got the create event (quotaForRemoteVNodes)".
+//				   PlanetLabInterface raise:"returnNumberOfRemoteVNodes".
+//				   FedericaInterface raise:"returnNumberOfRemoteVNodes".
+//				   
+//		]
+//		];
+		onStart: [
+		root print: "MISSION ON AIR".
+			].
+
+
+// Create the role for a remote !!!nurse!!!! (Federica). Interface is what we show, mission is what we load into other side
+root/mission/createrole value: "FedericaUser" value: myinterface value: mission.
+root print: "PlanetLab assigning interfaces".
+root/mission/createassignedpolicy value: "FedericaUser" value: "PlanetLabInterface" value: "FedericaInterface".
+root print: "LOADED".

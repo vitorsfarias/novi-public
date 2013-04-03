@@ -1,0 +1,88 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+  	<groupId>eu.novi</groupId>
+  	<artifactId>parent</artifactId>
+  	<version>0.1.0-SNAPSHOT</version>
+  	<relativePath>../parent/</relativePath>
+  </parent>
+  <packaging>bundle</packaging>
+  <artifactId>demo-events</artifactId>
+  <name>Component for creating failure events instead of real failures from Monitoring Service</name>
+  
+  <developers>
+    <developer>
+      <id>yiannos.kryftis</id>
+      <name>Yiannos Kryftis</name>
+      <email>ykryftis@netmode.ece.ntua.gr</email>
+      <organization>NTUA</organization>
+      <organizationUrl>http://www.man.poznan.pl/</organizationUrl>
+      <roles>
+        <role>architect</role>
+        <role>developer</role>
+      </roles>
+      <timezone>+1</timezone>
+    </developer>
+  </developers>
+  
+  
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <configuration>
+          <instructions>
+		  <Bundle-SymbolicName>${pom.groupId}.${pom.artifactId};
+							blueprint.graceperiod:=true;
+							blueprint.timeout:= 480000
+		</Bundle-SymbolicName>
+            <Export-Package>eu.novi.demoEvents</Export-Package>
+            <Private-Package>eu.novi.demoEventsImpl</Private-Package>
+          </instructions>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  <dependencies>
+	<dependency>
+			<groupId>eu.novi</groupId>
+			<artifactId>feedback</artifactId>
+			<version>${project.version}</version>
+	</dependency>
+	<dependency>
+			<groupId>eu.novi</groupId>
+			<artifactId>novi-api</artifactId>
+			<version>${project.version}</version>
+	</dependency>
+	
+	<dependency>
+			<groupId>eu.novi</groupId>
+			<artifactId>policy-manager-AA</artifactId>
+			<version>${project.version}</version>
+	</dependency>
+	<dependency>
+			<groupId>eu.novi</groupId>
+			<artifactId>information-model</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>eu.novi</groupId>
+			<artifactId>framework</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+              <groupId>eu.novi</groupId>
+              <artifactId>xmlrpc-client-osgi</artifactId>
+              <version>${project.version}</version>
+                </dependency>
+  	<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.8.1</version>
+			<type>jar</type>
+			<scope>compile</scope>
+			<optional>false</optional>
+		</dependency>
+  </dependencies>
+</project>

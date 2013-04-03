@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<rspec xmlns="http://www.protogeni.net/resources/rspec/2" xmlns:flack="http://www.protogeni.net/resources/rspec/ext/flack/1" xmlns:planetlab="http://www.planet-lab.org/resources/sfa/ext/planetlab/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="advertisement" xsi:schemaLocation="http://www.protogeni.net/resources/rspec/2 http://www.protogeni.net/resources/rspec/2/ad.xsd http://www.planet-lab.org/resources/sfa/ext/planetlab/1 http://www.planet-lab.org/resources/sfa/ext/planetlab/1/planetlab.xsd>" expires="2012-02-27T09:33:14Z" generated="2012-02-27T08:33:14Z">
+  <statistics call="ListResources">
+    <aggregate status="success" name="novipl" elapsed="1.70977902412"/>
+  </statistics>
+  <node component_manager_id="urn:publicid:IDN+novipl+authority+cm" component_id="urn:publicid:IDN+novipl:novi+node+novilab.elte.hu" exclusive="false" component_name="novilab.elte.hu">
+    <hardware_type name="plab-pc"/>
+    <hardware_type name="pc"/>
+    <location country="unknown" longitude="16.0" latitude="52.0"/>
+    <interface component_id="urn:publicid:IDN+novipl+interface+node50:eth0"/>
+    <sliver_type name="plab-vserver"/>
+  </node>
+  <node component_manager_id="urn:publicid:IDN+novipl+authority+cm" component_id="urn:publicid:IDN+novipl:novi+node+smilax1.man.poznan.pl" exclusive="false" component_name="smilax1.man.poznan.pl">
+    <hardware_type name="plab-pc"/>
+    <hardware_type name="pc"/>
+    <location country="unknown" longitude="16.0" latitude="52.0"/>
+    <interface component_id="urn:publicid:IDN+novipl+interface+node52:eth0"/>
+    <sliver_type name="plab-vserver"/>
+  </node>
+  <node component_manager_id="urn:publicid:IDN+novipl+authority+cm" component_id="urn:publicid:IDN+novipl:novi+node+smilax5.man.poznan.pl" exclusive="false" component_name="smilax5.man.poznan.pl">
+    <hardware_type name="plab-pc"/>
+    <hardware_type name="pc"/>
+    <location country="unknown" longitude="16.0" latitude="52.0"/>
+    <interface component_id="urn:publicid:IDN+novipl+interface+node56:eth0"/>
+    <sliver_type name="plab-vserver"/>
+  </node>
+  <node component_manager_id="urn:publicid:IDN+novipl+authority+cm" component_id="urn:publicid:IDN+novipl:pln+node+www.test.pl" exclusive="false" component_name="www.test.pl">
+    <hardware_type name="plab-pc"/>
+    <hardware_type name="pc"/>
+    <interface component_id="urn:publicid:IDN+novipl+interface+node57:eth0"/>
+    <sliver_type name="plab-vserver"/>
+  </node>
+  <node component_manager_id="urn:publicid:IDN+novipl+authority+cm" component_id="urn:publicid:IDN+novipl:novi+node+smilax3.man.poznan.pl" exclusive="false" component_name="smilax3.man.poznan.pl">
+    <hardware_type name="plab-pc"/>
+    <hardware_type name="pc"/>
+    <location country="unknown" longitude="16.0" latitude="52.0"/>
+    <interface component_id="urn:publicid:IDN+novipl+interface+node54:eth0"/>
+    <sliver_type name="plab-vserver"/>
+  </node>
+  <node component_manager_id="urn:publicid:IDN+novipl+authority+cm" component_id="urn:publicid:IDN+novipl:novi+node+smilax2.man.poznan.pl" exclusive="false" component_name="smilax2.man.poznan.pl">
+    <hardware_type name="plab-pc"/>
+    <hardware_type name="pc"/>
+    <location country="unknown" longitude="16.0" latitude="52.0"/>
+    <interface component_id="urn:publicid:IDN+novipl+interface+node47:eth0"/>
+    <sliver_type name="plab-vserver"/>
+  </node>
+  <node component_manager_id="urn:publicid:IDN+novipl+authority+cm" component_id="urn:publicid:IDN+novipl:novi+node+smilax4.man.poznan.pl" exclusive="false" component_name="smilax4.man.poznan.pl">
+    <hardware_type name="plab-pc"/>
+    <hardware_type name="pc"/>
+    <location country="unknown" longitude="16.0" latitude="52.0"/>
+    <interface component_id="urn:publicid:IDN+novipl+interface+node55:eth0"/>
+    <sliver_type name="plab-vserver"/>
+  </node>
+  <node component_manager_id="urn:publicid:IDN+novipl+authority+cm" component_id="urn:publicid:IDN+novipl:novi+node+planetlab1-novi.lab.netmode.ece.ntua.gr" exclusive="false" component_name="planetlab1-novi.lab.netmode.ece.ntua.gr">
+    <hardware_type name="plab-pc"/>
+    <hardware_type name="pc"/>
+    <location country="unknown" longitude="16.0" latitude="52.0"/>
+    <interface component_id="urn:publicid:IDN+novipl+interface+node48:eth0"/>
+    <sliver_type name="plab-vserver"/>
+  </node>
+  <node component_manager_id="urn:publicid:IDN+novipl+authority+cm" component_id="urn:publicid:IDN+novipl:novi+node+planetlab2-novi.lab.netmode.ece.ntua.gr" exclusive="false" component_name="planetlab2-novi.lab.netmode.ece.ntua.gr">
+    <hardware_type name="plab-pc"/>
+    <hardware_type name="pc"/>
+    <location country="unknown" longitude="16.0" latitude="52.0"/>
+    <interface component_id="urn:publicid:IDN+novipl+interface+node49:eth0"/>
+    <sliver_type name="plab-vserver"/>
+  </node>
+</rspec>

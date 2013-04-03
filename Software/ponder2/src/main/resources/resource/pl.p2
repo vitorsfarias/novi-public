@@ -1,0 +1,14 @@
+event := root/factory/event create: #("name" "numberofnodes").
+root/event at: "createPlanetLabSlice" put: event.
+
+root/factory at: "PlSlice" put: (root load: "PlSlice").
+root at: "PlSlicesdomain" put: root/factory/domain create.
+
+policy := root/factory/ecapolicy create.
+policy event: root/event/createPlanetLabSlice;
+	action: [ :name :numberofnodes |
+			   root print:"creating "+ numberofnodes + " of PlanetLab Nodes".
+			   root/PlSlicesdomain at: name put: (root/factory/PlSlice create: name numberofnodes: numberofnodes)].
+root/policy at: "createPlanetLabSlice" put: policy.
+policy active: true.
+

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!-- Author: Adianto Wibisono[adianto.wibisono@uva.nl] -->
+
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cm="http://aries.apache.org/blueprint/xmlns/blueprint-cm/v1.0.0">
+	
+
+	<!--  USER FEEDBACK HANDLER BEANS  -->
+	<cm:property-placeholder persistent-id="eu.novi.feedback"/>
+
+   <service ref="userFeedbackHandlerBean" 
+   			interface="eu.novi.feedback.FeedbackHandler">
+   			<service-properties>
+                <entry key="service.exported.interfaces" value="*" />
+                <entry key="org.apache.cxf.ws.databinding" value="jaxb" />
+				<!-- All service interfaces are available for Distributed OSGi -->
+				<!--<entry key="service.exported.interfaces" value="*" />
+				<entry key="service.exported.configs" value="org.apache.cxf.rs" />
+				<entry key="service.exported.intents" value="HTTP" />
+				<entry key="org.apache.cxf.rs.httpservice.context" value="/feedback" />-->
+				<!--<entry key="testbed" value="${testbed}" />-->
+			</service-properties>
+   </service>
+
+	<!-- This is the user data that is being updated whenever a message arrives, 
+		and it is being used to generate JSON for timeline -->
+	<bean id="userFeedbackDataBean" class="eu.novi.feedback.UserFeedbackData">
+	</bean>
+
+	<!-- This is the rest end point which produces timeline based on json generated from feedback user queue -->
+	<bean id="userFeedbackHandlerBean" class="eu.novi.feedback.FeedbackHandlerImpl">
+		<property name="userFeedbackData">
+			<ref component-id="userFeedbackDataBean" />
+		</property>
+	</bean>
+
+	<!--  This is the user feedback listener to the queue  -->
+	<bean id="userFeedbackListener" class="eu.novi.feedback.queue.FeedbackQueueListener" init-method="initialize">
+		<property name="userFeedbackData">
+			<ref component-id="userFeedbackDataBean" />
+		</property>
+	</bean>
+
+	<!--  This user Feedback queu producer is used by above report event user feedback producer  -->
+	<bean id="userFeedbackQueueProducer" class="eu.novi.feedback.queue.FeedbackQueueProducer" init-method="initialize">
+	</bean>
+	
+	<!--  This is the user feedback listener to the queue  -->
+	<bean id="userFeedbackProducer" class="eu.novi.feedback.event.ReportEventImpl">
+		<property name="eventQueueProducer">
+			<ref component-id="userFeedbackQueueProducer"/>
+		</property>	
+	</bean>
+	
+	
+	
+	
+
+	<!--  This is the service we provide to other components  -->
+	<service ref="userFeedbackProducer">
+		<interfaces>
+			<value>eu.novi.feedback.event.ReportEvent</value>
+		</interfaces>
+	    <service-properties>
+		    <!--<entry key="service.exported.interfaces" value="*" />-->
+		    <!--<entry key="testbed" value="${testbed}" />-->
+	    </service-properties> 
+	</service>
+</blueprint>

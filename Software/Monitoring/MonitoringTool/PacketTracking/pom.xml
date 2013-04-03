@@ -1,0 +1,34 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>eu.novi</groupId>
+  <version>0.1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <artifactId>reactor</artifactId>
+  <name>Packet Tracking</name>
+  
+  <developers>
+    <developer>
+      <id>carsten.schmoll</id>
+      <name>Carsten Schmoll</name>
+      <email>carsten.schmoll@fokus.fraunhofer.de</email>
+      <organization>Fraunhofer FOKUS</organization>
+      <organizationUrl>http://www.fokus.fraunhofer.de/</organizationUrl>
+      <roles>
+        <role>architect</role>
+      </roles>
+      <timezone>+1</timezone>
+    </developer>
+  </developers>
+
+  <scm>
+    <connection>scm:git:https://git.man.poznan.pl/gitroot/novi.git/</connection>
+  </scm>
+  
+  <modules>
+	<module>packetmatcher</module>
+	<module>pt-api</module>
+	<module>netview</module>
+	<module>ipfix4java</module>
+  </modules>
+</project>
+ 

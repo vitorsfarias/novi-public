@@ -1,0 +1,21 @@
+root print: "Welcome to Ponder2".
+
+string := "This string is stored in the domain structure".
+root at: "string" put: string.
+root print: root/string.
+
+root print: "Some stars:".
+5 do: [ :num | root print: "*" + ("*" * num)].
+
+root print: "Objects in the root domain:".
+root do: [ :name :object | root print: name].
+
+// Now define and event and a policy
+template := root/factory/event create: #("colour" "intensity").
+root/event at: "colourevent" put: template.
+
+policy := root/factory/ecapolicy create.
+policy event: root/event/colourevent;
+           condition: [ :intensity | intensity > 50 ];
+           action: [ :colour :intensity | root print: "Received event: colour=" + colour + " intensity=" + intensity];
+           active: true.

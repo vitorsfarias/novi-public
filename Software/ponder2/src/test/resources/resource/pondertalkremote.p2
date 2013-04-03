@@ -1,0 +1,7 @@
+factory := root load: "PonderTalk".
+pt := factory create: "PonderTalk".
+
+pt trace: true.
+
+root print: "Now, in a terminal do:   java -cp ponder2.jar net.ponder2.ponderTalk PonderTalk 2 + 1."
+

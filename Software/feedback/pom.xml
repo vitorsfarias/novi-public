@@ -1,0 +1,104 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>eu.novi</groupId>
+		<artifactId>parent</artifactId>
+		<version>0.1.0-SNAPSHOT</version>
+		<relativePath>../parent/</relativePath>
+	</parent>
+	<packaging>bundle</packaging>
+	<artifactId>feedback</artifactId>
+	<name>User feedback component</name>
+	<description>
+		     Each component in NOVI service layer can use this feedback to inform user about 
+		     How their request is being processed. It work based on sessions.
+		     Internal within NOVI service layer other components interested in event can register
+		     and observe the events
+	</description>
+
+	<developers>
+		<developer>
+			<id>adianto.wibisono</id>
+			<name>Adianto Wibisono</name>
+			<email>a.wibisono@uva.nl</email>
+			<organization>UvA</organization>
+			<organizationUrl>http://science.uva.nl/research/sne</organizationUrl>
+			<roles>
+				<role>architect</role>
+				<role>developer</role>
+			</roles>
+			<timezone>+1</timezone>
+		</developer>
+
+	</developers>
+
+	<dependencies>
+
+
+		<!--<dependency>
+			<groupId>org.apache.servicemix.specs</groupId>
+			<artifactId>org.apache.servicemix.specs.jsr311-api-1.0</artifactId>
+			<version>1.9.0</version>
+		</dependency>
+		-->
+		<dependency>
+			<groupId>org.apache.activemq</groupId>
+			<artifactId>activemq-core</artifactId>
+			<version>5.7.0</version>
+		</dependency>
+	
+		<dependency>
+			<groupId>org.apache.geronimo.specs</groupId>
+			<artifactId>geronimo-jms_1.1_spec</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.geronimo.specs</groupId>
+			<artifactId>geronimo-j2ee-management_1.1_spec</artifactId>
+			<version>1.0.1</version>
+		</dependency>
+		
+
+
+		<dependency>
+			<groupId>org.apache.geronimo.specs</groupId>
+			<artifactId>geronimo-jta_1.1_spec</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+	
+		<dependency>
+			<groupId>eu.novi</groupId>
+			<artifactId>framework</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<configuration>
+					<instructions>
+						<Bundle-Name>User Feedback</Bundle-Name>
+						<Bundle-Description>
+Feedback bundle which would allow components within NOVI Service layer to provide feedback while handling requests.
+						</Bundle-Description>
+						<Export-Package>
+							eu.novi.feedback,
+							eu.novi.feedback.event
+						</Export-Package>
+					</instructions>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

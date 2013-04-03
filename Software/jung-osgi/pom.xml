@@ -1,0 +1,83 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+   <groupId>eu.novi</groupId>
+   <artifactId>parent</artifactId>
+   <version>0.1.0-SNAPSHOT</version>
+   <relativePath>../parent/</relativePath>
+  </parent>
+  <packaging>bundle</packaging>
+  <artifactId>jung-osgi</artifactId>
+  <name>Jung OSGI bundle</name>
+  
+  <properties>
+<!--   <export.package>
+  edu.uci.ics.jung.graph,
+ edu.uci.ics.jung.graph.uitl,
+  edu.uci.ics.jung.graph.Graph,
+  edu.uci.ics.jung.graph.SparseMultigraph
+  </export.package> -->
+        <export.packages>${export.package}*;</export.packages>
+        <import.packages>*</import.packages>
+        <private.packages>!*</private.packages>
+        <symbolic.name>${pom.groupId}.${pom.artifactId}</symbolic.name>
+        <embed-dep>*;scope=provided;inline=true;type=!pom</embed-dep>
+        <unpack-bundle>false</unpack-bundle>
+  </properties>
+  
+  <dependencies>
+ <dependency>
+  <groupId>net.sf.jung</groupId>
+  <artifactId>jung-graph-impl</artifactId>
+  <version>2.0.1</version>
+  <scope>provided</scope>
+ </dependency>
+ <dependency>
+  <groupId>net.sf.jung</groupId>
+  <artifactId>jung-api</artifactId>
+  <version>2.0.1</version>
+  <scope>provided</scope>
+ </dependency>
+ <dependency>
+  <groupId>net.sf.jung</groupId>
+  <artifactId>jung-algorithms</artifactId>
+  <version>2.0.1</version>
+  <scope>provided</scope>
+ </dependency>
+ <dependency>
+            <groupId>colt</groupId>
+            <artifactId>colt</artifactId>
+            <version>1.0.3</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+    <groupId>net.sourceforge.collections</groupId>
+    <artifactId>collections-generic</artifactId>
+    <version>4.01</version>
+    <scope>provided</scope>
+</dependency>
+ </dependencies>
+ 
+ 
+ <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <configuration>
+   <unpackBundle>${unpack.bundle}</unpackBundle>
+   <instructions>
+    <Bundle-Name>Jung OSGI Bundle</Bundle-Name>
+    <Bundle-Description>This bundle exposes the required package from Jung as OSGI Bundle</Bundle-Description>
+    <Import-Package>${import.packages}</Import-Package>
+    <Private-Package>${private.packages}</Private-Package>
+    <Include-Resource>${include.resources}</Include-Resource>
+    <Embed-Dependency>${embed-dep}</Embed-Dependency>
+    <_exportcontents>edu.uci.ics.jung.graph.*</_exportcontents>
+   </instructions>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+ 
+</project>

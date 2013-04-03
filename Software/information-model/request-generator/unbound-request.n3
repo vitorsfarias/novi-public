@@ -1,0 +1,130 @@
+@prefix novi: <http://fp7-novi.eu/im.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix unit: <http://fp7-novi.eu/unit.owl#> .
+
+novi:UnboundTopology a owl:NamedIndividual;
+    novi:contains novi:lrouter,
+        novi:lrouter2,
+        <http://fp7-novi.eu/im.owl#lrouter2:if0-vm1:eth0>,
+        <http://fp7-novi.eu/im.owl#lrouter:if0-sliver1:eth0>,
+        novi:sliver1,
+        <http://fp7-novi.eu/im.owl#sliver1:eth0-lrouter:if0>,
+        novi:sliver2,
+        novi:vm1,
+        <http://fp7-novi.eu/im.owl#vm1:eth0-lrouter2:if0>;
+    novi:name "UnboundTopology" .
+
+novi:lrouter-if0 a novi:BidirectionalInterface,
+        owl:NamedIndividual;
+    novi:contains novi:lrouter-if0-in,
+        novi:lrouter-if0-out;
+    novi:hasIPv4Address novi:lrouter-if0-address;
+    novi:name "if0" .
+
+novi:lrouter2-if0 a novi:BidirectionalInterface,
+        owl:NamedIndividual;
+    novi:contains novi:lrouter2-if0-in,
+        novi:lrouter2-if0-out;
+    novi:name "if0" .
+
+novi:sliver1-eth0 a novi:BidirectionalInterface,
+        owl:NamedIndividual;
+    novi:contains novi:sliver1-eth0-in,
+        novi:sliver1-eth0-out;
+    novi:hasIPv4Address novi:sliver1-eth0-address;
+    novi:name "eth0" .
+
+novi:vm1-eth0 a novi:BidirectionalInterface,
+        owl:NamedIndividual;
+    novi:contains novi:vm1-eth0-in,
+        novi:vm1-eth0-out;
+    novi:name "eth0" .
+
+novi:lrouter a novi:Node,
+        owl:NamedIndividual;
+    novi:hasInboundInterface novi:lrouter-if0-in;
+    novi:hasOutboundInterface novi:lrouter-if0-out;
+    novi:name "lrouter" .
+
+novi:lrouter-if0-address a unit:IPAddress,
+        owl:NamedIndividual;
+    unit:hasNetmask "255.255.255.248";
+    unit:hasUnit unit:ipv4dotted;
+    unit:hasValue "192.168.37.1" .
+
+novi:lrouter2 a novi:Node,
+        owl:NamedIndividual;
+    novi:hasInboundInterface novi:lrouter2-if0-in;
+    novi:hasOutboundInterface novi:lrouter2-if0-out;
+    novi:name "lrouter2" .
+
+novi:sliver1 a novi:Node,
+        owl:NamedIndividual;
+    novi:hasInboundInterface novi:sliver1-eth0-in;
+    novi:hasOutboundInterface novi:sliver1-eth0-out;
+    novi:name "sliver1" .
+
+novi:sliver1-eth0-address a unit:IPAddress,
+        owl:NamedIndividual;
+    unit:hasNetmask "255.255.255.248";
+    unit:hasUnit unit:ipv4dotted;
+    unit:hasValue "192.168.37.3" .
+
+novi:sliver2 a novi:Node,
+        owl:NamedIndividual;
+    novi:name "sliver2" .
+
+novi:vm1 a novi:Node,
+        owl:NamedIndividual;
+    novi:hasInboundInterface novi:vm1-eth0-in;
+    novi:hasOutboundInterface novi:vm1-eth0-out;
+    novi:name "vm1" .
+
+novi:lrouter-if0-in a novi:Interface,
+        owl:NamedIndividual;
+    novi:isSink <http://fp7-novi.eu/im.owl#sliver1:eth0-lrouter:if0> .
+
+novi:lrouter-if0-out a novi:Interface,
+        owl:NamedIndividual;
+    novi:isSource <http://fp7-novi.eu/im.owl#lrouter:if0-sliver1:eth0> .
+
+novi:lrouter2-if0-in a novi:Interface,
+        owl:NamedIndividual;
+    novi:isSink <http://fp7-novi.eu/im.owl#vm1:eth0-lrouter2:if0> .
+
+novi:lrouter2-if0-out a novi:Interface,
+        owl:NamedIndividual;
+    novi:isSource <http://fp7-novi.eu/im.owl#lrouter2:if0-vm1:eth0> .
+
+novi:sliver1-eth0-in a novi:Interface,
+        owl:NamedIndividual;
+    novi:isSink <http://fp7-novi.eu/im.owl#lrouter:if0-sliver1:eth0> .
+
+novi:sliver1-eth0-out a novi:Interface,
+        owl:NamedIndividual;
+    novi:isSource <http://fp7-novi.eu/im.owl#sliver1:eth0-lrouter:if0> .
+
+novi:vm1-eth0-in a novi:Interface,
+        owl:NamedIndividual;
+    novi:isSink <http://fp7-novi.eu/im.owl#lrouter2:if0-vm1:eth0> .
+
+novi:vm1-eth0-out a novi:Interface,
+        owl:NamedIndividual;
+    novi:isSource <http://fp7-novi.eu/im.owl#vm1:eth0-lrouter2:if0> .
+
+<http://fp7-novi.eu/im.owl#lrouter2:if0-vm1:eth0> a novi:Link,
+        owl:NamedIndividual;
+    novi:name "lrouter2:if0-vm1:eth0" .
+
+<http://fp7-novi.eu/im.owl#lrouter:if0-sliver1:eth0> a novi:Link,
+        owl:NamedIndividual;
+    novi:name "lrouter:if0-sliver1:eth0" .
+
+<http://fp7-novi.eu/im.owl#sliver1:eth0-lrouter:if0> a novi:Link,
+        owl:NamedIndividual;
+    novi:name "sliver1:eth0-lrouter:if0" .
+
+<http://fp7-novi.eu/im.owl#vm1:eth0-lrouter2:if0> a novi:Link,
+        owl:NamedIndividual;
+    novi:name "vm1:eth0-lrouter2:if0" .
+

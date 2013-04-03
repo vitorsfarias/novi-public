@@ -1,0 +1,89 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>eu.novi</groupId>
+		<artifactId>parent</artifactId>
+		<version>0.1.0-SNAPSHOT</version>
+		<relativePath>../parent/</relativePath>
+	</parent>
+	<packaging>jar</packaging>
+	<artifactId>python-integration</artifactId>
+	<name>Python Integration Framework</name>
+	<description>Integration code for OSGi components written in Python</description>
+
+	<developers>
+		<developer>
+			<id>szwed</id>
+			<name>Blazej Pietrzak</name>
+			<email>blazej.pietrzak@man.poznan.pl</email>
+			<organization>PSNC</organization>
+			<organizationUrl>http://www.man.poznan.pl/</organizationUrl>
+			<roles>
+				<role>architect</role>
+				<role>developer</role>
+			</roles>
+			<timezone>+1</timezone>
+		</developer>
+		<developer>
+			<id>pikusa</id>
+			<name>Piotr Pikusa</name>
+			<email>pikusa@man.poznan.pl</email>
+			<organization>PSNC</organization>
+			<organizationUrl>http://www.man.poznan.pl/</organizationUrl>
+			<roles>
+				<role>architect</role>
+				<role>developer</role>
+			</roles>
+			<timezone>+1</timezone>
+		</developer>
+	</developers>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.python</groupId>
+			<artifactId>jython-standalone</artifactId>
+			<version>2.5.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.osgi</groupId>
+			<artifactId>org.osgi.core</artifactId>
+			<version>4.2.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<profiles>
+		<profile>
+			<id>novi-job</id>	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>2.3</version>
+				<executions>
+					<execution>
+						<id>unpack-dependencies</id>
+						<phase>compile</phase>
+						<goals>
+							<goal>unpack-dependencies</goal>
+						</goals>
+						<configuration>
+							<includeArtifactIds>jython-standalone</includeArtifactIds>
+							<outputDirectory>${project.build.directory}/classes</outputDirectory>
+							<excludes>META-INF/**</excludes>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+	</profile>
+</profiles>
+	
+</project>

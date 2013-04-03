@@ -1,0 +1,139 @@
+[{"http://fp7-novi.eu/monitoring_features.owl#FreeMemory" : {
+   "TYPE" : "meminfo",
+   "ID" : 1470,
+   "HDR" : {
+      "NAME" : "DataHeader 1471",
+      "HDRINFO" : [
+         {
+            "NAME" : "Run",
+            "DIMENTSION" : "Countable",
+            "UNIT" : "piece"
+            },
+         {
+            "FEATURE": "http://fp7-novi.eu/monitoring_features.owl#FreeMemory",
+            "NAME" : "Free Memory",
+            "DIMENTSION" : "InformationSize",
+            "PREFIX" : "kilo",
+            "UNIT" : "Byte"
+            }
+      ]
+      },
+   "DATA" : [
+      [ 1, 43944 ]
+   ]
+}},
+{"http://fp7-novi.eu/monitoring_features.owl#CPUCores" : {
+   "TYPE" : "cpuload",
+   "ID" : 1482,
+   "HDR" : {
+      "NAME" : "DataHeader 1483",
+      "HDRINFO" : [
+         {
+            "NAME" : "Run",
+            "DIMENTSION" : "Countable",
+            "UNIT" : "piece"
+            },
+         {
+            "FEATURE": "http://fp7-novi.eu/monitoring_features.owl#CPUCores",
+            "NAME" : "Cores of kprocs",
+            "DIMENTSION" : "Countable",
+            "UNIT" : "piece"
+            }
+      ]
+      },
+   "DATA" : [
+      [ 1, 2 ]
+   ]
+}},
+{"http://fp7-novi.eu/monitoring_features.owl#CPUCores" : {
+   "TYPE" : "cpuinfo",
+   "ID" : 1494,
+   "HDR" : {
+      "NAME" : "DataHeader 1495",
+      "HDRINFO" : [
+         {
+            "NAME" : "Run",
+            "DIMENTSION" : "Countable",
+            "UNIT" : "piece"
+            },
+         {
+            "FEATURE": "http://fp7-novi.eu/monitoring_features.owl#CPUCores",
+            "NAME" : "Number of cores",
+            "DIMENTSION" : "Countable",
+            "UNIT" : "piece"
+            }
+      ]
+      },
+   "DATA" : [
+      [ 1, 1 ]
+   ]
+}},
+{"http://fp7-novi.eu/monitoring_features.owl#CPUSockets" : {
+   "TYPE" : "cpuinfo",
+   "ID" : 1506,
+   "HDR" : {
+      "NAME" : "DataHeader 1507",
+      "HDRINFO" : [
+         {
+            "NAME" : "Run",
+            "DIMENTSION" : "Countable",
+            "UNIT" : "piece"
+            },
+         {
+            "FEATURE": "http://fp7-novi.eu/monitoring_features.owl#CPUSockets",
+            "NAME" : "Number of sockets",
+            "DIMENTSION" : "Countable",
+            "UNIT" : "piece"
+            }
+      ]
+      },
+   "DATA" : [
+      [ 1, 0 ]
+   ]
+}},
+{"http://fp7-novi.eu/monitoring_features.owl#CPUClockRate" : {
+   "TYPE" : "cpuinfo",
+   "ID" : 1520,
+   "HDR" : {
+      "NAME" : "DataHeader 1521",
+      "HDRINFO" : [
+         {
+            "NAME" : "Run",
+            "DIMENTSION" : "Countable",
+            "UNIT" : "piece"
+            },
+         {
+            "FEATURE": "http://fp7-novi.eu/monitoring_features.owl#CPUClockRate",
+            "NAME" : "Speed MHz",
+            "DIMENTSION" : "Frequency",
+            "UNIT" : "persecond"
+            }
+      ]
+      },
+   "DATA" : [
+      [ 1, 2311.847 ]
+   ]
+}},
+{"http://fp7-novi.eu/monitoring_features.owl#FreeDiskSpace" : {
+   "TYPE" : "diskinfo",
+   "ID" : 1532,
+   "HDR" : {
+      "NAME" : "DataHeader 1533",
+      "HDRINFO" : [
+         {
+            "NAME" : "Run",
+            "DIMENTSION" : "Countable",
+            "UNIT" : "piece"
+            },
+         {
+            "FEATURE": "http://fp7-novi.eu/monitoring_features.owl#FreeDiskSpace",
+            "NAME" : "Available Disk Size",
+            "DIMENTSION" : "InformationSize",
+            "UNIT" : "bit"
+            }
+      ]
+      },
+   "DATA" : [
+      [ 1, 9666508 ]
+   ]
+}}]

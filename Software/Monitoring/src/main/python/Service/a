@@ -1,0 +1,38 @@
+>
+    <core:hasInboundInterface rdf:resource="http://foo.bar/req.owl#ifin"/>
+    <core:hasIPv4Address rdf:resource="http://foo.bar/req.owl#smilax_address"/>
+    <core:hasIPv4Address rdf:resource="http://foo.bar/req.owl#smilax_address"/>
+    <core:hasOutboundInterface rdf:resource="http://foo.bar/req.owl#ifin"/>
+    <feature:hasFeature rdf:resource="http://fp7-novi.eu/monitoring_features.owl#MemoryUtilization"/>
+    <query:hasFormatter rdf:resource="http://fp7-novi.eu/monitoring_query.owl#Formatter_JSON"/>
+    <query:hasResource rdf:resource="http://foo.bar/req.owl#smilax1"/>
+  </rdf:Description>
+  </rdf:Description>
+  </rdf:Description>
+  </rdf:Description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://foo.bar/req.owl#ifin">
+  <rdf:Description rdf:about="http://foo.bar/req.owl#ifout">
+  <rdf:Description rdf:about="http://foo.bar/req.owl#measureMemoryInformation">
+  <rdf:Description rdf:about="http://foo.bar/req.owl#smilax1">
+  <rdf:Description rdf:about="http://foo.bar/req.owl#smilax_address">
+</rdf:RDF>
+<rdf:RDF
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Node"/>
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Resource"/>
+    <rdf:type rdf:resource="http://fp7-novi.eu/monitoring_query.owl#BundleQuery"/>
+    <rdf:type rdf:resource="http://fp7-novi.eu/unit.owl#IPAddress"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <stat:hasSample rdf:resource="http://fp7-novi.eu/monitoring_stat.owl#UnmodifiedExtractOfFeatureSamples"/>
+    <unit:hasValue>150.254.160.19</unit:hasValue>
+   xmlns:core="http://fp7-novi.eu/im.owl#"
+   xmlns:feature="http://fp7-novi.eu/monitoring_features.owl#"
+   xmlns:query="http://fp7-novi.eu/monitoring_query.owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:stat="http://fp7-novi.eu/monitoring_stat.owl#"
+   xmlns:unit="http://fp7-novi.eu/unit.owl#"
+<?xml version="1.0" encoding="UTF-8"?>

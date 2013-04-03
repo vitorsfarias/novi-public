@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!-- Author: Piotr Pikusa <pikusa@man.poznan.pl> -->
+
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+	xmlns:cm="http://aries.apache.org/blueprint/xmlns/blueprint-cm/v1.0.0">
+
+
+	<!-- Properties have to be placed in etc/eu.novi.resources.federica.cfg file on appropriate karaf instance
+	 <cm:property-placeholder persistent-id="eu.novi.nswitch.federica.cfg" /> -->
+	<bean id="nswitch-federica" class="eu.novi.nswitch.federica.NswitchFederica">
+		
+	</bean>
+	
+	<service ref="nswitch-federica">
+		<interfaces>
+			<value>eu.novi.nswitch.Nswitch</value>
+		</interfaces>
+		<service-properties>
+			<!-- All service interfaces are available for Distributed OSGi -->
+			<entry key="service.exported.interfaces" value="*" />
+ 			<entry key="testbed" value="FEDERICA" />
+		</service-properties>
+	</service>
+
+</blueprint>

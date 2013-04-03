@@ -1,0 +1,282 @@
+ [
+    {
+        "http://fp7-novi.eu/monitoring_features.owl#DiskUtilization": {
+            "TYPE": "diskinfo",
+            "ID": 449,
+            "HDR": {
+                "NAME": "DataHeader 4499",
+                "HDRINFO": [
+                    {
+                        "NAME": "Disk Size Used",
+                        "DIMENTSION": "informationsize",
+                        "UNIT": "Byte",
+                        "PREFIX": "kilo"
+                    },
+                    {
+                        "NAME": "Run",
+                        "DIMENTSION": "countable",
+                        "UNIT": "piece"
+                    },
+                    {
+						"FEATURE": "http://fp7-novi.eu/monitoring_features.owl#DiskUtilization",
+                        "NAME": "DiskUtilization",
+                        "DIMENTSION": "informationsize",
+                        "UNIT": "Byte",
+                        "PREFIX": "kilo"
+                    }
+                ]
+            },
+            "DATA": [
+                [
+                    1211126108,
+                    1,
+                    0.64
+                ]
+            ]
+        }
+    },
+    {
+        "http://fp7-novi.eu/monitoring_features.owl#MemoryUtilization": {
+            "TYPE": "diskinfo",
+            "ID": 449,
+            "HDR": {
+                "NAME": "DataHeader 4499",
+                "HDRINFO": [
+                    {
+						"FEATURE": "http://fp7-novi.eu/monitoring_features.owl#MemoryUtilization",
+                        "NAME": "MemoryUtilization",
+                        "DIMENTSION": "informationsize",
+                        "UNIT": "Byte",
+                        "PREFIX": "kilo"
+                    },
+                    {
+                        "NAME": "Run",
+                        "DIMENTSION": "countable",
+                        "UNIT": "piece"
+                    },
+                    {
+                        "NAME": "mem  run",
+                        "DIMENTSION": "informationsize",
+                        "UNIT": "Byte",
+                        "PREFIX": "kilo"
+                    }
+                ]
+            },
+            "DATA": [
+                [
+                    0.45,
+                    1,
+                    12489604
+                ]
+            ]
+        }
+    },
+    {
+        "http://fp7-novi.eu/monitoring_features.owl#DiskUtilization": {
+            "TYPE": "diskinfo",
+            "ID": 449,
+            "HDR": {
+                "NAME": "DataHeader 4499",
+                "HDRINFO": [
+                    {
+                        "NAME": "Disk Size Used",
+                        "DIMENTSION": "informationsize",
+                        "UNIT": "Byte",
+                        "PREFIX": "kilo"
+                    },
+                    {
+                        "NAME": "Run",
+                        "DIMENTSION": "countable",
+                        "UNIT": "piece"
+                    },
+                    {
+						"FEATURE": "http://fp7-novi.eu/monitoring_features.owl#DiskUtilization",
+                        "NAME": "DiskUtilization",
+                        "DIMENTSION": "informationsize",
+                        "UNIT": "Byte",
+                        "PREFIX": "kilo"
+                    }
+                ]
+            },
+            "DATA": [
+                [
+                    1211126108,
+                    1,
+                    0.77
+                ]
+            ]
+        }
+    },
+    {
+        "http://fp7-novi.eu/monitoring_features.owl#MemoryUtilization": {
+            "TYPE": "diskinfo",
+            "ID": 449,
+            "HDR": {
+                "NAME": "DataHeader 4499",
+                "HDRINFO": [
+                    {
+						"FEATURE": "http://fp7-novi.eu/monitoring_features.owl#MemoryUtilization",
+                        "NAME": "MemoryUtilization",
+                        "DIMENTSION": "informationsize",
+                        "UNIT": "Byte",
+                        "PREFIX": "kilo"
+                    },
+                    {
+                        "NAME": "Run",
+                        "DIMENTSION": "countable",
+                        "UNIT": "piece"
+                    },
+                    {
+                        "NAME": "mem  run",
+                        "DIMENTSION": "informationsize",
+                        "UNIT": "Byte",
+                        "PREFIX": "kilo"
+                    }
+                ]
+            },
+            "DATA": [
+                [
+                    0.58,
+                    1,
+                    12489604
+                ]
+            ]
+        }
+    },
+    {
+        "http://fp7-novi.eu/monitoring_features.owl#FreeDiskSpace": {
+            "TYPE": "diskinfo",
+            "ID": 450,
+            "HDR": {
+                "NAME": "DataHeader 4500",
+                "HDRINFO": [
+                    {
+                        "NAME": "Disk Size Used",
+                        "DIMENTSION": "informationsize",
+                        "UNIT": "Byte",
+                        "PREFIX": "kilo"
+                    },
+                    {
+                        "NAME": "Run",
+                        "DIMENTSION": "countable",
+                        "UNIT": "piece"
+                    },
+                    {
+						"FEATURE": "http://fp7-novi.eu/monitoring_features.owl#FreeDiskSpace",
+                        "NAME": "Available Disk Size",
+                        "DIMENTSION": "informationsize",
+                        "UNIT": "Byte",
+                        "PREFIX": "kilo"
+                    }
+                ]
+            },
+            "DATA": [
+                [
+                    121112618,
+                    12,
+                    122489604
+                ]
+            ]
+        }
+    },
+    {
+        "http://fp7-novi.eu/monitoring_features.owl#CPUClockRate": {
+            "TYPE": "cpuinfo2",
+            "ID": 445,
+            "HDR": {
+                "NAME": "DataHeader 446",
+                "HDRINFO": [
+                    {
+                        "NAME": "Number of cores",
+                        "DIMENTSION": "countable",
+                        "UNIT": "piece"
+                    },
+                    {
+                        "NAME": "Number of sockets",
+                        "DIMENTSION": "countable",
+                        "UNIT": "piece"
+                    },
+                    {
+						"FEATURE": "http://fp7-novi.eu/monitoring_features.owl#CPUClockRate",
+                        "NAME": "Speed MHz",
+                        "DIMENTSION": "frequency",
+                        "UNIT": "persecond",
+                        "PREFIX": "mega"
+                    },
+                    {
+                        "NAME": "Run",
+                        "DIMENTSION": "countable",
+                        "UNIT": "piece"
+                    }
+                ]
+            },
+            "DATA": [
+                [
+                    1,
+                    1,
+                    1995,
+                    1
+                ]
+            ]
+        }
+    },
+    {
+    "http://fp7-novi.eu/monitoring_features.owl#CPUUtilization"	: {
+   "TYPE" : "cpuload",
+   "ID" : 52847504,
+   "HDR" : {
+      "NAME" : "DataHeader 53287440",
+      "HDRINFO" : [
+         {
+            "NAME" : "Run",
+            "DIMENTSION" : "Countable",
+            "UNIT" : "piece"
+         },
+         {
+            "NAME" : "Jobs in queue",
+            "DIMENTSION" : "Countable",
+            "UNIT" : "piece"
+         },
+         {
+			"FEATURE": "http://fp7-novi.eu/monitoring_features.owl#CPUUtilization",
+            "NAME" : "CPUUtilization",
+            "DIMENTSION" : "InformationSize",
+            "UNIT" : "piece"
+         }
+      ]
+   },
+   "DATA" : [
+      [ 1, 0.24, 0.35 ]
+   ]}
+    }
+    ,{
+    "http://fp7-novi.eu/monitoring_features.owl#CPUUtilization"	: {
+   "TYPE" : "cpuload",
+   "ID" : 52847504,
+   "HDR" : {
+      "NAME" : "DataHeader 53287440",
+      "HDRINFO" : [
+         {
+            "NAME" : "Run",
+            "DIMENTSION" : "Countable",
+            "UNIT" : "piece"
+         },
+         {
+            "NAME" : "Jobs in queue",
+            "DIMENTSION" : "Countable",
+            "UNIT" : "piece"
+         },
+         {
+			"FEATURE": "http://fp7-novi.eu/monitoring_features.owl#CPUUtilization",
+            "NAME" : "CPUUtilization",
+            "DIMENTSION" : "InformationSize",
+            "UNIT" : "piece"
+         }
+      ]
+   },
+   "DATA" : [
+      [ 1, 0.24, 0.60 ]
+   ]
+   }
+    }
+]

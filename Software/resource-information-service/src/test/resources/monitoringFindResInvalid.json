@@ -1,0 +1,70 @@
+[{"http://fp7-novi.eu/monitoring_features.owl#FreeMemory" : {
+   "TYPE" : "meminfo",
+   "ID" : 496,
+   "HDR" : {
+      "NAME" : "DataHeader 497",
+      "HDRINFO" : [
+         {
+            "NAME" : "Run",
+            "DIMENTSION" : "Countable",
+            "UNIT" : "piece"
+            },
+         {
+            "FEATURE": "http://fp7-novi.eu/monitoring_features.owl#FreeMemory",
+            "NAME" : "Free Memory",
+            "DIMENTSION" : "InformationSize",
+            "PREFIX" : "kilo",
+            "UNIT" : "Byte"
+            }
+      ]
+      },
+   "DATA" : [
+      [ 1, 326432 ]
+   ]
+}},
+{"http://fp7-novi.eu/monitoring_features.owl#CPUClockRate" : {
+   "TYPE" : "cpuinfo",
+   "ID" : 499,
+   "HDR" : {
+      "NAME" : "DataHeader 500",
+      "HDRINFO" : [
+         {
+            "NAME" : "Run",
+            "DIMENTSION" : "Countable",
+            "UNIT" : "piece"
+            },
+         {
+            "FEATURE": "http://fp7-novi.eu/monitoring_features.owl#CPUClockRate",
+            "NAME" : "Speed MHz",
+            "DIMENTSION" : "Frequency",
+            "UNIT" : "persecond"
+            }
+      ]
+      },
+   "DATA" : [
+      [ 1, null ]
+   ]
+}},
+{"http://fp7-novi.eu/monitoring_features.owl#FreeDiskSpace" : {
+   "TYPE" : "diskinfo",
+   "ID" : 502,
+   "HDR" : {
+      "NAME" : "DataHeader 503",
+      "HDRINFO" : [
+         {
+            "NAME" : "Run",
+            "DIMENTSION" : "Countable",
+            "UNIT" : "piece"
+            },
+         {
+            "FEATURE": "http://fp7-novi.eu/monitoring_features.owl#FreeDiskSpace",
+            "NAME" : "Available Disk Size",
+            "DIMENTSION" : "InformationSize",
+            "UNIT" : "bit"
+            }
+      ]
+      },
+   "DATA" : [
+      [ 1, None ]
+   ]
+}}]

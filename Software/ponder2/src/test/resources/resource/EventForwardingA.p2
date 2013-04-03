@@ -1,0 +1,65 @@
+// Start this with option
+// -boot EventForwardingA.p2 -address rmi://localhost/EFA
+// then run EventForwardingB
+
+domain := root/factory/domain.
+eca := root/factory/ecapolicy.
+
+// Create the test event type
+testevent := root/factory/event create: #("value").
+root/event at: "testevent" put: testevent.
+
+// Create a domain hierarchy
+
+root at: "d1" put: domain create.
+root at: "d2" put: domain create.
+
+// Create a policy that is attached to a domain and looks for the event
+makepol := [ :domain :name |
+	policy := eca create.
+	policy 
+		event: testevent;
+		action: [ :value | root print: "Policy " + name + " received event " + value ];
+		attach: domain;
+		active: true.
+].
+
+makepol value: root value: "root".
+makepol value: root/d1 value: "root/d1".
+
+// Create a forwarder
+forwarder := (root load: "EventForwarder") create.
+root at: "forwarder" put: forwarder.
+
+forwarder attachTo: root/d2.
+forwarder forwardTo: root/d1.
+forwarder active: false.
+
+// To ensure that the source of the event is set correctly, i.e. an object inside
+// one of the domains d2 we need a policy in that domain
+// to initiate the events.
+
+makepol := [ :domain :name |
+	event := root/factory/event create.
+	root/event at: name put: event.
+	policy := eca create.
+	policy
+		event: event;
+		action: [ testevent create: #( name )];
+		active: true.
+	domain at: name put: policy.
+].
+
+makepol value: root/d2 value: "eventD2".
+
+root print: "Only root should get the next event".
+root/event/eventD2 create.
+
+forwarder active: true.
+
+root print: "D1 and root should get the next event".
+root/event/eventD2 create.
+
+
+
+

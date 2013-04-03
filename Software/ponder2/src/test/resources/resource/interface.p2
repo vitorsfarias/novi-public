@@ -1,0 +1,32 @@
+// Some Interface testing
+ifactory := root load: "Interface".
+interface := ifactory create.
+
+b := [ root print: "Block called" ].
+interface map: "test" to: b as: "value".
+interface test.
+
+b := [ :arg | root print: "Block called with "+arg ].
+interface map: "test1:" to: b as: "value:".
+interface test1: 45.
+
+b := [ :a1 :a2 | root print: "Block called with args "+a1+ " and " + a2 ].
+interface map: "arg1:arg2:" to: b as: "value:value:".
+interface arg1: 45 arg2: "Hello".
+
+interface map: "block" toObject: b.
+interface/block value: 22 value: "Last interface test".
+
+// Event testing
+
+event := root/factory/event create: #( "pressure" ).
+root/event at: "bp" put: event.
+event := root/factory/event create: #( "temperature" ).
+root/event at: "temp" put: event.
+
+interface map: "bp" toEvent: root/event/bp.
+interface providesEvent: "bp".
+interface map: "temp" toEvent: root/event/temp.
+interface providesEvent: "temp".
+interface acceptsEvent: "temp".
+

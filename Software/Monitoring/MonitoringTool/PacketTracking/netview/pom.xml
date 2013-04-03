@@ -1,0 +1,158 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>de.fhg.fokus.net</groupId>
+	<artifactId>netview</artifactId>
+	<name>NetView</name>
+	<version>1.1-SNAPSHOT-plain</version>
+	<repositories>
+		<repository>
+			<id>jboss.releases</id>
+			<name>JBoss releases</name>
+			<url>http://repository.jboss.org/maven2
+			</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+	<distributionManagement>
+		<repository>
+			<id>pt</id>
+			<url>${pt.releases.repo.url}</url> <!-- TODO: Enter the right url -->
+		</repository>
+		<snapshotRepository>
+			<id>pt</id>
+			<url>${pt.snapshots.repo.url}</url> <!-- TODO: Enter the right url -->
+		</snapshotRepository>
+		<site>
+			<id>pt-site</id>
+			<url>${pt.site.deploy.url}</url> <!-- TODO: Enter the right url -->
+		</site>
+	</distributionManagement>
+	<build>
+		<resources>
+			<resource>
+				<directory> src/main/resources</directory>
+				<includes>
+					<include> **/*.form </include>
+					<include> **/*.png </include>
+					<include> **/*.properties </include>
+				</includes>
+			</resource>
+			<resource>
+				<directory> src/main/java </directory>
+				<includes>
+					<include> **/*.form </include>
+					<include> **/*.png </include>
+					<include> **/*.properties </include>
+				</includes>
+			</resource>
+		</resources>
+		<plugins>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+					<archive>
+						<manifest>
+							<mainClass>de.fhg.fokus.net.netview.control.MainController</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+				<executions>
+					<execution>
+						<id>make-assembly</id> <!-- this is used for inheritance merges -->
+						<phase>package</phase> <!-- append to the packaging phase. -->
+						<goals>
+							<goal>single</goal> <!-- goals == mojos -->
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<dependencies>
+		<dependency>
+			<groupId>de.fhg.fokus.net</groupId>
+			<artifactId>pt-api</artifactId>
+			<version>1.1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.5.6</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.5.6</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jul-to-slf4j</artifactId>
+			<version>1.5.6</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.5</version>
+			<scope>test</scope>
+		</dependency>
+	 <dependency>
+	  <groupId>postgresql</groupId>
+	  <artifactId>postgresql</artifactId>
+	  <version>9.1-901-1.jdbc4</version>
+      </dependency>
+	 <dependency>
+	  <groupId>org.jdesktop</groupId>
+	  <artifactId>appframework</artifactId>
+	  <version>1.0.3</version>
+	 </dependency>
+	 <dependency>
+	  <groupId>javax.persistence</groupId>
+	  <artifactId>persistence-api</artifactId>
+	  <version>1.0</version>
+	 </dependency>
+	</dependencies>
+	 <reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.1</version>
+				<configuration>
+					<executable>../scripts/m2classpath.sh</executable>
+					<arguments>
+						<argument>create_classpath_file</argument>
+						<classpath />
+					</arguments>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.5</version>
+			</plugin>
+
+		</plugins>
+	</reporting>
+
+</project>

@@ -1,0 +1,55 @@
+newdom := root/factory/domain.
+newauthpol := root/factory/authpolicy.
+newecapol := root/factory/ecapolicy.
+newevent := root/factory/event.
+
+//create a domain for my managed object
+root at: "myMODom" put: newdom create.
+
+//load the managed object
+factory := root load: "MyMO".
+// test the static
+name := factory testStatic: "Hello".
+root print: "Static result is " + name.
+
+//instantiate a MyMO object
+mymo := factory create: "ALICE" at: 30. 
+
+//put it in the myMODom domain
+root/myMODom at: "mymo" put: mymo.
+
+// Create domains
+root at: "authdom" put: newdom create.
+root at: "ecadom" put: newdom create.
+
+// Create a stop all rule
+root/authdom at: "authstopall" put: (newauthpol subject: root 	action: "name:age:" target: root focus:"t" ).
+root/authdom/authstopall reqneg. // set the policy neg for the request part
+root/authdom/authstopall repneg. //set the policy as a neg for the reply part
+root/authdom/authstopall active: true.
+
+root/authdom at: "auth1" put: (newauthpol subject: root action: "name:age:" target: root/myMODom focus:"t" ).			   
+root/authdom/auth1 final. //set the policy as a final
+root/authdom/auth1 reqcondition: [ root print: "Target is: " + p_target name + " age: " + p_target age. true ].
+root/authdom/auth1 repcondition: [ root print: "Subject is " + p_subject. true ].
+root/authdom/auth1 active: true.
+
+//create an event to set the new name of the mymo object
+root/event at: "setName" put: ( newevent create: #( "newname" )).
+
+//create an obligation policy that intercepts the event setName and 
+//execute as an action the setName method of mymo
+
+root/ecadom at: "ecapol1" put: ( (newecapol create)
+								 event: root/event/setName;
+								 //condition: [ :newname |  newname=="BOB" ];
+								 action: [ :newname | 	root/myMODom/mymo name: newname age: 36	];
+								 self).
+//activate the policy
+root/ecadom/ecapol1 active: true.	
+
+//send the event
+root/event/setName create: #("FRED").
+
+//send the event
+root/event/setName create: #("BOB").

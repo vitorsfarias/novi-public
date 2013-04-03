@@ -1,0 +1,92 @@
+'''
+Created on Jul 18, 2011
+
+@author: steger, jozsef
+@organization: ELTE
+@contact: steger@complex.elte.hu
+'''
+
+from Driver import Driver, DriverError
+from paramiko import SSHClient, RSAKey, SSHException, AutoAddPolicy
+from Credential.credentialtypes import UsernamePassword, UsernameRSAKey
+from time import sleep
+
+class SshDriver(Driver):
+    timeout = 5
+    trials = 3
+    wait = .2
+
+    def __init__(self):
+        self.client = None
+
+    def __del__(self):
+        self.close()
+        
+    def connect(self, host, credential, port = 22, known_host = None):
+        self.client = SSHClient()
+        if known_host is None:
+            self.client.set_missing_host_key_policy( AutoAddPolicy() )
+        else:
+            self.client.load_host_keys(filename = known_host)
+        if isinstance(credential, UsernamePassword):
+        # use password authentication
+            self.client.connect(hostname = host, port = port, 
+                                username = credential.username, password =credential.password, 
+                                timeout = self.timeout, look_for_keys = False, compress = True)
+        elif isinstance(credential, UsernameRSAKey):
+        # use the RSA key
+            if credential.password:
+                pw = credential.password
+            else:
+                pw = None
+            key = RSAKey(password = pw, filename = credential.rsakey)
+            n = self.trials
+            while n:
+                try:
+                    self.client.connect(hostname = host, port = port, 
+                                username = credential.username, pkey = key, 
+                                timeout = self.timeout, look_for_keys = False, compress = True)
+                    break
+                except SSHException, e:
+                    if e.message.startswith("Error reading SSH protocol banner"):
+                        n -= 1
+                        print "WW: retry to connect @%s in %f seconds" % (host, self.wait)
+                        sleep(self.wait)
+                    else:
+                        raise
+        if not self.isConnected:
+            self.close()
+            raise DriverError("Cannot connect @%s " % host)
+        self.host = host
+
+    def close(self):
+        try:
+            self.client.close()
+        except:
+            pass
+        finally:
+            self.client = None
+
+    @property
+    def isConnected(self):
+        try:
+            return self.client.get_transport().is_active()
+        except:
+            return False
+
+class SshExec(SshDriver):
+    def __init__(self, host, credential, port = 22, command = "echo helloworld @ `hostname`", known_host = None):
+        SshDriver.__init__(self)
+        self.connect(host, credential, port, known_host)
+        self.command = command
+    
+    def execute(self, command = None):
+        if not self.isConnected:
+            raise DriverError("Not connected")
+        if command is None:
+            command = self.command
+        _, stout, sterr = self.client.exec_command(command = command)
+        e = sterr.read()
+        if len(e):
+            print "EE: execution @%s '%s' failed: %s" % (self.host, command, e)
+        return stout

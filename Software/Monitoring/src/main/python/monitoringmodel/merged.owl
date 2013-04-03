@@ -1,0 +1,1540 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://fp7-novi.eu/Policy_Service/merged.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     ontologyIRI="http://fp7-novi.eu/Policy_Service/merged.owl">
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Import>http://fp7-novi.eu/im.owl</Import>
+    <Declaration>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#AuthorizationPolicy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#ECAPolicy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntityMethod"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntityProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#ManagementDomain"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#MissionPolicy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#NOVIUser"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#Policy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#PolicyAction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#PolicyCondition"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#PolicyEvent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#PolicySubject"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#PolicyTarget"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#RBACPolicy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#Role"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://fp7-novi.eu/im.owl#CPU"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://fp7-novi.eu/im.owl#DiskImage"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://fp7-novi.eu/im.owl#Group"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://fp7-novi.eu/im.owl#Interface"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://fp7-novi.eu/im.owl#Lifetime"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://fp7-novi.eu/im.owl#Link"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://fp7-novi.eu/im.owl#Location"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://fp7-novi.eu/im.owl#LoginComponent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://fp7-novi.eu/im.owl#LoginService"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://fp7-novi.eu/im.owl#Memory"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://fp7-novi.eu/im.owl#MemoryService"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://fp7-novi.eu/im.owl#NSwitch"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://fp7-novi.eu/im.owl#NetworkElement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://fp7-novi.eu/im.owl#Node"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://fp7-novi.eu/im.owl#NodeComponent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://fp7-novi.eu/im.owl#Path"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://fp7-novi.eu/im.owl#Platform"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://fp7-novi.eu/im.owl#ProcessingService"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://fp7-novi.eu/im.owl#Reservation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://fp7-novi.eu/im.owl#Resource"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://fp7-novi.eu/im.owl#Service"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://fp7-novi.eu/im.owl#Storage"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://fp7-novi.eu/im.owl#StorageService"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://fp7-novi.eu/im.owl#SwitchingMatrix"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://fp7-novi.eu/im.owl#SwitchingService"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://fp7-novi.eu/im.owl#Topology"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://fp7-novi.eu/im.owl#VirtualLink"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://fp7-novi.eu/im.owl#VirtualNode"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntitiesProperties"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#ManagementDomainProperties"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#NOVIUserProperties"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#PolicyActionProperties"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#PolicyObjectProperties"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#hasAction"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#hasCondition"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#hasEvent"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#hasMethods"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#hasNoviRole"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#hasPolicyAction"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#hasPolicyCondition"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#hasPolicyEvent"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#hasPolicySubject"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#hasPolicyTarget"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#hasProperties"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#hasUserPlatform"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#includes"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://fp7-novi.eu/im.owl#connectedTo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://fp7-novi.eu/im.owl#contains"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://fp7-novi.eu/im.owl#hasComponent"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://fp7-novi.eu/im.owl#hasInboundInterface"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://fp7-novi.eu/im.owl#hasLifetime"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://fp7-novi.eu/im.owl#hasOutboundInterface"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://fp7-novi.eu/im.owl#hasService"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://fp7-novi.eu/im.owl#hasSink"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://fp7-novi.eu/im.owl#hasSource"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://fp7-novi.eu/im.owl#implementedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://fp7-novi.eu/im.owl#inPath"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://fp7-novi.eu/im.owl#isContainedIn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://fp7-novi.eu/im.owl#isSink"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://fp7-novi.eu/im.owl#isSource"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://fp7-novi.eu/im.owl#locatedAt"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://fp7-novi.eu/im.owl#next"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://fp7-novi.eu/im.owl#provisionedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://fp7-novi.eu/im.owl#switchedTo"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntityDataProperties"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#RoleProperties"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#hasAuthenticationStatus"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#hasRoleInPlatform"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#hasUserID"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#diskImage"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#endTime"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#exclusive"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hardwareType"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasAvailableCapacity"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasAvailableCores"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasAvailableLogicalRouters"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasAvailableMemorySize"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasAvailableStorageSize"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasCPUSpeed"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasCapacity"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasCores"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasGRETunnelID"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasIPv4Address"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasLogicalRouters"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasLoginIPv4Address"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasLoginProtocol"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasMemorySize"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasNetmask"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasOS"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasPrivateSinkAddress"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasPrivateSourceAddress"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasStorageSize"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasVLANID"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasVendor"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasVirtualizationEnvironment"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hostname"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hrn"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#id"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#latitude"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#longitude"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#startTime"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#virtualRole"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://fp7-novi.eu/im.owl#Federica"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://fp7-novi.eu/im.owl#PlanetLab"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#AuthorizationPolicy"/>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#Policy"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#ECAPolicy"/>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#Policy"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntityProperty"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#ManagementDomain"/>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#MissionPolicy"/>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#Policy"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#Policy"/>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#PolicyAction"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#PolicyCondition"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#PolicyEvent"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#PolicySubject"/>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#PolicyTarget"/>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#RBACPolicy"/>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#Policy"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#Role"/>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://fp7-novi.eu/im.owl#CPU"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#NodeComponent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://fp7-novi.eu/im.owl#DiskImage"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#NodeComponent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://fp7-novi.eu/im.owl#Interface"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#NetworkElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://fp7-novi.eu/im.owl#Link"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#NetworkElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://fp7-novi.eu/im.owl#LoginComponent"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#NodeComponent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://fp7-novi.eu/im.owl#LoginService"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#Service"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://fp7-novi.eu/im.owl#Memory"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#NodeComponent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://fp7-novi.eu/im.owl#MemoryService"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#Service"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://fp7-novi.eu/im.owl#NSwitch"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#Link"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://fp7-novi.eu/im.owl#NetworkElement"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#Resource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://fp7-novi.eu/im.owl#Node"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#Resource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://fp7-novi.eu/im.owl#NodeComponent"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#Resource"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://fp7-novi.eu/im.owl#Path"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#NetworkElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://fp7-novi.eu/im.owl#Platform"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#Group"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://fp7-novi.eu/im.owl#ProcessingService"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#Service"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://fp7-novi.eu/im.owl#Reservation"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#Group"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://fp7-novi.eu/im.owl#Resource"/>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://fp7-novi.eu/im.owl#Service"/>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://fp7-novi.eu/im.owl#Storage"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#NodeComponent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://fp7-novi.eu/im.owl#StorageService"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#Service"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://fp7-novi.eu/im.owl#SwitchingMatrix"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#NodeComponent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://fp7-novi.eu/im.owl#SwitchingService"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#Service"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://fp7-novi.eu/im.owl#Topology"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#Group"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://fp7-novi.eu/im.owl#VirtualLink"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#Link"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://fp7-novi.eu/im.owl#VirtualNode"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#Node"/>
+    </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="http://fp7-novi.eu/im.owl#Platform"/>
+        <NamedIndividual IRI="http://fp7-novi.eu/im.owl#Federica"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://fp7-novi.eu/im.owl#Platform"/>
+        <NamedIndividual IRI="http://fp7-novi.eu/im.owl#PlanetLab"/>
+    </ClassAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#hasAction"/>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#PolicyActionProperties"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#hasCondition"/>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#PolicyActionProperties"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#hasEvent"/>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#PolicyActionProperties"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#hasMethods"/>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntitiesProperties"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#hasNoviRole"/>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#NOVIUserProperties"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#hasPolicyAction"/>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#PolicyObjectProperties"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#hasPolicyCondition"/>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#PolicyObjectProperties"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#hasPolicyEvent"/>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#PolicyObjectProperties"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#hasPolicySubject"/>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#PolicyObjectProperties"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#hasPolicyTarget"/>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#PolicyObjectProperties"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#hasProperties"/>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntitiesProperties"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#hasUserPlatform"/>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#NOVIUserProperties"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#includes"/>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#ManagementDomainProperties"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="http://fp7-novi.eu/im.owl#isContainedIn"/>
+        <ObjectProperty IRI="http://fp7-novi.eu/im.owl#contains"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="http://fp7-novi.eu/im.owl#hasSink"/>
+        <ObjectProperty IRI="http://fp7-novi.eu/im.owl#isSink"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="http://fp7-novi.eu/im.owl#hasSource"/>
+        <ObjectProperty IRI="http://fp7-novi.eu/im.owl#isSource"/>
+    </InverseObjectProperties>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="http://fp7-novi.eu/im.owl#locatedAt"/>
+    </FunctionalObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#hasAction"/>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#PolicyAction"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#hasCondition"/>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#PolicyCondition"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#hasEvent"/>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#PolicyEvent"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#hasMethods"/>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#hasNoviRole"/>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#NOVIUser"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#hasPolicyAction"/>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#Policy"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#hasPolicyCondition"/>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#Policy"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#hasPolicyEvent"/>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#Policy"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#hasPolicySubject"/>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#Policy"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#hasPolicyTarget"/>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#Policy"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#hasProperties"/>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#hasUserPlatform"/>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#NOVIUser"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#includes"/>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#ManagementDomain"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://fp7-novi.eu/im.owl#connectedTo"/>
+        <ObjectUnionOf>
+            <Class IRI="http://fp7-novi.eu/im.owl#Interface"/>
+            <Class IRI="http://fp7-novi.eu/im.owl#Node"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://fp7-novi.eu/im.owl#contains"/>
+        <ObjectUnionOf>
+            <Class IRI="http://fp7-novi.eu/im.owl#Group"/>
+            <Class IRI="http://fp7-novi.eu/im.owl#Path"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://fp7-novi.eu/im.owl#hasComponent"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#Node"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://fp7-novi.eu/im.owl#hasInboundInterface"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#Node"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://fp7-novi.eu/im.owl#hasLifetime"/>
+        <ObjectUnionOf>
+            <Class IRI="http://fp7-novi.eu/im.owl#Group"/>
+            <Class IRI="http://fp7-novi.eu/im.owl#Resource"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://fp7-novi.eu/im.owl#hasOutboundInterface"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#Node"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://fp7-novi.eu/im.owl#hasService"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#Node"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://fp7-novi.eu/im.owl#hasSink"/>
+        <ObjectUnionOf>
+            <Class IRI="http://fp7-novi.eu/im.owl#Link"/>
+            <Class IRI="http://fp7-novi.eu/im.owl#Path"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://fp7-novi.eu/im.owl#hasSource"/>
+        <ObjectUnionOf>
+            <Class IRI="http://fp7-novi.eu/im.owl#Link"/>
+            <Class IRI="http://fp7-novi.eu/im.owl#Path"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://fp7-novi.eu/im.owl#implementedBy"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#Node"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://fp7-novi.eu/im.owl#inPath"/>
+        <ObjectUnionOf>
+            <Class IRI="http://fp7-novi.eu/im.owl#NetworkElement"/>
+            <Class IRI="http://fp7-novi.eu/im.owl#Node"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://fp7-novi.eu/im.owl#isContainedIn"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#Resource"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://fp7-novi.eu/im.owl#isSink"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#Interface"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://fp7-novi.eu/im.owl#isSource"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#Interface"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://fp7-novi.eu/im.owl#locatedAt"/>
+        <ObjectUnionOf>
+            <Class IRI="http://fp7-novi.eu/im.owl#Node"/>
+            <Class IRI="http://fp7-novi.eu/im.owl#Service"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://fp7-novi.eu/im.owl#next"/>
+        <ObjectUnionOf>
+            <Class IRI="http://fp7-novi.eu/im.owl#NetworkElement"/>
+            <Class IRI="http://fp7-novi.eu/im.owl#Node"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://fp7-novi.eu/im.owl#provisionedBy"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#Link"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://fp7-novi.eu/im.owl#switchedTo"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#Interface"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#hasAction"/>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntityMethod"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#hasAction"/>
+        <DataSomeValuesFrom>
+            <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+            <Datatype abbreviatedIRI="xsd:anyURI"/>
+        </DataSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#hasCondition"/>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntityProperty"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#hasEvent"/>
+        <DataSomeValuesFrom>
+            <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+            <Datatype abbreviatedIRI="xsd:anyURI"/>
+        </DataSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#hasMethods"/>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntityMethod"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#hasNoviRole"/>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#Role"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#hasPolicyAction"/>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#PolicyAction"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#hasPolicyCondition"/>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#PolicyCondition"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#hasPolicyEvent"/>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#PolicyEvent"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#hasPolicySubject"/>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#hasPolicyTarget"/>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#hasProperties"/>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntityProperty"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#hasUserPlatform"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#Platform"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#includes"/>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://fp7-novi.eu/im.owl#connectedTo"/>
+        <ObjectUnionOf>
+            <Class IRI="http://fp7-novi.eu/im.owl#Interface"/>
+            <Class IRI="http://fp7-novi.eu/im.owl#Node"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://fp7-novi.eu/im.owl#contains"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#Resource"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://fp7-novi.eu/im.owl#hasComponent"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#NodeComponent"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://fp7-novi.eu/im.owl#hasInboundInterface"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#Interface"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://fp7-novi.eu/im.owl#hasLifetime"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#Lifetime"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://fp7-novi.eu/im.owl#hasOutboundInterface"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#Interface"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://fp7-novi.eu/im.owl#hasService"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#Service"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://fp7-novi.eu/im.owl#hasSink"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#Interface"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://fp7-novi.eu/im.owl#hasSource"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#Interface"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://fp7-novi.eu/im.owl#implementedBy"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#Node"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://fp7-novi.eu/im.owl#inPath"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#Path"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://fp7-novi.eu/im.owl#isContainedIn"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#Group"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://fp7-novi.eu/im.owl#isSink"/>
+        <ObjectUnionOf>
+            <Class IRI="http://fp7-novi.eu/im.owl#Link"/>
+            <Class IRI="http://fp7-novi.eu/im.owl#Path"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://fp7-novi.eu/im.owl#isSource"/>
+        <ObjectUnionOf>
+            <Class IRI="http://fp7-novi.eu/im.owl#Link"/>
+            <Class IRI="http://fp7-novi.eu/im.owl#Path"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://fp7-novi.eu/im.owl#locatedAt"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#Location"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://fp7-novi.eu/im.owl#next"/>
+        <ObjectUnionOf>
+            <Class IRI="http://fp7-novi.eu/im.owl#NetworkElement"/>
+            <Class IRI="http://fp7-novi.eu/im.owl#Node"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://fp7-novi.eu/im.owl#provisionedBy"/>
+        <ObjectUnionOf>
+            <Class IRI="http://fp7-novi.eu/im.owl#Link"/>
+            <Class IRI="http://fp7-novi.eu/im.owl#Path"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://fp7-novi.eu/im.owl#switchedTo"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#Interface"/>
+    </ObjectPropertyRange>
+    <SubDataPropertyOf>
+        <DataProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#hasAuthenticationStatus"/>
+        <DataProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#RoleProperties"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#hasRoleInPlatform"/>
+        <DataProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#RoleProperties"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#hasUserID"/>
+        <DataProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#RoleProperties"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasCores"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasPrivateSourceAddress"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <FunctionalDataProperty>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#diskImage"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#endTime"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#exclusive"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hardwareType"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasAvailableCapacity"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasAvailableCores"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasAvailableLogicalRouters"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasAvailableMemorySize"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasAvailableStorageSize"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasCPUSpeed"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasCapacity"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasCores"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasLogicalRouters"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasLoginIPv4Address"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasMemorySize"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasName"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasNetmask"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasOS"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasStorageSize"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasVendor"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasVirtualizationEnvironment"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hostname"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hrn"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#id"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#latitude"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#longitude"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#startTime"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#virtualRole"/>
+    </FunctionalDataProperty>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#hasAuthenticationStatus"/>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#NOVIUser"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#hasRoleInPlatform"/>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#NOVIUser"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#hasUserID"/>
+        <Class IRI="http://fp7-novi.eu/NOVIPolicyService.owl#NOVIUser"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#diskImage"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#VirtualNode"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#endTime"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#Lifetime"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#exclusive"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#Resource"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hardwareType"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#Node"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasAvailableCapacity"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#NetworkElement"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasAvailableCores"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#CPU"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasAvailableLogicalRouters"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#Node"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasAvailableMemorySize"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#Memory"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasAvailableStorageSize"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#Storage"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasCPUSpeed"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#CPU"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasCapacity"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#NetworkElement"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasCores"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#CPU"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasGRETunnelID"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#NSwitch"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasIPv4Address"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#Interface"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasLogicalRouters"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#Node"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasLoginIPv4Address"/>
+        <ObjectUnionOf>
+            <Class IRI="http://fp7-novi.eu/im.owl#LoginComponent"/>
+            <Class IRI="http://fp7-novi.eu/im.owl#LoginService"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasLoginProtocol"/>
+        <ObjectUnionOf>
+            <Class IRI="http://fp7-novi.eu/im.owl#LoginComponent"/>
+            <Class IRI="http://fp7-novi.eu/im.owl#LoginService"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasMemorySize"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#Memory"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasNetmask"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#Interface"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasOS"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#VirtualNode"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasPrivateSinkAddress"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#NSwitch"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasPrivateSourceAddress"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#NSwitch"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasStorageSize"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#Storage"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasVLANID"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#NSwitch"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasVendor"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#VirtualNode"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasVirtualizationEnvironment"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#VirtualNode"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hostname"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#Node"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hrn"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#Node"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#latitude"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#Location"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#longitude"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#Location"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#startTime"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#Lifetime"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#virtualRole"/>
+        <Class IRI="http://fp7-novi.eu/im.owl#VirtualNode"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#hasAuthenticationStatus"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#hasRoleInPlatform"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://fp7-novi.eu/NOVIPolicyService.owl#hasUserID"/>
+        <Datatype abbreviatedIRI="xsd:anyURI"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#diskImage"/>
+        <Datatype abbreviatedIRI="xsd:anyURI"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#endTime"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#exclusive"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hardwareType"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasAvailableCapacity"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasAvailableCores"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasAvailableLogicalRouters"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasAvailableMemorySize"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasAvailableStorageSize"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasCPUSpeed"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasCapacity"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasCores"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasGRETunnelID"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasIPv4Address"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasLogicalRouters"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasLoginIPv4Address"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasMemorySize"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasName"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasNetmask"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasOS"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasPrivateSinkAddress"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasPrivateSourceAddress"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasStorageSize"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasVLANID"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasVendor"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hasVirtualizationEnvironment"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hostname"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#hrn"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#id"/>
+        <Datatype abbreviatedIRI="xsd:anyURI"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#latitude"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#longitude"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#startTime"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://fp7-novi.eu/im.owl#virtualRole"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://fp7-novi.eu/NOVIPolicyService.owl#AuthorizationPolicy</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">AuthorizationPolicy</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://fp7-novi.eu/NOVIPolicyService.owl#ECAPolicy</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">ECAPolicy</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntitiesProperties</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">ManagedEntitiesProperties</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntity</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">ManagedEntity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntityDataProperties</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">ManagedEntityDataProperties</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntityMethod</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">ManagedEntityMethod</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://fp7-novi.eu/NOVIPolicyService.owl#ManagedEntityProperty</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">ManagedEntityProperty</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://fp7-novi.eu/NOVIPolicyService.owl#ManagementDomain</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">ManagementDomain</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://fp7-novi.eu/NOVIPolicyService.owl#ManagementDomainProperties</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">ManagementDomainProperties</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://fp7-novi.eu/NOVIPolicyService.owl#MissionPolicy</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">MissionPolicy</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://fp7-novi.eu/NOVIPolicyService.owl#NOVIUser</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">NOVIUser</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://fp7-novi.eu/NOVIPolicyService.owl#NOVIUserProperties</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">NOVIUserProperties</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://fp7-novi.eu/NOVIPolicyService.owl#Policy</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Policy</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://fp7-novi.eu/NOVIPolicyService.owl#PolicyAction</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">PolicyAction</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://fp7-novi.eu/NOVIPolicyService.owl#PolicyActionProperties</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">PolicyActionProperties</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://fp7-novi.eu/NOVIPolicyService.owl#PolicyCondition</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">PolicyCondition</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://fp7-novi.eu/NOVIPolicyService.owl#PolicyEvent</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">PolicyEvent</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://fp7-novi.eu/NOVIPolicyService.owl#PolicyObjectProperties</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">PolicyObjectProperties</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://fp7-novi.eu/NOVIPolicyService.owl#PolicySubject</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">PolicySubject</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://fp7-novi.eu/NOVIPolicyService.owl#PolicyTarget</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">PolicyTarget</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://fp7-novi.eu/NOVIPolicyService.owl#RBACPolicy</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">RBACPolicy</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://fp7-novi.eu/NOVIPolicyService.owl#Role</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Role</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://fp7-novi.eu/NOVIPolicyService.owl#RoleProperties</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">RoleProperties</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://fp7-novi.eu/NOVIPolicyService.owl#hasAction</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">hasAction</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://fp7-novi.eu/NOVIPolicyService.owl#hasAuthenticationStatus</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">hasAuthenticationStatus</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://fp7-novi.eu/NOVIPolicyService.owl#hasCondition</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">hasCondition</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://fp7-novi.eu/NOVIPolicyService.owl#hasEvent</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">hasEvent</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://fp7-novi.eu/NOVIPolicyService.owl#hasMethods</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">hasMethods</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://fp7-novi.eu/NOVIPolicyService.owl#hasNoviRole</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">hasNOVIRole</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://fp7-novi.eu/NOVIPolicyService.owl#hasPolicyAction</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">hasPolicyAction</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://fp7-novi.eu/NOVIPolicyService.owl#hasPolicyCondition</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">hasPolicyCondition</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://fp7-novi.eu/NOVIPolicyService.owl#hasPolicyEvent</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">hasPolicyEvent</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://fp7-novi.eu/NOVIPolicyService.owl#hasPolicySubject</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">hasPolicySubject</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://fp7-novi.eu/NOVIPolicyService.owl#hasPolicyTarget</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">hasPolicyTarget</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://fp7-novi.eu/NOVIPolicyService.owl#hasProperties</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">hasProperties</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://fp7-novi.eu/NOVIPolicyService.owl#hasRoleInPlatform</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">hasRoleInPlatform</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://fp7-novi.eu/NOVIPolicyService.owl#hasUserID</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">hasUserID</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://fp7-novi.eu/NOVIPolicyService.owl#hasUserPlatform</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">hasUserPlatform</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://fp7-novi.eu/NOVIPolicyService.owl#includes</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">includes</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://fp7-novi.eu/im.owl#Platform</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Platform</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://fp7-novi.eu/im.owl#Resource</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Resource</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://fp7-novi.eu/im.owl#Service</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Service</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://fp7-novi.eu/im.owl#hasLoginProtocol</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">values are for example SSHv1, SSHv2, Telnet, etc.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://fp7-novi.eu/im.owl#inPath</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Should be reconsidered.</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.2.3.22702) http://owlapi.sourceforge.net -->
+

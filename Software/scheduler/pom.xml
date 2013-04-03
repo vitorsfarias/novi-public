@@ -1,0 +1,53 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>eu.novi</groupId>
+		<artifactId>parent</artifactId>
+		<version>0.4.0-SNAPSHOT</version>
+		<relativePath>../parent/</relativePath>
+	</parent>
+	<packaging>bundle</packaging>
+	<artifactId>scheduler</artifactId>
+	<name>Scheduler service</name>
+	<version>0.1.0-SNAPSHOT</version>
+
+	<developers>
+		<developer>
+			<id>blazej.pietrzak</id>
+			<name>Blazej Pietrzak</name>
+			<email>blazej.pietrzak@man.poznan.pl</email>
+			<organization>PSNC</organization>
+			<organizationUrl>http://www.man.poznan.pl/</organizationUrl>
+			<roles>
+				<role>architect</role>
+				<role>developer</role>
+			</roles>
+			<timezone>+1</timezone>
+		</developer>
+	</developers>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.osgi</groupId>
+			<artifactId>org.osgi.compendium</artifactId>
+			<version>4.2.0</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>eu.novi</groupId>
+			<artifactId>framework</artifactId>
+			<version>${project.version}</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+</project>

@@ -1,0 +1,8 @@
+factory := root load: "PonderTalk".
+pt := factory create: "PonderTalk".
+//pt trace: true.
+//pt test: "root trace: true".
+
+pt2 := factory create.
+answer := pt2 execute: "root print: \"Hello1\"".
+root print: "The answer is "+answer.

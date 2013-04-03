@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="User Entered Import Resolution" name="file:.///monitoring-model_spiral2/unit.owl" uri="monitoring-model_spiral2/unit.owl"/>
+    <uri id="User Entered Import Resolution" name="file:.///novi-im.owl" uri="novi-im.owl"/>
+    <uri id="User Entered Import Resolution" name="file:.//monitoring-model/unit.owl" uri="monitoring-model/unit.owl"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1360936698240" name="duplicate:http://fp7-novi.eu/NOVIPolicyService.owl" uri="policy_im.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1360936698240" name="duplicate:http://fp7-novi.eu/NOVIPolicyService.owl" uri="policy_imV2.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1360936698240" name="duplicate:http://fp7-novi.eu/NOVIPolicyService.owl" uri="policy_imV4.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1360936698240" name="http://fp7-novi.eu/Policy_Service/merged.owl" uri="merged.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1360936698240" name="duplicate:http://fp7-novi.eu/config.owl" uri="monitoring-model/config_federica.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1360936698240" name="duplicate:http://fp7-novi.eu/config.owl" uri="monitoring-model/config_planetlab.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1360936698240" name="http://fp7-novi.eu/im.owl" uri="novi-im.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1360936698240" name="http://fp7-novi.eu/monitoringQuery_example.owl" uri="monitoring-model/monitoringQuery_example.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1360936698240" name="http://fp7-novi.eu/monitoring_event.owl" uri="monitoring-model/monitoring_event.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1360936698240" name="http://fp7-novi.eu/monitoring_features.owl" uri="monitoring-model/monitoring_features.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1360936698240" name="http://fp7-novi.eu/monitoring_parameter.owl" uri="monitoring-model/monitoring_parameters.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1360936698240" name="http://fp7-novi.eu/monitoring_query.owl" uri="monitoring-model/monitoring_query.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1360936698240" name="http://fp7-novi.eu/monitoring_stat.owl" uri="monitoring-model/monitoring_stat.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1360936698240" name="http://fp7-novi.eu/unit.owl" uri="src/main/java/META-INF/ontologies/unit.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1360936698240" name="http://www.w3.org/2002/07/owl" uri="src/main/resources/monitoring_rdfxml.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1360936698240" name="shadowed:http://fp7-novi.eu/NOVIPolicyService.owl" uri="src/main/java/META-INF/ontologies/policy_im.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1360936698240" name="shadowed:http://fp7-novi.eu/NOVIPolicyService.owl" uri="src/main/java/META-INF/ontologies/policy_imV4.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1360936698240" name="shadowed:http://fp7-novi.eu/NOVIPolicyService.owl" uri="target/classes/META-INF/ontologies/policy_im.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1360936698240" name="shadowed:http://fp7-novi.eu/NOVIPolicyService.owl" uri="target/classes/META-INF/ontologies/policy_imV4.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1360936698240" name="shadowed:http://fp7-novi.eu/im.owl" uri="src/main/java/META-INF/ontologies/novi-im.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1360936698240" name="shadowed:http://fp7-novi.eu/im.owl" uri="monitoring-model/novi-im.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1360936698240" name="shadowed:http://fp7-novi.eu/im.owl" uri="target/classes/META-INF/ontologies/novi-im.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1360936698240" name="shadowed:http://fp7-novi.eu/unit.owl" uri="monitoring-model/unit.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1360936698240" name="shadowed:http://fp7-novi.eu/unit.owl" uri="target/classes/META-INF/ontologies/unit.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1360936698240" name="shadowed:http://www.w3.org/2002/07/owl" uri="monitoring-model/monitoring_task.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1360936698240" name="shadowed:http://www.w3.org/2002/07/owl" uri="target/classes/monitoring_rdfxml.owl"/>
+    </group>
+</catalog>

@@ -1,0 +1,30 @@
+{
+   "TYPE" : "meminfo",
+   "ID" : 441,
+   "HDR" : {
+      "NAME" : "DataHeader 442",
+      "HDRINFO" : [
+         {
+            "NAME" : "Run",
+            "DIMENTSION" : "countable",
+            "UNIT" : "piece"
+         },
+         {
+            "NAME" : "Available Memory",
+            "DIMENTSION" : "informationsize",
+            "UNIT" : "Byte",
+            "PREFIX" : "kilo"
+         },
+         {
+            "NAME" : "Free Memory",
+            "DIMENTSION" : "informationsize",
+            "UNIT" : "Byte",
+            "PREFIX" : "kilo"
+         }
+      ]
+   },
+   "DATA" : [
+      [ 1, 1030004, 49764 ],
+      [ 2, 1030011, 49732 ]
+   ]
+}

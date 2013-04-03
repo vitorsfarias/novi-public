@@ -1,0 +1,63 @@
+package net.ponder2.comms.http;
+
+// This file should be places in the appropriate place in the Axis 1 installation.  It communicates with a local
+// Ponder2 application using the RMI name Ponder2
+// Remove the package line above.
+
+/*
+ * Copyright 2002,2004 The Apache Software Foundation.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import java.rmi.Naming;
+
+import net.ponder2.PonderTalkInterface;
+import net.ponder2.comms.rmistring.RmiStringReceiveInterface;
+
+/**
+ * class to list headers sent in request as a string array
+ */
+public class Ponder2 {
+
+  public static String PONDER2 = "rmi://localhost/Ponder2";
+
+  public static String PONDERTALK = "rmi://localhost/PonderTalk";
+
+  public String execute(String xmlString) {
+    String reply = "Operation failed - lookup failed: " + PONDER2;
+    try {
+      RmiStringReceiveInterface ponder2 = (RmiStringReceiveInterface)Naming.lookup(PONDER2);
+      if (ponder2 != null)
+        reply = ponder2.execute(xmlString);
+    }
+    catch (Exception e) {
+      reply = "Operation failed  " + e.getMessage();
+    }
+    return reply;
+  }
+
+  public String executePonderTalk(String ponderTalkString) {
+    String reply = "Operation failed - lookup failed: " + PONDERTALK;
+    try {
+      PonderTalkInterface ponderTalk = (PonderTalkInterface)Naming.lookup(PONDERTALK);
+      if (ponderTalk != null)
+        reply = ponderTalk.execute(ponderTalkString);
+    }
+    catch (Exception e) {
+      reply = "Operation failed " + e.getMessage();
+    }
+    return reply;
+  }
+
+}

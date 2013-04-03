@@ -1,0 +1,25 @@
+event := root/factory/event create: #("Platform").
+root/event at: "createPlatform" put: event.
+
+root/factory at: "Platform" put: (root load: "PlatformMO").
+
+policy := root/factory/ecapolicy create.
+policy event: root/event/createPlatform;
+	action: [ :Platform |
+			   root print:"creating the Platform " + Platform .
+			   root at: Platform put: (root/factory/Platform create: Platform)].
+root/policy at: "createPlatform" put: policy.
+policy active: true.
+
+
+event2 := root/factory/event create: #("topo").
+root/event at: "findpartitioningcost" put: event2.
+root/factory at: "Platform" put: (root load: "PlatformMO").
+policy2 := root/factory/ecapolicy create.
+policy2 event: root/event/findpartitioningcost;
+ action: [ :topo|
+      root print:"find partitioning cost of topology " + topo.
+      (root/Platform) findpartitioningcost:  topo.
+      ].
+root/policy at: "findpartitioningcost" put: policy2.
+policy2 active: true.

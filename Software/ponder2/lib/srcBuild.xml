@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Ponder2 Install" default="install" basedir=".">
+
+	<!-- =================================
+          target: install
+         ================================= -->
+	<target name="install" description="--> installs all the subdirectory components of Ponder2">
+		<ant dir="Ponder2" target="install" inheritAll="false" />
+		<ant dir="Ponder2Comms" target="install" inheritAll="false" />
+	</target>
+
+</project>

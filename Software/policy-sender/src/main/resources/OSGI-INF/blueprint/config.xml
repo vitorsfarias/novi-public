@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!-- Author: Blazej Pietrzak [blazej.pietrzak@man.poznan.pl] -->
+
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+	xmlns:cm="http://aries.apache.org/blueprint/xmlns/blueprint-cm/v1.0.0">
+
+	<cm:property-placeholder persistent-id="eu.novi.pm" />
+	<bean id="polman" class="eu.novi.policysender.impl.PolicyManagerImpl" />
+	<service ref="polman" interface="eu.novi.policysender.interfaces.PolicyManagerIF" />
+
+	<bean id="ponder2event" class="eu.novi.policysender.requestToIRM.RequestToIRM" />
+	<service ref="ponder2event" interface="eu.novi.policysender.interfaces.interfaceforponder2" />
+
+	<!-- A class that makes the communication with IRM service -->
+	<bean id="requestToIRM" class="eu.novi.policysender.requestToIRM.RequestToIRM2">
+		<property name="irmMapperInterface" ref="refInterfacefromIRM" />
+		<property name="policyCallsToRIS" ref="refPolicyCall" />
+	</bean>
+
+	<!-- A class that makes the communication with RIS service -->
+	<bean id="requestToRIS" class="eu.novi.policysender.requestToRIS.RequestToInit">
+		<property name="policyCallsToRIS" ref="refPolicyCall" />
+	</bean>
+
+	<!-- A class that makes the communication with mail service <bean id="sendEmail" 
+		class="eu.novi.policysender.emailclient.SimpleSendEmail" > <property name="callsToMail" 
+		ref="refInterfaceforMail" /> </bean> -->
+
+	<!-- Reference to InterfacefromIRM provided by IRM -->
+	<reference id="refInterfacefromIRM" interface="eu.novi.mapping.RemoteIRM" />
+
+	<!-- Reference to InterfacefromIRM provided by IRM -->
+	<reference id="refPolicyCall" interface="eu.novi.resources.discovery.PolicyCalls" />
+
+
+</blueprint>

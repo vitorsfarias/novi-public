@@ -1,0 +1,9 @@
+FOR YOUR INFORMATION
+
+In order to avoid confusion, all obsoleted pieces of owl documents that relate to monitoring are moved in the obsolete/ folder
+
+The most recent version of the monitoring model is to be found in monitoring-model/ folder.
+
+If in your code wherever you reference to the filesystem folder monitoring-model_spiral2/ please update that information to point to monitoring-model/
+
+

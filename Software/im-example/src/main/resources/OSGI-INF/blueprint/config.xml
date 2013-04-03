@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!-- Author: Adianto Wibisono [a.wibisono@uva.nl] -->
+
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+
+ <bean id="repositoryUtil" class="eu.novi.im.util.IMRepositoryUtilImpl" destroy-method="destroyMethod">
+ </bean>
+
+ <service ref="repositoryUtil" interface="eu.novi.im.util.IMRepositoryUtil" />
+  
+</blueprint>

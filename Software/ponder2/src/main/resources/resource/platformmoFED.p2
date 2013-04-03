@@ -1,0 +1,62 @@
+event := root/factory/event create: #("Platform").
+root/event at: "createPlatform" put: event.
+
+root/factory at: "Platform" put: (root load: "PlatformMO").
+
+policy := root/factory/ecapolicy create.
+policy event: root/event/createPlatform;
+	action: [ :Platform |
+			   root print:"creating the Platform " + Platform .
+			   root at: Platform put: (root/factory/Platform create: Platform)].
+root/policy at: "createPlatform" put: policy.
+policy active: true.
+
+root/event/createPlatform create:#("FEDERICA").
+
+event2 := root/factory/event create: #("topo").
+root/event at: "findpartitioningcost" put: event2.
+root/factory at: "Platform" put: (root load: "PlatformMO").
+policy2 := root/factory/ecapolicy create.
+policy2 event: root/event/findpartitioningcost;
+ action: [ :topo|
+      root print:"find partitioning cost of topology " + topo.
+      (root/Federica) findpartitioningcost:  topo.
+      ].
+root/policy at: "findpartitioningcost" put: policy2.
+policy2 active: true.
+
+event3 := root/factory/event create.
+root/event at: "addToNumberOfRemoteVNodesIprovide" put: event3.
+root/factory at: "Platform" put: (root load: "PlatformMO").
+policy3 := root/factory/ecapolicy create.
+policy3 event: root/event/addToNumberOfRemoteVNodesIprovide;
+ action: [ 
+ 	root print:"add new remote VNode I provide".
+    (root/FEDERICA) addToNumberOfRemoteVNodesIprovide.
+      ].
+root/policy at: "addToNumberOfRemoteVNodesIprovide" put: policy3.
+policy3 active: true.
+
+event5 := root/factory/event create.
+root/event at: "addToNumberOfRemoteVNodesIgot" put: event5.
+root/factory at: "Platform" put: (root load: "PlatformMO").
+policy5 := root/factory/ecapolicy create.
+policy5 event: root/event/addToNumberOfRemoteVNodesIgot;
+ action: [ 
+ 	root print:"add new remote VNode I got".
+    (root/FEDERICA) addToNumberOfRemoteVNodesIgot.
+      ].
+root/policy at: "addToNumberOfRemoteVNodesIgot" put: policy5.
+policy5 active: true.
+
+event4 := root/factory/event create.
+root/event at: "getquota" put: event4.
+root/factory at: "Platform" put: (root load: "PlatformMO").
+policy4 := root/factory/ecapolicy create.
+policy4 event: root/event/getquota;
+ action: [ 
+ 	 root print:"Returning the quota of allowance of remote VNodes".
+    (root/FEDERICA) getquota.
+      ].
+root/policy at: "getquota" put: policy4.
+policy4 active: true

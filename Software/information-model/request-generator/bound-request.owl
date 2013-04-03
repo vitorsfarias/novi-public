@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+   xmlns:novi="http://fp7-novi.eu/im.owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:unit="http://fp7-novi.eu/unit.owl#"
+>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/0-out">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#smilax1.man.poznan.pl:eth0-in">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#sliver2-eth0-out">
+    <novi:implementedBy rdf:resource="http://fp7-novi.eu/im.owl#smilax1.man.poznan.pl:eth0-out"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+    <novi:isSource rdf:resource="http://fp7-novi.eu/im.owl#sliver2:eth0-lrouter:if1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#planetlab2-novi.lab.netmode.ece.ntua.gr:eth0-out">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#lrouter2-if0-out">
+    <novi:implementedBy rdf:resource="http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/0-out"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+    <novi:isSource rdf:resource="http://fp7-novi.eu/im.owl#lrouter2:if0-lrouter:if2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#lrouter-if0-address">
+    <unit:hasNetmask>255.255.255.248</unit:hasNetmask>
+    <rdf:type rdf:resource="http://fp7-novi.eu/unit.owl#IPAddress"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <unit:hasValue>192.168.37.1</unit:hasValue>
+    <unit:hasUnit rdf:resource="http://fp7-novi.eu/unit.owl#ipv4dotted"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#lrouter2-if0">
+    <novi:contains rdf:resource="http://fp7-novi.eu/im.owl#lrouter2-if0-out"/>
+    <novi:contains rdf:resource="http://fp7-novi.eu/im.owl#lrouter2-if0-in"/>
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#BidirectionalInterface"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <novi:name>if0</novi:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#vm1:eth0-lrouter2:if1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Link"/>
+    <novi:name>vm1:eth0-lrouter2:if1</novi:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#sliver1-eth0-in">
+    <novi:implementedBy rdf:resource="http://fp7-novi.eu/im.owl#planetlab2-novi.lab.netmode.ece.ntua.gr:eth0-in"/>
+    <novi:isSink rdf:resource="http://fp7-novi.eu/im.owl#lrouter:if0-sliver1:eth0"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#sliver2-eth0-address">
+    <unit:hasNetmask>255.255.255.248</unit:hasNetmask>
+    <rdf:type rdf:resource="http://fp7-novi.eu/unit.owl#IPAddress"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <unit:hasValue>192.168.37.4</unit:hasValue>
+    <unit:hasUnit rdf:resource="http://fp7-novi.eu/unit.owl#ipv4dotted"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/2">
+    <novi:contains rdf:resource="http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/2-in"/>
+    <novi:contains rdf:resource="http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/2-out"/>
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#BidirectionalInterface"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <novi:name>http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/2</novi:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#FEDERICA_psnc.poz.router1">
+    <novi:hardwareType>router</novi:hardwareType>
+    <novi:name>http://fp7-novi.eu/im.owl#FEDERICA_psnc.poz.router1</novi:name>
+    <novi:hasInboundInterface rdf:resource="http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/2/9-in"/>
+    <novi:hasInboundInterface rdf:resource="http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/0/0-in"/>
+    <novi:hasOutboundInterface rdf:resource="http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/0/0-out"/>
+    <novi:hasOutboundInterface rdf:resource="http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/2/9-out"/>
+    <novi:hostname>psnc.poz.router1</novi:hostname>
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Node"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#lrouter-if1-address">
+    <unit:hasNetmask>255.255.255.248</unit:hasNetmask>
+    <rdf:type rdf:resource="http://fp7-novi.eu/unit.owl#IPAddress"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <unit:hasValue>192.168.37.2</unit:hasValue>
+    <unit:hasUnit rdf:resource="http://fp7-novi.eu/unit.owl#ipv4dotted"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#sliver2">
+    <novi:hasOutboundInterface rdf:resource="http://fp7-novi.eu/im.owl#sliver2-eth0-out"/>
+    <novi:hasInboundInterface rdf:resource="http://fp7-novi.eu/im.owl#sliver2-eth0-in"/>
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Node"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <novi:name>sliver2</novi:name>
+    <novi:implementedBy rdf:resource="http://fp7-novi.eu/im.owl#PlanetLab_smilax1.man.poznan.pl"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#dfn.erl.vserver1.vmnic1-out">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#nswitch-fed-pl-3701">
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#NSwitch"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <novi:name>http://fp7-novi.eu/im.owl#nswitch-fed-pl-3701</novi:name>
+    <novi:hasVLANID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3701</novi:hasVLANID>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/2/9-out">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#sliver1-eth0">
+    <novi:contains rdf:resource="http://fp7-novi.eu/im.owl#sliver1-eth0-in"/>
+    <novi:contains rdf:resource="http://fp7-novi.eu/im.owl#sliver1-eth0-out"/>
+    <novi:hasIPv4Address rdf:resource="http://fp7-novi.eu/im.owl#sliver1-eth0-address"/>
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#BidirectionalInterface"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <novi:name>eth0</novi:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#lrouter2-if1">
+    <novi:contains rdf:resource="http://fp7-novi.eu/im.owl#lrouter2-if1-in"/>
+    <novi:contains rdf:resource="http://fp7-novi.eu/im.owl#lrouter2-if1-out"/>
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#BidirectionalInterface"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <novi:name>if1</novi:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/0/0">
+    <novi:contains rdf:resource="http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/0/0-out"/>
+    <novi:contains rdf:resource="http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/0/0-in"/>
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#BidirectionalInterface"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <novi:name>http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/0/0</novi:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#vm1-eth0-out">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+    <novi:isSource rdf:resource="http://fp7-novi.eu/im.owl#vm1:eth0-lrouter2:if1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#smilax1.man.poznan.pl:eth0-out">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#lrouter-if0">
+    <novi:contains rdf:resource="http://fp7-novi.eu/im.owl#lrouter-if0-in"/>
+    <novi:contains rdf:resource="http://fp7-novi.eu/im.owl#lrouter-if0-out"/>
+    <novi:hasIPv4Address rdf:resource="http://fp7-novi.eu/im.owl#lrouter-if0-address"/>
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#BidirectionalInterface"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <novi:name>if0</novi:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#lrouter2-if1-in">
+    <novi:isSink rdf:resource="http://fp7-novi.eu/im.owl#vm1:eth0-lrouter2:if1"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/0/0-in">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#sliver2-eth0-in">
+    <novi:implementedBy rdf:resource="http://fp7-novi.eu/im.owl#smilax1.man.poznan.pl:eth0-in"/>
+    <novi:isSink rdf:resource="http://fp7-novi.eu/im.owl#lrouter:if1-sliver2:eth0"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#lrouter-if0-in">
+    <novi:implementedBy rdf:resource="http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/2/9-in"/>
+    <novi:isSink rdf:resource="http://fp7-novi.eu/im.owl#sliver1:eth0-lrouter:if0"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#lrouter-if1">
+    <novi:contains rdf:resource="http://fp7-novi.eu/im.owl#lrouter-if1-out"/>
+    <novi:contains rdf:resource="http://fp7-novi.eu/im.owl#lrouter-if1-in"/>
+    <novi:hasIPv4Address rdf:resource="http://fp7-novi.eu/im.owl#lrouter-if1-address"/>
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#BidirectionalInterface"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <novi:name>if1</novi:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#planetlab2-novi.lab.netmode.ece.ntua.gr:eth0">
+    <novi:contains rdf:resource="http://fp7-novi.eu/im.owl#planetlab2-novi.lab.netmode.ece.ntua.gr:eth0-out"/>
+    <novi:contains rdf:resource="http://fp7-novi.eu/im.owl#planetlab2-novi.lab.netmode.ece.ntua.gr:eth0-in"/>
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#BidirectionalInterface"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <novi:name>http://fp7-novi.eu/im.owl#planetlab2-novi.lab.netmode.ece.ntua.gr:eth0</novi:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#lrouter2:if0-lrouter:if2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Link"/>
+    <novi:name>lrouter2:if0-lrouter:if2</novi:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/2/9-in">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#sliver1:eth0-lrouter:if0">
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#VirtualLink"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <novi:name>sliver1:eth0-lrouter:if0</novi:name>
+    <novi:provisionedBy rdf:resource="http://fp7-novi.eu/im.owl#nswitch-fed-pl-3701"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#FEDERICA_dfn.erl.vserver1">
+    <novi:hasOutboundInterface rdf:resource="http://fp7-novi.eu/im.owl#dfn.erl.vserver1.vmnic1-out"/>
+    <novi:hasInboundInterface rdf:resource="http://fp7-novi.eu/im.owl#dfn.erl.vserver1.vmnic1-in"/>
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Node"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <novi:name>http://fp7-novi.eu/im.owl#FEDERICA_dfn.erl.vserver1</novi:name>
+    <novi:hostname>vserver1.erl.de</novi:hostname>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#vm1-eth0">
+    <novi:contains rdf:resource="http://fp7-novi.eu/im.owl#vm1-eth0-in"/>
+    <novi:contains rdf:resource="http://fp7-novi.eu/im.owl#vm1-eth0-out"/>
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#BidirectionalInterface"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <novi:name>eth0</novi:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#PlanetLab_smilax1.man.poznan.pl">
+    <novi:hardwareType>i386</novi:hardwareType>
+    <novi:name>http://fp7-novi.eu/im.owl#PlanetLab_smilax1.man.poznan.pl</novi:name>
+    <novi:hasInboundInterface rdf:resource="http://fp7-novi.eu/im.owl#smilax1.man.poznan.pl:eth0-in"/>
+    <novi:hasOutboundInterface rdf:resource="http://fp7-novi.eu/im.owl#smilax1.man.poznan.pl:eth0-out"/>
+    <novi:hostname>smilax1.man.poznan.pl</novi:hostname>
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Node"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#lrouter-if2-in">
+    <novi:implementedBy rdf:resource="http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/0/0-in"/>
+    <novi:isSink rdf:resource="http://fp7-novi.eu/im.owl#lrouter2:if0-lrouter:if2"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#smilax1.man.poznan.pl:eth0">
+    <novi:contains rdf:resource="http://fp7-novi.eu/im.owl#smilax1.man.poznan.pl:eth0-in"/>
+    <novi:contains rdf:resource="http://fp7-novi.eu/im.owl#smilax1.man.poznan.pl:eth0-out"/>
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#BidirectionalInterface"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <novi:name>http://fp7-novi.eu/im.owl#smilax1.man.poznan.pl:eth0</novi:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#lrouter-if2-out">
+    <novi:implementedBy rdf:resource="http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/0/0-out"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+    <novi:isSource rdf:resource="http://fp7-novi.eu/im.owl#lrouter:if2-lrouter2:if0"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/2-out">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#vm1">
+    <novi:hasOutboundInterface rdf:resource="http://fp7-novi.eu/im.owl#vm1-eth0-out"/>
+    <novi:hasInboundInterface rdf:resource="http://fp7-novi.eu/im.owl#vm1-eth0-in"/>
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Node"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <novi:name>vm1</novi:name>
+    <novi:implementedBy rdf:resource="http://fp7-novi.eu/im.owl#FEDERICA_dfn.erl.vserver1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#PlanetLab_planetlab2-novi.lab.netmode.ece.ntua.gr">
+    <novi:hardwareType>i386</novi:hardwareType>
+    <novi:name>http://fp7-novi.eu/im.owl#PlanetLab_planetlab2-novi.lab.netmode.ece.ntua.gr</novi:name>
+    <novi:hasInboundInterface rdf:resource="http://fp7-novi.eu/im.owl#planetlab2-novi.lab.netmode.ece.ntua.gr:eth0-in"/>
+    <novi:hasOutboundInterface rdf:resource="http://fp7-novi.eu/im.owl#planetlab2-novi.lab.netmode.ece.ntua.gr:eth0-out"/>
+    <novi:hostname>planetlab2-novi.lab.netmode.ece.ntua.gr</novi:hostname>
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Node"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#lrouter2:if1-vm1:eth0">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Link"/>
+    <novi:name>lrouter2:if1-vm1:eth0</novi:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#lrouter:if0-sliver1:eth0">
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#VirtualLink"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <novi:name>lrouter:if0-sliver1:eth0</novi:name>
+    <novi:provisionedBy rdf:resource="http://fp7-novi.eu/im.owl#nswitch-fed-pl-3701"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#lrouter-if0-out">
+    <novi:implementedBy rdf:resource="http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/2/9-out"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+    <novi:isSource rdf:resource="http://fp7-novi.eu/im.owl#lrouter:if0-sliver1:eth0"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#sliver2-eth0">
+    <novi:contains rdf:resource="http://fp7-novi.eu/im.owl#sliver2-eth0-in"/>
+    <novi:contains rdf:resource="http://fp7-novi.eu/im.owl#sliver2-eth0-out"/>
+    <novi:hasIPv4Address rdf:resource="http://fp7-novi.eu/im.owl#sliver2-eth0-address"/>
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#BidirectionalInterface"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <novi:name>eth0</novi:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/2/9">
+    <novi:contains rdf:resource="http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/2/9-in"/>
+    <novi:contains rdf:resource="http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/2/9-out"/>
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#BidirectionalInterface"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <novi:name>http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/2/9</novi:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#vm1-eth0-in">
+    <novi:isSink rdf:resource="http://fp7-novi.eu/im.owl#lrouter2:if1-vm1:eth0"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#sliver1-eth0-out">
+    <novi:implementedBy rdf:resource="http://fp7-novi.eu/im.owl#planetlab2-novi.lab.netmode.ece.ntua.gr:eth0-out"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+    <novi:isSource rdf:resource="http://fp7-novi.eu/im.owl#sliver1:eth0-lrouter:if0"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#lrouter-if1-out">
+    <novi:implementedBy rdf:resource="http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/2/9-out"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+    <novi:isSource rdf:resource="http://fp7-novi.eu/im.owl#lrouter:if1-sliver2:eth0"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#lrouter-if2">
+    <novi:contains rdf:resource="http://fp7-novi.eu/im.owl#lrouter-if2-in"/>
+    <novi:contains rdf:resource="http://fp7-novi.eu/im.owl#lrouter-if2-out"/>
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#BidirectionalInterface"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <novi:name>if2</novi:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/2-in">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#lrouter:if1-sliver2:eth0">
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#VirtualLink"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <novi:name>lrouter:if1-sliver2:eth0</novi:name>
+    <novi:provisionedBy rdf:resource="http://fp7-novi.eu/im.owl#nswitch-fed-pl-3701"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#lrouter2">
+    <novi:hasOutboundInterface rdf:resource="http://fp7-novi.eu/im.owl#lrouter2-if0-out"/>
+    <novi:hasOutboundInterface rdf:resource="http://fp7-novi.eu/im.owl#lrouter2-if1-out"/>
+    <novi:hasInboundInterface rdf:resource="http://fp7-novi.eu/im.owl#lrouter2-if1-in"/>
+    <novi:hasInboundInterface rdf:resource="http://fp7-novi.eu/im.owl#lrouter2-if0-in"/>
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Node"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <novi:name>lrouter2</novi:name>
+    <novi:implementedBy rdf:resource="http://fp7-novi.eu/im.owl#FEDERICA_dfn.erl.router1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#lrouter-if1-in">
+    <novi:implementedBy rdf:resource="http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/2/9-in"/>
+    <novi:isSink rdf:resource="http://fp7-novi.eu/im.owl#sliver2:eth0-lrouter:if1"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#sliver1">
+    <novi:hasOutboundInterface rdf:resource="http://fp7-novi.eu/im.owl#sliver1-eth0-out"/>
+    <novi:hasInboundInterface rdf:resource="http://fp7-novi.eu/im.owl#sliver1-eth0-in"/>
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Node"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <novi:name>sliver1</novi:name>
+    <novi:implementedBy rdf:resource="http://fp7-novi.eu/im.owl#PlanetLab_planetlab2-novi.lab.netmode.ece.ntua.gr"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#dfn.erl.vserver1.vmnic1">
+    <novi:contains rdf:resource="http://fp7-novi.eu/im.owl#dfn.erl.vserver1.vmnic1-out"/>
+    <novi:contains rdf:resource="http://fp7-novi.eu/im.owl#dfn.erl.vserver1.vmnic1-in"/>
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#BidirectionalInterface"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <novi:name>http://fp7-novi.eu/im.owl#dfn.erl.vserver1.vmnic1</novi:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#RequestTopology2">
+    <novi:contains rdf:resource="http://fp7-novi.eu/im.owl#vm1"/>
+    <novi:contains rdf:resource="http://fp7-novi.eu/im.owl#lrouter:if2-lrouter2:if0"/>
+    <novi:contains rdf:resource="http://fp7-novi.eu/im.owl#lrouter2:if1-vm1:eth0"/>
+    <novi:contains rdf:resource="http://fp7-novi.eu/im.owl#lrouter:if0-sliver1:eth0"/>
+    <novi:contains rdf:resource="http://fp7-novi.eu/im.owl#vm1:eth0-lrouter2:if1"/>
+    <novi:contains rdf:resource="http://fp7-novi.eu/im.owl#sliver2:eth0-lrouter:if1"/>
+    <novi:contains rdf:resource="http://fp7-novi.eu/im.owl#lrouter"/>
+    <novi:contains rdf:resource="http://fp7-novi.eu/im.owl#lrouter2:if0-lrouter:if2"/>
+    <novi:contains rdf:resource="http://fp7-novi.eu/im.owl#sliver1:eth0-lrouter:if0"/>
+    <novi:contains rdf:resource="http://fp7-novi.eu/im.owl#sliver2"/>
+    <novi:contains rdf:resource="http://fp7-novi.eu/im.owl#lrouter:if1-sliver2:eth0"/>
+    <novi:contains rdf:resource="http://fp7-novi.eu/im.owl#lrouter2"/>
+    <novi:contains rdf:resource="http://fp7-novi.eu/im.owl#sliver1"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <novi:name>RequestTopology2</novi:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#lrouter:if2-lrouter2:if0">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Link"/>
+    <novi:name>lrouter:if2-lrouter2:if0</novi:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#planetlab2-novi.lab.netmode.ece.ntua.gr:eth0-in">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#lrouter2-if0-in">
+    <novi:implementedBy rdf:resource="http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/0-in"/>
+    <novi:isSink rdf:resource="http://fp7-novi.eu/im.owl#lrouter:if2-lrouter2:if0"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#sliver1-eth0-address">
+    <unit:hasNetmask>255.255.255.248</unit:hasNetmask>
+    <rdf:type rdf:resource="http://fp7-novi.eu/unit.owl#IPAddress"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <unit:hasValue>192.168.37.3</unit:hasValue>
+    <unit:hasUnit rdf:resource="http://fp7-novi.eu/unit.owl#ipv4dotted"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#psnc.poz.router1.ge-0/0/0-out">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#sliver2:eth0-lrouter:if1">
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#VirtualLink"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <novi:name>sliver2:eth0-lrouter:if1</novi:name>
+    <novi:provisionedBy rdf:resource="http://fp7-novi.eu/im.owl#nswitch-fed-pl-3701"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#lrouter2-if1-out">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+    <novi:isSource rdf:resource="http://fp7-novi.eu/im.owl#lrouter2:if1-vm1:eth0"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/0">
+    <novi:contains rdf:resource="http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/0-out"/>
+    <novi:contains rdf:resource="http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/0-in"/>
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#BidirectionalInterface"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <novi:name>http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/0</novi:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/0-in">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#FEDERICA_dfn.erl.router1">
+    <novi:hasOutboundInterface rdf:resource="http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/0-out"/>
+    <novi:hasOutboundInterface rdf:resource="http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/2-out"/>
+    <novi:hasInboundInterface rdf:resource="http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/2-in"/>
+    <novi:hasInboundInterface rdf:resource="http://fp7-novi.eu/im.owl#dfn.erl.router1.ge-0/1/0-in"/>
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Node"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <novi:name>http://fp7-novi.eu/im.owl#FEDERICA_dfn.erl.router1</novi:name>
+    <novi:hostname>router1.erl.de</novi:hostname>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#dfn.erl.vserver1.vmnic1-in">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fp7-novi.eu/im.owl#lrouter">
+    <novi:hasOutboundInterface rdf:resource="http://fp7-novi.eu/im.owl#lrouter-if1-out"/>
+    <novi:hasOutboundInterface rdf:resource="http://fp7-novi.eu/im.owl#lrouter-if0-out"/>
+    <novi:hasOutboundInterface rdf:resource="http://fp7-novi.eu/im.owl#lrouter-if2-out"/>
+    <novi:hasInboundInterface rdf:resource="http://fp7-novi.eu/im.owl#lrouter-if0-in"/>
+    <novi:hasInboundInterface rdf:resource="http://fp7-novi.eu/im.owl#lrouter-if2-in"/>
+    <novi:hasInboundInterface rdf:resource="http://fp7-novi.eu/im.owl#lrouter-if1-in"/>
+    <rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Node"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <novi:name>lrouter</novi:name>
+    <novi:implementedBy rdf:resource="http://fp7-novi.eu/im.owl#FEDERICA_psnc.poz.router1"/>
+  </rdf:Description>
+</rdf:RDF>

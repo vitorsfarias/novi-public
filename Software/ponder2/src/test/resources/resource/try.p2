@@ -1,0 +1,6 @@
+// Test code for Ponder2
+
+
+ root print: "Try stuff 'out, ok?".
+ 
+ "Hello" == "Hello" ifTrue: [root print: "string equality ok"].

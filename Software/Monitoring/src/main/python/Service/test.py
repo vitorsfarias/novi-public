@@ -1,0 +1,268 @@
+from __future__ import with_statement
+'''
+Created on Aug 10, 2011
+
+@author: steger
+'''
+import site
+site.addsitedir('../site-packages')
+
+import unittest2
+from rdflib import Graph, Namespace, Literal
+from Example.credentials import noviCredentialIARGS
+from Example.Platforms import FRAMEWORK
+from Util.MonitoringQueryImpl import MonitoringQueryImpl
+
+
+class Test(unittest2.TestCase):
+    
+    def setUp(self):
+        self.MSI_planetlab = FRAMEWORK.getService('PlanetLab')
+        self.PL_O = self.MSI_planetlab.service.ontology
+        NS = self.PL_O.ns
+        self.S = NS('stat')['UnmodifiedExtractOfFeatureSamples']
+        self.F = NS('query')['Formatter_JSON']
+
+    def tearDown(self):
+        pass
+
+    def test_echo(self):
+        p1 = "PlanetLab"
+        p2 = "FEDERICA"
+        response = FRAMEWORK.getService(p1).echo(p1)
+        print response
+        i, o = response.split("->")
+        got = (i.split("@")[-1].strip(), o.split("@")[-1].strip())
+        expect = (p1, p1)
+        self.assertEquals(expect, got, "Echo reply differs from expected (%s): %s" % (expect, response))
+        response = FRAMEWORK.getService(p2).echo(p1)
+        i, o = response.split("->")
+        got = (i.split("@")[-1].strip(), o.split("@")[-1].strip())
+        expect = (p2, p1)
+        self.assertEquals(expect, got, "Echo reply differs from expected (%s): %s" % (expect, response))
+
+    def test_measure(self):
+        doc = "../monitoringmodel/monitoringQuery_example.owl" # % self.PL_O.baseurl
+        with open(doc) as fp:
+            q = fp.read()
+#        response = self.MS_planetlab.measure(credential = mykeyring, query = q)
+        response = self.MSI_planetlab.measure(credential = [noviCredentialIARGS], query = q)
+        print response
+        self.assertTrue(response, "Got nothing due to former errors")
+        self.assertGreater(len(response.splitlines()), 26, "got empty measurement response")
+
+    def new_g(self):
+        g = Graph()
+        for k, (_, ns) in self.PL_O.ontology.iteritems():
+            g.bind(k, Namespace(ns))
+        return g
+
+    def save(self, fn, q):
+        try:
+            with open(fn, 'w') as f:
+                f.write(q)
+        except:
+            pass
+
+    def test_genq_mem(self):
+        g = self.new_g()
+        mns = Namespace("http://foo.bar/req.owl#")
+        g.bind('q', mns)
+        NS = self.PL_O.ns
+        TYPE = NS('rdf')['type']
+        Q = mns['measureMemoryInformation']
+#        Q2 = mns['measureMemoryInformation2']
+        R = mns['smilax1']
+        I1 = mns['ifin']
+        I2 = mns['ifout']
+        IPADDR = Literal('150.254.160.19')
+        ADDR = mns['smilax_address']
+        g.add((Q, TYPE, NS('owl')['NamedIndividual']))
+        g.add((Q, TYPE, NS('query')['BundleQuery']))
+#        g.add((Q, NS('feature')['hasFeature'], NS('feature')['FreeMemory']))
+        g.add((Q, NS('feature')['hasFeature'], NS('feature')['MemoryUtilization']))
+        g.add((Q, NS('query')['hasResource'], R))
+
+#        g.add((Q2, TYPE, NS('owl')['NamedIndividual']))
+#        g.add((Q2, TYPE, NS('query')['BundleQuery']))
+#        g.add((Q2, NS('feature')['hasFeature'], NS('feature')['AvailableMemory']))
+#        g.add((Q2, NS('query')['hasResource'], R))
+
+        g.add((Q, NS('stat')['hasSample'], self.S))
+        g.add((Q, NS('query')['hasFormatter'], self.F))
+
+#        g.add((Q2, NS('stat')['hasSample'], self.S))
+#        g.add((Q2, NS('query')['hasFormatter'], self.F))
+
+        
+        g.add((R, TYPE, NS('core')['Node']))
+        g.add((R, TYPE, NS('core')['Resource']))
+        g.add((R, TYPE, NS('owl')['NamedIndividual']))
+ 
+        g.add((R, NS('core')['hasInboundInterface'], I1))
+        g.add((R, NS('core')['hasOutboundInterface'], I1))
+        g.add((I1, TYPE, NS('core')['Interface']))
+        g.add((I2, TYPE, NS('core')['Interface']))
+        g.add((I1, NS('core')['hasIPv4Address'], ADDR))
+        g.add((I2, NS('core')['hasIPv4Address'], ADDR))
+        g.add((ADDR, TYPE, NS('owl')['NamedIndividual']))
+        g.add((ADDR, TYPE, NS('unit')['IPAddress']))
+        g.add((ADDR, NS('unit')['hasValue'], IPADDR))
+        query = g.serialize()
+        self.save(fn = "/tmp/genq_mem.owl", q = query)
+        response = self.MSI_planetlab.measure(credential = [noviCredentialIARGS], query = query)
+        print response
+        self.assertGreater(len(response.splitlines()), 20, "got empty measurement response")
+
+    def test_genq_cpu(self):
+        g = self.new_g()
+        mns = Namespace("http://foo.bar/req.owl#")
+        g.bind('q', mns)
+        NS = self.PL_O.ns
+        TYPE = NS('rdf')['type']
+        Q = mns['measureCPUInformation']
+        R = mns['smilax1']
+        I1 = mns['ifin']
+        I2 = mns['ifout']
+        IPADDR = Literal('150.254.160.19')
+        ADDR = mns['smilax_address']
+        g.add((Q, TYPE, NS('owl')['NamedIndividual']))
+        g.add((Q, TYPE, NS('query')['BundleQuery']))
+        g.add((Q, NS('feature')['hasFeature'], NS('feature')['CPUUtilization']))
+        g.add((Q, NS('query')['hasResource'], R))
+
+        g.add((Q, NS('stat')['hasSample'], self.S))
+        g.add((Q, NS('query')['hasFormatter'], self.F))
+        
+        g.add((R, TYPE, NS('core')['Node']))
+        g.add((R, TYPE, NS('core')['Resource']))
+        g.add((R, TYPE, NS('owl')['NamedIndividual']))
+
+        g.add((R, NS('core')['hasInboundInterface'], I1))
+        g.add((R, NS('core')['hasOutboundInterface'], I1))
+        g.add((I1, TYPE, NS('core')['Interface']))
+        g.add((I2, TYPE, NS('core')['Interface']))
+        g.add((I1, NS('core')['hasIPv4Address'], ADDR))
+        g.add((I2, NS('core')['hasIPv4Address'], ADDR))
+        g.add((ADDR, TYPE, NS('owl')['NamedIndividual']))
+        g.add((ADDR, TYPE, NS('unit')['IPAddress']))
+        g.add((ADDR, NS('unit')['hasValue'], IPADDR))
+        query = g.serialize()
+        self.save(fn = "/tmp/genq_cpu.owl", q = query)
+        response = self.MSI_planetlab.measure(credential = [noviCredentialIARGS], query = query)
+        print response
+        self.assertGreater(len(response.splitlines()), 16, "got empty measurement response")
+
+    def test_genq_err(self):
+        g = self.new_g()
+        mns = Namespace("http://foo.bar/req.owl#")
+        g.bind('q', mns)
+        NS = self.PL_O.ns
+        TYPE = NS('rdf')['type']
+        Q = mns['cantmeasureright']
+        R = mns['smilax1']
+        I1 = mns['ifin']
+        I2 = mns['ifout']
+        IPADDR = Literal('150.254.160.19')
+        ADDR = mns['smilax_address']
+        g.add((Q, TYPE, NS('owl')['NamedIndividual']))
+        g.add((Q, TYPE, NS('query')['BundleQuery']))
+        g.add((Q, NS('feature')['hasFeature'], NS('feature')['UsedMemory']))
+        g.add((Q, NS('query')['hasResource'], R))
+
+        g.add((Q, NS('stat')['hasSample'], self.S))
+        g.add((Q, NS('query')['hasFormatter'], self.F))
+        
+        g.add((R, TYPE, NS('core')['Node']))
+        g.add((R, TYPE, NS('core')['Resource']))
+        g.add((R, TYPE, NS('owl')['NamedIndividual']))
+
+        g.add((R, NS('core')['hasInboundInterface'], I1))
+        g.add((R, NS('core')['hasOutboundInterface'], I1))
+        g.add((I1, TYPE, NS('core')['Interface']))
+        g.add((I2, TYPE, NS('core')['Interface']))
+        g.add((I1, NS('core')['hasIPv4Address'], ADDR))
+        g.add((I2, NS('core')['hasIPv4Address'], ADDR))
+        g.add((ADDR, TYPE, NS('owl')['NamedIndividual']))
+        g.add((ADDR, TYPE, NS('unit')['IPAddress']))
+        g.add((ADDR, NS('unit')['hasValue'], IPADDR))
+        query = g.serialize()
+        self.save(fn = "/tmp/genq_cpu.owl", q = query)
+        response = self.MSI_planetlab.measure(credential = [noviCredentialIARGS], query = query)
+        print response
+        self.assertTrue("error" in response, "no error message! got %s" % response)
+
+    def test_genq_helper(self):
+        q = MonitoringQueryImpl(self.MSI_planetlab._ms)
+        q.addFeature('measureMemoryInfo', 'MemoryUtilization')
+        q.addResource('measureMemoryInfo', 'smilax1', 'Node')
+        q.addInterface('smilax1', 'ifin', 'hasInboundInterface')
+        q.addInterface('smilax1', 'ifout', 'hasOutboundInterface')
+        q.defineInterface('ifin','150.254.160.19', 'hasIPv4Address')
+        q.defineInterface('ifout','150.254.160.19', 'hasIPv4Address')
+        query = q.serialize()
+        self.save(fn = "/tmp/genq_mem2.owl", q = query)
+        print query
+        response = self.MSI_planetlab.measure(credential = [noviCredentialIARGS], query = query)
+        print response
+        self.assertGreater(len(response.splitlines()), 20, "got empty measurement response")
+
+
+    def test_genq_complex(self):
+        g = self.new_g()
+        mns = Namespace("http://foo.bar/req.owl#")
+        g.bind('q', mns)
+        NS = self.PL_O.ns
+        TYPE = NS('rdf')['type']
+        Q1 = mns['measureMemoryInformation']
+        Q2 = mns['measureCPUInformation']
+        Q3 = mns['measureDiskInformation']
+        Q4 = mns['measureUsedMemory'] # should generate error
+        R = mns['smilax1']
+        I1 = mns['ifin']
+        I2 = mns['ifout']
+        P = mns['part']
+        IPADDR = Literal('150.254.160.19')
+        ADDR = mns['smilax_address']
+        for Q, feature in [(Q1, 'FreeMemory'), (Q2, 'CPULoad'), (Q3, 'FreeDiskSpace'), (Q4, 'UsedMemory')]:
+            g.add((Q, TYPE, NS('owl')['NamedIndividual']))
+            g.add((Q, TYPE, NS('query')['BundleQuery']))
+            g.add((Q, NS('feature')['hasFeature'], NS('feature')[feature]))
+            g.add((Q, NS('query')['hasResource'], R))
+
+            g.add((Q, NS('stat')['hasSample'], self.S))
+            g.add((Q, NS('query')['hasFormatter'], self.F))
+        
+        g.add((R, TYPE, NS('core')['Node']))
+        g.add((R, TYPE, NS('core')['Resource']))
+        g.add((R, TYPE, NS('owl')['NamedIndividual']))
+
+        g.add((R, NS('core')['hasInboundInterface'], I1))
+        g.add((R, NS('core')['hasOutboundInterface'], I1))
+        g.add((I1, TYPE, NS('core')['Interface']))
+        g.add((I2, TYPE, NS('core')['Interface']))
+        g.add((I1, NS('core')['hasIPv4Address'], ADDR))
+        g.add((I2, NS('core')['hasIPv4Address'], ADDR))
+        g.add((ADDR, TYPE, NS('owl')['NamedIndividual']))
+        g.add((ADDR, TYPE, NS('unit')['IPAddress']))
+        g.add((ADDR, NS('unit')['hasValue'], IPADDR))
+        g.add((Q3, NS('param')['hasParameter'], P))
+        g.add((P, TYPE, NS('owl')['NamedIndividual']))
+        g.add((P, TYPE, NS('query')['QueryParameter']))
+        g.add((P, NS('param')['paramName'], Literal("partition")))
+        g.add((P, NS('unit')['hasValue'], Literal("/")))
+        g.add((P, NS('param')['hasType'], NS('param')['String']))
+        g.add((P, TYPE, NS('unit')['NameOfSomething']))
+        query = g.serialize()
+        self.save(fn = "/tmp/genq_complex.owl", q = query)
+        response = self.MSI_planetlab.measure(credential = [noviCredentialIARGS], query = query)
+        print response
+        self.assertTrue(response, "got nothing")
+        self.assertGreater(len(response.splitlines()), 26, "got empty measurement response")
+        self.assertTrue("error" in response, "no error message! got %s" % response)
+
+
+
+if __name__ == "__main__":
+    #import sys;sys.argv = ['', 'Test.test_genq']
+    unittest2.main()

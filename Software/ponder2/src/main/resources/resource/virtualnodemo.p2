@@ -1,0 +1,39 @@
+
+event := root/factory/event create: #("vnode" "topology").
+root/event at: "createVNode" put: event.
+
+root/factory at: "VirtualNode" put: (root load: "VirtualNodeMO").
+root at: "VNodesdomain" put: root/factory/domain create.
+
+policy := root/factory/ecapolicy create.
+policy event: root/event/createVNode;
+	action: [ :vnode :topology |
+			   root print:"creating a VirtualNodeMO with uri " + vnode + " for topology " + topology.
+			   root/VNodesdomain at: vnode put: (root/factory/VirtualNode create: vnode topology: topology)].
+root/policy at: "createVNode" put: policy.
+policy active: true.
+
+event2 := root/factory/event create: #("urifailure").
+root/event at: "virtualnodefailure" put: event2.
+root/factory at: "VirtualNode" put: (root load: "VirtualNodeMO").
+root/factory at: "Topology" put: (root load: "TopologyMO").
+policy2 := root/factory/ecapolicy create.
+policy2 event: root/event/virtualnodefailure;
+action: [ :urifailure |
+      root print:"failure of VNode with uri " + urifailure.
+      virtualNode := (root/VNodesdomain at: urifailure).
+      root/event/topologyfailure create: #((virtualNode getTopo: urifailure) urifailure).
+      ].
+root/policy at: "virtualnodefailure" put: policy2.
+policy2 active: true.
+
+event3 := root/factory/event create: #("vnode" "topology").
+root/event at: "removeVNode" put: event3.
+policy3 := root/factory/ecapolicy create.
+policy3 event: root/event/removeVNode;
+	action: [ :vnode :topology |
+			   root print:"removing the VirtualNodeMO with uri " + vnode + " of topology " + topology.
+			   (root/VNodesdomain at: vnode) remove: vnode topology: topology.
+			   root/VNodesdomain remove: vnode].
+root/policy at: "removeVNode" put: policy3.
+policy3 active: true.

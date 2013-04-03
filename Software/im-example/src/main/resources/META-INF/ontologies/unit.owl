@@ -1,0 +1,829 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://fp7-novi.eu/unit.owl#"
+     xml:base="http://fp7-novi.eu/unit.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://fp7-novi.eu/unit.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#derivedFrom -->
+
+    <owl:ObjectProperty rdf:about="http://fp7-novi.eu/unit.owl#derivedFrom">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://fp7-novi.eu/unit.owl#SimpleUnit"/>
+        <rdfs:range rdf:resource="http://fp7-novi.eu/unit.owl#Unit"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#hasUnit -->
+
+    <owl:ObjectProperty rdf:about="http://fp7-novi.eu/unit.owl#hasUnit">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://fp7-novi.eu/unit.owl#Dimension"/>
+        <rdfs:range rdf:resource="http://fp7-novi.eu/unit.owl#Unit"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#possiblePrefix -->
+
+    <owl:ObjectProperty rdf:about="http://fp7-novi.eu/unit.owl#possiblePrefix">
+        <rdfs:range rdf:resource="http://fp7-novi.eu/unit.owl#Prefix"/>
+        <rdfs:domain rdf:resource="http://fp7-novi.eu/unit.owl#Unit"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#productOf -->
+
+    <owl:ObjectProperty rdf:about="http://fp7-novi.eu/unit.owl#productOf">
+        <rdfs:domain rdf:resource="http://fp7-novi.eu/unit.owl#ProductUnit"/>
+        <rdfs:range rdf:resource="http://fp7-novi.eu/unit.owl#Unit"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#forwardExpression -->
+
+    <owl:DatatypeProperty rdf:about="http://fp7-novi.eu/unit.owl#forwardExpression">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://fp7-novi.eu/unit.owl#regexp"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#inverseExpression -->
+
+    <owl:DatatypeProperty rdf:about="http://fp7-novi.eu/unit.owl#inverseExpression">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://fp7-novi.eu/unit.owl#regexp"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#power -->
+
+    <owl:DatatypeProperty rdf:about="http://fp7-novi.eu/unit.owl#power">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://fp7-novi.eu/unit.owl#Unit"/>
+        <rdfs:range rdf:resource="&xsd;double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#regexp -->
+
+    <owl:DatatypeProperty rdf:about="http://fp7-novi.eu/unit.owl#regexp">
+        <rdfs:domain rdf:resource="http://fp7-novi.eu/unit.owl#Unit"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#scale -->
+
+    <owl:DatatypeProperty rdf:about="http://fp7-novi.eu/unit.owl#scale">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;double"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://fp7-novi.eu/unit.owl#Prefix"/>
+                    <rdf:Description rdf:about="http://fp7-novi.eu/unit.owl#Unit"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#symbol -->
+
+    <owl:DatatypeProperty rdf:about="http://fp7-novi.eu/unit.owl#symbol">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://fp7-novi.eu/unit.owl#Prefix"/>
+                    <rdf:Description rdf:about="http://fp7-novi.eu/unit.owl#Unit"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#value -->
+
+    <owl:DatatypeProperty rdf:about="http://fp7-novi.eu/unit.owl#value">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;double"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://fp7-novi.eu/unit.owl#Prefix"/>
+                    <rdf:Description rdf:about="http://fp7-novi.eu/unit.owl#Unit"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#BaseUnit -->
+
+    <owl:Class rdf:about="http://fp7-novi.eu/unit.owl#BaseUnit">
+        <rdfs:subClassOf rdf:resource="http://fp7-novi.eu/unit.owl#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#DerivedUnit -->
+
+    <owl:Class rdf:about="http://fp7-novi.eu/unit.owl#DerivedUnit">
+        <rdfs:subClassOf rdf:resource="http://fp7-novi.eu/unit.owl#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#Dimension -->
+
+    <owl:Class rdf:about="http://fp7-novi.eu/unit.owl#Dimension">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://fp7-novi.eu/unit.owl#hasUnit"/>
+                <owl:onClass rdf:resource="http://fp7-novi.eu/unit.owl#Unit"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#PowerUnit -->
+
+    <owl:Class rdf:about="http://fp7-novi.eu/unit.owl#PowerUnit">
+        <rdfs:subClassOf rdf:resource="http://fp7-novi.eu/unit.owl#SimpleUnit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#Prefix -->
+
+    <owl:Class rdf:about="http://fp7-novi.eu/unit.owl#Prefix"/>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#ProductUnit -->
+
+    <owl:Class rdf:about="http://fp7-novi.eu/unit.owl#ProductUnit">
+        <rdfs:subClassOf rdf:resource="http://fp7-novi.eu/unit.owl#DerivedUnit"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://fp7-novi.eu/unit.owl#productOf"/>
+                <owl:onClass rdf:resource="http://fp7-novi.eu/unit.owl#Unit"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:minQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#RegexpScaleUnit -->
+
+    <owl:Class rdf:about="http://fp7-novi.eu/unit.owl#RegexpScaleUnit">
+        <rdfs:subClassOf rdf:resource="http://fp7-novi.eu/unit.owl#SimpleUnit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#ScaleUnit -->
+
+    <owl:Class rdf:about="http://fp7-novi.eu/unit.owl#ScaleUnit">
+        <rdfs:subClassOf rdf:resource="http://fp7-novi.eu/unit.owl#SimpleUnit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#SimpleUnit -->
+
+    <owl:Class rdf:about="http://fp7-novi.eu/unit.owl#SimpleUnit">
+        <rdfs:subClassOf rdf:resource="http://fp7-novi.eu/unit.owl#DerivedUnit"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://fp7-novi.eu/unit.owl#derivedFrom"/>
+                <owl:onClass rdf:resource="http://fp7-novi.eu/unit.owl#Unit"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#Unit -->
+
+    <owl:Class rdf:about="http://fp7-novi.eu/unit.owl#Unit"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#Byte -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/unit.owl#Byte">
+        <rdf:type rdf:resource="http://fp7-novi.eu/unit.owl#ScaleUnit"/>
+        <scale>8</scale>
+        <symbol>B</symbol>
+        <possiblePrefix rdf:resource="http://fp7-novi.eu/unit.owl#Gibi"/>
+        <possiblePrefix rdf:resource="http://fp7-novi.eu/unit.owl#Kibi"/>
+        <possiblePrefix rdf:resource="http://fp7-novi.eu/unit.owl#Mebi"/>
+        <possiblePrefix rdf:resource="http://fp7-novi.eu/unit.owl#Tebi"/>
+        <derivedFrom rdf:resource="http://fp7-novi.eu/unit.owl#bit"/>
+        <possiblePrefix rdf:resource="http://fp7-novi.eu/unit.owl#giga"/>
+        <possiblePrefix rdf:resource="http://fp7-novi.eu/unit.owl#kilo"/>
+        <possiblePrefix rdf:resource="http://fp7-novi.eu/unit.owl#mega"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#Bytepersecond -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/unit.owl#Bytepersecond">
+        <rdf:type rdf:resource="http://fp7-novi.eu/unit.owl#ScaleUnit"/>
+        <scale>8</scale>
+        <symbol>Bps</symbol>
+        <derivedFrom rdf:resource="http://fp7-novi.eu/unit.owl#bitpersecond"/>
+        <possiblePrefix rdf:resource="http://fp7-novi.eu/unit.owl#giga"/>
+        <possiblePrefix rdf:resource="http://fp7-novi.eu/unit.owl#kilo"/>
+        <possiblePrefix rdf:resource="http://fp7-novi.eu/unit.owl#mega"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#Gibi -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/unit.owl#Gibi">
+        <rdf:type rdf:resource="http://fp7-novi.eu/unit.owl#Prefix"/>
+        <symbol>G</symbol>
+        <value>1073741824</value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#Kibi -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/unit.owl#Kibi">
+        <rdf:type rdf:resource="http://fp7-novi.eu/unit.owl#Prefix"/>
+        <value>1024</value>
+        <symbol>K</symbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#Mebi -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/unit.owl#Mebi">
+        <rdf:type rdf:resource="http://fp7-novi.eu/unit.owl#Prefix"/>
+        <symbol>M</symbol>
+        <value>1048576</value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#Tebi -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/unit.owl#Tebi">
+        <rdf:type rdf:resource="http://fp7-novi.eu/unit.owl#Prefix"/>
+        <value>1099511627776</value>
+        <symbol>T</symbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#bit -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/unit.owl#bit">
+        <rdf:type rdf:resource="http://fp7-novi.eu/unit.owl#BaseUnit"/>
+        <symbol>bit</symbol>
+        <possiblePrefix rdf:resource="http://fp7-novi.eu/unit.owl#giga"/>
+        <possiblePrefix rdf:resource="http://fp7-novi.eu/unit.owl#kilo"/>
+        <possiblePrefix rdf:resource="http://fp7-novi.eu/unit.owl#mega"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#bitpersecond -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/unit.owl#bitpersecond">
+        <rdf:type rdf:resource="http://fp7-novi.eu/unit.owl#ProductUnit"/>
+        <symbol>bps</symbol>
+        <productOf rdf:resource="http://fp7-novi.eu/unit.owl#bit"/>
+        <possiblePrefix rdf:resource="http://fp7-novi.eu/unit.owl#giga"/>
+        <possiblePrefix rdf:resource="http://fp7-novi.eu/unit.owl#kilo"/>
+        <possiblePrefix rdf:resource="http://fp7-novi.eu/unit.owl#mega"/>
+        <productOf rdf:resource="http://fp7-novi.eu/unit.owl#persecond"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#capacity -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/unit.owl#capacity">
+        <rdf:type rdf:resource="http://fp7-novi.eu/unit.owl#Dimension"/>
+        <hasUnit rdf:resource="http://fp7-novi.eu/unit.owl#bitpersecond"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#cardinal -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/unit.owl#cardinal">
+        <rdf:type rdf:resource="http://fp7-novi.eu/unit.owl#Dimension"/>
+        <hasUnit rdf:resource="http://fp7-novi.eu/unit.owl#unitless"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#celsius -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/unit.owl#celsius">
+        <rdf:type rdf:resource="http://fp7-novi.eu/unit.owl#BaseUnit"/>
+        <symbol>C</symbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#count -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/unit.owl#count">
+        <rdf:type rdf:resource="http://fp7-novi.eu/unit.owl#Dimension"/>
+        <hasUnit rdf:resource="http://fp7-novi.eu/unit.owl#unit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#day -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/unit.owl#day">
+        <rdf:type rdf:resource="http://fp7-novi.eu/unit.owl#ScaleUnit"/>
+        <scale>86400</scale>
+        <derivedFrom rdf:resource="http://fp7-novi.eu/unit.owl#second"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#deco -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/unit.owl#deco">
+        <rdf:type rdf:resource="http://fp7-novi.eu/unit.owl#Prefix"/>
+        <value>10</value>
+        <symbol>d</symbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#dozen -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/unit.owl#dozen">
+        <rdf:type rdf:resource="http://fp7-novi.eu/unit.owl#ScaleUnit"/>
+        <scale>12</scale>
+        <derivedFrom rdf:resource="http://fp7-novi.eu/unit.owl#unit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#fraction -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/unit.owl#fraction">
+        <rdf:type rdf:resource="http://fp7-novi.eu/unit.owl#BaseUnit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#frequency -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/unit.owl#frequency">
+        <rdf:type rdf:resource="http://fp7-novi.eu/unit.owl#Dimension"/>
+        <hasUnit rdf:resource="http://fp7-novi.eu/unit.owl#persecond"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#geoposition -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/unit.owl#geoposition">
+        <rdf:type rdf:resource="http://fp7-novi.eu/unit.owl#Dimension"/>
+        <hasUnit rdf:resource="http://fp7-novi.eu/unit.owl#radian"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#giga -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/unit.owl#giga">
+        <rdf:type rdf:resource="http://fp7-novi.eu/unit.owl#Prefix"/>
+        <value>1000000000</value>
+        <symbol>g</symbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#hecto -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/unit.owl#hecto">
+        <rdf:type rdf:resource="http://fp7-novi.eu/unit.owl#Prefix"/>
+        <value>100</value>
+        <symbol>h</symbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#hour -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/unit.owl#hour">
+        <rdf:type rdf:resource="http://fp7-novi.eu/unit.owl#ScaleUnit"/>
+        <scale>3600</scale>
+        <symbol>h</symbol>
+        <derivedFrom rdf:resource="http://fp7-novi.eu/unit.owl#second"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#informationrate -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/unit.owl#informationrate">
+        <rdf:type rdf:resource="http://fp7-novi.eu/unit.owl#Dimension"/>
+        <hasUnit rdf:resource="http://fp7-novi.eu/unit.owl#bitpersecond"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#informationsize -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/unit.owl#informationsize">
+        <rdf:type rdf:resource="http://fp7-novi.eu/unit.owl#Dimension"/>
+        <hasUnit rdf:resource="http://fp7-novi.eu/unit.owl#bit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#ipaddress -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/unit.owl#ipaddress">
+        <rdf:type rdf:resource="http://fp7-novi.eu/unit.owl#Dimension"/>
+        <hasUnit rdf:resource="http://fp7-novi.eu/unit.owl#ipv4dotted"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#ipv4dotted -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/unit.owl#ipv4dotted">
+        <rdf:type rdf:resource="http://fp7-novi.eu/unit.owl#BaseUnit"/>
+        <symbol></symbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#ipv4int -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/unit.owl#ipv4int">
+        <rdf:type rdf:resource="http://fp7-novi.eu/unit.owl#RegexpScaleUnit"/>
+        <derivedFrom rdf:resource="http://fp7-novi.eu/unit.owl#ipv6int"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#ipv6dotted -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/unit.owl#ipv6dotted">
+        <rdf:type rdf:resource="http://fp7-novi.eu/unit.owl#RegexpScaleUnit"/>
+        <derivedFrom rdf:resource="http://fp7-novi.eu/unit.owl#ipv6int"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#ipv6int -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/unit.owl#ipv6int">
+        <rdf:type rdf:resource="http://fp7-novi.eu/unit.owl#BaseUnit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#kilo -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/unit.owl#kilo">
+        <rdf:type rdf:resource="http://fp7-novi.eu/unit.owl#Prefix"/>
+        <symbol>k</symbol>
+        <value>1000</value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#mega -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/unit.owl#mega">
+        <rdf:type rdf:resource="http://fp7-novi.eu/unit.owl#Prefix"/>
+        <value>1000000</value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#micro -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/unit.owl#micro">
+        <rdf:type rdf:resource="http://fp7-novi.eu/unit.owl#Prefix"/>
+        <value>1e-6</value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#milli -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/unit.owl#milli">
+        <rdf:type rdf:resource="http://fp7-novi.eu/unit.owl#Prefix"/>
+        <symbol>m</symbol>
+        <value>1e-3</value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#minute -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/unit.owl#minute">
+        <rdf:type rdf:resource="http://fp7-novi.eu/unit.owl#ScaleUnit"/>
+        <symbol>min</symbol>
+        <scale>60</scale>
+        <derivedFrom rdf:resource="http://fp7-novi.eu/unit.owl#second"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#month -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/unit.owl#month">
+        <rdf:type rdf:resource="http://fp7-novi.eu/unit.owl#ScaleUnit"/>
+        <scale>1814400</scale>
+        <derivedFrom rdf:resource="http://fp7-novi.eu/unit.owl#second"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#nameofsomething -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/unit.owl#nameofsomething">
+        <rdf:type rdf:resource="http://fp7-novi.eu/unit.owl#Dimension"/>
+        <hasUnit rdf:resource="http://fp7-novi.eu/unit.owl#unitless"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#nano -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/unit.owl#nano">
+        <rdf:type rdf:resource="http://fp7-novi.eu/unit.owl#Prefix"/>
+        <symbol>n</symbol>
+        <value>1e-9</value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#nounit -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/unit.owl#nounit">
+        <rdf:type rdf:resource="http://fp7-novi.eu/unit.owl#BaseUnit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#percent -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/unit.owl#percent">
+        <rdf:type rdf:resource="http://fp7-novi.eu/unit.owl#ScaleUnit"/>
+        <scale>100</scale>
+        <symbol>%</symbol>
+        <derivedFrom rdf:resource="http://fp7-novi.eu/unit.owl#fraction"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#permil -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/unit.owl#permil">
+        <rdf:type rdf:resource="http://fp7-novi.eu/unit.owl#ScaleUnit"/>
+        <scale>1000</scale>
+        <derivedFrom rdf:resource="http://fp7-novi.eu/unit.owl#fraction"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#persecond -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/unit.owl#persecond">
+        <rdf:type rdf:resource="http://fp7-novi.eu/unit.owl#PowerUnit"/>
+        <symbol>Hz</symbol>
+        <power>-1</power>
+        <possiblePrefix rdf:resource="http://fp7-novi.eu/unit.owl#giga"/>
+        <possiblePrefix rdf:resource="http://fp7-novi.eu/unit.owl#kilo"/>
+        <possiblePrefix rdf:resource="http://fp7-novi.eu/unit.owl#mega"/>
+        <derivedFrom rdf:resource="http://fp7-novi.eu/unit.owl#second"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#pico -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/unit.owl#pico">
+        <rdf:type rdf:resource="http://fp7-novi.eu/unit.owl#Prefix"/>
+        <value>1e-12</value>
+        <symbol>p</symbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#pointintime -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/unit.owl#pointintime">
+        <rdf:type rdf:resource="http://fp7-novi.eu/unit.owl#Dimension"/>
+        <hasUnit rdf:resource="http://fp7-novi.eu/unit.owl#unixtimestamp"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#radian -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/unit.owl#radian">
+        <rdf:type rdf:resource="http://fp7-novi.eu/unit.owl#BaseUnit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#ratio -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/unit.owl#ratio">
+        <rdf:type rdf:resource="http://fp7-novi.eu/unit.owl#Dimension"/>
+        <hasUnit rdf:resource="http://fp7-novi.eu/unit.owl#fraction"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#second -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/unit.owl#second">
+        <rdf:type rdf:resource="http://fp7-novi.eu/unit.owl#BaseUnit"/>
+        <symbol>s</symbol>
+        <possiblePrefix rdf:resource="http://fp7-novi.eu/unit.owl#micro"/>
+        <possiblePrefix rdf:resource="http://fp7-novi.eu/unit.owl#milli"/>
+        <possiblePrefix rdf:resource="http://fp7-novi.eu/unit.owl#nano"/>
+        <possiblePrefix rdf:resource="http://fp7-novi.eu/unit.owl#pico"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#temperature -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/unit.owl#temperature">
+        <rdf:type rdf:resource="http://fp7-novi.eu/unit.owl#Dimension"/>
+        <hasUnit rdf:resource="http://fp7-novi.eu/unit.owl#celsius"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#tera -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/unit.owl#tera">
+        <rdf:type rdf:resource="http://fp7-novi.eu/unit.owl#Prefix"/>
+        <value>2e12</value>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#timeinterval -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/unit.owl#timeinterval">
+        <rdf:type rdf:resource="http://fp7-novi.eu/unit.owl#Dimension"/>
+        <hasUnit rdf:resource="http://fp7-novi.eu/unit.owl#second"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#unit -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/unit.owl#unit">
+        <rdf:type rdf:resource="http://fp7-novi.eu/unit.owl#BaseUnit"/>
+        <symbol>(1)</symbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#unitless -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/unit.owl#unitless">
+        <rdf:type rdf:resource="http://fp7-novi.eu/unit.owl#BaseUnit"/>
+        <symbol></symbol>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#unixtimestamp -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/unit.owl#unixtimestamp">
+        <rdf:type rdf:resource="http://fp7-novi.eu/unit.owl#BaseUnit"/>
+        <symbol>s</symbol>
+        <possiblePrefix rdf:resource="http://fp7-novi.eu/unit.owl#nano"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#week -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/unit.owl#week">
+        <rdf:type rdf:resource="http://fp7-novi.eu/unit.owl#ScaleUnit"/>
+        <scale>604800</scale>
+        <derivedFrom rdf:resource="http://fp7-novi.eu/unit.owl#second"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#year -->
+
+    <owl:NamedIndividual rdf:about="http://fp7-novi.eu/unit.owl#year">
+        <rdf:type rdf:resource="http://fp7-novi.eu/unit.owl#ScaleUnit"/>
+        <scale>6622560000</scale>
+        <derivedFrom rdf:resource="http://fp7-novi.eu/unit.owl#second"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.3.1824) http://owlapi.sourceforge.net -->
+

@@ -1,0 +1,29 @@
+//inspector := root load: "HashInspector".
+//inspector inspect: Variables.
+
+root at: "esii" put: root/factory/domain create.
+
+// Set up the traffic profile object
+root/esii at: "trafficProfile" put: #() asHash.
+trafficProfile := root/esii/trafficProfile.
+
+// The following is made up and needs to be formalised
+
+trafficProfile at: "total_BW" put: 1000.
+trafficProfile at: "BW_1" put: 1000.
+trafficProfile at: "BW_2" put: 1000.
+trafficProfile at: "initialValue" put: 1000.
+trafficProfile at: "congestedValue" put: 1000.
+trafficProfile at: "maxCongestedValue" put: 1000.
+trafficProfile at: "bandwidthGuaranteed" put: 1000.
+trafficProfile at: "qsize" put: 50.
+trafficProfile at: "whippy" put: "Whip".
+
+// Set up the network status object
+root/esii at: "status" put: #() asHash.
+root/esii/status at: "maxCongestedValue" put: false.
+
+temp := (root load: "HashInspector") create.
+temp manage: root/esii/trafficProfile as: "Traffic Profile".
+temp manage: root/esii/status as: "Network Status".
+temp manage: Variables as: "Variables".

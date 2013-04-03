@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="MacRoman"?>
+<jardesc>
+<jar path="Ponder2/lib/ponder2aptfactory.jar"/>
+<options buildIfNeeded="true" compress="true" descriptionLocation="/Ponder2/lib/ponder2aptfactory.jardesc" exportErrors="false" exportWarnings="true" includeDirectoryEntries="true" overwrite="true" saveDescription="true" storeRefactorings="false" useSourceFolders="false"/>
+<storedRefactorings deprecationInfo="true" structuralOnly="false"/>
+<selectedProjects/>
+<manifest generateManifest="true" manifestLocation="" manifestVersion="1.0" reuseManifest="false" saveManifest="false" usesManifest="true">
+<sealing sealJar="false">
+<packagesToSeal/>
+<packagesToUnSeal/>
+</sealing>
+</manifest>
+<selectedElements exportClassFiles="true" exportJavaFiles="true" exportOutputFolder="false">
+<folder path="/Ponder2/src/main/resources/META-INF"/>
+<javaElement handleIdentifier="=Ponder2/src\/main\/java&lt;net.ponder2.apt"/>
+<javaElement handleIdentifier="=Ponder2/src\/main\/resources&lt;net.ponder2.apt"/>
+</selectedElements>
+</jardesc>

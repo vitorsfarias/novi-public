@@ -1,0 +1,124 @@
+//creation of the hospital domain structure
+
+newdom := root/factory/domain.
+
+//create a domain to store target auth policies 
+root at: "tauthdom" put: newdom create.
+
+//create a domain to store subject auth policies 
+root at: "sauthdom" put: newdom create.
+
+
+newauthpol := root load: "AuthorisationPolicy".
+root/factory at: "newauthpol" put: newauthpol.
+
+
+//create a negative authorisation policy a1.
+//If activated, this policy will not allowed 
+//user1 to perform the operation "access" of resource planetlab2-novi.lab.netmode.ece.ntua.gr
+
+
+root/tauthdom at: "a1" put: (newauthpol subject: root/Usersdomain/User1
+									action: "access:" 
+									target: root/Resources/planetlab2 
+									focus: "st").
+root/tauthdom/a1 reqneg. // set the policy neg for the in part
+root/tauthdom/a1 active: true. //(de)activate the policy
+
+root/tauthdom at: "bl1" put: (newauthpol subject: root/Rolesdomain/PlanetLabUserBlack
+									action: "access:" 
+									target: (root/Resources at "urn:publicid:IDN+novipl:novi+node+smilax5.man.poznan.pl")
+									focus: "st").
+root/tauthdom/bl1 reqneg. // set the policy neg for the in part
+root/tauthdom/bl1 active: true. //(de)activate the policy
+
+
+root/tauthdom at: "bl2" put: (newauthpol subject: root/Rolesdomain/PlanetLabUserBlack
+									action: "access:" 
+									target: (root/Resources at "urn:publicid:IDN+novipl:novi+node+smilax4.man.poznan.pl")
+									focus: "st").
+root/tauthdom/bl2 reqneg. // set the policy neg for the in part
+root/tauthdom/bl2 active: true. //(de)activate the policy
+
+
+root/tauthdom at: "bl3" put: (newauthpol subject: root/Rolesdomain/PlanetLabUserBlack
+									action: "access:" 
+									target: (root/Resources at "urn:publicid:IDN+novipl:novi+node+planetlab1-novi.lab.netmode.ece.ntua.gr")
+									focus: "st").
+root/tauthdom/bl3 reqneg. // set the policy neg for the in part
+root/tauthdom/bl3 active: true. //(de)activate the policy
+
+
+root/tauthdom at: "bl4" put: (newauthpol subject: root/Rolesdomain/PlanetLabUserBlack
+									action: "access:" 
+									target: (root/Resources at "urn:publicid:IDN+novipl:novi+node+dfn-novi-ple1.x-win.dfn.de")
+									focus: "st").
+root/tauthdom/bl4 reqneg. // set the policy neg for the in part
+root/tauthdom/bl4 active: true. //(de)activate the policy
+
+
+root/tauthdom at: "bl5" put: (newauthpol subject: root/Rolesdomain/PlanetLabUserBlack
+									action: "access:" 
+									target: (root/Resources at "urn:publicid:IDN+novipl:novi+node+smilax3.man.poznan.pl")
+									focus: "st").
+root/tauthdom/bl5 reqneg. // set the policy neg for the in part
+root/tauthdom/bl5 active: true. //(de)activate the policy
+
+
+root/tauthdom at: "bl6" put: (newauthpol subject: root/Rolesdomain/PlanetLabUserBlack
+									action: "access:" 
+									target: (root/Resources at "urn:publicid:IDN+novipl:novi+node+novilab.elte.hu")
+									focus: "st").
+root/tauthdom/bl6 reqneg. // set the policy neg for the in part
+root/tauthdom/bl6 active: true. //(de)activate the policy
+
+
+root/tauthdom at: "bl7" put: (newauthpol subject: root/Rolesdomain/PlanetLabUserBlack
+									action: "access:" 
+									target: (root/Resources at "urn:publicid:IDN+novipl:novi+node+smilax2.man.poznan.pll")
+									focus: "st").
+root/tauthdom/bl7 reqneg. // set the policy neg for the in part
+root/tauthdom/bl7 active: true. //(de)activate the policy
+
+
+root/tauthdom at: "bl8" put: (newauthpol subject: root/Rolesdomain/PlanetLabUserBlack
+									action: "access:" 
+									target: (root/Resources at "urn:publicid:IDN+novipl:novi+node+smilax1.man.poznan.pl")
+									focus: "st").
+root/tauthdom/bl8 reqneg. // set the policy neg for the in part
+root/tauthdom/bl8 active: true. //(de)activate the policy
+
+
+root/tauthdom at: "bl9" put: (newauthpol subject: root/Rolesdomain/PlanetLabUserBlack
+									action: "access:" 
+									target: (root/Resources at "urn:publicid:IDN+novipl:novi+node+planetlab2-novi.lab.netmode.ece.ntua.gr")
+									focus: "st").
+root/tauthdom/bl9 reqneg. // set the policy neg for the in part
+root/tauthdom/bl9 active: true. //(de)activate the policy
+
+
+//define an authorisation policy that has as subject the domain /root/Usersdomain/User1 
+//and as target the domain root/resources/Nodes/planetlab1-novi.lab.netmode.ece.ntua.gr. This policy must be a positive authorisation
+//that should take priority over any of the previous policies
+
+root/tauthdom at: "a2" put: (newauthpol subject: root/Usersdomain/User1
+									action: "access:" 
+									target: root/Resources/planetlab1
+									focus:"st" ).
+root/tauthdom/a2 final.
+root/tauthdom/a2 active: true. 
+
+root/tauthdom at: "a3" put: (newauthpol subject: root/Usersdomain/User1
+									action: "access:" 
+									target: (root/Resources at: "http://fp7-novi.eu/im.owl#PlanetLab_planetlab2-novi.lab.netmode.ece.ntua.gr")
+									focus:"st" ).
+root/tauthdom/a3 final.
+root/tauthdom/a3 active: true. 
+
+root/tauthdom at: "a4" put: (newauthpol subject: root/Usersdomain/User1
+									action: "access:" 
+									target: (root/Resources at: "http://fp7-novi.eu/im.owl#PlanetLab_planetlab1-novi.lab.netmode.ece.ntua.gr")
+									focus:"st" ).
+root/tauthdom/a4 final.
+root/tauthdom/a4 active: true. 
+

@@ -1,0 +1,230 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://fp7-novi.eu/monitoring_query.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     ontologyIRI="http://fp7-novi.eu/monitoring_query.owl">
+    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="im" IRI="http://fp7-novi.eu/im.owl#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="monitoring_query" IRI="http://fp7-novi.eu/monitoring_query.owl#"/>
+    <Import>http://fp7-novi.eu/monitoring_parameter.owl</Import>
+    <Import>http://fp7-novi.eu/monitoring_stat.owl</Import>
+    <Import>http://fp7-novi.eu/im.owl</Import>
+    <Import>http://fp7-novi.eu/monitoring_features.owl#</Import>
+    <Annotation>
+        <AnnotationProperty IRI="#author"/>
+        <Literal datatypeIRI="&xsd;string">Mátray, Péter (matray@complex.elte.hu)</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="#author"/>
+        <Literal datatypeIRI="&xsd;string">Stéger, József (steger@complex.elte.hu)</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal datatypeIRI="&xsd;string">Part of the NOVI Information Model (IM). Defines and classifies concepts that are necessary to describe monitoring services, their parametrization and the representation of the results.</Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="#BatchQuery"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BundleQuery"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ConditionQuery"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DataFormatter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MonitorQuery"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MonitorQueryDefinitionPart"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Query"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#QueryParameter"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasFormatter"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasResource"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasProcessid"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Formatter_CSV"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Formatter_JSON"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#UnmodifiedExtractOfFeatureSamples"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#author"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#BatchQuery"/>
+        <Class IRI="#MonitorQuery"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BatchQuery"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://fp7-novi.eu/monitoring_parameter.owl#hasParameter"/>
+            <Class IRI="#QueryParameter"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BatchQuery"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#hasResource"/>
+            <Class abbreviatedIRI="im:Resource"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BundleQuery"/>
+        <Class IRI="#MonitorQuery"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BundleQuery"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://fp7-novi.eu/monitoring_parameter.owl#hasParameter"/>
+            <Class IRI="#QueryParameter"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BundleQuery"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasResource"/>
+            <Class abbreviatedIRI="im:Resource"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ConditionQuery"/>
+        <Class IRI="#Query"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ConditionQuery"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="http://fp7-novi.eu/monitoring_stat.owl#hasCondition"/>
+            <Class IRI="http://fp7-novi.eu/monitoring_stat.owl#Condition"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DataFormatter"/>
+        <Class IRI="#MonitorQueryDefinitionPart"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MonitorQuery"/>
+        <Class IRI="#Query"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MonitorQuery"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="http://fp7-novi.eu/monitoring_features.owl#hasFeature"/>
+            <Class IRI="http://fp7-novi.eu/monitoring_features.owl#MonitoredFeature"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MonitorQuery"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasFormatter"/>
+            <Class IRI="#DataFormatter"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MonitorQuery"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="http://fp7-novi.eu/monitoring_stat.owl#hasSample"/>
+            <Class IRI="http://fp7-novi.eu/monitoring_stat.owl#Sample"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#QueryParameter"/>
+        <Class IRI="http://fp7-novi.eu/monitoring_parameter.owl#Parameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#QueryParameter"/>
+        <Class IRI="#MonitorQueryDefinitionPart"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SampleManipulationQuery"/>
+        <Class IRI="#MonitorQuery"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SampleManipulationQuery"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasResource"/>
+            <Class abbreviatedIRI="im:Resource"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://fp7-novi.eu/monitoring_stat.owl#Sample"/>
+        <Class IRI="#MonitorQueryDefinitionPart"/>
+    </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="#DataFormatter"/>
+        <NamedIndividual IRI="#Formatter_CSV"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DataFormatter"/>
+        <NamedIndividual IRI="#Formatter_JSON"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://fp7-novi.eu/monitoring_stat.owl#Sample"/>
+        <NamedIndividual IRI="#UnmodifiedExtractOfFeatureSamples"/>
+    </ClassAssertion>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasFormatter"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasResource"/>
+    </FunctionalObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasFormatter"/>
+        <Class IRI="#BundleQuery"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasFormatter"/>
+        <Class IRI="#DataFormatter"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasResource"/>
+        <Class abbreviatedIRI="im:Resource"/>
+    </ObjectPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasProcessid"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasResource</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">here it links to the core ontology</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

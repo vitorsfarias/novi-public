@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!-- Author: Blazej Pietrzak [blazej.pietrzak@man.poznan.pl] -->
+
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+	xmlns:cm="http://aries.apache.org/blueprint/xmlns/blueprint-cm/v1.0.0">
+	<cm:property-placeholder persistent-id="eu.novi.requesthandler.sfa"/>
+  	<bean id="RequestHandlerSFA" class="eu.novi.requesthandler.sfa.impl.SFAFederatedTestbedImpl" >
+  	    	<property name="testbed" value="${testbed}" />
+  	    	<property name="nswitchManager" ref="nswitch-manager" />
+  	    	<property name="logService" ref="refLogService"/>
+  	    	<property name="reportUserFeedback"  ref="refUserFeedback"/>
+  	    	<!-- Waiting time since the slice is created to the nswitch call -->
+  	    	<property name="waitingTime" value="${waitingTime}" />
+  	    	<!-- Reference to RSpec definition in different bundle
+  	    	<property name="sfaRSpecs" ref="rspecs"/>
+  	    	 -->
+  	    	
+  	    	
+ 	</bean>
+  	<service ref="RequestHandlerSFA">
+     	<interfaces>
+      		<value>eu.novi.requesthandler.sfa.FederatedTestbed</value>
+    	</interfaces>
+  		<service-properties>
+   			<entry key="testbed" value="${testbed}" />
+  		</service-properties>
+  	</service>
+  	<!-- Reference to osgi NSwitch -->
+  	<reference id="nswitch-manager" interface="eu.novi.nswitch.manager.NswitchManager" />
+ 	
+ 	<!-- Reference to osgi Log Service -->
+	<reference id="refLogService" interface="org.osgi.service.log.LogService" />
+	
+	<!-- Reference for reporting feedback  -->
+    <reference id="refUserFeedback" interface="eu.novi.feedback.event.ReportEvent" />
+    
+    <!-- Reference to SFA RSpecs
+     <reference-list id="rspecs" interface="eu.novi.sfa.Rspec"  member-type="service-object"/>
+      -->
+   
+    
+	
+</blueprint>

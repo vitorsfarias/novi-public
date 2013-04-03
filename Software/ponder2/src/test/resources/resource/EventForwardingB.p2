@@ -1,0 +1,53 @@
+// Start this with option
+// -boot EventForwardingB.p2 
+// after starting EventForwardingA
+
+domain := root/factory/domain.
+eca := root/factory/ecapolicy.
+
+// Get the remote root
+remote := root import: "root"  from: "rmi://localhost/EFA".
+
+// Import the test event type
+testevent := remote/event/testevent.
+root/event at: "testevent" put: testevent.
+
+// Create a domain hierarchy
+root at: "d1" put: domain create.
+root at: "d2" put: domain create.
+
+// Create a policy that is attached to a domain and looks for the event
+makepol := [ :domain :name |
+	policy := eca create.
+	policy 
+		event: testevent;
+		action: [ :value | root print: "Policy " + name + " received event " + value ];
+		attach: domain;
+		active: true.
+].
+
+makepol value: root value: "root".
+makepol value: root/d1 value: "root/d1".
+
+// Grab A's forwarder
+forwarder := remote/forwarder.
+
+// Tell it to forward events here and turn it off
+forwarder forwardTo: root/d1.
+forwarder active: false.
+
+// This tests that the forwarder can forward to us
+root print: "Sending event: No events should show up in B".
+remote/event/eventD2 create.
+
+forwarder active: true.
+
+root print: "Sending event: D1 and root should get the next event".
+remote/event/eventD2 create.
+
+
+// Now test that we can have a forwarder that forwards to another SMC
+
+
+
+

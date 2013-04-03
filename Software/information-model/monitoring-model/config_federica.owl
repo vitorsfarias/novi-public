@@ -1,0 +1,1211 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY im "http://fp7-novi.eu/im.owl#" >
+    <!ENTITY unit "http://fp7-novi.eu/unit.owl#" >
+    <!ENTITY config "http://fp7-novi.eu/config.owl#" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY monitoring "http://fp7-novi.eu/monitoring.owl#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY monitoring_task "http://fp7-novi.eu/monitoring_task.owl#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY monitoring_features "http://fp7-novi.eu/monitoring_features.owl#" >
+    <!ENTITY monitoring_parameter "http://fp7-novi.eu/monitoring_parameter.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://fp7-novi.eu/config.owl#"
+     xml:base="http://fp7-novi.eu/config.owl"
+     xmlns:unit="http://fp7-novi.eu/unit.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:monitoring_task="http://fp7-novi.eu/monitoring_task.owl#"
+     xmlns:monitoring="http://fp7-novi.eu/monitoring.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:monitoring_features="http://fp7-novi.eu/monitoring_features.owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:config="http://fp7-novi.eu/config.owl#"
+     xmlns:im="http://fp7-novi.eu/im.owl#"
+     xmlns:monitoring_parameter="http://fp7-novi.eu/monitoring_parameter.owl#">
+    <owl:Ontology rdf:about="http://fp7-novi.eu/config.owl">
+        <owl:imports rdf:resource="http://fp7-novi.eu/monitoring_task.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="&monitoring_parameter;paramValue"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#C1_Run -->
+
+    <owl:NamedIndividual rdf:about="&config;C1_Run">
+        <rdf:type rdf:resource="&monitoring_task;MiscColumn"/>
+        <rdf:type rdf:resource="&unit;Countable"/>
+        <monitoring_task:sequenceNumber>1</monitoring_task:sequenceNumber>
+        <monitoring_task:name>Run</monitoring_task:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#C2_AvailableDisk -->
+
+    <owl:NamedIndividual rdf:about="&config;C2_AvailableDisk">
+        <rdf:type rdf:resource="&monitoring_task;MonitoredFeatureColumn"/>
+        <rdf:type rdf:resource="&unit;InformationSize"/>
+        <monitoring_task:sequenceNumber>2</monitoring_task:sequenceNumber>
+        <monitoring_task:name>Available Disk Size</monitoring_task:name>
+        <monitoring_task:hasMonitoredFeature rdf:resource="&monitoring_features;FreeDiskSpace"/>
+        <unit:hasPrefix rdf:resource="&unit;Byte"/>
+        <unit:hasPrefix rdf:resource="&unit;kilo"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#C2_AvailableMemory -->
+
+    <owl:NamedIndividual rdf:about="&config;C2_AvailableMemory">
+        <rdf:type rdf:resource="&monitoring_task;MonitoredFeatureColumn"/>
+        <rdf:type rdf:resource="&unit;InformationSize"/>
+        <monitoring_task:sequenceNumber>2</monitoring_task:sequenceNumber>
+        <monitoring_task:name>Available Memory</monitoring_task:name>
+        <monitoring_task:hasMonitoredFeature rdf:resource="&monitoring_features;AvailableMemory"/>
+        <unit:hasUnit rdf:resource="&unit;Byte"/>
+        <unit:hasPrefix rdf:resource="&unit;kilo"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#C2_CPULoad1min -->
+
+    <owl:NamedIndividual rdf:about="&config;C2_CPULoad1min">
+        <rdf:type rdf:resource="&monitoring_task;MonitoredFeatureColumn"/>
+        <rdf:type rdf:resource="&unit;Countable"/>
+        <monitoring_task:name>Jobs in queue</monitoring_task:name>
+        <monitoring_task:sequenceNumber>2</monitoring_task:sequenceNumber>
+        <monitoring_task:hasMonitoredFeature rdf:resource="&monitoring_features;CPULoad"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#C2_SequenceNumber -->
+
+    <owl:NamedIndividual rdf:about="&config;C2_SequenceNumber">
+        <rdf:type rdf:resource="&monitoring_task;MiscColumn"/>
+        <rdf:type rdf:resource="&unit;Countable"/>
+        <monitoring_task:name>Sequence Number</monitoring_task:name>
+        <monitoring_task:sequenceNumber>2</monitoring_task:sequenceNumber>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#C2_Timestamp -->
+
+    <owl:NamedIndividual rdf:about="&config;C2_Timestamp">
+        <rdf:type rdf:resource="&monitoring_task;MiscColumn"/>
+        <rdf:type rdf:resource="&unit;PointInTime"/>
+        <monitoring_task:sequenceNumber>2</monitoring_task:sequenceNumber>
+        <monitoring_task:name>Timestamp of samples</monitoring_task:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#C2_Uptime -->
+
+    <owl:NamedIndividual rdf:about="&config;C2_Uptime">
+        <rdf:type rdf:resource="&monitoring_task;MonitoredFeatureColumn"/>
+        <rdf:type rdf:resource="&unit;TimeInterval"/>
+        <monitoring_task:sequenceNumber>2</monitoring_task:sequenceNumber>
+        <monitoring_task:name>Uptime</monitoring_task:name>
+        <monitoring_task:hasMonitoredFeature rdf:resource="&monitoring_features;Uptime"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#C2_cporeid -->
+
+    <owl:NamedIndividual rdf:about="&config;C2_coreid">
+        <rdf:type rdf:resource="&monitoring_task;MiscColumn"/>
+        <rdf:type rdf:resource="&unit;Cardinal"/>
+        <monitoring_task:name>cpu core identifier</monitoring_task:name>
+        <monitoring_task:sequenceNumber>2</monitoring_task:sequenceNumber>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#C2_memoryutilization -->
+
+    <owl:NamedIndividual rdf:about="&config;C2_memoryutilization">
+        <rdf:type rdf:resource="&monitoring_task;MonitoredFeatureColumn"/>
+        <rdf:type rdf:resource="&unit;Utilization"/>
+        <monitoring_task:name>memory utilization</monitoring_task:name>
+        <monitoring_task:sequenceNumber>2</monitoring_task:sequenceNumber>
+        <monitoring_task:hasMonitoredFeature rdf:resource="&monitoring_features;MemoryUtilization"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#C3_cpuutilization -->
+
+    <owl:NamedIndividual rdf:about="&config;C3_cpuutilization">
+        <rdf:type rdf:resource="&monitoring_task;MonitoredFeatureColumn"/>
+        <rdf:type rdf:resource="&unit;Utilization"/>
+        <monitoring_task:name>cpu utilization</monitoring_task:name>
+        <monitoring_task:sequenceNumber>3</monitoring_task:sequenceNumber>
+        <monitoring_task:hasMonitoredFeature rdf:resource="&monitoring_features;CPUUtilization"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#C2_linkutilization -->
+
+    <owl:NamedIndividual rdf:about="&config;C2_linkutilization">
+        <rdf:type rdf:resource="&monitoring_task;MonitoredFeatureColumn"/>
+        <rdf:type rdf:resource="&unit;Utilization"/>
+        <monitoring_task:name>link utilization</monitoring_task:name>
+        <monitoring_task:sequenceNumber>2</monitoring_task:sequenceNumber>
+        <monitoring_task:hasMonitoredFeature rdf:resource="&monitoring_features;LinkUtilization"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#C3_CPUCores -->
+
+    <owl:NamedIndividual rdf:about="&config;C3_CPUCores">
+        <rdf:type rdf:resource="&monitoring_task;MonitoredFeatureColumn"/>
+        <rdf:type rdf:resource="&unit;Countable"/>
+        <monitoring_task:sequenceNumber>3</monitoring_task:sequenceNumber>
+        <monitoring_task:name>Cores of kprocs</monitoring_task:name>
+        <monitoring_task:hasMonitoredFeature rdf:resource="&monitoring_features;CPUCores"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#C3_DelayMin -->
+
+    <owl:NamedIndividual rdf:about="&config;C3_DelayMin">
+        <rdf:type rdf:resource="&monitoring_task;MonitoredFeatureColumn"/>
+        <rdf:type rdf:resource="&unit;TimeInterval"/>
+        <monitoring_task:name>Minimum of delays</monitoring_task:name>
+        <monitoring_task:sequenceNumber>3</monitoring_task:sequenceNumber>
+        <monitoring_task:hasMonitoredFeature rdf:resource="&monitoring_features;OnewayDelay"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#C3_FreeMemory -->
+
+    <owl:NamedIndividual rdf:about="&config;C3_FreeMemory">
+        <rdf:type rdf:resource="&monitoring_task;MonitoredFeatureColumn"/>
+        <rdf:type rdf:resource="&unit;InformationSize"/>
+        <monitoring_task:name>Free Memory</monitoring_task:name>
+        <monitoring_task:sequenceNumber>3</monitoring_task:sequenceNumber>
+        <monitoring_task:hasMonitoredFeature rdf:resource="&monitoring_features;FreeMemory"/>
+        <unit:hasUnit rdf:resource="&unit;Byte"/>
+        <unit:hasPrefix rdf:resource="&unit;kilo"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#C3_SourceAddress -->
+
+    <owl:NamedIndividual rdf:about="&config;C3_SourceAddress">
+        <rdf:type rdf:resource="&monitoring_task;MonitoredFeatureColumn"/>
+        <rdf:type rdf:resource="&unit;IPAddress"/>
+        <monitoring_task:sequenceNumber>3</monitoring_task:sequenceNumber>
+        <monitoring_task:name>Source Address</monitoring_task:name>
+        <monitoring_task:hasMonitoredFeature rdf:resource="&monitoring_features;Address"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#C3_UsedDisk -->
+
+    <owl:NamedIndividual rdf:about="&config;C3_UsedDisk">
+        <rdf:type rdf:resource="&monitoring_task;MonitoredFeatureColumn"/>
+        <rdf:type rdf:resource="&unit;InformationSize"/>
+        <monitoring_task:name>Disk Size Used</monitoring_task:name>
+        <monitoring_task:sequenceNumber>3</monitoring_task:sequenceNumber>
+        <monitoring_task:hasMonitoredFeature rdf:resource="&monitoring_features;UsedDiskSpace"/>
+        <unit:hasUnit rdf:resource="&unit;Byte"/>
+        <unit:hasPrefix rdf:resource="&unit;kilo"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#C4_DelayMedian -->
+
+    <owl:NamedIndividual rdf:about="&config;C4_DelayMedian">
+        <rdf:type rdf:resource="&monitoring_task;MonitoredFeatureColumn"/>
+        <rdf:type rdf:resource="&unit;TimeInterval"/>
+        <monitoring_task:sequenceNumber>4</monitoring_task:sequenceNumber>
+        <monitoring_task:name>Median of delays</monitoring_task:name>
+        <monitoring_task:hasMonitoredFeature rdf:resource="&monitoring_features;OnewayDelay"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#C4_DestinationAddress -->
+
+    <owl:NamedIndividual rdf:about="&config;C4_DestinationAddress">
+        <rdf:type rdf:resource="&monitoring_task;MonitoredFeatureColumn"/>
+        <rdf:type rdf:resource="&unit;IPAddress"/>
+        <monitoring_task:sequenceNumber>4</monitoring_task:sequenceNumber>
+        <monitoring_task:name>Destination Address</monitoring_task:name>
+        <monitoring_task:hasMonitoredFeature rdf:resource="&monitoring_features;Address"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#C5_DelayMax -->
+
+    <owl:NamedIndividual rdf:about="&config;C5_DelayMax">
+        <rdf:type rdf:resource="&monitoring_task;MonitoredFeatureColumn"/>
+        <rdf:type rdf:resource="&unit;TimeInterval"/>
+        <monitoring_task:name>Maximum of delays</monitoring_task:name>
+        <monitoring_task:sequenceNumber>5</monitoring_task:sequenceNumber>
+        <monitoring_task:hasMonitoredFeature rdf:resource="&monitoring_features;OnewayDelay"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#C5_PacketSize -->
+
+    <owl:NamedIndividual rdf:about="&config;C5_PacketSize">
+        <rdf:type rdf:resource="&monitoring_task;MonitoredFeatureColumn"/>
+        <rdf:type rdf:resource="&unit;InformationSize"/>
+        <monitoring_task:sequenceNumber>5</monitoring_task:sequenceNumber>
+        <monitoring_task:name>Packet Size</monitoring_task:name>
+        <monitoring_task:hasMonitoredFeature rdf:resource="&monitoring_features;PacketSize"/>
+        <unit:hasUnit rdf:resource="&unit;Byte"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#C5_TimestampSend -->
+
+    <owl:NamedIndividual rdf:about="&config;C5_TimestampSend">
+        <rdf:type rdf:resource="&monitoring_task;MonitoredFeatureColumn"/>
+        <rdf:type rdf:resource="&unit;PointInTime"/>
+        <monitoring_task:sequenceNumber>5</monitoring_task:sequenceNumber>
+        <monitoring_task:name>Sending Timestamp</monitoring_task:name>
+        <unit:hasPrefix rdf:resource="&unit;nano"/>
+        <unit:hasUnit rdf:resource="&unit;unixtimestamp"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#C6_Lossratio -->
+
+    <owl:NamedIndividual rdf:about="&config;C6_Lossratio">
+        <rdf:type rdf:resource="&monitoring_task;MonitoredFeatureColumn"/>
+        <rdf:type rdf:resource="&unit;InformationLossRatio"/>
+        <monitoring_task:name>Packet loss ratio</monitoring_task:name>
+        <monitoring_task:sequenceNumber>6</monitoring_task:sequenceNumber>
+        <monitoring_task:hasMonitoredFeature rdf:resource="&monitoring_features;PacketlossRatio"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#C6_OnewayDelay -->
+
+    <owl:NamedIndividual rdf:about="&config;C6_OnewayDelay">
+        <rdf:type rdf:resource="&monitoring_task;MonitoredFeatureColumn"/>
+        <rdf:type rdf:resource="&unit;TimeInterval"/>
+        <monitoring_task:sequenceNumber>6</monitoring_task:sequenceNumber>
+        <monitoring_task:name>Oneway Delay</monitoring_task:name>
+        <monitoring_task:hasMonitoredFeature rdf:resource="&monitoring_features;OnewayDelay"/>
+        <unit:hasPrefix rdf:resource="&unit;nano"/>
+        <unit:hasUnit rdf:resource="&unit;second"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#C6_TimeToLive -->
+
+    <owl:NamedIndividual rdf:about="&config;C6_TimeToLive">
+        <rdf:type rdf:resource="&monitoring_task;MonitoredFeatureColumn"/>
+        <rdf:type rdf:resource="&unit;Countable"/>
+        <monitoring_task:name>Time To Live</monitoring_task:name>
+        <monitoring_task:sequenceNumber>6</monitoring_task:sequenceNumber>
+        <monitoring_task:hasMonitoredFeature rdf:resource="&monitoring_features;TimeToLive"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#C7_RoundTripDelay -->
+
+    <owl:NamedIndividual rdf:about="&config;C7_RoundTripDelay">
+        <rdf:type rdf:resource="&monitoring_task;MonitoredFeatureColumn"/>
+        <rdf:type rdf:resource="&unit;TimeInterval"/>
+        <monitoring_task:name>Round Trip Delay</monitoring_task:name>
+        <monitoring_task:sequenceNumber>7</monitoring_task:sequenceNumber>
+        <monitoring_task:hasMonitoredFeature rdf:resource="&monitoring_features;RoundtripDelay"/>
+        <unit:hasPrefix rdf:resource="&unit;micro"/>
+        <unit:hasUnit rdf:resource="&unit;second"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#EP_Count -->
+
+    <owl:NamedIndividual rdf:about="&config;EP_Count">
+        <rdf:type rdf:resource="&monitoring_task;ExecutionParameter"/>
+        <rdf:type rdf:resource="&unit;Countable"/>
+        <monitoring_parameter:paramName>Count</monitoring_parameter:paramName>
+        <unit:hasValue>5</unit:hasValue>
+        <monitoring_parameter:hasType rdf:resource="&monitoring_parameter;Integer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#EP_Delay -->
+
+    <owl:NamedIndividual rdf:about="&config;EP_Delay">
+        <rdf:type rdf:resource="&monitoring_task;ExecutionParameter"/>
+        <rdf:type rdf:resource="&unit;TimeInterval"/>
+        <monitoring_parameter:paramName>Delay</monitoring_parameter:paramName>
+        <unit:hasValue>100</unit:hasValue>
+        <monitoring_parameter:hasType rdf:resource="&monitoring_parameter;Integer"/>
+        <unit:hasPrefix rdf:resource="&unit;milli"/>
+        <unit:hasUnit rdf:resource="&unit;second"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#EP_DestinationAddress -->
+
+    <owl:NamedIndividual rdf:about="&config;EP_DestinationAddress">
+        <rdf:type rdf:resource="&monitoring_task;ExecutionParameter"/>
+        <rdf:type rdf:resource="&unit;IPAddress"/>
+        <monitoring_parameter:paramName>DestinationAddress</monitoring_parameter:paramName>
+        <monitoring_parameter:hasType rdf:resource="&monitoring_parameter;String"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#EP_PacketSize -->
+
+    <owl:NamedIndividual rdf:about="&config;EP_PacketSize">
+        <rdf:type rdf:resource="&monitoring_task;ExecutionParameter"/>
+        <rdf:type rdf:resource="&unit;InformationSize"/>
+        <unit:hasValue>64</unit:hasValue>
+        <monitoring_parameter:paramName>PacketSize</monitoring_parameter:paramName>
+        <monitoring_parameter:hasType rdf:resource="&monitoring_parameter;Integer"/>
+        <unit:hasUnit rdf:resource="&unit;Byte"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#EP_SourceAddress -->
+
+    <owl:NamedIndividual rdf:about="&config;EP_SourceAddress">
+        <rdf:type rdf:resource="&monitoring_task;ExecutionParameter"/>
+        <rdf:type rdf:resource="&unit;IPAddress"/>
+        <monitoring_parameter:paramName>SourceAddress</monitoring_parameter:paramName>
+        <monitoring_parameter:hasType rdf:resource="&monitoring_parameter;String"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#EP_destinatoinPort -->
+
+    <owl:NamedIndividual rdf:about="&config;EP_destinatoinPort">
+        <rdf:type rdf:resource="&monitoring_task;ExecutionParameter"/>
+        <rdf:type rdf:resource="&unit;Cardinal"/>
+        <monitoring_parameter:paramName>DestinationPort</monitoring_parameter:paramName>
+        <monitoring_parameter:hasType rdf:resource="&monitoring_parameter;Integer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#EP_slicename -->
+
+    <owl:NamedIndividual rdf:about="&config;EP_slicename">
+        <rdf:type rdf:resource="&monitoring_task;ExecutionParameter"/>
+        <rdf:type rdf:resource="&unit;NameOfSomething"/>
+        <monitoring_parameter:paramName>SliceName</monitoring_parameter:paramName>
+        <monitoring_parameter:hasType rdf:resource="&monitoring_parameter;String"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#EP_sourcePort -->
+
+    <owl:NamedIndividual rdf:about="&config;EP_sourcePort">
+        <rdf:type rdf:resource="&monitoring_task;ExecutionParameter"/>
+        <rdf:type rdf:resource="&unit;Cardinal"/>
+        <monitoring_parameter:paramName>SourcePort</monitoring_parameter:paramName>
+        <monitoring_parameter:hasType rdf:resource="&monitoring_parameter;Integer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#HPRE_HADESaggr -->
+
+    <owl:NamedIndividual rdf:about="&config;HPRE_HADESaggr">
+        <rdf:type rdf:resource="&monitoring_task;PreHook"/>
+        <monitoring_task:hookCode>self.repository = kw.get(&apos;repository&apos;)
+self.pattern = re.compile(&apos;^(\d+)\s+(-?\d+\.?\d*)\s+(-?\d+\.?\d*)\s+(-?\d+\.?\d*)\s+(\d+)\s+.*$&apos;)
+self.template = self.data.getTemplate(size = 1)
+lookup = { &apos;192.168.31.1&apos;: &apos;PSNC_FED&apos;, &apos;192.168.31.5&apos;: &apos;DFN_FED&apos;, &apos;192.168.31.9&apos;: &apos;GARR_FED&apos; }
+root = &quot;/home/novi-monitoring&quot;
+source = lookup[ self.parameters.get(&apos;SourceAddress&apos;, self.um.ipv4dotted) ]
+destination = lookup[ self.parameters.get(&apos;DestinationAddress&apos;, self.um.ipv4dotted) ]
+lookupcommand = &quot;echo %s/data/hades/novi/www/*/*/*/%s.%s.0.qos_ai.dat&quot; % (root, source, destination)
+self.client = self.driver(host = self.repository, credential = self.credential)
+files = self.client.execute(lookupcommand).read().split()
+self.command = &quot;%s/hades/bin/hades-show-data.pl --config=novi %s&quot;  % (root, files[-1])
+self.nsamples = int(kw.get(&apos;samplecount&apos;))</monitoring_task:hookCode>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#HPRE_SONoMAChirp -->
+
+    <owl:NamedIndividual rdf:about="&config;HPRE_SONoMAChirp">
+        <rdf:type rdf:resource="&monitoring_task;PreHook"/>
+        <monitoring_task:hookCode>from base64 import b64decode
+self.decode =  b64decode
+self.pattern = re.compile(&apos;^(\d+)\s+(\d+\.\d+\.\d+\.\d+)\s+(\d+\.\d+\.\d+\.\d+)\s+(\d+)\s+(\d+)$&apos;)
+self.username=self.credential.username
+self.password=self.credential.password
+self.client = self.driver(kw.get(&apos;url&apos;))
+self.sessionId = self.client.service.requestSession(self.username, self.password, &apos;CSV&apos;, False)
+self.port = kw.get(&apos;MAserviceport&apos;)
+self.template = self.data.getTemplate(size = 1)
+self.delaylist = self.client.factory.create(&quot;delayList&quot;)
+self.delaylist.gap = [100000,100000]</monitoring_task:hookCode>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#HPRE_SONoMAPing -->
+
+    <owl:NamedIndividual rdf:about="&config;HPRE_SONoMAPing">
+        <rdf:type rdf:resource="&monitoring_task;PreHook"/>
+        <monitoring_task:hookCode>from base64 import b64decode
+self.decode =  b64decode
+self.pattern = re.compile(&apos;^(\d+)\s+(\d+\.\d+\.\d+\.\d+)\s+(\d+\.\d+\.\d+\.\d+)\s+(\d+)\s+(\d+)\s+(\d+)$&apos;)
+self.username=self.credential.username
+self.password=self.credential.password
+self.client = self.driver(kw.get(&apos;url&apos;))
+self.sessionId = self.client.service.requestSession(self.username, self.password, &apos;CSV&apos;, False)
+self.port = kw.get(&apos;MAserviceport&apos;)
+self.template = self.data.getTemplate(size = 1)</monitoring_task:hookCode>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#HPRE_sshCPULoad -->
+
+    <owl:NamedIndividual rdf:about="&config;HPRE_sshCPULoad">
+        <rdf:type rdf:resource="&monitoring_task;PreHook"/>
+        <monitoring_task:hookCode>self.pattern = re.compile(&apos;^(\d+\.?\d*)\s+(\d+\.?\d*)\s+(\d+\.?\d*)\s+(\d+)/(\d+)\s+\d+$&apos;)
+self.template = self.data.getTemplate(size = 1)
+command = &quot;cat /proc/loadavg&quot;
+self.client = self.driver(host = self.parameters.get(&apos;SourceAddress&apos;, self.um.ipv4dotted), credential = self.credential, command = command)</monitoring_task:hookCode>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#HPRE_sshCPULoadSlice -->
+
+    <owl:NamedIndividual rdf:about="&config;HPRE_sshCPULoadSlice">
+        <rdf:type rdf:resource="&monitoring_task;PreHook"/>
+        <monitoring_task:hookCode>self.pattern = re.compile(&apos;^(\d+\.?\d*)\s+(\d+\.?\d*)\s+(\d+\.?\d*)\s+(\d+)/(\d+)\s+\d+$&apos;)
+self.template = self.data.getTemplate(size = 1)
+command = &quot;vserver %s exec cat /proc/loadavg&quot; %self.parameters.get(&apos;SliceName&apos;, self.um.nounit)
+self.client = self.driver(host = self.parameters.get(&apos;SourceAddress&apos;, self.um.ipv4dotted), credential = self.credential, command = command)</monitoring_task:hookCode>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#HPRE_sshDiskinfo -->
+
+    <owl:NamedIndividual rdf:about="&config;HPRE_sshDiskinfo">
+        <rdf:type rdf:resource="&monitoring_task;PreHook"/>
+        <monitoring_task:hookCode>self.pattern = re.compile(&apos;^.*\s+\d+\s+(\d+)\s+(\d+)\s+\d+%\s+.*$&apos;)
+self.template = self.data.getTemplate(size = 1)
+command = &quot;df %s&quot; % self.parameters.get(&apos;Directory&apos;, self.um.unitless)
+self.client = self.driver(host = self.parameters.get(&apos;SourceAddress&apos;, self.um.ipv4dotted), credential = self.credential, command = command)
+</monitoring_task:hookCode>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#HPRE_sshMeminfo -->
+
+    <owl:NamedIndividual rdf:about="&config;HPRE_sshMeminfo">
+        <rdf:type rdf:resource="&monitoring_task;PreHook"/>
+        <monitoring_task:hookCode>self.pattern = re.compile(&apos;^(.*):\s*(\d+)\s+(.B)$&apos;)
+self.template = self.data.getTemplate(size = 1)
+command = &quot;cat /proc/meminfo&quot;
+self.client = self.driver(host = self.parameters.get(&apos;SourceAddress&apos;, self.um.ipv4dotted), credential = self.credential, command = command)</monitoring_task:hookCode>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#HPRE_sshUptime -->
+
+    <owl:NamedIndividual rdf:about="&config;HPRE_sshUptime">
+        <rdf:type rdf:resource="&monitoring_task;PreHook"/>
+        <monitoring_task:hookCode>self.pattern = re.compile(&apos;^(\d+\.?\d*)\s+.*$&apos;)
+self.template = self.data.getTemplate(size = 1)
+command = &quot;cat /proc/uptime&quot;
+self.client = self.driver(host = self.parameters.get(&apos;SourceAddress&apos;, self.um.ipv4dotted), credential = self.credential, command = command)</monitoring_task:hookCode>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#HPST_SONoMA -->
+
+    <owl:NamedIndividual rdf:about="&config;HPST_SONoMA">
+        <rdf:type rdf:resource="&monitoring_task;PostHook"/>
+        <monitoring_task:hookCode>self.client.service.closeSession(self.username, self.password, self.sessionId)</monitoring_task:hookCode>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#HP_HADES_repository -->
+
+    <owl:NamedIndividual rdf:about="&config;HP_HADES_repository">
+        <rdf:type rdf:resource="&monitoring_task;HookParameter"/>
+        <rdf:type rdf:resource="&unit;NameOfSomething"/>
+        <unit:hasValue>194.132.52.212</unit:hasValue>
+        <monitoring_parameter:paramName>repository</monitoring_parameter:paramName>
+        <monitoring_parameter:hasType rdf:resource="&monitoring_parameter;String"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#HP_HADES_samplecount -->
+
+    <owl:NamedIndividual rdf:about="&config;HP_HADES_samplecount">
+        <rdf:type rdf:resource="&monitoring_task;HookParameter"/>
+        <rdf:type rdf:resource="&unit;Countable"/>
+        <monitoring_parameter:paramName>samplecount</monitoring_parameter:paramName>
+        <unit:hasValue>9</unit:hasValue>
+        <monitoring_parameter:hasType rdf:resource="&monitoring_parameter;Integer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#HP_SONoMA_MAserviceport -->
+
+    <owl:NamedIndividual rdf:about="&config;HP_SONoMA_MAserviceport">
+        <rdf:type rdf:resource="&monitoring_task;HookParameter"/>
+        <rdf:type rdf:resource="&unit;Cardinal"/>
+        <monitoring_parameter:paramName>MAserviceport</monitoring_parameter:paramName>
+        <unit:hasValue>11122</unit:hasValue>
+        <monitoring_parameter:hasType rdf:resource="&monitoring_parameter;Integer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#HP_SONoMA_url -->
+
+    <owl:NamedIndividual rdf:about="&config;HP_SONoMA_url">
+        <rdf:type rdf:resource="&monitoring_task;HookParameter"/>
+        <rdf:type rdf:resource="&unit;NameOfSomething"/>
+        <unit:hasValue>http://complex.elte.hu/~steger/sonoma/user.wsdl</unit:hasValue>
+        <monitoring_parameter:paramName>url</monitoring_parameter:paramName>
+        <monitoring_parameter:hasType rdf:resource="&monitoring_parameter;String"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#HR_G3memutil -->
+
+    <owl:NamedIndividual rdf:about="&config;HR_G3memutil">
+        <rdf:type rdf:resource="&monitoring_task;RetrieveHook"/>
+        <monitoring_task:hookCode>lut = {
+&apos;194.132.52.246&apos;: &apos;uas.poz.pl.net.fp7-federica.eu&apos;,
+&apos;194.132.52.230&apos;: &apos;vnode1.poz.pl.net.fp7-federica.eu&apos;,
+&apos;194.132.52.238&apos;: &apos;vnode2.poz.pl.net.fp7-federica.eu&apos;,
+&apos;194.132.52.2&apos;: &apos;vnode1.erl.de.net.fp7-federica.eu&apos;, #HACK for the test
+&apos;194.132.52.166&apos;: &apos;vnode1.erl.de.net.fp7-federica.eu&apos;,
+&apos;194.132.52.174&apos;: &apos;vnode2.erl.de.net.fp7-federica.eu&apos;,
+&apos;194.132.52.182&apos;: &apos;vnode1.mil.it.net.fp7-federica.eu&apos;,
+&apos;194.132.52.190&apos;: &apos;vnode2.mil.it.net.fp7-federica.eu&apos;,
+}
+sip, _ = self.parameters[&apos;SourceAddress&apos;]
+url = &quot;https://tom1.cesnet.cz/vmware-test2/sledovac2/HostGraphs/%s_65537_3600.xml&quot; % lut[sip]
+command = &quot;curl -k --user \&quot;monitor1:m/n.t,r1\&quot; \&quot;%s\&quot;&quot; % url
+response = self.driver(url, self.credential).fetch()
+pattern = re.compile(&apos;^\s*&lt;row&gt;&lt;t&gt;(\d+)&lt;/t&gt;&lt;v&gt;(\d+\.?\d*e?[-+]?\d*)&lt;/v&gt;&lt;v&gt;(\d+\.?\d*e?[-+]?\d*)&lt;/v&gt;&lt;/row&gt;.*$&apos;)
+data = []
+for l in response.splitlines():
+    if pattern.match(l):
+        u = pattern.split(l)[3]
+        data.append([self.runcount, .01 * float(u)])
+template = self.data.getTemplate(size = len(data))
+template.updateMany( (&apos;Run&apos;, &apos;memory utilization&apos;), data )
+self.data.saveRecord(template)
+return True</monitoring_task:hookCode>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#HR_G3cpuutil -->
+
+    <owl:NamedIndividual rdf:about="&config;HR_G3cpuutil">
+        <rdf:type rdf:resource="&monitoring_task;RetrieveHook"/>
+        <monitoring_task:hookCode>lut = {
+&apos;194.132.52.246&apos;: &apos;uas.poz.pl.net.fp7-federica.eu&apos;,
+&apos;194.132.52.230&apos;: &apos;vnode1.poz.pl.net.fp7-federica.eu&apos;,
+&apos;194.132.52.238&apos;: &apos;vnode2.poz.pl.net.fp7-federica.eu&apos;,
+&apos;194.132.52.2&apos;: &apos;vnode1.erl.de.net.fp7-federica.eu&apos;, #HACK for the test
+&apos;194.132.52.166&apos;: &apos;vnode1.erl.de.net.fp7-federica.eu&apos;,
+&apos;194.132.52.174&apos;: &apos;vnode2.erl.de.net.fp7-federica.eu&apos;,
+&apos;194.132.52.182&apos;: &apos;vnode1.mil.it.net.fp7-federica.eu&apos;,
+&apos;194.132.52.190&apos;: &apos;vnode2.mil.it.net.fp7-federica.eu&apos;,
+}
+sip, _ = self.parameters[&apos;SourceAddress&apos;]
+url = &quot;https://tom1.cesnet.cz/vmware-test2/sledovac2/HostGraphs/%s_1_3600Spec.xml&quot; % lut[sip]
+command = &quot;curl -k --user \&quot;monitor1:m/n.t,r1\&quot; \&quot;%s\&quot;&quot; % url
+response = self.driver(url, self.credential).fetch()
+pattern = re.compile(&apos;^\s*&lt;row&gt;&lt;t&gt;(\d+)&lt;/t&gt;&lt;v&gt;(\d+\.?\d*e?[-+]?\d*)&lt;/v&gt;&lt;v&gt;(\d+\.?\d*e?[-+]?\d*)&lt;/v&gt;&lt;v&gt;(\d+\.?\d*e?[-+]?\d*)&lt;/v&gt;&lt;v&gt;(\d+\.?\d*e?[-+]?\d*)&lt;/v&gt;&lt;v&gt;(\d+\.?\d*e?[-+]?\d*)&lt;/v&gt;&lt;v&gt;(\d+\.?\d*e?[-+]?\d*)&lt;/v&gt;&lt;v&gt;(\d+\.?\d*e?[-+]?\d*)&lt;/v&gt;&lt;v&gt;(\d+\.?\d*e?[-+]?\d*)&lt;/v&gt;&lt;/row&gt;.*$&apos;)
+template = self.data.getTemplate(size = 8) # 8 cores in vnode
+for l in response.splitlines():
+    data = []
+    if pattern.match(l):
+        u = pattern.split(l)[2:-1]         # timestamp is not used now
+        for c in range(8):
+            data.append([self.runcount, c, .01 * float(u[c])])
+        template.updateMany( (&apos;Run&apos;, &apos;cpu core identifier&apos;, &apos;cpu utilization&apos;), data )
+        self.data.saveRecord(template)
+return True</monitoring_task:hookCode>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#HR_G3linkutil -->
+
+    <owl:NamedIndividual rdf:about="&config;HR_G3linkutil">
+        <rdf:type rdf:resource="&monitoring_task;RetrieveHook"/>
+        <monitoring_task:hookCode>lut = {
+&apos;194.132.52.4&apos;: &apos;sw01.poz.pl&apos;,
+&apos;194.132.52.2&apos;: &apos;sw01.erl.de&apos;,
+&apos;194.132.52.3&apos;: &apos;sw01.mil.it&apos;,
+}
+sip, _ = self.parameters[&apos;SourceAddress&apos;]
+dip, _ = self.parameters[&apos;DestinationAddress&apos;]
+src = lut[sip]
+dst = lut[dip]
+url = &quot;https://tom1.cesnet.cz/netreport/federica_utilization1/%s%%20-&gt;%%20%s/index_INTERFACE_utilization__-2-hours_now_rrdxport.txt&quot; % (src, dst)
+command = &quot;curl -k --user \&quot;monitor1:m/n.t,r1\&quot; \&quot;%s\&quot;&quot; % url
+response = self.driver(url, self.credential).fetch()
+pattern = re.compile(&apos;^\s*&lt;row&gt;&lt;t&gt;(\d+)&lt;/t&gt;&lt;v&gt;(\d+\.?\d*e?-?\d*)&lt;/v&gt;&lt;v&gt;(\d+\.?\d*e?-?\d*)&lt;/v&gt;&lt;v&gt;(\d+\.?\d*e?-?\d*)&lt;/v&gt;&lt;v&gt;(\d+\.?\d*e?-?\d*)&lt;/v&gt;&lt;v&gt;(\d+\.?\d*e?-?\d*)&lt;/v&gt;&lt;v&gt;(\d+\.?\d*e?-?\d*)&lt;/v&gt;&lt;/row&gt;.*$&apos;)
+data = []
+for l in response.splitlines():
+    if pattern.match(l):
+        u = pattern.split(l)[3]
+        data.append([self.runcount, u])
+template = self.data.getTemplate(size = len(data))
+template.updateMany( (&apos;Run&apos;, &apos;link utilization&apos;), data )
+self.data.saveRecord(template)
+return True</monitoring_task:hookCode>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#HR_HADESaggr -->
+
+    <owl:NamedIndividual rdf:about="&config;HR_HADESaggr">
+        <rdf:type rdf:resource="&monitoring_task;RetrieveHook"/>
+        <monitoring_task:hookCode>data = []
+for r in self.client.execute(self.command).readlines():
+    print r
+    if self.pattern.match(r):
+        ts, dtmin, dtmed, dtmax, loss = self.pattern.split(r)[1:-1]
+        data.append( [ self.runcount, ts, dtmin, dtmed, dtmax, float(loss)/self.nsamples ] )
+self.template.clear(size = len(data))
+self.template.updateMany( (&apos;Run&apos;, &apos;Time&apos;, &apos;MinDelay&apos;, &apos;MedianDelay&apos;, &apos;MaxDelay&apos;, &apos;Loss&apos;), data )
+self.data.saveRecord(self.template)
+return True</monitoring_task:hookCode>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#HR_SONoMAshortChirp -->
+
+    <owl:NamedIndividual rdf:about="&config;HR_SONoMAshortChirp">
+        <rdf:type rdf:resource="&monitoring_task;RetrieveHook"/>
+        <monitoring_task:hookCode>source = &quot;%s:%d&quot; % (self.parameters.get(&apos;SourceAddress&apos;, self.um.ipv4dotted), self.port)
+destination = &quot;%s:%d&quot; % (self.parameters.get(&apos;DestinationAddress&apos;, self.um.ipv4dotted), self.port)
+res = self.client.service.shortChirp(self.sessionId, 
+  source, self.parameters.get(&apos;SourcePort&apos;, self.um.unitless), 
+  destination, self.parameters.get(&apos;DestinationPort&apos;, self.um.unitless),
+  self.parameters.get(&apos;Count&apos;, self.um.piece), self.parameters.get(&apos;Delay&apos;, self.um.micro_second), 
+  self.parameters.get(&apos;PacketSize&apos;, self.um.Byte), self.delaylist)
+rec = self.decode(res).splitlines()
+data = []
+for r in rec:
+    if self.pattern.match(r):
+        self.template.clear()
+        ex = self.pattern.split(r)[:-1]
+        ex[0] = self.runcount
+        ex[-1] = int(ex[-1])-int(ex[-2])
+        data.append( ex )
+self.template.clear(size = len(data))
+self.template.updateMany( (&apos;Run&apos;, &apos;Sequence Number&apos;, &apos;Source Address&apos;, &apos;Destination Address&apos;, &apos;Sending Timestamp&apos;, &apos;Oneway Delay&apos;), data )
+self.data.saveRecord(self.template)
+return True</monitoring_task:hookCode>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#HR_SONoMAshortPing -->
+
+    <owl:NamedIndividual rdf:about="&config;HR_SONoMAshortPing">
+        <rdf:type rdf:resource="&monitoring_task;RetrieveHook"/>
+        <monitoring_task:hookCode>source = &quot;%s:%d&quot; % (self.parameters.get(&apos;SourceAddress&apos;, self.um.ipv4dotted), self.port)
+res = self.client.service.shortPing(self.sessionId, 
+  source, self.parameters.get(&apos;DestinationAddress&apos;, self.um.ipv4dotted), self.parameters.get(&apos;Count&apos;, self.um.piece), 
+  self.parameters.get(&apos;Delay&apos;, self.um.micro_second), self.parameters.get(&apos;PacketSize&apos;, self.um.Byte))
+rec = self.decode(res).splitlines()
+for r in rec:
+    if self.pattern.match(r):
+        self.template.clear()
+        ex = self.pattern.split(r)[:-1]
+        ex[0] = self.runcount
+        self.template.updateMany( (&apos;Run&apos;, &apos;Sequence Number&apos;, &apos;Source Address&apos;, &apos;Destination Address&apos;, &apos;Packet Size&apos;, &apos;Time To Live&apos;, &apos;Round Trip Delay&apos;), [ex,] )
+        self.data.saveRecord(self.template)
+return True</monitoring_task:hookCode>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#HR_sshCPULoad -->
+
+    <owl:NamedIndividual rdf:about="&config;HR_sshCPULoad">
+        <rdf:type rdf:resource="&monitoring_task;RetrieveHook"/>
+        <monitoring_task:hookCode>self.template.clear()
+self.template.update(&apos;Run&apos;, (self.runcount,))
+for r in self.client.execute().readlines():
+    if self.pattern.match(r):
+        load1min, _, _, cores, _ = self.pattern.split(r)[1:-1]
+        self.template.update(&apos;Jobs in queue&apos;, (load1min,))
+        self.template.update(&apos;Cores of kprocs&apos;, (cores,))
+self.data.saveRecord(self.template)
+return True</monitoring_task:hookCode>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#HR_sshDiskinfo -->
+
+    <owl:NamedIndividual rdf:about="&config;HR_sshDiskinfo">
+        <rdf:type rdf:resource="&monitoring_task;RetrieveHook"/>
+        <monitoring_task:hookCode>self.template.clear()
+self.template.update(&apos;Run&apos;, (self.runcount,))
+for r in self.client.execute().readlines():
+    if self.pattern.match(r):
+        u, a = self.pattern.split(r)[1:-1]
+        self.template.update(&apos;Available Disk Size&apos;, (a,))
+        self.template.update(&apos;Disk Size Used&apos;, (u,))
+self.data.saveRecord(self.template)
+return True</monitoring_task:hookCode>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#HR_sshMeminfo -->
+
+    <owl:NamedIndividual rdf:about="&config;HR_sshMeminfo">
+        <rdf:type rdf:resource="&monitoring_task;RetrieveHook"/>
+        <monitoring_task:hookCode>self.template.clear()
+self.template.update(&apos;Run&apos;, (self.runcount,))
+for r in self.client.execute().readlines():
+    if self.pattern.match(r):
+        n, v, u = self.pattern.split(r)[1:-1]
+        if n == &apos;MemTotal&apos; and u == &apos;kB&apos;:
+            self.template.update(&apos;Available Memory&apos;, (v,))
+        elif n == &apos;MemFree&apos; and u == &apos;kB&apos;:
+            self.template.update(&apos;Free Memory&apos;, (v,))
+self.data.saveRecord(self.template)
+return True</monitoring_task:hookCode>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#HR_sshUptime -->
+
+    <owl:NamedIndividual rdf:about="&config;HR_sshUptime">
+        <rdf:type rdf:resource="&monitoring_task;RetrieveHook"/>
+        <monitoring_task:hookCode>self.template.clear()
+self.template.update(&apos;Run&apos;, (self.runcount,))
+for r in self.client.execute().readlines():
+    if self.pattern.match(r):
+        dt, = self.pattern.split(r)[1:-1]
+        self.template.update(&apos;Uptime&apos;, (dt,))
+self.data.saveRecord(self.template)
+return True</monitoring_task:hookCode>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#T_G3MEMutil -->
+
+    <owl:NamedIndividual rdf:about="&config;T_G3MEMutil">
+        <rdf:type rdf:resource="&monitoring_task;MonitoringTask"/>
+        <monitoring_task:name>G3 memory utilization look up</monitoring_task:name>
+        <monitoring_task:hasExecutionParameter rdf:resource="&config;EP_SourceAddress"/>
+        <monitoring_task:hasRetrieveHook rdf:resource="&config;HR_G3memutil"/>
+        <monitoring_task:hasOutputTableFormat rdf:resource="&config;g3memutiltable"/>
+        <monitoring_task:hasDriver rdf:resource="&monitoring_task;REST"/>
+        <monitoring_task:hasMonitoringDomain rdf:resource="&monitoring_task;Substrate"/>
+        <monitoring_task:hasAuthenticationType rdf:resource="&monitoring_task;UsernamePassword"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#T_G3CPUutil -->
+
+    <owl:NamedIndividual rdf:about="&config;T_G3CPUutil">
+        <rdf:type rdf:resource="&monitoring_task;MonitoringTask"/>
+        <monitoring_task:name>G3 CPU utilization look up</monitoring_task:name>
+        <monitoring_task:hasExecutionParameter rdf:resource="&config;EP_SourceAddress"/>
+        <monitoring_task:hasRetrieveHook rdf:resource="&config;HR_G3cpuutil"/>
+        <monitoring_task:hasOutputTableFormat rdf:resource="&config;g3cpuutiltable"/>
+        <monitoring_task:hasDriver rdf:resource="&monitoring_task;REST"/>
+        <monitoring_task:hasMonitoringDomain rdf:resource="&monitoring_task;Substrate"/>
+        <monitoring_task:hasAuthenticationType rdf:resource="&monitoring_task;UsernamePassword"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#T_G3linkutil -->
+
+    <owl:NamedIndividual rdf:about="&config;T_G3linkutil">
+        <rdf:type rdf:resource="&monitoring_task;MonitoringTask"/>
+        <monitoring_task:name>G3 link utilization look up</monitoring_task:name>
+        <monitoring_task:hasExecutionParameter rdf:resource="&config;EP_DestinationAddress"/>
+        <monitoring_task:hasExecutionParameter rdf:resource="&config;EP_SourceAddress"/>
+        <monitoring_task:hasRetrieveHook rdf:resource="&config;HR_G3linkutil"/>
+        <monitoring_task:hasOutputTableFormat rdf:resource="&config;g3linkutiltable"/>
+        <monitoring_task:hasDriver rdf:resource="&monitoring_task;REST"/>
+        <monitoring_task:hasMonitoringDomain rdf:resource="&monitoring_task;Substrate"/>
+        <monitoring_task:hasAuthenticationType rdf:resource="&monitoring_task;UsernamePassword"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#T_SONoMAChirp -->
+
+    <owl:NamedIndividual rdf:about="&config;T_SONoMAChirp">
+        <rdf:type rdf:resource="&monitoring_task;MonitoringTask"/>
+        <monitoring_task:name>SONoMAChirp</monitoring_task:name>
+        <monitoring_task:hasExecutionParameter rdf:resource="&config;EP_Count"/>
+        <monitoring_task:hasExecutionParameter rdf:resource="&config;EP_Delay"/>
+        <monitoring_task:hasExecutionParameter rdf:resource="&config;EP_DestinationAddress"/>
+        <monitoring_task:hasExecutionParameter rdf:resource="&config;EP_PacketSize"/>
+        <monitoring_task:hasExecutionParameter rdf:resource="&config;EP_SourceAddress"/>
+        <monitoring_task:hasExecutionParameter rdf:resource="&config;EP_destinatoinPort"/>
+        <monitoring_task:hasExecutionParameter rdf:resource="&config;EP_sourcePort"/>
+        <monitoring_task:hasPreHook rdf:resource="&config;HPRE_SONoMAChirp"/>
+        <monitoring_task:hasPostHook rdf:resource="&config;HPST_SONoMA"/>
+        <monitoring_task:hasHookParameter rdf:resource="&config;HP_SONoMA_MAserviceport"/>
+        <monitoring_task:hasHookParameter rdf:resource="&config;HP_SONoMA_url"/>
+        <monitoring_task:hasRetrieveHook rdf:resource="&config;HR_SONoMAshortChirp"/>
+        <monitoring_task:hasOutputTableFormat rdf:resource="&config;sonomashortchirptable"/>
+        <monitoring_task:hasDriver rdf:resource="&monitoring_task;SOAPClient"/>
+        <monitoring_task:hasAuthenticationType rdf:resource="&monitoring_task;UsernamePassword"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#T_SONoMAPing -->
+
+    <owl:NamedIndividual rdf:about="&config;T_SONoMAPing">
+        <rdf:type rdf:resource="&monitoring_task;MonitoringTask"/>
+        <monitoring_task:name>SONoMAPing</monitoring_task:name>
+        <monitoring_task:hasExecutionParameter rdf:resource="&config;EP_Count"/>
+        <monitoring_task:hasExecutionParameter rdf:resource="&config;EP_Delay"/>
+        <monitoring_task:hasExecutionParameter rdf:resource="&config;EP_DestinationAddress"/>
+        <monitoring_task:hasExecutionParameter rdf:resource="&config;EP_PacketSize"/>
+        <monitoring_task:hasExecutionParameter rdf:resource="&config;EP_SourceAddress"/>
+        <monitoring_task:hasPreHook rdf:resource="&config;HPRE_SONoMAPing"/>
+        <monitoring_task:hasPostHook rdf:resource="&config;HPST_SONoMA"/>
+        <monitoring_task:hasHookParameter rdf:resource="&config;HP_SONoMA_MAserviceport"/>
+        <monitoring_task:hasHookParameter rdf:resource="&config;HP_SONoMA_url"/>
+        <monitoring_task:hasRetrieveHook rdf:resource="&config;HR_SONoMAshortPing"/>
+        <monitoring_task:hasOutputTableFormat rdf:resource="&config;sonomashortpingtable"/>
+        <monitoring_task:hasDriver rdf:resource="&monitoring_task;SOAPClient"/>
+        <monitoring_task:hasAuthenticationType rdf:resource="&monitoring_task;UsernamePassword"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#T_SSHCPULoad -->
+
+    <owl:NamedIndividual rdf:about="&config;T_SSHCPULoad">
+        <rdf:type rdf:resource="&monitoring_task;MonitoringTask"/>
+        <monitoring_task:name>sshcpuload</monitoring_task:name>
+        <monitoring_task:hasExecutionParameter rdf:resource="&config;EP_SourceAddress"/>
+        <monitoring_task:hasPreHook rdf:resource="&config;HPRE_sshCPULoad"/>
+        <monitoring_task:hasRetrieveHook rdf:resource="&config;HR_sshCPULoad"/>
+        <monitoring_task:hasOutputTableFormat rdf:resource="&config;sshcpuloadtable"/>
+        <monitoring_task:hasDriver rdf:resource="&monitoring_task;SSH"/>
+        <monitoring_task:hasMonitoringDomain rdf:resource="&monitoring_task;Substrate"/>
+        <monitoring_task:hasAuthenticationType rdf:resource="&monitoring_task;UsernamePassword"/>
+        <monitoring_task:hasAuthenticationType rdf:resource="&monitoring_task;UsernameRSAKey"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#T_SSHCPULoadSlice -->
+
+    <owl:NamedIndividual rdf:about="&config;T_SSHCPULoadSlice">
+        <rdf:type rdf:resource="&monitoring_task;MonitoringTask"/>
+        <im:hasName>sshcpuloadslice</im:hasName>
+        <monitoring_task:hasExecutionParameter rdf:resource="&config;EP_SourceAddress"/>
+        <monitoring_task:hasPreHook rdf:resource="&config;HPRE_sshCPULoadSlice"/>
+        <monitoring_task:hasRetrieveHook rdf:resource="&config;HR_sshCPULoad"/>
+        <monitoring_task:hasOutputTableFormat rdf:resource="&config;sshcpuloadtable"/>
+        <monitoring_task:hasDriver rdf:resource="&monitoring_task;SSH"/>
+        <monitoring_task:hasMonitoringDomain rdf:resource="&monitoring_task;Slice"/>
+        <monitoring_task:hasAuthenticationType rdf:resource="&monitoring_task;UsernamePassword"/>
+        <monitoring_task:hasAuthenticationType rdf:resource="&monitoring_task;UsernameRSAKey"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#T_SSHDiskInfo -->
+
+    <owl:NamedIndividual rdf:about="&config;T_SSHDiskInfo">
+        <rdf:type rdf:resource="&monitoring_task;MonitoringTask"/>
+        <monitoring_task:name>sshdiskinfo</monitoring_task:name>
+        <monitoring_task:hasExecutionParameter rdf:resource="&config;EP_SourceAddress"/>
+        <monitoring_task:hasPreHook rdf:resource="&config;HPRE_sshDiskinfo"/>
+        <monitoring_task:hasRetrieveHook rdf:resource="&config;HR_sshDiskinfo"/>
+        <monitoring_task:hasOutputTableFormat rdf:resource="&config;sshdisktable"/>
+        <monitoring_task:hasExecutionParameter rdf:resource="&monitoring_features;PFM_FilesystemFolder"/>
+        <monitoring_task:hasDriver rdf:resource="&monitoring_task;SSH"/>
+        <monitoring_task:hasMonitoringDomain rdf:resource="&monitoring_task;Substrate"/>
+        <monitoring_task:hasAuthenticationType rdf:resource="&monitoring_task;UsernamePassword"/>
+        <monitoring_task:hasAuthenticationType rdf:resource="&monitoring_task;UsernameRSAKey"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#T_SSHMemInfo -->
+
+    <owl:NamedIndividual rdf:about="&config;T_SSHMemInfo">
+        <rdf:type rdf:resource="&monitoring_task;MonitoringTask"/>
+        <monitoring_task:name>sshMeminfo</monitoring_task:name>
+        <monitoring_task:hasExecutionParameter rdf:resource="&config;EP_SourceAddress"/>
+        <monitoring_task:hasPreHook rdf:resource="&config;HPRE_sshMeminfo"/>
+        <monitoring_task:hasRetrieveHook rdf:resource="&config;HR_sshMeminfo"/>
+        <monitoring_task:hasOutputTableFormat rdf:resource="&config;sshmemorytable"/>
+        <monitoring_task:hasDriver rdf:resource="&monitoring_task;SSH"/>
+        <monitoring_task:hasMonitoringDomain rdf:resource="&monitoring_task;Substrate"/>
+        <monitoring_task:hasAuthenticationType rdf:resource="&monitoring_task;UsernamePassword"/>
+        <monitoring_task:hasAuthenticationType rdf:resource="&monitoring_task;UsernameRSAKey"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#T_SSHUptime -->
+
+    <owl:NamedIndividual rdf:about="&config;T_SSHUptime">
+        <rdf:type rdf:resource="&monitoring_task;MonitoringTask"/>
+        <monitoring_task:name>sshuptime</monitoring_task:name>
+        <monitoring_task:hasExecutionParameter rdf:resource="&config;EP_SourceAddress"/>
+        <monitoring_task:hasPreHook rdf:resource="&config;HPRE_sshUptime"/>
+        <monitoring_task:hasRetrieveHook rdf:resource="&config;HR_sshUptime"/>
+        <monitoring_task:hasOutputTableFormat rdf:resource="&config;sshuptimetable"/>
+        <monitoring_task:hasDriver rdf:resource="&monitoring_task;SSH"/>
+        <monitoring_task:hasMonitoringDomain rdf:resource="&monitoring_task;Substrate"/>
+        <monitoring_task:hasAuthenticationType rdf:resource="&monitoring_task;UsernamePassword"/>
+        <monitoring_task:hasAuthenticationType rdf:resource="&monitoring_task;UsernameRSAKey"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#T_hadesaggregate -->
+
+    <owl:NamedIndividual rdf:about="&config;T_hadesaggregate">
+        <rdf:type rdf:resource="&monitoring_task;MonitoringTask"/>
+        <monitoring_task:name>hadesaggregates</monitoring_task:name>
+        <monitoring_task:hasExecutionParameter rdf:resource="&config;EP_DestinationAddress"/>
+        <monitoring_task:hasExecutionParameter rdf:resource="&config;EP_SourceAddress"/>
+        <monitoring_task:hasPreHook rdf:resource="&config;HPRE_HADESaggr"/>
+        <monitoring_task:hasHookParameter rdf:resource="&config;HP_HADES_repository"/>
+        <monitoring_task:hasHookParameter rdf:resource="&config;HP_HADES_samplecount"/>
+        <monitoring_task:hasRetrieveHook rdf:resource="&config;HR_HADESaggr"/>
+        <monitoring_task:hasOutputTableFormat rdf:resource="&config;sshhadesaggrtable"/>
+        <monitoring_task:hasDriver rdf:resource="&monitoring_task;SSH"/>
+        <monitoring_task:hasMonitoringDomain rdf:resource="&monitoring_task;Substrate"/>
+        <monitoring_task:hasAuthenticationType rdf:resource="&monitoring_task;UsernamePassword"/>
+        <monitoring_task:hasAuthenticationType rdf:resource="&monitoring_task;UsernameRSAKey"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#g3memutiltable -->
+
+    <owl:NamedIndividual rdf:about="&config;g3memutiltable">
+        <rdf:type rdf:resource="&monitoring_task;OutputTableFormat"/>
+        <monitoring_task:name>memutilization</monitoring_task:name>
+        <monitoring_task:hasColumn rdf:resource="&config;C1_Run"/>
+        <monitoring_task:hasColumn rdf:resource="&config;C2_memoryutilization"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#g3cpuutiltable -->
+
+    <owl:NamedIndividual rdf:about="&config;g3cpuutiltable">
+        <rdf:type rdf:resource="&monitoring_task;OutputTableFormat"/>
+        <monitoring_task:name>cpuutilization</monitoring_task:name>
+        <monitoring_task:hasColumn rdf:resource="&config;C1_Run"/>
+        <monitoring_task:hasColumn rdf:resource="&config;C2_coreid"/>
+        <monitoring_task:hasColumn rdf:resource="&config;C3_cpuutilization"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#g3linkutiltable -->
+
+    <owl:NamedIndividual rdf:about="&config;g3linkutiltable">
+        <rdf:type rdf:resource="&monitoring_task;OutputTableFormat"/>
+        <monitoring_task:name>linkutilization</monitoring_task:name>
+        <monitoring_task:hasColumn rdf:resource="&config;C1_Run"/>
+        <monitoring_task:hasColumn rdf:resource="&config;C2_linkutilization"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#sonomashortchirptable -->
+
+    <owl:NamedIndividual rdf:about="&config;sonomashortchirptable">
+        <rdf:type rdf:resource="&monitoring_task;OutputTableFormat"/>
+        <monitoring_task:name>onewaydelay</monitoring_task:name>
+        <monitoring_task:hasColumn rdf:resource="&config;C1_Run"/>
+        <monitoring_task:hasColumn rdf:resource="&config;C2_SequenceNumber"/>
+        <monitoring_task:hasColumn rdf:resource="&config;C3_SourceAddress"/>
+        <monitoring_task:hasColumn rdf:resource="&config;C4_DestinationAddress"/>
+        <monitoring_task:hasColumn rdf:resource="&config;C5_TimestampSend"/>
+        <monitoring_task:hasColumn rdf:resource="&config;C6_OnewayDelay"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#sonomashortpingtable -->
+
+    <owl:NamedIndividual rdf:about="&config;sonomashortpingtable">
+        <rdf:type rdf:resource="&monitoring_task;OutputTableFormat"/>
+        <monitoring_task:name>ping</monitoring_task:name>
+        <monitoring_task:hasColumn rdf:resource="&config;C1_Run"/>
+        <monitoring_task:hasColumn rdf:resource="&config;C2_SequenceNumber"/>
+        <monitoring_task:hasColumn rdf:resource="&config;C3_SourceAddress"/>
+        <monitoring_task:hasColumn rdf:resource="&config;C4_DestinationAddress"/>
+        <monitoring_task:hasColumn rdf:resource="&config;C5_PacketSize"/>
+        <monitoring_task:hasColumn rdf:resource="&config;C6_TimeToLive"/>
+        <monitoring_task:hasColumn rdf:resource="&config;C7_RoundTripDelay"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#sshcpuloadtable -->
+
+    <owl:NamedIndividual rdf:about="&config;sshcpuloadtable">
+        <rdf:type rdf:resource="&monitoring_task;OutputTableFormat"/>
+        <monitoring_task:name>cpuload</monitoring_task:name>
+        <monitoring_task:hasColumn rdf:resource="&config;C1_Run"/>
+        <monitoring_task:hasColumn rdf:resource="&config;C2_CPULoad1min"/>
+        <monitoring_task:hasColumn rdf:resource="&config;C3_CPUCores"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#sshdisktable -->
+
+    <owl:NamedIndividual rdf:about="&config;sshdisktable">
+        <rdf:type rdf:resource="&monitoring_task;OutputTableFormat"/>
+        <monitoring_task:name>diskinfo</monitoring_task:name>
+        <monitoring_task:hasColumn rdf:resource="&config;C1_Run"/>
+        <monitoring_task:hasColumn rdf:resource="&config;C2_AvailableDisk"/>
+        <monitoring_task:hasColumn rdf:resource="&config;C3_UsedDisk"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#sshhadesaggrtable -->
+
+    <owl:NamedIndividual rdf:about="&config;sshhadesaggrtable">
+        <rdf:type rdf:resource="&monitoring_task;OutputTableFormat"/>
+        <monitoring_task:name>hadesaggregates</monitoring_task:name>
+        <monitoring_task:hasColumn rdf:resource="&config;C1_Run"/>
+        <monitoring_task:hasColumn rdf:resource="&config;C2_Timestamp"/>
+        <monitoring_task:hasColumn rdf:resource="&config;C3_DelayMin"/>
+        <monitoring_task:hasColumn rdf:resource="&config;C4_DelayMedian"/>
+        <monitoring_task:hasColumn rdf:resource="&config;C5_DelayMax"/>
+        <monitoring_task:hasColumn rdf:resource="&config;C6_Lossratio"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#sshmemorytable -->
+
+    <owl:NamedIndividual rdf:about="&config;sshmemorytable">
+        <rdf:type rdf:resource="&monitoring_task;OutputTableFormat"/>
+        <monitoring_task:name>meminfo</monitoring_task:name>
+        <monitoring_task:hasColumn rdf:resource="&config;C1_Run"/>
+        <monitoring_task:hasColumn rdf:resource="&config;C2_AvailableMemory"/>
+        <monitoring_task:hasColumn rdf:resource="&config;C3_FreeMemory"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/config.owl#sshuptimetable -->
+
+    <owl:NamedIndividual rdf:about="&config;sshuptimetable">
+        <rdf:type rdf:resource="&monitoring_task;OutputTableFormat"/>
+        <monitoring_task:name>uptimeinfo</monitoring_task:name>
+        <monitoring_task:hasColumn rdf:resource="&config;C1_Run"/>
+        <monitoring_task:hasColumn rdf:resource="&config;C2_Uptime"/>
+    </owl:NamedIndividual>
+    <rdf:Description>
+        <unit:hasValue></unit:hasValue>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.3.1957) http://owlapi.sourceforge.net -->
+

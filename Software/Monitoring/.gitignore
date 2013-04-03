@@ -1,0 +1,4 @@
+*.pyc
+docs/
+/sandbox
+catalog-v???.xml

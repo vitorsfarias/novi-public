@@ -1,0 +1,178 @@
+[
+ {"http://fp7-novi.eu/monitoring_features.owl#FreeDiskSpace"	: {
+   "TYPE" : "diskinfo",
+   "ID" : 513,
+   "HDR" : {
+      "NAME" : "DataHeader 514",
+      "HDRINFO" : [
+         {
+            "NAME" : "Run",
+            "DIMENTSION" : "countable",
+            "UNIT" : "piece"
+         },
+         {
+			"FEATURE": "http://fp7-novi.eu/monitoring_features.owl#FreeDiskSpace",
+            "NAME" : "Available Disk Size",
+            "DIMENTSION" : "informationsize",
+            "UNIT" : "Byte", "PREFIX" : "kilo"
+         },
+         {
+            "NAME" : "Disk Size Used",
+            "DIMENTSION" : "informationsize",
+            "UNIT" : "Byte", "PREFIX" : "kilo"
+         }
+      ]
+   },
+   "DATA" : [
+      [ 1, 12888536, 827176 ]
+   ]
+}},
+
+ {"http://fp7-novi.eu/monitoring_features.owl#FreeMemory"	: {
+   "TYPE" : "meminfo",
+   "ID" : 516,
+   "HDR" : {
+      "NAME" : "DataHeader 517",
+      "HDRINFO" : [
+         {
+            "NAME" : "Run",
+            "DIMENTSION" : "countable",
+            "UNIT" : "piece"
+         },
+         {
+            "NAME" : "Available Memory",
+            "DIMENTSION" : "informationsize",
+            "UNIT" : "Byte", "PREFIX" : "kilo"
+         },
+         {
+    		"FEATURE": "http://fp7-novi.eu/monitoring_features.owl#FreeMemory",
+            "NAME" : "Free Memory",
+            "DIMENTSION" : "informationsize",
+            "UNIT" : "Byte", "PREFIX" : "kilo"
+         }
+      ]
+   },
+   "DATA" : [
+      [ 1, 511124, 7412 ]
+   ]
+}},
+
+ {"http://fp7-novi.eu/monitoring_features.owl#notExistFeature"	: {
+   "TYPE" : "meminfo",
+   "ID" : 516,
+   "HDR" : {
+      "NAME" : "DataHeader 517",
+      "HDRINFO" : [
+         {
+            "NAME" : "Run",
+            "DIMENTSION" : "countable",
+            "UNIT" : "piece"
+         },
+         {
+            "NAME" : "Available Memory",
+            "DIMENTSION" : "informationsize",
+            "UNIT" : "Byte", "PREFIX" : "kilo"
+         },
+         {
+            "NAME" : "Free Memory",
+            "DIMENTSION" : "informationsize",
+            "UNIT" : "Byte", "PREFIX" : "kilo"
+         }
+      ]
+   },
+   "DATA" : [
+      [ 1, 511124, 7412 ]
+   ]
+}},
+
+ {"http://fp7-novi.eu/monitoring_features.owl#CPUClockRate"	: {
+   "TYPE" : "cpuinfo2",
+   "ID" : 519,
+   "HDR" : {
+      "NAME" : "DataHeader 520",
+      "HDRINFO" : [
+         {
+            "NAME" : "Run",
+            "DIMENTSION" : "countable",
+            "UNIT" : "piece"
+         },
+         {
+            "NAME" : "Number of cores",
+            "DIMENTSION" : "countable",
+            "UNIT" : "piece"
+         },
+         {
+            "NAME" : "Number of sockets",
+            "DIMENTSION" : "countable",
+            "UNIT" : "piece"
+         },
+         {
+			"FEATURE": "http://fp7-novi.eu/monitoring_features.owl#CPUClockRate",
+            "NAME" : "Speed MHz",
+            "DIMENTSION" : "frequency",
+            "UNIT" : "persecond", "PREFIX" : "mega"
+         }
+      ]
+   },
+   "DATA" : [
+      [ 1, 2, 1, 2311.847 ]
+   ]
+}}, 
+
+{"http://fp7-novi.eu/monitoring_features.owl#CPUSockets"	: {
+   "TYPE" : "cpuload",
+   "ID" : 52847504,
+   "HDR" : {
+      "NAME" : "DataHeader 53287440",
+      "HDRINFO" : [
+         {
+            "NAME" : "Run",
+            "DIMENTSION" : "Countable",
+            "UNIT" : "piece"
+         },
+         {
+            "NAME" : "Jobs in queue",
+            "DIMENTSION" : "Countable",
+            "UNIT" : "piece"
+         },
+         {
+			"FEATURE": "http://fp7-novi.eu/monitoring_features.owl#CPUSockets",
+            "NAME" : "Number of sockets",
+            "DIMENTSION" : "Countable",
+            "UNIT" : "piece"
+         }
+      ]
+   },
+   "DATA" : [
+      [ 1, 0.24, 1 ]
+   ]
+}},
+{"http://fp7-novi.eu/monitoring_features.owl#CPUCores"	: {
+   "TYPE" : "cpuload",
+   "ID" : 52847504,
+   "HDR" : {
+      "NAME" : "DataHeader 53287440",
+      "HDRINFO" : [
+         {
+            "NAME" : "Run",
+            "DIMENTSION" : "Countable",
+            "UNIT" : "piece"
+         },
+         {
+            "NAME" : "Jobs in queue",
+            "DIMENTSION" : "Countable",
+            "UNIT" : "piece"
+         },
+         {
+			"FEATURE": "http://fp7-novi.eu/monitoring_features.owl#CPUCores",
+            "NAME" : "Number of cores",
+            "DIMENTSION" : "Countable",
+            "UNIT" : "piece"
+         }
+      ]
+   },
+   "DATA" : [
+      [ 1, 0.24, 2 ]
+   ]
+}}
+]

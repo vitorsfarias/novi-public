@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1337873683436" name="duplicate:http://fp7-novi.eu/im.owl" uri="FEDERICA_substrate.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1337873683436" name="duplicate:http://fp7-novi.eu/im.owl" uri="FEDERICATopology.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1337873683436" name="duplicate:http://fp7-novi.eu/im.owl" uri="MidtermWorkshopRequest.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1337873683436" name="duplicate:http://fp7-novi.eu/im.owl" uri="MidtermWorkshopRequest_unbound.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1337873683436" name="duplicate:http://fp7-novi.eu/im.owl" uri="PLETopology.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1337873683436" name="duplicate:http://fp7-novi.eu/im.owl" uri="PLEtopologyModified3.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1337873683436" name="duplicate:http://fp7-novi.eu/im.owl" uri="PLEtopologyModified3_v1.owl"/>
+    </group>
+</catalog>

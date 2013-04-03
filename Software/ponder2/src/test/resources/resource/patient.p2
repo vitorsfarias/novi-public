@@ -1,0 +1,48 @@
+// This is run in the Patient
+root print: "Setting up the Patient".
+
+// Event types we are going to use
+event := root/factory/event.
+root/event at: "bloodpressure" put: (event create: #( "value" )).
+root/event at: "temp" put: (event create: #( "value" )).
+root/event at: "alarm" put: event create.
+
+
+// Create the Patient Interface
+root print: "Interface Setup".
+
+myinterface := root/factory/interface create.
+
+myinterface event: "bp" is: root/event/bloodpressure.
+myinterface providesEvent: "bp".
+myinterface providesEvent: "temp". // Uses default   event: "temp" is: root/event/temp
+myinterface providesEvent: "alarm".
+myinterface acceptsEvent: "alarm".
+					
+// Mission setup
+root print: "Mission Setup".
+
+// Empty mission
+mission := root/factory/mission create.
+
+// Create the role for a remote nurse. Interface is what we show, mission is what we load into other side
+root/mission/createrole value: "nurse" value: myinterface value: mission.
+
+// Create the role for a remote doctor, could sue different interface and mission
+root/mission/createrole value: "doctor" value: myinterface value: mission.
+
+// No mission loading policy here yet.
+
+
+//=====================================================
+// For testing
+
+// Set up a policy to check the event that the mission produces
+rxpolicy := root/factory/ecapolicy create.
+rxpolicy
+	event: root/event/alarm;
+	action: [ root print: "=====> Alarm raised by mission" ];
+	active: true.
+
+// Set up ponderTalk interpreter
+root at: "command" put: (root load: "PonderTalk") create.

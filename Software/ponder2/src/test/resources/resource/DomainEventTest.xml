@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml>
+	<!--# Tests domain events and <use> with OID -->
+	<xml>
+		<!--# Domain structure for domain events-->
+		<use name="/event">
+			<add name="domain">
+				<use name="/template/domain">
+					<create/>
+				</use>
+			</add>
+		</use>
+	</xml>
+	<!--
+		
+		Create test event templates
+		 -->
+	<xml>
+		<use name="/event/domain">
+			<add name="add">
+				<use name="/template/event">
+					<create>
+						<arg name="domainoid"/>
+						<arg name="name"/>
+						<arg name="oid"/>
+					</create>
+				</use>
+			</add>
+			<add name="remove">
+				<use name="/template/event">
+					<create>
+						<arg name="domainoid"/>
+						<arg name="name"/>
+						<arg name="oid"/>
+					</create>
+				</use>
+			</add>
+		</use>
+	</xml>
+	<xml>
+		<!-- 
+		
+				# Create a policy that acts on the add event.
+         -->
+		<use name="/policy">
+			<add name="testdomainevent">
+				<use name="/template/policy">
+					<create type="obligation" event="/event/domain/add" active="false">
+						<arg name="domainoid"/>
+						<arg name="name"/>
+						<arg name="oid"/>
+						<action>
+							<!-- Remove the object -->
+							<use> !domainoid; <remove name="!name;" force="true"/>
+							</use>
+						</action>
+					</create>
+				</use>
+			</add>
+		</use>
+	</xml>
+	<use name="/policy/testdomainevent" active="true"/>
+</xml>

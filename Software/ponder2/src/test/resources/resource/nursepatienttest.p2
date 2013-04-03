@@ -1,0 +1,20 @@
+// Grab the PonderTalk interpreters
+nurse := root import: "root/command" from: "rmi://localhost/Nurse".
+patient := root import: "root/command" from: "rmi://localhost/Patient".
+
+// Simulate Discovery
+nurse execute: "
+	patientinterface := root import: \"root/role/nurse/interface\" from: \"rmi://localhost/Patient\".
+	root/event/newsmc create: #( \"patient\" patientinterface ).
+".
+
+//Test events going from the Patient SMC via the interface to the mission
+root print: "Testing Patient Events".
+patient execute: "root/event/temp create: #( 27 ).".
+
+
+// Kill the nurse
+([(root import: "root" from: "rmi://localhost/Nurse" ) exit] onError: []) value.
+
+// Now trigger event to cause an alarm event, should be raised in nurse and patient
+patient execute: "([root/event/bloodpressure create: #( 45 )] onError: [ root print: \"EEEEEEEKKKKKKKK\"]) value.".

@@ -1,0 +1,3 @@
+// Used to terminate an SMC via the argument list after other things have been done
+// e.g.   SMC -boot dowork.p2 -boot exit
+root exit.

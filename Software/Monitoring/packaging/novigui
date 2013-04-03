@@ -1,0 +1,3 @@
+#! /bin/sh
+
+PYTHONPATH=/usr/share/novi-ms-gui python /usr/share/novi-ms-gui/gui.py

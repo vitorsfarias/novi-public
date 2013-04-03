@@ -1,0 +1,62 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>eu.novi</groupId>
+		<artifactId>parent</artifactId>
+		<version>0.1.0-SNAPSHOT</version>
+		<relativePath>../parent/</relativePath>
+	</parent>
+	<packaging>bundle</packaging>
+	<artifactId>authentication</artifactId>
+	<name>authentication OSGI bundle</name>
+
+	<properties>
+		<import.packages>*</import.packages>
+		<private.packages>!*</private.packages>
+		<symbolic.name>${pom.groupId}.${pom.artifactId}</symbolic.name>
+		<embed-dep>*;scope=provided;inline=true;type=!pom</embed-dep>
+		<unpack-bundle>false</unpack-bundle>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>eu.novi</groupId>
+			<artifactId>xmlrpc-client-osgi</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+			<dependency>
+			<groupId>eu.novi</groupId>
+			<artifactId>information-model</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>eu.novi</groupId>
+			<artifactId>feedback</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+	</dependencies>
+
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<configuration>
+					<unpackBundle>${unpack.bundle}</unpackBundle>
+					<instructions>
+						<Bundle-Name>authentication OSGI Bundle</Bundle-Name>
+						<Bundle-Description>This bundle exposes the required functions for
+							testbed specific operations</Bundle-Description>
+						<Export-Package>eu.novi.authentication.*</Export-Package>
+						<Import-Package>${import.packages}</Import-Package>
+						<Private-Package>${private.packages}</Private-Package>
+						<Embed-Dependency>${embed-dep}</Embed-Dependency>
+					</instructions>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

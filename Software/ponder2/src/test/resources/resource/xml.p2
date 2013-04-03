@@ -1,0 +1,25 @@
+newdom := root/factory/domain.
+newpol := root/factory/ecapolicy.
+newevent := root/factory/event.
+
+xml := "<?xml version='1.0'?>
+<birthdate>
+    <month>January</month>
+    <day>21</day>
+    <year>1983</year>
+</birthdate>" asXML.
+
+expression := "/birthdate/year".
+
+number := xml xpathNumber: expression.
+node := xml xpathNode: expression.
+array := xml xpathNodeSet: expression.
+boolean := xml xpathBoolean: expression.
+string :=  xml xpathString: expression.
+
+root print: "XML is "+ xml.
+root print: "Node is "+ node.
+root print: "Array is "+ array.
+root print: "Number is "+ number.
+root print: "Boolean is "+ boolean.
+root print: "String is "+ string.

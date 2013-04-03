@@ -1,0 +1,663 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY unit "http://fp7-novi.eu/unit.owl#" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY monitoring_features "http://fp7-novi.eu/monitoring_features.owl#" >
+    <!ENTITY monitoring_parameter "http://fp7-novi.eu/monitoring_parameter.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://fp7-novi.eu/monitoring_features.owl#"
+     xml:base="http://fp7-novi.eu/monitoring_features.owl"
+     xmlns:unit="http://fp7-novi.eu/unit.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:monitoring_features="http://fp7-novi.eu/monitoring_features.owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:monitoring_parameter="http://fp7-novi.eu/monitoring_parameter.owl#">
+    <owl:Ontology rdf:about="http://fp7-novi.eu/monitoring_features.owl#">
+        <owl:imports rdf:resource="http://fp7-novi.eu/im.owl"/>
+        <owl:imports rdf:resource="http://fp7-novi.eu/monitoring_parameter.owl"/>
+        <owl:imports rdf:resource="http://fp7-novi.eu/unit.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="&monitoring_parameter;hasDimension"/>
+    <owl:AnnotationProperty rdf:about="&monitoring_features;imports"/>
+    <owl:AnnotationProperty rdf:about="&monitoring_parameter;hasPrefix"/>
+    <owl:AnnotationProperty rdf:about="&monitoring_parameter;hasUnit"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_features.owl#hasFeature -->
+
+    <owl:ObjectProperty rdf:about="&monitoring_features;hasFeature">
+        <rdfs:range rdf:resource="&monitoring_features;MonitoredFeature"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_features.owl#hasResourceType -->
+
+    <owl:ObjectProperty rdf:about="&monitoring_features;hasResourceType">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&monitoring_features;MonitoredFeature"/>
+        <rdfs:range rdf:resource="&monitoring_features;ResourceType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_features.owl#obligatoryParameter -->
+
+    <owl:ObjectProperty rdf:about="&monitoring_features;obligatoryParameter">
+        <rdfs:range rdf:resource="&monitoring_parameter;Parameter"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_features.owl#optionalParameter -->
+
+    <owl:ObjectProperty rdf:about="&monitoring_features;optionalParameter">
+        <rdfs:range rdf:resource="&monitoring_parameter;Parameter"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_features.owl#featureName -->
+
+    <owl:DatatypeProperty rdf:about="&monitoring_features;featureName">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&monitoring_features;MonitoredFeature"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_features.owl#BandwidthFeature -->
+
+    <owl:Class rdf:about="&monitoring_features;BandwidthFeature">
+        <rdfs:subClassOf rdf:resource="&monitoring_features;MonitoredFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_features.owl#DelayFeature -->
+
+    <owl:Class rdf:about="&monitoring_features;DelayFeature">
+        <rdfs:subClassOf rdf:resource="&monitoring_features;MonitoredFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_features.owl#FeatureMonitoringParameter -->
+
+    <owl:Class rdf:about="&monitoring_features;FeatureMonitoringParameter">
+        <rdfs:subClassOf rdf:resource="&monitoring_parameter;Parameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_features.owl#MemoryFeature -->
+
+    <owl:Class rdf:about="&monitoring_features;MemoryFeature">
+        <rdfs:subClassOf rdf:resource="&monitoring_features;MonitoredFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_features.owl#MiscFeature -->
+
+    <owl:Class rdf:about="&monitoring_features;MiscFeature">
+        <rdfs:subClassOf rdf:resource="&monitoring_features;MonitoredFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_features.owl#MonitoredFeature -->
+
+    <owl:Class rdf:about="&monitoring_features;MonitoredFeature">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&monitoring_features;featureName"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_features.owl#ProcessorFeature -->
+
+    <owl:Class rdf:about="&monitoring_features;ProcessorFeature">
+        <rdfs:subClassOf rdf:resource="&monitoring_features;MonitoredFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_features.owl#ResourceType -->
+
+    <owl:Class rdf:about="&monitoring_features;ResourceType">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_features.owl#StorageFeature -->
+
+    <owl:Class rdf:about="&monitoring_features;StorageFeature">
+        <rdfs:subClassOf rdf:resource="&monitoring_features;MonitoredFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_features.owl#Address -->
+
+    <owl:NamedIndividual rdf:about="&monitoring_features;Address">
+        <rdf:type rdf:resource="&monitoring_features;MiscFeature"/>
+        <rdf:type rdf:resource="&unit;IPAddress"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_features.owl#AvailableBandwidth -->
+
+    <owl:NamedIndividual rdf:about="&monitoring_features;AvailableBandwidth">
+        <rdf:type rdf:resource="&monitoring_features;BandwidthFeature"/>
+        <rdf:type rdf:resource="&unit;InformationRate"/>
+        <featureName>Available Bandwidth</featureName>
+        <hasResourceType rdf:resource="&monitoring_features;PathResource"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_features.owl#AvailableMemory -->
+
+    <owl:NamedIndividual rdf:about="&monitoring_features;AvailableMemory">
+        <rdf:type rdf:resource="&monitoring_features;MemoryFeature"/>
+        <rdf:type rdf:resource="&unit;InformationSize"/>
+        <hasResourceType rdf:resource="&monitoring_features;NodeResource"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_features.owl#CPUClockRate -->
+
+    <owl:NamedIndividual rdf:about="&monitoring_features;CPUClockRate">
+        <rdf:type rdf:resource="&monitoring_features;ProcessorFeature"/>
+        <rdf:type rdf:resource="&unit;Frequency"/>
+    </owl:NamedIndividual>
+    
+
+    <!-- http://fp7-novi.eu/monitoring_features.owl#PartitioningCost -->
+
+    <owl:NamedIndividual rdf:about="&monitoring_features;PartitioningCost">
+        <rdf:type rdf:resource="&monitoring_features;ProcessorFeature"/>
+	<rdf:type rdf:resource="&unit;Countable"/>
+        <featureName>PartitioningCost</featureName>
+        <hasResourceType rdf:resource="&monitoring_features;NodeResource"/>
+    </owl:NamedIndividual>
+
+
+    <!-- http://fp7-novi.eu/monitoring_features.owl#CPUCoreTemperature -->
+
+    <owl:NamedIndividual rdf:about="&monitoring_features;CPUCoreTemperature">
+        <rdf:type rdf:resource="&monitoring_features;ProcessorFeature"/>
+        <rdf:type rdf:resource="&unit;Temperature"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_features.owl#CPUCores -->
+
+    <owl:NamedIndividual rdf:about="&monitoring_features;CPUCores">
+        <rdf:type rdf:resource="&monitoring_features;ProcessorFeature"/>
+        <rdf:type rdf:resource="&unit;Countable"/>
+        <featureName>kprocCores</featureName>
+        <hasResourceType rdf:resource="&monitoring_features;NodeResource"/>
+    </owl:NamedIndividual>
+    
+    <!-- http://fp7-novi.eu/monitoring_features.owl#LinkUtilization -->
+
+    <owl:NamedIndividual rdf:about="&monitoring_features;LinkUtilization">
+        <rdf:type rdf:resource="&monitoring_features;BandwidthFeature"/>
+        <rdf:type rdf:resource="&unit;Utilization"/>
+        <featureName>LinkUtilization</featureName>
+        <hasResourceType rdf:resource="&monitoring_features;PathResource"/>
+    </owl:NamedIndividual>
+
+
+    <!-- http://fp7-novi.eu/monitoring_features.owl#CPUUtilization -->
+
+    <owl:NamedIndividual rdf:about="&monitoring_features;CPUUtilization">
+        <rdf:type rdf:resource="&monitoring_features;ProcessorFeature"/>
+        <rdf:type rdf:resource="&unit;Utilization"/>
+        <featureName>CPUUtilization</featureName>
+        <hasResourceType rdf:resource="&monitoring_features;NodeResource"/>
+    </owl:NamedIndividual>
+    
+
+    <!-- http://fp7-novi.eu/monitoring_features.owl#CPUSockets -->
+
+    <owl:NamedIndividual rdf:about="&monitoring_features;CPUSockets">
+        <rdf:type rdf:resource="&monitoring_features;ProcessorFeature"/>
+        <rdf:type rdf:resource="&unit;Countable"/>
+        <featureName>CPUSockets</featureName>
+        <hasResourceType rdf:resource="&monitoring_features;NodeResource"/>
+    </owl:NamedIndividual>
+
+    <!-- http://fp7-novi.eu/monitoring_features.owl#CPULoad -->
+
+    <owl:NamedIndividual rdf:about="&monitoring_features;CPULoad">
+        <rdf:type rdf:resource="&monitoring_features;ProcessorFeature"/>
+        <rdf:type rdf:resource="&unit;Countable"/>
+        <featureName>CPULoad</featureName>
+        <hasResourceType rdf:resource="&monitoring_features;NodeResource"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_features.owl#ConsumedBandwidth -->
+
+    <owl:NamedIndividual rdf:about="&monitoring_features;ConsumedBandwidth">
+        <rdf:type rdf:resource="&monitoring_features;BandwidthFeature"/>
+        <rdf:type rdf:resource="&unit;InformationRate"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_features.owl#DiskQuota -->
+
+    <owl:NamedIndividual rdf:about="&monitoring_features;DiskQuota">
+        <rdf:type rdf:resource="&monitoring_features;StorageFeature"/>
+        <rdf:type rdf:resource="&unit;InformationSize"/>
+    </owl:NamedIndividual>
+    
+
+    <!-- http://fp7-novi.eu/monitoring_features.owl#DiskUtilization -->
+
+    <owl:NamedIndividual rdf:about="&monitoring_features;DiskUtilization">
+        <rdf:type rdf:resource="&monitoring_features;StorageFeature"/>
+        <rdf:type rdf:resource="&unit;Utilization"/>
+        <featureName>DiskUtilization</featureName>
+        <hasResourceType rdf:resource="&monitoring_features;NodeResource"/>
+    </owl:NamedIndividual>
+
+
+    <!-- http://fp7-novi.eu/monitoring_features.owl#FreeDiskSpace -->
+
+    <owl:NamedIndividual rdf:about="&monitoring_features;FreeDiskSpace">
+        <rdf:type rdf:resource="&monitoring_features;StorageFeature"/>
+        <rdf:type rdf:resource="&unit;InformationSize"/>
+        <featureName>Free Disk Space</featureName>
+        <hasResourceType rdf:resource="&monitoring_features;NodeResource"/>
+        <obligatoryParameter rdf:resource="&monitoring_features;PFM_FilesystemFolder"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_features.owl#FreeMemory -->
+
+    <owl:NamedIndividual rdf:about="&monitoring_features;FreeMemory">
+        <rdf:type rdf:resource="&monitoring_features;MemoryFeature"/>
+        <rdf:type rdf:resource="&unit;InformationSize"/>
+        <featureName>Free Memory</featureName>
+        <hasResourceType rdf:resource="&monitoring_features;NodeResource"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_features.owl#MemoryUtilization -->
+
+    <owl:NamedIndividual rdf:about="&monitoring_features;MemoryUtilization">
+        <rdf:type rdf:resource="&monitoring_features;MemoryFeature"/>
+        <rdf:type rdf:resource="&unit;InformationUtilization"/>
+        <featureName>MemoryUtilization</featureName>
+        <hasResourceType rdf:resource="&monitoring_features;NodeResource"/>
+    </owl:NamedIndividual>
+    
+
+    <!-- http://fp7-novi.eu/monitoring_features.owl#NodeResource -->
+
+    <owl:NamedIndividual rdf:about="&monitoring_features;NodeResource">
+        <rdf:type rdf:resource="&monitoring_features;ResourceType"/>
+        <hasFeature rdf:resource="&monitoring_features;AvailableMemory"/>
+        <hasFeature rdf:resource="&monitoring_features;MemoryUtilization"/>
+        <hasFeature rdf:resource="&monitoring_features;CPUClockRate"/>
+        <hasFeature rdf:resource="&monitoring_features;CPUCoreTemperature"/>
+        <hasFeature rdf:resource="&monitoring_features;CPUCores"/>
+        <hasFeature rdf:resource="&monitoring_features;CPUSockets"/>
+        <hasFeature rdf:resource="&monitoring_features;CPULoad"/>
+        <hasFeature rdf:resource="&monitoring_features;CPUUtilization"/>
+        <hasFeature rdf:resource="&monitoring_features;DiskQuota"/>
+        <hasFeature rdf:resource="&monitoring_features;FreeDiskSpace"/>
+        <hasFeature rdf:resource="&monitoring_features;FreeMemory"/>
+        <hasFeature rdf:resource="&monitoring_features;SwappedMemory"/>
+        <hasFeature rdf:resource="&monitoring_features;Uptime"/>
+        <hasFeature rdf:resource="&monitoring_features;UsedDiskSpace"/>
+        <hasFeature rdf:resource="&monitoring_features;PartitionCost"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_features.owl#OnewayDelay -->
+
+    <owl:NamedIndividual rdf:about="&monitoring_features;OnewayDelay">
+        <rdf:type rdf:resource="&monitoring_features;DelayFeature"/>
+        <rdf:type rdf:resource="&unit;TimeInterval"/>
+        <featureName>Oneway Delay</featureName>
+        <optionalParameter rdf:resource="&monitoring_features;PFM_Count"/>
+        <optionalParameter rdf:resource="&monitoring_features;PFM_Delay"/>
+        <optionalParameter rdf:resource="&monitoring_features;PFM_DestinationPort"/>
+        <optionalParameter rdf:resource="&monitoring_features;PFM_PacketSize"/>
+        <optionalParameter rdf:resource="&monitoring_features;PFM_SourcePort"/>
+        <hasResourceType rdf:resource="&monitoring_features;PathResource"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_features.owl#PFM_Count -->
+
+    <owl:NamedIndividual rdf:about="&monitoring_features;PFM_Count">
+        <rdf:type rdf:resource="&monitoring_features;FeatureMonitoringParameter"/>
+        <rdf:type rdf:resource="&unit;Countable"/>
+        <monitoring_parameter:paramName>Count</monitoring_parameter:paramName>
+        <unit:hasValue>5</unit:hasValue>
+        <monitoring_parameter:hasType rdf:resource="&monitoring_parameter;Integer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_features.owl#PFM_Delay -->
+
+    <owl:NamedIndividual rdf:about="&monitoring_features;PFM_Delay">
+        <rdf:type rdf:resource="&monitoring_features;FeatureMonitoringParameter"/>
+        <rdf:type rdf:resource="&unit;TimeInterval"/>
+        <unit:hasValue>200</unit:hasValue>
+        <monitoring_parameter:paramName>Delay</monitoring_parameter:paramName>
+        <monitoring_parameter:hasType rdf:resource="&monitoring_parameter;Integer"/>
+        <unit:hasPrefix rdf:resource="&unit;milli"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_features.owl#PFM_DestinationNode -->
+
+    <owl:NamedIndividual rdf:about="&monitoring_features;PFM_DestinationNode">
+        <rdf:type rdf:resource="&monitoring_features;FeatureMonitoringParameter"/>
+        <rdf:type rdf:resource="&unit;NameOfSomething"/>
+        <unit:hasValue>planetlab2-novi.lab.netmode.ece.ntua.gr</unit:hasValue>
+        <monitoring_parameter:paramName>Destination</monitoring_parameter:paramName>
+        <monitoring_parameter:hasType rdf:resource="&monitoring_parameter;String"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_features.owl#PFM_DestinationPort -->
+
+    <owl:NamedIndividual rdf:about="&monitoring_features;PFM_DestinationPort">
+        <rdf:type rdf:resource="&monitoring_features;FeatureMonitoringParameter"/>
+        <rdf:type rdf:resource="&unit;Cardinal"/>
+        <unit:hasValue>7777</unit:hasValue>
+        <monitoring_parameter:paramName>DestinationPort</monitoring_parameter:paramName>
+        <monitoring_parameter:hasType rdf:resource="&monitoring_parameter;Integer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_features.owl#PFM_FilesystemFolder -->
+
+    <owl:NamedIndividual rdf:about="&monitoring_features;PFM_FilesystemFolder">
+        <rdf:type rdf:resource="&monitoring_features;FeatureMonitoringParameter"/>
+        <rdf:type rdf:resource="&unit;NameOfSomething"/>
+        <monitoring_parameter:paramName>Directory</monitoring_parameter:paramName>
+        <unit:hasValue>/</unit:hasValue>
+        <monitoring_parameter:hasType rdf:resource="&monitoring_parameter;String"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_features.owl#PFM_NetworkInterface -->
+
+    <owl:NamedIndividual rdf:about="&monitoring_features;PFM_NetworkInterface">
+        <rdf:type rdf:resource="&monitoring_features;FeatureMonitoringParameter"/>
+        <rdf:type rdf:resource="&unit;NameOfSomething"/>
+        <unit:hasValue>novi</unit:hasValue>
+        <monitoring_parameter:paramName>NetworkInterface</monitoring_parameter:paramName>
+        <monitoring_parameter:hasType rdf:resource="&monitoring_parameter;String"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_features.owl#PFM_PacketSize -->
+
+    <owl:NamedIndividual rdf:about="&monitoring_features;PFM_PacketSize">
+        <rdf:type rdf:resource="&monitoring_features;FeatureMonitoringParameter"/>
+        <rdf:type rdf:resource="&unit;InformationSize"/>
+        <unit:hasValue>64</unit:hasValue>
+        <monitoring_parameter:paramName>PacketSize</monitoring_parameter:paramName>
+        <monitoring_parameter:hasType rdf:resource="&monitoring_parameter;Integer"/>
+        <unit:hasUnit rdf:resource="&unit;Byte"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_features.owl#PFM_SourceNode -->
+
+    <owl:NamedIndividual rdf:about="&monitoring_features;PFM_SourceNode">
+        <rdf:type rdf:resource="&monitoring_features;FeatureMonitoringParameter"/>
+        <rdf:type rdf:resource="&unit;NameOfSomething"/>
+        <monitoring_parameter:paramName>Source</monitoring_parameter:paramName>
+        <unit:hasValue>novilab.elte.hu</unit:hasValue>
+        <monitoring_parameter:hasType rdf:resource="&monitoring_parameter;String"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_features.owl#PFM_SourcePort -->
+
+    <owl:NamedIndividual rdf:about="&monitoring_features;PFM_SourcePort">
+        <rdf:type rdf:resource="&monitoring_features;FeatureMonitoringParameter"/>
+        <rdf:type rdf:resource="&unit;Cardinal"/>
+        <monitoring_parameter:paramName>SourcePort</monitoring_parameter:paramName>
+        <unit:hasValue>7777</unit:hasValue>
+        <monitoring_parameter:hasType rdf:resource="&monitoring_parameter;Integer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_features.owl#PFM_TimeToLive -->
+
+    <owl:NamedIndividual rdf:about="&monitoring_features;PFM_TimeToLive">
+        <rdf:type rdf:resource="&monitoring_features;FeatureMonitoringParameter"/>
+        <rdf:type rdf:resource="&unit;Countable"/>
+        <unit:hasValue>32</unit:hasValue>
+        <monitoring_parameter:paramName>TimeToLive</monitoring_parameter:paramName>
+        <monitoring_parameter:hasType rdf:resource="&monitoring_parameter;Integer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_features.owl#PacketSize -->
+
+    <owl:NamedIndividual rdf:about="&monitoring_features;PacketSize">
+        <rdf:type rdf:resource="&monitoring_features;MiscFeature"/>
+        <rdf:type rdf:resource="&unit;InformationSize"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_features.owl#PacketlossRatio -->
+
+    <owl:NamedIndividual rdf:about="&monitoring_features;PacketlossRatio">
+        <rdf:type rdf:resource="&monitoring_features;MiscFeature"/>
+        <rdf:type rdf:resource="&unit;InformationLossRatio"/>
+        <featureName>Packet loss ratio</featureName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_features.owl#PathResource -->
+
+    <owl:NamedIndividual rdf:about="&monitoring_features;PathResource">
+        <rdf:type rdf:resource="&monitoring_features;ResourceType"/>
+        <hasFeature rdf:resource="&monitoring_features;AvailableBandwidth"/>
+        <hasFeature rdf:resource="&monitoring_features;ConsumedBandwidth"/>
+        <hasFeature rdf:resource="&monitoring_features;OnewayDelay"/>
+        <hasFeature rdf:resource="&monitoring_features;PacketlossRatio"/>
+        <hasFeature rdf:resource="&monitoring_features;RoundtripDelay"/>
+        <hasFeature rdf:resource="&monitoring_features;LinkUtilization"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_features.owl#RoundtripDelay -->
+
+    <owl:NamedIndividual rdf:about="&monitoring_features;RoundtripDelay">
+        <rdf:type rdf:resource="&monitoring_features;DelayFeature"/>
+        <rdf:type rdf:resource="&unit;TimeInterval"/>
+        <featureName>Round Trip Delay</featureName>
+        <optionalParameter rdf:resource="&monitoring_features;PFM_Count"/>
+        <optionalParameter rdf:resource="&monitoring_features;PFM_Delay"/>
+        <optionalParameter rdf:resource="&monitoring_features;PFM_NetworkInterface"/>
+        <optionalParameter rdf:resource="&monitoring_features;PFM_PacketSize"/>
+        <optionalParameter rdf:resource="&monitoring_features;PFM_TimeToLive"/>
+        <hasResourceType rdf:resource="&monitoring_features;PathResource"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_features.owl#SwappedMemory -->
+
+    <owl:NamedIndividual rdf:about="&monitoring_features;SwappedMemory">
+        <rdf:type rdf:resource="&monitoring_features;MemoryFeature"/>
+        <rdf:type rdf:resource="&unit;InformationSize"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_features.owl#TimeToLive -->
+
+    <owl:NamedIndividual rdf:about="&monitoring_features;TimeToLive">
+        <rdf:type rdf:resource="&monitoring_features;MiscFeature"/>
+        <rdf:type rdf:resource="&unit;Countable"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_features.owl#Uptime -->
+
+    <owl:NamedIndividual rdf:about="&monitoring_features;Uptime">
+        <rdf:type rdf:resource="&monitoring_features;MiscFeature"/>
+        <rdf:type rdf:resource="&unit;TimeInterval"/>
+        <featureName>Uptime</featureName>
+        <hasResourceType rdf:resource="&monitoring_features;NodeResource"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_features.owl#UsedDiskSpace -->
+
+    <owl:NamedIndividual rdf:about="&monitoring_features;UsedDiskSpace">
+        <rdf:type rdf:resource="&monitoring_features;StorageFeature"/>
+        <rdf:type rdf:resource="&unit;InformationSize"/>
+        <featureName>Used Disk Space</featureName>
+        <hasResourceType rdf:resource="&monitoring_features;NodeResource"/>
+        <obligatoryParameter rdf:resource="&monitoring_features;PFM_FilesystemFolder"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_features.owl#UsedMemory -->
+
+    <owl:NamedIndividual rdf:about="&monitoring_features;UsedMemory">
+        <rdf:type rdf:resource="&monitoring_features;MemoryFeature"/>
+        <rdf:type rdf:resource="&unit;InformationSize"/>
+        <featureName>Used Memory</featureName>
+        <hasResourceType rdf:resource="&monitoring_features;NodeResource"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/unit.owl#fraction -->
+
+    <owl:NamedIndividual rdf:about="&unit;fraction"/>
+    <rdf:Description>
+        <imports rdf:resource="http://fp7-novi.eu/unit.owl"/>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.3.1824) http://owlapi.sourceforge.net -->
+

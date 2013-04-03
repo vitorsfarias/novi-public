@@ -1,0 +1,5 @@
+factory := root load: "VoidOperations".
+obj := factory create.
+obj show hide blippo. 
+ 
+

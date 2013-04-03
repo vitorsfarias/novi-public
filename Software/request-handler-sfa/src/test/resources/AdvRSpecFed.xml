@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rspec xmlns="http://sorch.netmode.ntua.gr/ws/RSpec" xmlns:fedad="http://sorch.netmode.ntua.gr/ws/RSpec/ext/federica" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="advertisement" xsi:schemaLocation="http://sorch.netmode.ntua.gr/ws/RSpec http://sorch.netmode.ntua.gr/ws/RSpec/ad.xsd http://sorch.netmode.ntua.gr/ws/RSpec/ext/federica http://sorch.netmode.ntua.gr/ws/RSpec/ext/federica/federica.xsd">
+	<node component_id="urn:publicid:IDN+federica.eu+node+psnc.poz.vserver1" component_manager_id="urn:publicid:IDN+federica.eu+authority+cm" component_name="psnc.poz.vserver1" exclusive="false">
+		<hardware_type name="pc"/>
+		<sliver_type name="vm">
+			<fedad:vendor name="VMWare"/>
+		</sliver_type>
+		<available fedad:diskSize="178,46Gb" fedad:numCPUCores="8" fedad:ramSize="32GB" now="true"/>
+		<interface component_id="urn:publicid:IDN+federica.eu+interface+psnc.poz.vserver1.vmnic0" fedad:exclusive="false" fedad:supportedFeatures="VLAN" role="experimental" fedad:canFederate="true" />
+		<interface component_id="urn:publicid:IDN+federica.eu+interface+psnc.poz.vserver1.vmnic1" fedad:exclusive="false" fedad:supportedFeatures="VLAN" role="experimental" fedad:canFederate="true" />
+		<interface component_id="urn:publicid:IDN+federica.eu+interface+psnc.poz.vserver1.vmnic2" fedad:exclusive="false" fedad:supportedFeatures="VLAN" role="experimental" fedad:canFederate="true" />
+		<interface component_id="urn:publicid:IDN+federica.eu+interface+psnc.poz.vserver1.vmnic3" fedad:exclusive="false" fedad:supportedFeatures="VLAN" role="experimental" fedad:canFederate="true" />
+		<interface component_id="urn:publicid:IDN+federica.eu+interface+psnc.poz.vserver1.vmnic4" fedad:exclusive="false" fedad:supportedFeatures="VLAN" role="experimental" fedad:canFederate="true" />
+		<interface component_id="urn:publicid:IDN+federica.eu+interface+psnc.poz.vserver1.vmnic5" fedad:exclusive="false" fedad:supportedFeatures="VLAN" role="experimental" fedad:canFederate="true" />
+		<interface component_id="urn:publicid:IDN+federica.eu+interface+psnc.poz.vserver1.vmnic6" fedad:exclusive="false" fedad:supportedFeatures="VLAN" role="experimental" fedad:canFederate="true" />
+		<interface component_id="urn:publicid:IDN+federica.eu+interface+psnc.poz.vserver1.vmnic7" fedad:exclusive="false" fedad:supportedFeatures="VLAN" role="experimental" fedad:canFederate="true" />
+	</node>
+	<node component_id="urn:publicid:IDN+federica.eu+node+psnc.poz.router1" component_manager_id="urn:publicid:IDN+federica.eu+authority+cm" component_name="psnc.poz.router1" exclusive="false">
+		<hardware_type name="genericNetworkDevice"/>
+		<sliver_type name="router">
+			<fedad:vendor OS="Junos9.3R28" name="Juniper"/>
+		</sliver_type>
+		<available fedad:availableLogicalRouters="1" now="true"/>
+		<interface component_id="urn:publicid:IDN+federica.eu+interface+psnc.poz.router1.ge-0/0/0" fedad:exclusive="false" fedad:supportedFeatures="VLAN" fedad:canFederate="true" />
+		<interface component_id="urn:publicid:IDN+federica.eu+interface+psnc.poz.router1.ge-0/0/2" fedad:exclusive="false" fedad:supportedFeatures="VLAN" fedad:canFederate="true" />
+		<interface component_id="urn:publicid:IDN+federica.eu+interface+psnc.poz.router1.ge-0/0/3" fedad:exclusive="false" fedad:supportedFeatures="VLAN" fedad:canFederate="true" />
+		<interface component_id="urn:publicid:IDN+federica.eu+interface+psnc.poz.router1.ge-0/1/0" fedad:exclusive="false" fedad:supportedFeatures="VLAN" fedad:canFederate="true" />
+		<interface component_id="urn:publicid:IDN+federica.eu+interface+psnc.poz.router1.ge-0/1/2" fedad:exclusive="false" fedad:supportedFeatures="VLAN" fedad:canFederate="true" />
+		<interface component_id="urn:publicid:IDN+federica.eu+interface+psnc.poz.router1.ge-0/1/3" fedad:exclusive="false" fedad:supportedFeatures="VLAN" fedad:canFederate="true" />
+		<interface component_id="urn:publicid:IDN+federica.eu+interface+psnc.poz.router1.ge-0/2/2" fedad:exclusive="false" fedad:supportedFeatures="VLAN" fedad:canFederate="true" />
+		<interface component_id="urn:publicid:IDN+federica.eu+interface+psnc.poz.router1.ge-0/2/3" fedad:exclusive="false" fedad:supportedFeatures="VLAN" fedad:canFederate="true" />
+		<interface component_id="urn:publicid:IDN+federica.eu+interface+psnc.poz.router1.ge-0/3/2" fedad:exclusive="false" fedad:supportedFeatures="VLAN" fedad:canFederate="true" />
+		<interface component_id="urn:publicid:IDN+federica.eu+interface+psnc.poz.router1.ge-0/3/3" fedad:exclusive="false" fedad:supportedFeatures="VLAN" fedad:canFederate="true" />
+	</node>
+	<node component_id="urn:publicid:IDN+federica.eu+node+dfn.erl.vserver1" component_manager_id="urn:publicid:IDN+federica.eu+authority+cm" component_name="dfn.erl.vserver1" exclusive="false">
+		<hardware_type name="pc"/>
+		<sliver_type name="vm">
+			<fedad:vendor name="VMWare"/>
+		</sliver_type>
+		<available fedad:diskSize="629,34Gb" fedad:numCPUCores="8" fedad:ramSize="16GB" now="true"/>
+		<interface component_id="urn:publicid:IDN+federica.eu+interface+dfn.erl.vserver1.vmnic0" fedad:exclusive="false" fedad:supportedFeatures="VLAN" role="experimental" fedad:canFederate="true" />
+		<interface component_id="urn:publicid:IDN+federica.eu+interface+dfn.erl.vserver1.vmnic1" fedad:exclusive="false" fedad:supportedFeatures="VLAN" role="experimental" fedad:canFederate="true" />
+		<interface component_id="urn:publicid:IDN+federica.eu+interface+dfn.erl.vserver1.vmnic2" fedad:exclusive="false" fedad:supportedFeatures="VLAN" role="experimental" fedad:canFederate="true"/>
+		<interface component_id="urn:publicid:IDN+federica.eu+interface+dfn.erl.vserver1.vmnic3" fedad:exclusive="false" fedad:supportedFeatures="VLAN" role="experimental" fedad:canFederate="true"/>
+		<interface component_id="urn:publicid:IDN+federica.eu+interface+dfn.erl.vserver1.vmnic4" fedad:exclusive="false" fedad:supportedFeatures="VLAN" role="experimental" fedad:canFederate="true"/>
+		<interface component_id="urn:publicid:IDN+federica.eu+interface+dfn.erl.vserver1.vmnic5" fedad:exclusive="false" fedad:supportedFeatures="VLAN" role="experimental" fedad:canFederate="true"/>
+		<interface component_id="urn:publicid:IDN+federica.eu+interface+dfn.erl.vserver1.vmnic6" fedad:exclusive="false" fedad:supportedFeatures="VLAN" role="experimental" fedad:canFederate="true"/>
+		<interface component_id="urn:publicid:IDN+federica.eu+interface+dfn.erl.vserver1.vmnic7" fedad:exclusive="false" fedad:supportedFeatures="VLAN" role="experimental" fedad:canFederate="true"/>
+	</node>
+	<node component_id="urn:publicid:IDN+federica.eu+node+dfn.erl.router1" component_manager_id="urn:publicid:IDN+federica.eu+authority+cm" component_name="dfn.erl.router1" exclusive="false">
+		<hardware_type name="genericNetworkDevice"/>
+		<sliver_type name="router">
+			<fedad:vendor OS="Junos9.3R28" name="Juniper"/>
+		</sliver_type>
+		<available fedad:availableLogicalRouters="5" now="true"/>
+		<interface component_id="urn:publicid:IDN+federica.eu+interface+dfn.erl.router1.ge-0/0/0" fedad:exclusive="false" fedad:supportedFeatures="VLAN" fedad:canFederate="true"/>
+		<interface component_id="urn:publicid:IDN+federica.eu+interface+dfn.erl.router1.ge-0/0/2" fedad:exclusive="false" fedad:supportedFeatures="VLAN" fedad:canFederate="true"/>
+		<interface component_id="urn:publicid:IDN+federica.eu+interface+dfn.erl.router1.ge-0/0/3" fedad:exclusive="false" fedad:supportedFeatures="VLAN" fedad:canFederate="true"/>
+		<interface component_id="urn:publicid:IDN+federica.eu+interface+dfn.erl.router1.ge-0/1/0" fedad:exclusive="false" fedad:supportedFeatures="VLAN" fedad:canFederate="true"/>
+		<interface component_id="urn:publicid:IDN+federica.eu+interface+dfn.erl.router1.ge-0/1/2" fedad:exclusive="false" fedad:supportedFeatures="VLAN" fedad:canFederate="true"/>
+		<interface component_id="urn:publicid:IDN+federica.eu+interface+dfn.erl.router1.ge-0/1/3" fedad:exclusive="false" fedad:supportedFeatures="VLAN" fedad:canFederate="true"/>
+		<interface component_id="urn:publicid:IDN+federica.eu+interface+dfn.erl.router1.ge-0/2/2" fedad:exclusive="false" fedad:supportedFeatures="VLAN" fedad:canFederate="true"/>
+		<interface component_id="urn:publicid:IDN+federica.eu+interface+dfn.erl.router1.ge-0/2/3" fedad:exclusive="false" fedad:supportedFeatures="VLAN" fedad:canFederate="true"/>
+		<interface component_id="urn:publicid:IDN+federica.eu+interface+dfn.erl.router1.ge-0/3/2" fedad:exclusive="false" fedad:supportedFeatures="VLAN" fedad:canFederate="true"/>
+		<interface component_id="urn:publicid:IDN+federica.eu+interface+dfn.erl.router1.ge-0/3/3" fedad:exclusive="false" fedad:supportedFeatures="VLAN" fedad:canFederate="true"/>
+	</node>
+	<link component_id="urn:publicid:IDN+federica.eu+link+dfn.erl.router1.ge-0/1/0-psnc.poz.router1.ge-0/0/0" component_name="dfn.erl.router1.ge-0/1/0-psnc.poz.router1.ge-0/0/0">
+		<interface_ref component_id="urn:publicid:IDN+federica.eu+interface+dfn.erl.router1.ge-0/1/0"/>
+		<interface_ref component_id="urn:publicid:IDN+federica.eu+interface+psnc.poz.router1.ge-0/0/0"/>
+		<link_type class="ethernet" name="VLAN"/>
+		<link_class name="ethernet"/>
+		<fedad:linkAvailability capacity="1000Mbps"/>
+	</link>
+	<link component_id="urn:publicid:IDN+federica.eu+link+dfn.erl.router1.logical" component_name="dfn.erl.router1.logical">
+		<interface_ref component_id="urn:publicid:IDN+federica.eu+interface+dfn.erl.router1.lt"/>
+		<interface_ref component_id="urn:publicid:IDN+federica.eu+interface+dfn.erl.router1.lt"/>
+		<link_type class="tunnel" name="VLAN"/>
+		<link_class name="tunnel"/>
+		<fedad:linkAvailability capacity="1000Mbps"/>
+	</link>
+	<link component_id="urn:publicid:IDN+federica.eu+link+psnc.poz.router1.logical" component_name="psnc.poz.router1.logical">
+		<interface_ref component_id="urn:publicid:IDN+federica.eu+interface+psnc.poz.router1.logical"/>
+		<interface_ref component_id="urn:publicid:IDN+federica.eu+interface+psnc.poz.router1.logical"/>
+		<link_type class="tunnel" name="VLAN"/>
+		<link_class name="tunnel"/>
+		<fedad:linkAvailability capacity="1000Mbps"/>
+	</link>
+</rspec>

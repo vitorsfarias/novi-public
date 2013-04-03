@@ -1,0 +1,88 @@
+'''
+Created on Aug 10, 2011
+
+@author: steger
+'''
+from urllib2 import URLError
+from rdflib import Graph, Namespace, URIRef, plugin
+from rdflib.query import Processor, Result
+import pkgutil
+import StringIO
+import monitoringmodel.im
+import os.path
+
+class IMError(Exception):
+    pass
+
+class Ontology(object):
+    ontology = { 
+        'owl': (None, "http://www.w3.org/2002/07/owl#"),
+        'unit': ('unit.owl', "http://fp7-novi.eu/unit.owl#"),
+        'param': ('monitoring_parameters.owl', "http://fp7-novi.eu/monitoring_parameter.owl#"),
+        'feature': ('monitoring_features.owl', "http://fp7-novi.eu/monitoring_features.owl#"),
+        'task': ('monitoring_task.owl', "http://fp7-novi.eu/monitoring_task.owl#"),
+        'query': (None, "http://fp7-novi.eu/monitoring_query.owl#"),   #('monitoring_query.owl', ...)
+        'conf': (None, "http://fp7-novi.eu/config.owl#"),
+        'stat': (None, 'http://fp7-novi.eu/monitoring_stat.owl#'),
+        'core': ('novi-im.owl', "http://fp7-novi.eu/im.owl#"),
+    }
+ 
+    def __init__(self, baseurl, config_owl):
+
+        plugin.register(
+            'sparql', Processor,
+            'rdfextras.sparql.processor', 'Processor')
+        plugin.register(
+            'sparql', Result,
+            'rdfextras.sparql.query', 'SPARQLQueryResult')
+
+        # JYTHON hack for accessing owl files
+        im = monitoringmodel.im.im()
+        path = im.path
+        loader = pkgutil.get_loader("monitoringmodel.im")
+
+        self.baseurl = path #baseurl
+        self.graph = Graph()
+        # load owl files and bind name spaces
+        try:
+            url = os.path.join(path, config_owl)
+            self.graph += Graph().parse(source = StringIO.StringIO(loader.get_data(url)) )
+        except URLError:
+            raise IMError("URLError: Cannot read model %s" % config_owl)
+        for prefix, (owl, ns) in self.ontology.iteritems():
+            if owl:
+                url = os.path.join(path, owl) #"%s/%s" % (self.baseurl, owl)
+                try:
+                    self.graph += Graph().parse(source = StringIO.StringIO(loader.get_data(url)) )
+                except URLError:
+                    raise IMError("URLError: Cannot read model %s" % url)
+            try:
+                self.graph.bind(prefix, Namespace(ns))
+            except:
+                pass
+
+    @staticmethod
+    def _float(f):
+        if '.' in f or 'e' in f or 'E' in f:
+            return float(f)
+        else:
+            return int(f)
+
+    @staticmethod
+    def _tail(uriref):
+        if not isinstance(uriref, URIRef):
+            raise IMError("Wrong uriref %s" % uriref)
+        return str(uriref).split("#")[-1]
+    
+    def query(self, query):
+        return self.graph.query(query, initNs = dict(self.graph.namespaces()))
+
+    def ns(self, prefix):
+        for p, ns in self.graph.namespaces():
+            if p == prefix:
+                return Namespace(ns)
+        raise IMError("Unknown prefix: %s" % prefix)
+    
+    def dump(self):
+        for t in self.graph.triples((None, None, None)):
+            print t

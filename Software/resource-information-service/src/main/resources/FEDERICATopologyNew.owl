@@ -1,0 +1,912 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#currentTestbed">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Group"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Platform"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+psnc.poz.uas">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Node"/>
+	<isContainedIn xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#currentTestbed"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#FEDERICA">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Group"/>
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Platform"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+psnc.poz.uas">
+	<isContainedIn xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#FEDERICA"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#psnc.poz.uas-location">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Location"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+psnc.poz.uas">
+	<locatedAt xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#psnc.poz.uas-location"/>
+	<hardwareType xmlns="http://fp7-novi.eu/im.owl#">pc</hardwareType>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#psnc.poz.uas.mem">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Memory"/>
+	<hasAvailableMemorySize xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#float">32.0</hasAvailableMemorySize>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+psnc.poz.uas">
+	<hasComponent xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#psnc.poz.uas.mem"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#psnc.poz.uas.cpu">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#CPU"/>
+	<hasAvailableCores xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</hasAvailableCores>
+	<hasCPUSpeed xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2.0</hasCPUSpeed>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+psnc.poz.uas">
+	<hasComponent xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#psnc.poz.uas.cpu"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#psnc.poz.uas.storage">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Storage"/>
+	<hasAvailableStorageSize xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#float">589.22</hasAvailableStorageSize>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+psnc.poz.uas">
+	<hasComponent xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#psnc.poz.uas.storage"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+interface+psnc.poz.uas.vmnic0-in">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+	<isInboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+psnc.poz.uas"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+psnc.poz.uas">
+	<hasInboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+interface+psnc.poz.uas.vmnic0-in"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+interface+psnc.poz.uas.vmnic1-in">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+	<isInboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+psnc.poz.uas"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+psnc.poz.uas">
+	<hasInboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+interface+psnc.poz.uas.vmnic1-in"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+interface+psnc.poz.uas.vmnic1-out">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+	<isOutboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+psnc.poz.uas"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+psnc.poz.uas">
+	<hasOutboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+interface+psnc.poz.uas.vmnic1-out"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+interface+psnc.poz.uas.vmnic0-out">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+	<isOutboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+psnc.poz.uas"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+psnc.poz.uas">
+	<hasOutboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+interface+psnc.poz.uas.vmnic0-out"/>
+	<hostname xmlns="http://fp7-novi.eu/im.owl#">psnc.poz.uas</hostname>
+	<hrn xmlns="http://fp7-novi.eu/im.owl#">federica.eu.psnc.poz.uas</hrn>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#currentTestbed">
+	<contains xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+psnc.poz.uas"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+psnc.poz.vserver3">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Node"/>
+	<isContainedIn xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#currentTestbed"/>
+	<isContainedIn xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#FEDERICA"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#psnc.poz.vserver3-location">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Location"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+psnc.poz.vserver3">
+	<locatedAt xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#psnc.poz.vserver3-location"/>
+	<hardwareType xmlns="http://fp7-novi.eu/im.owl#">pc</hardwareType>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#psnc.poz.vserver3.cpu">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#CPU"/>
+	<hasAvailableCores xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</hasAvailableCores>
+	<hasCPUSpeed xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2.0</hasCPUSpeed>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+psnc.poz.vserver3">
+	<hasComponent xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#psnc.poz.vserver3.cpu"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#psnc.poz.vserver3.storage">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Storage"/>
+	<hasAvailableStorageSize xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#float">904.52</hasAvailableStorageSize>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+psnc.poz.vserver3">
+	<hasComponent xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#psnc.poz.vserver3.storage"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#psnc.poz.vserver3.mem">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Memory"/>
+	<hasAvailableMemorySize xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#float">32.0</hasAvailableMemorySize>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+psnc.poz.vserver3">
+	<hasComponent xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#psnc.poz.vserver3.mem"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+interface+psnc.poz.vserver3.vmnic1-in">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+	<isInboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+psnc.poz.vserver3"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+psnc.poz.vserver3">
+	<hasInboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+interface+psnc.poz.vserver3.vmnic1-in"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+interface+psnc.poz.vserver3.vmnic0-in">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+	<isInboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+psnc.poz.vserver3"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+psnc.poz.vserver3">
+	<hasInboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+interface+psnc.poz.vserver3.vmnic0-in"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+interface+psnc.poz.vserver3.vmnic1-out">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+	<isOutboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+psnc.poz.vserver3"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+psnc.poz.vserver3">
+	<hasOutboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+interface+psnc.poz.vserver3.vmnic1-out"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+interface+psnc.poz.vserver3.vmnic0-out">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+	<isOutboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+psnc.poz.vserver3"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+psnc.poz.vserver3">
+	<hasOutboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+interface+psnc.poz.vserver3.vmnic0-out"/>
+	<hostname xmlns="http://fp7-novi.eu/im.owl#">psnc.poz.vserver3</hostname>
+	<hrn xmlns="http://fp7-novi.eu/im.owl#">federica.eu.psnc.poz.vserver3</hrn>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#currentTestbed">
+	<contains xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+psnc.poz.vserver3"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+psnc.poz.vserver2">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Node"/>
+	<isContainedIn xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#currentTestbed"/>
+	<isContainedIn xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#FEDERICA"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#psnc.poz.vserver2-location">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Location"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+psnc.poz.vserver2">
+	<locatedAt xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#psnc.poz.vserver2-location"/>
+	<hardwareType xmlns="http://fp7-novi.eu/im.owl#">pc</hardwareType>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#psnc.poz.vserver2.cpu">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#CPU"/>
+	<hasAvailableCores xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</hasAvailableCores>
+	<hasCPUSpeed xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2.33</hasCPUSpeed>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+psnc.poz.vserver2">
+	<hasComponent xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#psnc.poz.vserver2.cpu"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#psnc.poz.vserver2.storage">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Storage"/>
+	<hasAvailableStorageSize xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#float">173.32</hasAvailableStorageSize>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+psnc.poz.vserver2">
+	<hasComponent xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#psnc.poz.vserver2.storage"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#psnc.poz.vserver2.mem">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Memory"/>
+	<hasAvailableMemorySize xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#float">16.0</hasAvailableMemorySize>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+psnc.poz.vserver2">
+	<hasComponent xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#psnc.poz.vserver2.mem"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+interface+psnc.poz.vserver2.vmnic1-in">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+	<isInboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+psnc.poz.vserver2"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+psnc.poz.vserver2">
+	<hasInboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+interface+psnc.poz.vserver2.vmnic1-in"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+interface+psnc.poz.vserver2.vmnic0-in">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+	<isInboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+psnc.poz.vserver2"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+psnc.poz.vserver2">
+	<hasInboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+interface+psnc.poz.vserver2.vmnic0-in"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+interface+psnc.poz.vserver2.vmnic1-out">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+	<isOutboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+psnc.poz.vserver2"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+psnc.poz.vserver2">
+	<hasOutboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+interface+psnc.poz.vserver2.vmnic1-out"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+interface+psnc.poz.vserver2.vmnic0-out">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+	<isOutboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+psnc.poz.vserver2"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+psnc.poz.vserver2">
+	<hasOutboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+interface+psnc.poz.vserver2.vmnic0-out"/>
+	<hostname xmlns="http://fp7-novi.eu/im.owl#">psnc.poz.vserver2</hostname>
+	<hrn xmlns="http://fp7-novi.eu/im.owl#">federica.eu.psnc.poz.vserver2</hrn>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#currentTestbed">
+	<contains xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+psnc.poz.vserver2"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+psnc.poz.router1">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Node"/>
+	<isContainedIn xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#currentTestbed"/>
+	<isContainedIn xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#FEDERICA"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#psnc.poz.router1-location">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Location"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+psnc.poz.router1">
+	<locatedAt xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#psnc.poz.router1-location"/>
+	<hardwareType xmlns="http://fp7-novi.eu/im.owl#">genericNetworkDevice</hardwareType>
+	<hasAvailableLogicalRouters xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</hasAvailableLogicalRouters>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+interface+psnc.poz.router1.ge-0/2/1-in">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+	<isInboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+psnc.poz.router1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+psnc.poz.router1">
+	<hasInboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+interface+psnc.poz.router1.ge-0/2/1-in"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+interface+psnc.poz.router1.ge-0/1/7-in">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+	<isInboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+psnc.poz.router1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+psnc.poz.router1">
+	<hasInboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+interface+psnc.poz.router1.ge-0/1/7-in"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+interface+psnc.poz.router1.ge-0/2/8-in">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+	<isInboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+psnc.poz.router1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+psnc.poz.router1">
+	<hasInboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+interface+psnc.poz.router1.ge-0/2/8-in"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+interface+psnc.poz.router1.ge-0/1/6-in">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+	<isInboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+psnc.poz.router1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+psnc.poz.router1">
+	<hasInboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+interface+psnc.poz.router1.ge-0/1/6-in"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+interface+psnc.poz.router1.ge-0/2/9-in">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</canFederate>
+	<isInboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+psnc.poz.router1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+psnc.poz.router1">
+	<hasInboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+interface+psnc.poz.router1.ge-0/2/9-in"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+interface+psnc.poz.router1.ge-0/1/0-in">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+	<isInboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+psnc.poz.router1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+psnc.poz.router1">
+	<hasInboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+interface+psnc.poz.router1.ge-0/1/0-in"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+interface+psnc.poz.router1.ge-0/0/0-in">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+	<isInboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+psnc.poz.router1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+psnc.poz.router1">
+	<hasInboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+interface+psnc.poz.router1.ge-0/0/0-in"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+interface+psnc.poz.router1.logical-in">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+	<isInboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+psnc.poz.router1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+psnc.poz.router1">
+	<hasInboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+interface+psnc.poz.router1.logical-in"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+interface+psnc.poz.router1.ge-0/1/4-in">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+	<isInboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+psnc.poz.router1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+psnc.poz.router1">
+	<hasInboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+interface+psnc.poz.router1.ge-0/1/4-in"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+interface+psnc.poz.router1.ge-0/1/5-in">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+	<isInboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+psnc.poz.router1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+psnc.poz.router1">
+	<hasInboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+interface+psnc.poz.router1.ge-0/1/5-in"/>
+	<hasLogicalRouters xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#int">11</hasLogicalRouters>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+interface+psnc.poz.router1.ge-0/1/7-out">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+	<isOutboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+psnc.poz.router1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+psnc.poz.router1">
+	<hasOutboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+interface+psnc.poz.router1.ge-0/1/7-out"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+interface+psnc.poz.router1.ge-0/1/6-out">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+	<isOutboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+psnc.poz.router1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+psnc.poz.router1">
+	<hasOutboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+interface+psnc.poz.router1.ge-0/1/6-out"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+interface+psnc.poz.router1.ge-0/1/5-out">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+	<isOutboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+psnc.poz.router1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+psnc.poz.router1">
+	<hasOutboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+interface+psnc.poz.router1.ge-0/1/5-out"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+interface+psnc.poz.router1.ge-0/2/9-out">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</canFederate>
+	<isOutboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+psnc.poz.router1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+psnc.poz.router1">
+	<hasOutboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+interface+psnc.poz.router1.ge-0/2/9-out"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+interface+psnc.poz.router1.ge-0/1/4-out">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+	<isOutboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+psnc.poz.router1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+psnc.poz.router1">
+	<hasOutboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+interface+psnc.poz.router1.ge-0/1/4-out"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+interface+psnc.poz.router1.ge-0/1/0-out">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+	<isOutboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+psnc.poz.router1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+psnc.poz.router1">
+	<hasOutboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+interface+psnc.poz.router1.ge-0/1/0-out"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+interface+psnc.poz.router1.logical-out">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+	<isOutboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+psnc.poz.router1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+psnc.poz.router1">
+	<hasOutboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+interface+psnc.poz.router1.logical-out"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+interface+psnc.poz.router1.ge-0/2/8-out">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+	<isOutboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+psnc.poz.router1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+psnc.poz.router1">
+	<hasOutboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+interface+psnc.poz.router1.ge-0/2/8-out"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+interface+psnc.poz.router1.ge-0/2/1-out">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+	<isOutboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+psnc.poz.router1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+psnc.poz.router1">
+	<hasOutboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+interface+psnc.poz.router1.ge-0/2/1-out"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+interface+psnc.poz.router1.ge-0/0/0-out">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+	<isOutboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+psnc.poz.router1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+psnc.poz.router1">
+	<hasOutboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+interface+psnc.poz.router1.ge-0/0/0-out"/>
+	<hostname xmlns="http://fp7-novi.eu/im.owl#">psnc.poz.router1</hostname>
+	<hrn xmlns="http://fp7-novi.eu/im.owl#">federica.eu.psnc.poz.router1</hrn>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#currentTestbed">
+	<contains xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+psnc.poz.router1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+garr.mil.vserver2">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Node"/>
+	<isContainedIn xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#FEDERICA"/>
+	<isContainedIn xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#currentTestbed"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#garr.mil.vserver2-location">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Location"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+garr.mil.vserver2">
+	<locatedAt xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#garr.mil.vserver2-location"/>
+	<hardwareType xmlns="http://fp7-novi.eu/im.owl#">pc</hardwareType>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#garr.mil.vserver2.storage">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Storage"/>
+	<hasAvailableStorageSize xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#float">815.99</hasAvailableStorageSize>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+garr.mil.vserver2">
+	<hasComponent xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#garr.mil.vserver2.storage"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#garr.mil.vserver2.mem">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Memory"/>
+	<hasAvailableMemorySize xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#float">32.0</hasAvailableMemorySize>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+garr.mil.vserver2">
+	<hasComponent xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#garr.mil.vserver2.mem"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#garr.mil.vserver2.cpu">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#CPU"/>
+	<hasAvailableCores xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</hasAvailableCores>
+	<hasCPUSpeed xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2.0</hasCPUSpeed>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+garr.mil.vserver2">
+	<hasComponent xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#garr.mil.vserver2.cpu"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+interface+garr.mil.vserver2.vmnic0-in">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+	<isInboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+garr.mil.vserver2"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+garr.mil.vserver2">
+	<hasInboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+interface+garr.mil.vserver2.vmnic0-in"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+interface+garr.mil.vserver2.vmnic1-in">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+	<isInboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+garr.mil.vserver2"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+garr.mil.vserver2">
+	<hasInboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+interface+garr.mil.vserver2.vmnic1-in"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+interface+garr.mil.vserver2.vmnic1-out">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+	<isOutboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+garr.mil.vserver2"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+garr.mil.vserver2">
+	<hasOutboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+interface+garr.mil.vserver2.vmnic1-out"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+interface+garr.mil.vserver2.vmnic0-out">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+	<isOutboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+garr.mil.vserver2"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+garr.mil.vserver2">
+	<hasOutboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+interface+garr.mil.vserver2.vmnic0-out"/>
+	<hostname xmlns="http://fp7-novi.eu/im.owl#">garr.mil.vserver2</hostname>
+	<hrn xmlns="http://fp7-novi.eu/im.owl#">federica.eu.garr.mil.vserver2</hrn>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#currentTestbed">
+	<contains xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+garr.mil.vserver2"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+garr.mil.router1">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Node"/>
+	<isContainedIn xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#FEDERICA"/>
+	<isContainedIn xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#currentTestbed"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#garr.mil.router1-location">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Location"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+garr.mil.router1">
+	<locatedAt xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#garr.mil.router1-location"/>
+	<hardwareType xmlns="http://fp7-novi.eu/im.owl#">genericNetworkDevice</hardwareType>
+	<hasAvailableLogicalRouters xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#int">11</hasAvailableLogicalRouters>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+interface+garr.mil.router1.ge-0/1/4-in">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+	<isInboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+garr.mil.router1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+garr.mil.router1">
+	<hasInboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+interface+garr.mil.router1.ge-0/1/4-in"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+interface+garr.mil.router1.logical-in">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+	<isInboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+garr.mil.router1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+garr.mil.router1">
+	<hasInboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+interface+garr.mil.router1.logical-in"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+interface+garr.mil.router1.ge-0/2/0-in">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+	<isInboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+garr.mil.router1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+garr.mil.router1">
+	<hasInboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+interface+garr.mil.router1.ge-0/2/0-in"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+interface+garr.mil.router1.ge-0/0/0-in">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+	<isInboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+garr.mil.router1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+garr.mil.router1">
+	<hasInboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+interface+garr.mil.router1.ge-0/0/0-in"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+interface+garr.mil.router1.ge-0/1/5-in">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+	<isInboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+garr.mil.router1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+garr.mil.router1">
+	<hasInboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+interface+garr.mil.router1.ge-0/1/5-in"/>
+	<hasLogicalRouters xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</hasLogicalRouters>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+interface+garr.mil.router1.ge-0/1/4-out">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+	<isOutboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+garr.mil.router1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+garr.mil.router1">
+	<hasOutboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+interface+garr.mil.router1.ge-0/1/4-out"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+interface+garr.mil.router1.ge-0/2/0-out">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+	<isOutboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+garr.mil.router1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+garr.mil.router1">
+	<hasOutboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+interface+garr.mil.router1.ge-0/2/0-out"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+interface+garr.mil.router1.ge-0/0/0-out">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+	<isOutboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+garr.mil.router1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+garr.mil.router1">
+	<hasOutboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+interface+garr.mil.router1.ge-0/0/0-out"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+interface+garr.mil.router1.logical-out">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+	<isOutboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+garr.mil.router1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+garr.mil.router1">
+	<hasOutboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+interface+garr.mil.router1.logical-out"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+interface+garr.mil.router1.ge-0/1/5-out">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+	<isOutboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+garr.mil.router1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+garr.mil.router1">
+	<hasOutboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+interface+garr.mil.router1.ge-0/1/5-out"/>
+	<hostname xmlns="http://fp7-novi.eu/im.owl#">garr.mil.router1</hostname>
+	<hrn xmlns="http://fp7-novi.eu/im.owl#">federica.eu.garr.mil.router1</hrn>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#currentTestbed">
+	<contains xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+garr.mil.router1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+dfn.erl.router1">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Node"/>
+	<isContainedIn xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#FEDERICA"/>
+	<isContainedIn xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#currentTestbed"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#dfn.erl.router1-location">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Location"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+dfn.erl.router1">
+	<locatedAt xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#dfn.erl.router1-location"/>
+	<hardwareType xmlns="http://fp7-novi.eu/im.owl#">genericNetworkDevice</hardwareType>
+	<hasAvailableLogicalRouters xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#int">8</hasAvailableLogicalRouters>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+interface+dfn.erl.router1.ge-0/1/4-in">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+	<isInboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+dfn.erl.router1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+dfn.erl.router1">
+	<hasInboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+interface+dfn.erl.router1.ge-0/1/4-in"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+interface+dfn.erl.router1.logical-in">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+	<isInboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+dfn.erl.router1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+dfn.erl.router1">
+	<hasInboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+interface+dfn.erl.router1.logical-in"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+interface+dfn.erl.router1.ge-0/0/0-in">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+	<isInboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+dfn.erl.router1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+dfn.erl.router1">
+	<hasInboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+interface+dfn.erl.router1.ge-0/0/0-in"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+interface+dfn.erl.router1.ge-0/1/5-in">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+	<isInboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+dfn.erl.router1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+dfn.erl.router1">
+	<hasInboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+interface+dfn.erl.router1.ge-0/1/5-in"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+interface+dfn.erl.router1.ge-0/1/0-in">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+	<isInboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+dfn.erl.router1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+dfn.erl.router1">
+	<hasInboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+interface+dfn.erl.router1.ge-0/1/0-in"/>
+	<hasLogicalRouters xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#int">7</hasLogicalRouters>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+interface+dfn.erl.router1.ge-0/1/5-out">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+	<isOutboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+dfn.erl.router1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+dfn.erl.router1">
+	<hasOutboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+interface+dfn.erl.router1.ge-0/1/5-out"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+interface+dfn.erl.router1.ge-0/0/0-out">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+	<isOutboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+dfn.erl.router1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+dfn.erl.router1">
+	<hasOutboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+interface+dfn.erl.router1.ge-0/0/0-out"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+interface+dfn.erl.router1.ge-0/1/0-out">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+	<isOutboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+dfn.erl.router1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+dfn.erl.router1">
+	<hasOutboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+interface+dfn.erl.router1.ge-0/1/0-out"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+interface+dfn.erl.router1.ge-0/1/4-out">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+	<isOutboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+dfn.erl.router1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+dfn.erl.router1">
+	<hasOutboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+interface+dfn.erl.router1.ge-0/1/4-out"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+interface+dfn.erl.router1.logical-out">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+	<isOutboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+dfn.erl.router1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+dfn.erl.router1">
+	<hasOutboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+interface+dfn.erl.router1.logical-out"/>
+	<hostname xmlns="http://fp7-novi.eu/im.owl#">dfn.erl.router1</hostname>
+	<hrn xmlns="http://fp7-novi.eu/im.owl#">federica.eu.dfn.erl.router1</hrn>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#currentTestbed">
+	<contains xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+dfn.erl.router1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+dfn.erl.vserver2">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Node"/>
+	<isContainedIn xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#FEDERICA"/>
+	<isContainedIn xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#currentTestbed"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#dfn.erl.vserver2-location">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Location"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+dfn.erl.vserver2">
+	<locatedAt xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#dfn.erl.vserver2-location"/>
+	<hardwareType xmlns="http://fp7-novi.eu/im.owl#">pc</hardwareType>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#dfn.erl.vserver2.cpu">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#CPU"/>
+	<hasAvailableCores xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</hasAvailableCores>
+	<hasCPUSpeed xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2.0</hasCPUSpeed>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+dfn.erl.vserver2">
+	<hasComponent xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#dfn.erl.vserver2.cpu"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#dfn.erl.vserver2.storage">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Storage"/>
+	<hasAvailableStorageSize xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#float">774.12</hasAvailableStorageSize>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+dfn.erl.vserver2">
+	<hasComponent xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#dfn.erl.vserver2.storage"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#dfn.erl.vserver2.mem">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Memory"/>
+	<hasAvailableMemorySize xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#float">16.0</hasAvailableMemorySize>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+dfn.erl.vserver2">
+	<hasComponent xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="http://fp7-novi.eu/im.owl#dfn.erl.vserver2.mem"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+interface+dfn.erl.vserver2.vmnic1-in">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+	<isInboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+dfn.erl.vserver2"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+dfn.erl.vserver2">
+	<hasInboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+interface+dfn.erl.vserver2.vmnic1-in"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+interface+dfn.erl.vserver2.vmnic1-out">
+	<rdf:type rdf:resource="http://fp7-novi.eu/im.owl#Interface"/>
+	<canFederate xmlns="http://fp7-novi.eu/im.owl#" rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</canFederate>
+	<isOutboundInterfaceOf xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+dfn.erl.vserver2"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="urn:publicid:IDN+federica.eu+node+dfn.erl.vserver2">
+	<hasOutboundInterface xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+interface+dfn.erl.vserver2.vmnic1-out"/>
+	<hostname xmlns="http://fp7-novi.eu/im.owl#">dfn.erl.vserver2</hostname>
+	<hrn xmlns="http://fp7-novi.eu/im.owl#">federica.eu.dfn.erl.vserver2</hrn>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://fp7-novi.eu/im.owl#currentTestbed">
+	<contains xmlns="http://fp7-novi.eu/im.owl#" rdf:resource="urn:publicid:IDN+federica.eu+node+dfn.erl.vserver2"/>
+</rdf:Description>
+
+</rdf:RDF>

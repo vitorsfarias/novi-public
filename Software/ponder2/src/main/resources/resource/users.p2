@@ -1,0 +1,16 @@
+event := root/factory/event create: #("uri").
+root/event at: "createUser" put: event.
+
+root/factory at: "User" put: (root load: "UserMO").
+root at: "Usersdomain" put: root/factory/domain create.
+
+policy := root/factory/ecapolicy create.
+policy event: root/event/createUser;
+	action: [ :uri |
+			   root print:"creating a UserMO with uri " + uri .
+			   root/Usersdomain at: uri put: (root/factory/User create: uri)].
+root/policy at: "createUser" put: policy.
+policy active: true.
+
+root/event/createUser create: #("User1").
+root/event/createUser create: #("User2").

@@ -1,0 +1,128 @@
+{
+ "http://fp7-novi.eu/monitoring_features.owl#CPULoad"	: {
+   "TYPE" : "cpuload",
+   "ID" : 52847504,
+   "HDR" : {
+      "NAME" : "DataHeader 53287440",
+      "HDRINFO" : [
+         {
+            "NAME" : "Run",
+            "DIMENTSION" : "Countable",
+            "UNIT" : "piece"
+         },
+         {
+            "NAME" : "Jobs in queue",
+            "DIMENTSION" : "Countable",
+            "UNIT" : "piece"
+         },
+         {
+            "NAME" : "Cores of kprocs",
+            "DIMENTSION" : "Countable",
+            "UNIT" : "piece"
+         }
+      ]
+   },
+   "DATA" : [
+      [ 1, 0.24, 3 ]
+   ]
+},
+
+ "http://fp7-novi.eu/monitoring_features.owl#FreeMemory"	: {
+   "TYPE" : "meminfo",
+   "ID" : 53330704,
+   "HDR" : {
+      "NAME" : "DataHeader 52747344",
+      "HDRINFO" : [
+         {
+            "NAME" : "Run",
+            "DIMENTSION" : "Countable",
+            "UNIT" : "piece"
+         },
+         {
+	"FEATURE": "http://fp7-novi.eu/monitoring_features.owl#FreeMemoryWrong",
+            "NAME" : "Available Memory",
+            "DIMENTSION" : "InformationSize",
+            "UNIT" : "Byte", "PREFIX" : "kilo"
+         }
+      ]
+   },
+   "DATA" : [
+      [ 1, 511120]
+   ]
+},
+
+"http://fp7-novi.eu/monitoring_features.owl#CPUClockRate" : {
+	"TYPE" : "cpuinfo2",
+	"ID" : 448,
+	"HDR" : {
+		"NAME" : "DataHeader 449",
+		"HDRINFO" : [
+			{ 
+			"FEATURE": "http://fp7-novi.eu/monitoring_features.owl#CPUClockRate",
+			"NAME" : "Speed MHz", 
+			"DIMENTSION" : "frequency", "UNIT" : "persecond", "PREFIX" : "mega" },
+			{ "NAME" : "Number of cores", "DIMENTSION" : "countable", "UNIT" : "piece" },
+			{ "NAME" : "Number of sockets", "DIMENTSION" : "countable", "UNIT" : "piece" },
+			{ "NAME" : "Run", "DIMENTSION" : "countable", "UNIT" : "piece" } ]
+	},
+	"DATA" : [
+		[ 2995.000, 3, 2, 1 ]
+	]
+}, 
+"http://fp7-novi.eu/monitoring_features.owl#CPUSockets"	: {
+   "TYPE" : "cpuload",
+   "ID" : 52847504,
+   "HDR" : {
+      "NAME" : "DataHeader 53287440",
+      "HDRINFO" : [
+         {
+            "NAME" : "Run",
+            "DIMENTSION" : "Countable",
+            "UNIT" : "piece"
+         },
+         {
+            "NAME" : "Jobs in queue",
+            "DIMENTSION" : "Countable",
+            "UNIT" : "piece"
+         },
+         {
+			"FEATURE": "http://fp7-novi.eu/monitoring_features.owl#CPUSockets",
+            "NAME" : "Number of sockets",
+            "DIMENTSION" : "Countable",
+            "UNIT" : "piece"
+         }
+      ]
+   },
+   "DATA" : [
+      [ 1, 0.24, 2 ]
+   ]
+},
+"http://fp7-novi.eu/monitoring_features.owl#CPUCores"	: {
+   "TYPE" : "cpuload",
+   "ID" : 52847504,
+   "HDR" : {
+      "NAME" : "DataHeader 53287440",
+      "HDRINFO" : [
+         {
+            "NAME" : "Run",
+            "DIMENTSION" : "Countable",
+            "UNIT" : "piece"
+         },
+         {
+            "NAME" : "Jobs in queue",
+            "DIMENTSION" : "Countable",
+            "UNIT" : "piece"
+         },
+         {
+			"FEATURE": "http://fp7-novi.eu/monitoring_features.owl#CPUCores",
+            "NAME" : "Number of cores",
+            "DIMENTSION" : "Countable",
+            "UNIT" : "piece"
+         }
+      ]
+   },
+   "DATA" : [
+      [ 1, 0.24, 3 ]
+   ]
+}
+}

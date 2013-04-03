@@ -1,0 +1,82 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+  	<groupId>eu.novi</groupId>
+  	<artifactId>parent</artifactId>
+  	<version>0.1.0-SNAPSHOT</version>
+  	<relativePath>../parent/</relativePath>
+  </parent>
+  <packaging>bundle</packaging>
+  <artifactId>sshj-osgi</artifactId>
+  <name>SSHJ OSGI bundle</name>
+  
+  <developers>
+   <developer>
+      <id>pikusa</id>
+      <name>Piotr Pikusa</name>
+      <email>pikusa@man.poznan.pl</email>
+      <organization>PSNC</organization>
+      <organizationUrl>www.man.poznan.pl</organizationUrl>
+      <roles>
+        <role>architect</role>
+        <role>developer</role>
+      </roles>
+      <timezone>+1</timezone>
+    </developer>
+  
+  </developers>
+
+  <properties>
+ 	<export.package>
+			*
+	
+	</export.package>
+        <non-export.package></non-export.package>
+        <export.packages>*</export.packages>
+        <import.packages>*</import.packages>
+        <private.packages>!*</private.packages>
+        <symbolic.name>${pom.groupId}.${pom.artifactId}</symbolic.name>
+        <embed-dep>*;scope=provided;inline=true;type=!pom</embed-dep>
+        <unpack-bundle>false</unpack-bundle>
+  </properties>
+  
+  <dependencies>
+  
+  <!-- Transitive dependency needed -->
+  	
+  	
+	<!-- These are the main required packages related to sshj -->
+
+	<dependency>
+			<groupId>net.schmizz</groupId>
+			<artifactId>sshj</artifactId>
+			<version>0.6.1</version>
+			<scope>provided</scope>
+	</dependency>
+	
+  </dependencies>
+  
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <configuration>
+	  <unpackBundle>${unpack.bundle}</unpackBundle>
+          <instructions>
+	    <Bundle-Name>SSHJ OSGI Bundle</Bundle-Name>
+	    <Bundle-Description>
+		This bundle exposes the required package from sshj as OSGI Bundle
+	    </Bundle-Description>
+           
+	    <Import-Package>${import.packages}</Import-Package>
+            <Private-Package>${private.packages}</Private-Package>
+            <Include-Resource>${include.resources}</Include-Resource>
+            <Embed-Dependency>${embed-dep}</Embed-Dependency>
+            <_exportcontents>${export.package}</_exportcontents>
+          </instructions>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

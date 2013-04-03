@@ -1,0 +1,272 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+  	<groupId>eu.novi</groupId>
+  	<artifactId>parent</artifactId>
+  	<version>0.1.0-SNAPSHOT</version>
+  	<relativePath>../parent/</relativePath>
+  </parent>
+  <packaging>bundle</packaging>
+  <artifactId>alibaba-osgi</artifactId>
+  <name>Alibaba OSGI bundle</name>
+  
+  <developers>
+   <developer>
+      <id>adianto.wibisono</id>
+      <name>Adianto Wibisono</name>
+      <email>a.wibisono@uva.nl</email>
+      <organization>UvA</organization>
+      <organizationUrl>http://science.uva.nl/research/sne</organizationUrl>
+      <roles>
+        <role>architect</role>
+        <role>developer</role>
+      </roles>
+      <timezone>+1</timezone>
+    </developer>
+  
+  </developers>
+
+  <properties>
+ 	<export.package>
+			org.openrdf,
+			org.openrdf.annotations,
+
+			org.openrdf.model,
+			org.openrdf.model.impl,
+			org.openrdf.model.util,
+			org.openrdf.model.vocabulary,
+
+			org.openrdf.rio,
+			org.openrdf.rio.rdfxml,
+			org.openrdf.sail,
+			org.openrdf.sail.memory,
+			org.openrdf.sail.nativerdf,
+			
+			org.openrdf.result,  
+			org.openrdf.query,
+			org.openrdf.query.algebra,
+			org.openrdf.query.parser,
+			org.openrdf.query.parser.sparql,
+			org.openrdf.query.parser.sparql.ast,
+			org.openrdf.repository,
+			org.openrdf.repository.config,
+			org.openrdf.repository.sail, 
+		
+			info.aduna.io,	
+			info.aduna.iteration,
+			org.openrdf.repository.object,
+			org.openrdf.repository.object.config,
+			org.openrdf.repository.object.composition,
+			org.openrdf.repository.object.exceptions
+	
+	</export.package>
+        <non-export.package>!javax.servlet</non-export.package>
+        <export.packages>${non-export.package},${export.package}*;</export.packages>
+        <import.packages>*</import.packages>
+        <private.packages>!*</private.packages>
+        <symbolic.name>${project.groupId}.${project.artifactId}</symbolic.name>
+        <embed-dep>*;scope=provided;inline=true;type=!pom</embed-dep>
+        <unpack-bundle>false</unpack-bundle>
+  </properties>
+  
+  <dependencies>
+  
+  <!-- Transitive dependency needed -->
+  	<dependency>
+		<groupId>org.apache.felix</groupId>
+		<artifactId>javax.servlet</artifactId>
+		<version>1.0.0</version>
+	    	<scope>provided</scope>
+	</dependency>
+  	<dependency>
+		<groupId>commons-httpclient</groupId>
+		<artifactId>commons-httpclient</artifactId>
+		<version>3.1</version>
+	    	<scope>provided</scope>
+	</dependency>
+
+  <!-- dependency after latest Alibaba release update 
+	<dependency>
+		<groupId>ch.qos.logback</groupId>
+		<artifactId>logback-core</artifactId>
+		<version>1.0.1</version>
+	    	<scope>provided</scope>
+	</dependency>
+	<dependency>
+		<groupId>ch.qos.logback</groupId>
+		<artifactId>logback-classic</artifactId>
+		<version>1.0.1</version>
+	    	<scope>provided</scope>
+	</dependency>
+	<dependency>
+		<groupId>org.codehaus.janino</groupId>
+		<artifactId>janino</artifactId>
+		<version>2.6.1</version>
+	    	<scope>provided</scope>
+	</dependency>
+	<dependency>
+	    <groupId>org.codehaus.janino</groupId>
+	    <artifactId>com.springsource.org.codehaus.commons.compiler</artifactId>
+	    <version>2.6.1</version>
+	    <scope>provided</scope>
+	</dependency>
+	<dependency>
+		<groupId>net.sf.opencsv</groupId>
+		<artifactId>opencsv</artifactId>
+		<version>2.0</version>
+		<scope>provided</scope>
+	</dependency>  -->
+
+
+
+	<!-- Foundation from sesame runtime osgi -->
+	<dependency>
+	    	<groupId>org.openrdf.sesame</groupId>
+	    	<artifactId>sesame-runtime-osgi</artifactId>
+	    	<version>${sesame.version}</version>
+	    	<scope>provided</scope>
+	</dependency>
+	<dependency>
+	    	<groupId>org.openrdf.sesame</groupId>
+	    	<artifactId>sesame-queryalgebra-model</artifactId>
+	    	<version>${sesame.version}</version>
+	    	<scope>provided</scope>
+	</dependency>
+	 <!-- <dependency>
+		<groupId>org.openrdf.alibaba</groupId>
+		<artifactId>alibaba-runtime</artifactId>
+		<version>${alibaba.version}</version>
+		<scope>provided</scope>
+	</dependency>  -->
+	
+	<!-- These are the main required packages related to Alibaba (and Sesame) -->
+
+	<dependency>
+		<groupId>org.openrdf.alibaba</groupId>
+		<artifactId>alibaba-model</artifactId>
+		<version>${alibaba.version}</version>
+		<scope>provided</scope>
+	</dependency>
+	
+	<dependency>
+		<groupId>org.openrdf.alibaba</groupId>
+		<artifactId>alibaba-repository-object</artifactId>
+		<version>${alibaba.version}</version>
+		<scope>provided</scope>
+	</dependency>
+
+
+	 <dependency>
+		<groupId>org.openrdf.alibaba</groupId>
+		<artifactId>alibaba-repository-query</artifactId>
+		<version>${alibaba.version}</version>
+		<scope>provided</scope>
+	</dependency>
+
+	<dependency>
+		<groupId>org.openrdf.alibaba</groupId>
+		<artifactId>alibaba-sail-auditing</artifactId>
+		<version>${alibaba.version}</version>
+		<scope>provided</scope>
+	</dependency>
+
+	<dependency>
+		<groupId>org.openrdf.alibaba</groupId>
+		<artifactId>alibaba-store-blob</artifactId>
+		<version>${alibaba.version}</version>
+		<scope>provided</scope>
+	</dependency>
+
+	<dependency>
+		<groupId>org.openrdf.alibaba</groupId>
+		<artifactId>alibaba-composition-object</artifactId>
+		<version>${alibaba.version}</version>
+		<scope>provided</scope>
+	</dependency>
+
+	<dependency>
+		<groupId>info.aduna.commons</groupId>
+		<artifactId>aduna-commons-io</artifactId>
+		<version>2.10.0</version>
+		<scope>provided</scope>
+	</dependency>
+
+
+
+	<!-- These ones were required by the mains, some kind of secondary dependency -->
+	<dependency>
+		<groupId>org.apache.servicemix.bundles</groupId>
+		<artifactId>org.apache.servicemix.bundles.javassist</artifactId>
+		<version>3.9.0.GA_1</version>
+	    	<scope>provided</scope>
+	</dependency>
+
+	<dependency>
+	    	<groupId>commons-cli</groupId>
+	    	<artifactId>commons-cli</artifactId>
+	    	<version>1.2</version>
+	    	<scope>provided</scope>
+	</dependency>
+
+	<dependency>
+	    	<groupId>commons-codec</groupId>
+	    	<artifactId>commons-codec</artifactId>
+	    	<version>1.4</version>
+	    	<scope>provided</scope>
+	</dependency>
+
+	<dependency>
+		<groupId>org.osgi</groupId>
+		<artifactId>org.osgi.core</artifactId>
+		
+		<scope>provided</scope>
+	</dependency>
+  </dependencies>
+  
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <configuration>
+	  <unpackBundle>${unpack.bundle}</unpackBundle>
+          <instructions>
+	    <Bundle-Name>Alibaba OSGI Bundle</Bundle-Name>
+	    <Bundle-Description>
+		This bundle exposes the required package from Alibaba as OSGI Bundle
+	    </Bundle-Description>
+           
+	    <Import-Package>${import.packages}</Import-Package>
+            <Private-Package>${private.packages}</Private-Package>
+            <Include-Resource>${include.resources}</Include-Resource>
+            <Embed-Dependency>${embed-dep}</Embed-Dependency>
+            <_exportcontents>${export.package}</_exportcontents>
+	    <DynamicImport-Package>
+		  com.sun.jdi, com.sun.jdi.connect, com.sun.jdi.event, com.sun.jdi.request, 
+		sun.reflect,
+		ch.qos.logback.classic, 
+		ch.qos.logback.classic.joran, 
+		ch.qos.logback.core, 
+		ch.qos.logback.core.joran.action, 
+		ch.qos.logback.core.joran.spi, 
+		ch.qos.logback.core.rolling, 
+		ch.qos.logback.core.util, 
+		au.com.bytecode.opencsv,
+
+		  <!-- should have been somehow installed/loaded into service mix, not here -->
+		  <!-- These bundles were also red/unavailable from Sesame runtime OSGI -->
+		  web.servlet,
+		  org.springframework.context;
+		  org.springframework.web.servlet,
+		  org.springframework.web.servlet.handler,
+		  org.springframework.web.servlet.mvc,
+		  org.springframework.web.servlet.view,
+		  org.springframework.ui,
+		  org.apache.commons.dbcp 
+	    </DynamicImport-Package>
+          </instructions>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!-- Author: Yiannos Kryftis [ykryftis@netmode.ece.ntua.gr] -->
+
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+   
+   <bean id="refStartSMC" class="net.ponder2.SelfManagedCell"
+   init-method="main" destroy-method="exit">
+ 	</bean> 
+  
+</blueprint>

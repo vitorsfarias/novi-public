@@ -1,0 +1,254 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>eu.novi</groupId>
+		<artifactId>parent</artifactId>
+		<version>0.1.0-SNAPSHOT</version>
+		<relativePath>../parent/</relativePath>
+	</parent>
+
+	<artifactId>ponder2</artifactId>
+	<packaging>bundle</packaging>
+	<name>NOVI Ponder2 implementation</name>
+	<description>Policy manager service</description>
+
+	<developers>
+		<developer>
+			<id>yiannos.kryftis</id>
+			<name>Yiannos Kryftis</name>
+			<email>ykryftis@netmode.ece.ntua.gr</email>
+			<organization>NTUA</organization>
+			<organizationUrl>http://www.ntua.gr/</organizationUrl>
+			<roles>
+				<role>developer</role>
+			</roles>
+			<timezone>+2</timezone>
+		</developer>
+	</developers>
+	<dependencies>
+		<!--<dependency>
+			<groupId>eu.novi</groupId>
+			<artifactId>framework</artifactId>
+			<version>${project.version}</version>
+		</dependency>-->
+	
+	
+	<!-- 
+	Removed on 31/1/2013
+		<dependency>
+			<groupId>org.apache.geronimo.specs</groupId>
+			<artifactId>geronimo-jta_1.1_spec</artifactId>
+			<version>1.1.1</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.geronimo.specs</groupId>
+			<artifactId>geronimo-j2ee-management_1.1_spec</artifactId>
+			<version>1.0.1</version>
+			<scope>test</scope>
+		</dependency>-->
+
+
+		<!-- <dependency> <groupId>com.tu</groupId> <artifactId>tuprolog</artifactId> 
+			<version>1</version> <scope>system</scope> <systemPath>${basedir}/lib/2p.jar</systemPath> 
+			</dependency> -->
+		<!-- <dependency> <groupId>it.unibo.alice.tuprolog</groupId> <artifactId>tuprolog</artifactId> 
+			<version>2.1.1</version> </dependency> -->
+		<dependency>
+			<groupId>eu.novi</groupId>
+			<artifactId>tuprolog-osgi</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>eu.novi</groupId>
+			<artifactId>qdparser-osgi</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.mirror</groupId>
+			<artifactId>apt</artifactId>
+			<version>1</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/lib/tools.jar</systemPath>
+		</dependency>
+
+		<!-- <dependency> <groupId>net.ponder2.policy</groupId> <artifactId>PolicyP2Adaptor</artifactId> 
+			<version>1</version> <scope>system</scope> <systemPath>${basedir}/lib/ponder2.jar</systemPath> 
+			</dependency> -->
+		<!-- <dependency> <groupId>com.twicom</groupId> <artifactId>qdparser</artifactId> 
+			<version>1.1.0</version> <scope>system</scope> <systemPath>${basedir}/lib/qdparser.jar</systemPath> 
+			</dependency> -->
+
+		<!-- <dependency> <groupId>net.ponder2.apt</groupId> <artifactId>ponder2aptfactory</artifactId> 
+			<version>1.0</version> <scope>system</scope> <systemPath>${basedir}/lib/ponder2aptfactory.jar</systemPath> 
+			<exclusions> <exclusion> <groupId>com.sun</groupId> <artifactId>tools</artifactId> 
+			</exclusion> </exclusions> </dependency> -->
+		<dependency>
+			<groupId>org.jmock</groupId>
+			<artifactId>jmock-junit4</artifactId>
+			<version>2.5.1</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.jmock</groupId>
+			<artifactId>jmock</artifactId>
+			<version>2.5.1</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.jmock</groupId>
+			<artifactId>jmock-legacy</artifactId>
+			<version>2.5.1</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+		<!-- <dependency> <groupId>org.eclipse.jdt.apt</groupId> <artifactId>core</artifactId> 
+			<version>3.3.0-v20070607-1200</version> </dependency> -->
+		<!-- <dependency> <groupId>org.slf4j</groupId> <artifactId>integration</artifactId> 
+			<version>1.6.4</version> </dependency> -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>${slf4j-log4j12.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.servicemix.bundles</groupId>
+			<artifactId>
+    			org.apache.servicemix.bundles.antlr-runtime
+    		</artifactId>
+			<version>3.4_2</version>
+		</dependency>
+		<dependency>
+			<groupId>eu.novi</groupId>
+			<artifactId>information-model</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>eu.novi</groupId>
+			<artifactId>ponder2aptfactory</artifactId>
+			<version>${project.version}</version>
+			<scope>compile</scope>
+		</dependency>
+			<dependency>
+			<groupId>eu.novi</groupId>
+			<artifactId>jackson-osgi</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<!-- <dependency>
+			<groupId>org.apache.activemq</groupId>
+			<artifactId>activemq-core</artifactId>
+			<version>5.2.0</version>
+		</dependency> -->
+		<dependency>
+			<groupId>eu.novi</groupId>
+			<artifactId>communications</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>eu.novi</groupId>
+			<artifactId>policy-manager</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		  <dependency>
+			<groupId>eu.novi</groupId>
+			<artifactId>resource-information-service</artifactId>
+			<version>${project.version}</version>
+		</dependency>	
+		<dependency>
+			<groupId>eu.novi</groupId>
+			<artifactId>intelligent-resource-mapper</artifactId>
+			<version>${project.version}</version>
+		</dependency>	
+			<dependency>
+			<groupId>org.apache.activemq</groupId>
+			<artifactId>activemq-core</artifactId>
+			<version>5.7.0</version>
+		</dependency>
+		<dependency>
+                        <groupId>org.apache.xmlrpc</groupId>
+                        <artifactId>xmlrpc-client</artifactId>
+                        <version>3.1.3</version>
+                </dependency>
+
+                <dependency>
+                        <groupId>oscar-osgi</groupId>
+                        <artifactId>xmlrpc</artifactId>
+                        <version>1.0.0-SNAPSHOT</version>
+                </dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<configuration>
+					<instructions>
+					<Bundle-SymbolicName>${pom.groupId}.${pom.artifactId};
+							blueprint.graceperiod:=true;
+							blueprint.timeout:= 480000
+						</Bundle-SymbolicName>
+						<Export-Package>
+							eu.novi.ponder2,
+							eu.novi.ponder2.policy,
+							eu.novi.ponder2.comms,
+							eu.novi.ponder2.comms.rmi,
+							eu.novi.ponder2.comms.rmistring,
+							eu.novi.ponder2.comms.rmixml,
+							eu.novi.ponder2.comms.socket,
+							eu.novi.ponder2.comms.http,
+							eu.novi.ponder2.comms.xmlblaster,
+							eu.novi.ponder2.exception,
+							eu.novi.ponder2.managedobject,
+							eu.novi.ponder2.parser, 
+							eu.novi.ponder2.queue,
+							eu.novi.ponder2.objects, 
+							eu.novi.ponder2.mission,
+							eu.novi.ponder2.inspector, 
+							eu.novi.ponder2.interactions
+							</Export-Package>
+						<Private-Package></Private-Package>
+					</instructions>
+				</configuration>
+			</plugin>
+			<!-- I recommend to nod disable the unit tests since they work fine
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.4.2</version>
+				<configuration>
+					<skipTests>false</skipTests>
+				</configuration>
+			</plugin>-->
+			<!-- <plugin> -->
+			<!-- <groupId>org.apache.maven.plugins</groupId> -->
+			<!-- <artifactId>maven-jar-plugin</artifactId> -->
+			<!-- <version>2.3</version><configuration> -->
+			<!-- <excludes> -->
+			<!-- <exclude>**/doc/*</exclude> -->
+			<!-- </excludes> -->
+			<!-- </configuration> -->
+			<!-- </plugin> -->
+
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>apt-maven-plugin</artifactId>
+				<version>1.0-alpha-4</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>process</goal>
+							<goal>test-process</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

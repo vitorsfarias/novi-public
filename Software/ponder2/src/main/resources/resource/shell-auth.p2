@@ -1,0 +1,15 @@
+newauthpol := root/factory/authpolicy.
+
+root at: "shellout" put: (newauthpol subject: root/shell
+									action: "*" 
+									target: root
+									focus:"s"		
+									 ).
+
+root at: "shellin" put: (newauthpol subject: root/shell
+									action: "*" 
+									target: root
+									focus:"t"		
+									 ).
+root/shellout active:true.
+root/shellin active:true.

@@ -1,0 +1,37 @@
+event := root/factory/event create: #("uri").
+root/event at: "createTopology" put: event.
+
+root/factory at: "Topology" put: (root load: "TopologyMO").
+root at: "Topologysdomain" put: root/factory/domain create.
+
+policy := root/factory/ecapolicy create.
+policy event: root/event/createTopology;
+	action: [ :uri |
+			   root print:"creating a TopologyMO with uri " + uri .
+			   root/Topologysdomain at: uri put: (root/factory/Topology create: uri)].
+root/policy at: "createTopology" put: policy.
+policy active: true.
+
+
+event2 := root/factory/event create: #("nameoffailure" "resourcefail").
+root/event at: "topologyfailure" put: event2.
+root/factory at: "Topology" put: (root load: "TopologyMO").
+policy2 := root/factory/ecapolicy create.
+policy2 event: root/event/topologyfailure;
+	action: [ :nameoffailure :resourcefail|
+        root print:"topologyfailure " + nameoffailure.
+       (root/Topologysdomain at:nameoffailure) topologyfailure: nameoffailure resource: resourcefail.
+      ].
+root/policy at: "topologyfailure" put: policy2.
+policy2 active: true.
+
+event3 := root/factory/event create:#("uri").
+root/event at: "removeTopology" put: event3.
+policy3 := root/factory/ecapolicy create.
+policy3 event: root/event/removeTopology;
+	action: [ :uri |
+			   root print:"removing the TopologyMO with uri " + uri .
+			   (root/Topologysdomain at:uri) remove: uri.
+			   root/Topologysdomain remove: uri].
+root/policy at: "removeTopology" put: policy3.
+policy3 active: true.

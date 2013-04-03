@@ -1,0 +1,11 @@
+newdom := root/factory/domain.
+
+copyblock := [ :destname |
+                              [:name |  
+                                     destination := root at: destname ifAbsent: [ root at: destname put: newdom create ].
+                                     destination at: name put: ( root at: name)
+                              ]
+                        ].
+root  do: ( copyblock value: "blocktest1" ).
+root  do: ( copyblock value: "blocktest2" ).
+root/remote/Ponder2A do: ( copyblock value: "remotetest" ).

@@ -1,0 +1,175 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>eu.novi</groupId>
+		<artifactId>parent</artifactId>
+		<version>0.1.0-SNAPSHOT</version>
+		<relativePath>../parent/</relativePath>
+	</parent>
+	<artifactId>information-model</artifactId>
+  	<packaging>bundle</packaging>
+	<name>NOVI Information model</name>
+
+	<description>NOVI Information Model </description>
+
+	<developers>
+
+		<developer>
+			<id>jvdham</id>
+			<name>Jeroen van der Ham</name>
+			<email>vdham@uva.nl</email>
+			<organization>UVA</organization>
+			<organizationUrl>http://www.science.uva.nl/research/sne</organizationUrl>
+			<roles>
+				<role>developer</role>
+			</roles>
+			<timezone>+2</timezone>
+		</developer>
+		<developer>
+			<id>chariklis</id>
+			<name>Chariklis Pittaras</name>
+			<email>c.pittaras@uva.nl</email>
+			<organization>UVA</organization>
+			<organizationUrl>http://www.science.uva.nl/research/sne</organizationUrl>
+			<roles>
+				<role>developer</role>
+			</roles>
+			<timezone>+2</timezone>
+		</developer>
+		<developer>
+			<id>wibisono</id>
+			<name>Adianto Wibisono</name>
+			<email>a.wibisono@uva.nl</email>
+			<organization>UVA</organization>
+			<organizationUrl>http://www.science.uva.nl/research/sne</organizationUrl>
+			<roles>
+				<role>developer</role>
+			</roles>
+			<timezone>+2</timezone>
+		</developer>
+	</developers>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.openrdf.alibaba</groupId>
+			<artifactId>alibaba-repository-object</artifactId>
+			<version>${alibaba.version}</version>
+		</dependency>
+
+	</dependencies>
+
+	<repositories>
+
+		<repository>
+			<id>aduna-opensource.releases</id>
+			<name>Aduna Open Source - Maven releases</name>
+			<url>http://repo.aduna-software.org/maven2/releases</url>
+		</repository>
+
+		<repository>
+			<id>maven2-repository.dev.java.net</id>
+			<name>Java.net Repository for Maven</name>
+			<url>http://download.java.net/maven/2/</url>
+		</repository>
+
+		<repository>
+			<id>jboss</id>
+			<url>http://repository.jboss.org/maven2/</url>
+		</repository>
+	</repositories>
+
+
+	<build>
+		<plugins>
+
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+			
+
+			<!-- This is where the OSGi bundle will be generated -->
+		      	<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<configuration>
+				  <instructions>
+				    <Export-Package>eu.novi.im, eu.novi.im.core</Export-Package>
+				  </instructions>
+				</configuration>
+		      </plugin>
+	
+		</plugins>
+	</build>
+
+	<profiles>
+		<profile>
+		     <id>generate-core</id>
+		     <build>
+			 <defaultGoal>package</defaultGoal>
+
+			 <plugins>
+			     <plugin>
+				 <groupId>org.codehaus.mojo</groupId>
+				 <artifactId>exec-maven-plugin</artifactId>
+				 <executions>
+				     <execution>
+					 <phase>package</phase>
+					 <goals>
+					     <goal>java</goal>
+					 </goals>
+					 <configuration>
+						<mainClass> 
+							eu.novi.imgen.Generator
+						</mainClass>
+						<arguments>
+						     <argument> novi-im.owl </argument>
+						</arguments>													     
+					 </configuration>
+				     </execution>
+				 </executions>
+			     </plugin>
+			 </plugins>
+		     </build>
+		</profile>
+
+		<profile>
+		     <id>generate-policy</id>
+		     <build>
+			 <defaultGoal>package</defaultGoal>
+
+			 <plugins>
+			     <plugin>
+				 <groupId>org.codehaus.mojo</groupId>
+				 <artifactId>exec-maven-plugin</artifactId>
+				 <executions>
+				     <execution>
+					 <phase>package</phase>
+					 <goals>
+					     <goal>java</goal>
+					 </goals>
+					 <configuration>
+						<mainClass> 
+							eu.novi.imgen.Generator
+						</mainClass>
+						<arguments>
+						     <argument> policy_imV4.owl </argument>
+						</arguments>													     
+					 </configuration>
+				     </execution>
+				 </executions>
+			     </plugin>
+			 </plugins>
+		     </build>
+		</profile>
+	</profiles>
+
+</project>

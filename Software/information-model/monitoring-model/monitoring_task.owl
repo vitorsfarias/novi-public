@@ -1,0 +1,577 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY im "http://fp7-novi.eu/im.owl#" >
+    <!ENTITY unit "http://fp7-novi.eu/unit.owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY monitoring_task "http://fp7-novi.eu/monitoring_task.owl#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY monitoring_features "http://fp7-novi.eu/monitoring_features.owl#" >
+    <!ENTITY monitoring_parameter "http://fp7-novi.eu/monitoring_parameter.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl"
+     xmlns:unit="http://fp7-novi.eu/unit.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:monitoring_task="http://fp7-novi.eu/monitoring_task.owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:monitoring_features="http://fp7-novi.eu/monitoring_features.owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:im="http://fp7-novi.eu/im.owl#"
+     xmlns:monitoring_parameter="http://fp7-novi.eu/monitoring_parameter.owl#">
+    <Ontology rdf:about="http://fp7-novi.eu/monitoring_task.owl">
+        <monitoring_task:author rdf:datatype="&xsd;string">Mátray, Péter (matray@complex.elte.hu)</monitoring_task:author>
+        <rdfs:comment rdf:datatype="&xsd;string">Part of the NOVI Information Model (IM). Defines and classifies concepts that are necessary to describe monitoring services, their parametrization and the representation of the results.</rdfs:comment>
+        <monitoring_task:author rdf:datatype="&xsd;string">Stéger, József (steger@complex.elte.hu)</monitoring_task:author>
+        <imports rdf:resource="http://fp7-novi.eu/unit.owl"/>
+        <imports rdf:resource="http://fp7-novi.eu/monitoring_features.owl#"/>
+    </Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <AnnotationProperty rdf:about="&monitoring_task;author"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_task.owl#MonitoringTaskProperty -->
+
+    <ObjectProperty rdf:about="&monitoring_task;MonitoringTaskProperty">
+        <rdfs:domain rdf:resource="&monitoring_task;MonitoringTask"/>
+        <rdfs:range rdf:resource="&monitoring_task;MonitoringTaskDefinitionPart"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_task.owl#hasAuthenticationType -->
+
+    <ObjectProperty rdf:about="&monitoring_task;hasAuthenticationType">
+        <rdfs:range rdf:resource="&monitoring_task;AuthenticationType"/>
+        <rdfs:domain rdf:resource="&monitoring_task;MonitoringTask"/>
+        <rdfs:subPropertyOf rdf:resource="&monitoring_task;MonitoringTaskProperty"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_task.owl#hasColumn -->
+
+    <ObjectProperty rdf:about="&monitoring_task;hasColumn">
+        <rdfs:range rdf:resource="&monitoring_task;Column"/>
+        <rdfs:domain rdf:resource="&monitoring_task;OutputTableFormat"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_task.owl#hasDriver -->
+
+    <ObjectProperty rdf:about="&monitoring_task;hasDriver">
+        <rdfs:range rdf:resource="&monitoring_task;Driver"/>
+        <rdfs:domain rdf:resource="&monitoring_task;MonitoringTask"/>
+        <rdfs:subPropertyOf rdf:resource="&monitoring_task;MonitoringTaskProperty"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_task.owl#hasExecutionParameter -->
+
+    <ObjectProperty rdf:about="&monitoring_task;hasExecutionParameter">
+        <rdfs:range rdf:resource="&monitoring_task;ExecutionParameter"/>
+        <rdfs:domain rdf:resource="&monitoring_task;MonitoringTask"/>
+        <rdfs:subPropertyOf rdf:resource="&monitoring_task;MonitoringTaskProperty"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_task.owl#hasHookParameter -->
+
+    <ObjectProperty rdf:about="&monitoring_task;hasHookParameter">
+        <rdfs:range rdf:resource="&monitoring_task;HookParameter"/>
+        <rdfs:subPropertyOf rdf:resource="&monitoring_task;MonitoringTaskProperty"/>
+        <rdfs:domain rdf:resource="&monitoring_task;PreHook"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_task.owl#hasMonitoredFeature -->
+
+    <ObjectProperty rdf:about="&monitoring_task;hasMonitoredFeature">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="&monitoring_features;MonitoredFeature"/>
+        <rdfs:domain rdf:resource="&monitoring_task;MonitoredFeatureColumn"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_task.owl#hasMonitoringDomain -->
+
+    <ObjectProperty rdf:about="&monitoring_task;hasMonitoringDomain">
+        <rdfs:range rdf:resource="&monitoring_task;MonitoringDomain"/>
+        <rdfs:domain rdf:resource="&monitoring_task;MonitoringTask"/>
+        <rdfs:subPropertyOf rdf:resource="&monitoring_task;MonitoringTaskProperty"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_task.owl#hasOutputTableFormat -->
+
+    <ObjectProperty rdf:about="&monitoring_task;hasOutputTableFormat">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&monitoring_task;MonitoringTask"/>
+        <rdfs:subPropertyOf rdf:resource="&monitoring_task;MonitoringTaskProperty"/>
+        <rdfs:range rdf:resource="&monitoring_task;OutputTableFormat"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_task.owl#hasPostHook -->
+
+    <ObjectProperty rdf:about="&monitoring_task;hasPostHook">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&monitoring_task;MonitoringTask"/>
+        <rdfs:subPropertyOf rdf:resource="&monitoring_task;MonitoringTaskProperty"/>
+        <rdfs:range rdf:resource="&monitoring_task;PostHook"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_task.owl#hasPreHook -->
+
+    <ObjectProperty rdf:about="&monitoring_task;hasPreHook">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&monitoring_task;MonitoringTask"/>
+        <rdfs:subPropertyOf rdf:resource="&monitoring_task;MonitoringTaskProperty"/>
+        <rdfs:range rdf:resource="&monitoring_task;PreHook"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_task.owl#hasRetrieveHook -->
+
+    <ObjectProperty rdf:about="&monitoring_task;hasRetrieveHook">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&monitoring_task;MonitoringTask"/>
+        <rdfs:subPropertyOf rdf:resource="&monitoring_task;MonitoringTaskProperty"/>
+        <rdfs:range rdf:resource="&monitoring_task;RetrieveHook"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_task.owl#hasStartHook -->
+
+    <ObjectProperty rdf:about="&monitoring_task;hasStartHook">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&monitoring_task;MonitoringTask"/>
+        <rdfs:subPropertyOf rdf:resource="&monitoring_task;MonitoringTaskProperty"/>
+        <rdfs:range rdf:resource="&monitoring_task;StartHook"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_task.owl#hasStopHook -->
+
+    <ObjectProperty rdf:about="&monitoring_task;hasStopHook">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&monitoring_task;MonitoringTask"/>
+        <rdfs:subPropertyOf rdf:resource="&monitoring_task;MonitoringTaskProperty"/>
+        <rdfs:range rdf:resource="&monitoring_task;StopHook"/>
+    </ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_task.owl#hookCode -->
+
+    <DatatypeProperty rdf:about="&monitoring_task;hookCode">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&monitoring_task;Hook"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_task.owl#name -->
+
+    <DatatypeProperty rdf:about="&monitoring_task;name">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain>
+            <Class>
+                <unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&monitoring_task;Column"/>
+                    <rdf:Description rdf:about="&monitoring_task;MonitoringTask"/>
+                    <rdf:Description rdf:about="&monitoring_task;OutputTableFormat"/>
+                </unionOf>
+            </Class>
+        </rdfs:domain>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_task.owl#sequenceNumber -->
+
+    <DatatypeProperty rdf:about="&monitoring_task;sequenceNumber">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&monitoring_task;Column"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_task.owl#AuthenticationType -->
+
+    <Class rdf:about="&monitoring_task;AuthenticationType">
+        <rdfs:subClassOf rdf:resource="&monitoring_task;MonitoringTaskDefinitionPart"/>
+    </Class>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_task.owl#Column -->
+
+    <Class rdf:about="&monitoring_task;Column">
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&monitoring_task;sequenceNumber"/>
+                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                <onDataRange rdf:resource="&xsd;int"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&monitoring_task;name"/>
+                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                <onDataRange rdf:resource="&xsd;string"/>
+            </Restriction>
+        </rdfs:subClassOf>
+    </Class>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_task.owl#Driver -->
+
+    <Class rdf:about="&monitoring_task;Driver">
+        <rdfs:subClassOf rdf:resource="&monitoring_task;MonitoringTaskDefinitionPart"/>
+    </Class>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_task.owl#ExecutionParameter -->
+
+    <Class rdf:about="&monitoring_task;ExecutionParameter">
+        <rdfs:subClassOf rdf:resource="&monitoring_parameter;Parameter"/>
+        <rdfs:subClassOf rdf:resource="&monitoring_task;MonitoringParameter"/>
+    </Class>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_task.owl#Hook -->
+
+    <Class rdf:about="&monitoring_task;Hook">
+        <rdfs:subClassOf rdf:resource="&monitoring_task;MonitoringTaskDefinitionPart"/>
+    </Class>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_task.owl#HookParameter -->
+
+    <Class rdf:about="&monitoring_task;HookParameter">
+        <rdfs:subClassOf rdf:resource="&monitoring_parameter;Parameter"/>
+        <rdfs:subClassOf rdf:resource="&monitoring_task;MonitoringParameter"/>
+    </Class>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_task.owl#MiscColumn -->
+
+    <Class rdf:about="&monitoring_task;MiscColumn">
+        <rdfs:subClassOf rdf:resource="&monitoring_task;Column"/>
+    </Class>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_task.owl#MonitoredFeatureColumn -->
+
+    <Class rdf:about="&monitoring_task;MonitoredFeatureColumn">
+        <rdfs:subClassOf rdf:resource="&monitoring_task;Column"/>
+    </Class>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_task.owl#MonitoringDomain -->
+
+    <Class rdf:about="&monitoring_task;MonitoringDomain">
+        <rdfs:subClassOf rdf:resource="&monitoring_task;MonitoringTaskDefinitionPart"/>
+    </Class>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_task.owl#MonitoringParameter -->
+
+    <Class rdf:about="&monitoring_task;MonitoringParameter">
+        <rdfs:subClassOf rdf:resource="&monitoring_task;MonitoringTaskDefinitionPart"/>
+    </Class>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_task.owl#MonitoringTask -->
+
+    <Class rdf:about="&monitoring_task;MonitoringTask">
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&monitoring_task;hasRetrieveHook"/>
+                <onClass rdf:resource="&monitoring_task;RetrieveHook"/>
+                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&monitoring_task;hasMonitoringDomain"/>
+                <someValuesFrom rdf:resource="&monitoring_task;MonitoringDomain"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&monitoring_task;hasAuthenticationType"/>
+                <onClass rdf:resource="&monitoring_task;AuthenticationType"/>
+                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&monitoring_task;hasDriver"/>
+                <onClass rdf:resource="&monitoring_task;Driver"/>
+                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </rdfs:subClassOf>
+    </Class>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_task.owl#MonitoringTaskDefinitionPart -->
+
+    <Class rdf:about="&monitoring_task;MonitoringTaskDefinitionPart"/>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_task.owl#OutputTableFormat -->
+
+    <Class rdf:about="&monitoring_task;OutputTableFormat">
+        <rdfs:subClassOf rdf:resource="&monitoring_task;MonitoringTaskDefinitionPart"/>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&monitoring_task;name"/>
+                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+                <onDataRange rdf:resource="&xsd;string"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&monitoring_task;hasColumn"/>
+                <someValuesFrom rdf:resource="&monitoring_task;Column"/>
+            </Restriction>
+        </rdfs:subClassOf>
+    </Class>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_task.owl#PostHook -->
+
+    <Class rdf:about="&monitoring_task;PostHook">
+        <rdfs:subClassOf rdf:resource="&monitoring_task;Hook"/>
+    </Class>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_task.owl#PreHook -->
+
+    <Class rdf:about="&monitoring_task;PreHook">
+        <rdfs:subClassOf rdf:resource="&monitoring_task;Hook"/>
+    </Class>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_task.owl#RetrieveHook -->
+
+    <Class rdf:about="&monitoring_task;RetrieveHook">
+        <rdfs:subClassOf rdf:resource="&monitoring_task;Hook"/>
+    </Class>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_task.owl#StartHook -->
+
+    <Class rdf:about="&monitoring_task;StartHook">
+        <rdfs:subClassOf rdf:resource="&monitoring_task;Hook"/>
+    </Class>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_task.owl#StopHook -->
+
+    <Class rdf:about="&monitoring_task;StopHook">
+        <rdfs:subClassOf rdf:resource="&monitoring_task;Hook"/>
+    </Class>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_task.owl#TabularColumn -->
+
+    <Class rdf:about="&monitoring_task;TabularColumn">
+        <rdfs:subClassOf rdf:resource="&monitoring_task;Column"/>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="&monitoring_task;hasOutputTableFormat"/>
+                <onClass rdf:resource="&monitoring_task;OutputTableFormat"/>
+                <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
+            </Restriction>
+        </rdfs:subClassOf>
+    </Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_task.owl#DB -->
+
+    <NamedIndividual rdf:about="&monitoring_task;DB">
+        <rdf:type rdf:resource="&monitoring_task;Driver"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_task.owl#REST -->
+
+    <NamedIndividual rdf:about="&monitoring_task;REST">
+        <rdf:type rdf:resource="&monitoring_task;Driver"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_task.owl#SOAPClient -->
+
+    <NamedIndividual rdf:about="&monitoring_task;SOAPClient">
+        <rdf:type rdf:resource="&monitoring_task;Driver"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_task.owl#REST -->
+
+    <NamedIndividual rdf:about="&monitoring_task;REST">
+        <rdf:type rdf:resource="&monitoring_task;Driver"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_task.owl#LocalExec -->
+
+    <NamedIndividual rdf:about="&monitoring_task;LocalExec">
+        <rdf:type rdf:resource="&monitoring_task;Driver"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_task.owl#SSH -->
+
+    <NamedIndividual rdf:about="&monitoring_task;SSH">
+        <rdf:type rdf:resource="&monitoring_task;Driver"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_task.owl#Slice -->
+
+    <NamedIndividual rdf:about="&monitoring_task;Slice">
+        <rdf:type rdf:resource="&monitoring_task;MonitoringDomain"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_task.owl#Substrate -->
+
+    <NamedIndividual rdf:about="&monitoring_task;Substrate">
+        <rdf:type rdf:resource="&monitoring_task;MonitoringDomain"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_task.owl#UsernamePassword -->
+
+    <NamedIndividual rdf:about="&monitoring_task;UsernamePassword">
+        <rdf:type rdf:resource="&monitoring_task;AuthenticationType"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://fp7-novi.eu/monitoring_task.owl#UsernameRSAKey -->
+
+    <NamedIndividual rdf:about="&monitoring_task;UsernameRSAKey">
+        <rdf:type rdf:resource="&monitoring_task;AuthenticationType"/>
+    </NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.3.22702) http://owlapi.sourceforge.net -->
+

@@ -1,0 +1,6 @@
+
+root print: "Before included file".
+
+include "includefile2.p2"
+
+root print: "After included file".

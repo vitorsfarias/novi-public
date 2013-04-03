@@ -1,0 +1,199 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>eu.novi</groupId>
+		<artifactId>parent</artifactId>
+		<version>0.1.0-SNAPSHOT</version>
+		<relativePath>../parent/</relativePath>
+	</parent>
+	<packaging>bundle</packaging>
+	<artifactId>resource-information-service</artifactId>
+	<name>Resource Information service</name>
+
+	<developers>
+		<developer>
+			<id>Chariklis.Pittaras</id>
+			<name>Chariklis Pittaras</name>
+			<email>c.pittaras@uva.nl</email>
+			<organization>UvA</organization>
+			<organizationUrl>http://www.uva.nl/</organizationUrl>
+			<roles>
+				<role>leading developer</role>
+				<role>architect</role>
+			</roles>
+			<timezone>+1</timezone>
+		</developer>
+		<developer>
+			<id>blazej.pietrzak</id>
+			<name>Blazej Pietrzak</name>
+			<email>blazej.pietrzak@man.poznan.pl</email>
+			<organization>PSNC</organization>
+			<organizationUrl>http://www.man.poznan.pl/</organizationUrl>
+			<roles>
+				<role>architect</role>
+				<role>developer</role>
+			</roles>
+			<timezone>+1</timezone>
+		</developer>
+		<developer>
+			<id>pikusa</id>
+			<name>Piotr Pikusa</name>
+			<email>pikusa@man.poznan.pl</email>
+			<organization>PSNC</organization>
+			<organizationUrl>http://www.man.poznan.pl/</organizationUrl>
+			<roles>
+				<role>architect</role>
+				<role>developer</role>
+			</roles>
+			<timezone>+1</timezone>
+		</developer>
+	</developers>
+
+	<dependencies>
+		<dependency>
+			<groupId>eu.novi</groupId>
+			<artifactId>communications</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>eu.novi</groupId>
+			<artifactId>jackson-osgi</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>eu.novi</groupId>
+			<artifactId>alibaba-osgi</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>eu.novi</groupId>
+			<artifactId>xmlrpc-client-osgi</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>eu.novi</groupId>
+			<artifactId>nswitch</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>eu.novi</groupId>
+			<artifactId>nswitch-planetlab</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>eu.novi</groupId>
+			<artifactId>nswitch-federica</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>eu.novi</groupId>
+			<artifactId>nswitch-manager</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+		<!-- <dependency> <groupId>org.mockito</groupId> <artifactId>mockito-core</artifactId> 
+			<version>1.8.5</version> <scope>test</scope> </dependency> -->
+		<dependency>
+			<groupId>eu.novi</groupId>
+			<artifactId>framework</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.openrdf.alibaba</groupId>
+			<artifactId>alibaba-repository-object</artifactId>
+			<version>${alibaba.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>${commons-logging.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>${slf4j-log4j12.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>eu.novi</groupId>
+			<artifactId>information-model</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<!--<dependency> <groupId>org.openrdf.sesame</groupId> <artifactId>sesame-sail-rdbms</artifactId> 
+			<version>${sesame.version}</version> </dependency> -->
+		<!-- <dependency> <groupId>org.openrdf.sesame</groupId> <artifactId>sesame-sail-nativerdf</artifactId> 
+			<version>${sesame.version}</version> </dependency> -->
+		<dependency>
+			<groupId>eu.novi</groupId>
+			<artifactId>policy-manager-AA</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>eu.novi</groupId>
+			<artifactId>request-handler-sfa</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>eu.novi</groupId>
+			<artifactId>monitoring-service</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<!-- <version>1.8.5</version> -->
+		</dependency>
+		<dependency>
+			<groupId>eu.novi</groupId>
+			<artifactId>feedback</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>eu.novi</groupId>
+			<artifactId>scheduler</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+		<!-- <dependency> <groupId>com.fasterxml.jackson.core</groupId> <artifactId>jackson-core</artifactId> 
+			<version>2.0.6</version> </dependency> <dependency> <groupId>com.fasterxml.jackson.core</groupId> 
+			<artifactId>jackson-annotations</artifactId> <version>2.0.6</version> </dependency> 
+			<dependency> <groupId>com.fasterxml.jackson.core</groupId> <artifactId>jackson-databind</artifactId> 
+			<version>2.0.6</version> </dependency> -->
+			
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<configuration>
+					<instructions>
+						<Bundle-SymbolicName>${pom.groupId}.${pom.artifactId};
+							blueprint.graceperiod:=true;
+							blueprint.timeout:= 480000
+						</Bundle-SymbolicName>
+						<Import-Package>
+							*
+						</Import-Package>
+						<Export-Package>
+							eu.novi.resources.discovery,
+							eu.novi.resources.discovery.database,
+							eu.novi.resources.discovery.database.communic,
+							eu.novi.resources.discovery.response,
+							eu.novi.resources.discovery.remote.serve,
+							eu.novi.resources.discovery.remote.discovery,
+							eu.novi.resources.discovery.scheduler,
+							eu.novi.resources.discovery.util
+						</Export-Package>
+						<Private-Package>eu.novi.resources.discovery.impl</Private-Package>
+					</instructions>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

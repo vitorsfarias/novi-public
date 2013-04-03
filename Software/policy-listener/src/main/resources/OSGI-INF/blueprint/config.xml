@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!-- Author: Blazej Pietrzak [blazej.pietrzak@man.poznan.pl] -->
+
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+	xmlns:cm="http://aries.apache.org/blueprint/xmlns/blueprint-cm/v1.0.0">
+  
+  <cm:property-placeholder persistent-id="eu.novi.pmAA"/>
+  <bean id="authorizeman" class="eu.novi.policylistener.synchWithRIS.AuthorizationSearch" >
+  		<property name="userFeedback"  ref="refUserFeedback"/>
+  		<property name="testbed" value="${testbed}" />
+  		<property name="authenticationComp" ref="refAuthComp" />  		
+  </bean>
+  
+  <service ref="authorizeman" interface="eu.novi.policylistener.interfaces.InterfaceForRIS" >
+  <service-properties>
+   <entry key="service.exported.interfaces" value="*" />
+  </service-properties>
+  </service>
+  
+  <bean id="authorizeMon" class="eu.novi.policylistener.monitoringInteractions.MonitoringEvents" >
+  		<property name="userFeedback"  ref="refUserFeedback"/>
+  </bean>
+  <service ref="authorizeMon" interface="eu.novi.policylistener.interfaces.InterfaceForMonitoring" />
+  
+  <bean id="requestToAuthentication" class="eu.novi.policylistener.authentication.Basic">
+		<property name="authenticationComp" ref="refAuthComp" />
+	</bean>
+	
+  
+  <bean id="authorizeAPI" class="eu.novi.policylistener.authentication.Basic" >
+  		<property name="userFeedback"  ref="refUserFeedback"/>
+  		<property name="testbed" value="${testbed}" />
+  </bean>
+  
+  <service ref="authorizeAPI" interface="eu.novi.policylistener.interfaces.InterfaceForAPI">
+  <service-properties>
+   <entry key="service.exported.interfaces" value="*" />
+  </service-properties>
+  </service>
+   
+  
+  <reference id="refUserFeedback" interface="eu.novi.feedback.event.ReportEvent"  />
+  <reference id="refAuthComp" interface="eu.novi.authentication.InterfaceForPS"  />
+    
+</blueprint>

@@ -1,0 +1,22 @@
+// Bootstrap code for Ponder2
+
+//root trace: true.
+
+// Import the Domain code and create the default domains
+domainFactory := root load: "Domain".
+root 
+       at: "factory" put: domainFactory create;
+       at: "policy" put: domainFactory create;
+       at: "event" put: domainFactory create.
+     
+// Put the domain factory into the factory directory
+root/factory at: "domain" put: domainFactory.
+
+// Import event and policy factories
+root/factory
+        at: "event" put: ( root load: "EventTemplate" );
+        at: "ecapolicy" put: ( root load: "ObligationPolicy" );
+        at: "authpolicy" put: ( root load: "AuthorisationPolicy" ).
+
+// Delete the variable
+// System remove: "domainFactory".

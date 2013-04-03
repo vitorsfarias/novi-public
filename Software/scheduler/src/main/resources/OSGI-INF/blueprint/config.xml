@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!-- Author: Blazej Pietrzak <blazej.pietrzak@man.poznan.pl> -->
+
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+	xmlns:cm="http://aries.apache.org/blueprint/xmlns/blueprint-cm/v1.0.0">
+
+	<cm:property-placeholder persistent-id="eu.novi.scheduler">
+		<cm:default-properties>
+            <cm:property name="threadPoolSize" value="10" />
+        </cm:default-properties>
+	</cm:property-placeholder>
+	
+	<bean id="factory" class="eu.novi.scheduler.ThreadFactory" />
+	
+	<!-- invoke Executors.newScheduledThreadPool(${threadPoolSize}) -->
+	<bean id="scheduler" class="java.util.concurrent.Executors" factory-method="newScheduledThreadPool">
+	    <argument value="${threadPoolSize}" />
+	    <argument ref="factory" />
+	</bean>
+
+	<service ref="scheduler">
+		<interfaces>
+			<value>java.util.concurrent.ScheduledExecutorService</value>
+		</interfaces>
+	</service>
+
+</blueprint>

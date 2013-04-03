@@ -1,0 +1,67 @@
+// Test the proximity event bus and multi-path events
+
+domain := root/factory/domain.
+eca := root/factory/ecapolicy.
+
+testevent := root/factory/event create: #("value").
+
+// d1 and d2 are in root
+// d11 is in d1
+// d22 is in d2
+// d12 is in d1 and d2
+
+d1 := root at: "d1" put: domain create.
+d2 := root at: "d2" put: domain create.
+d11 := root/d1 at: "d11" put: domain create.
+d22 := root/d2 at: "d22" put: domain create.
+d12 := domain create.
+root/d1 at: "d12" put: d12.
+root/d2 at: "d12" put: d12.
+
+// Create a policy that is attached to domain and looks for event name or e12
+makepol := [ :domain :name |
+	policy := eca create.
+	policy 
+		event: testevent;
+		condition: [ :value | value == name or: [ value == "e12" ] ];
+		action: [ :value | root print: "Policy " + name + " received event " + value ];
+		attach: domain;
+		active: true.
+].
+
+policy := eca create.
+policy 
+	event: testevent;
+	action: [ :value | root print: "Policy root received event " + value ];
+	active: true.
+root/policy at: "root" put: policy.
+
+root/policy at: "p1" put: (makepol value: d1 value: "e11").
+root/policy at: "p2" put: (makepol value: d2 value: "e22").
+
+// To ensure that the source of the event is set correctly, i.e. an object inside
+// one of the domains d11, d12 and d22 we need policies in those domains
+// to initiate the events.
+
+makepol := [ :domain :name |
+	event := root/factory/event create.
+	root/event at: name put: event.
+	policy := eca create.
+	policy
+		event: event;
+		action: [ testevent create: #( name )];
+		active: true.
+	domain at: name put: policy.
+].
+
+makepol value: d11 value: "e11".
+makepol value: d12 value: "e12".
+makepol value: d22 value: "e22".
+
+root print: "Testing e11. Should be received by e11 and root".
+root/event/e11 create.
+root print: "Testing e22. Should be received by e22 and root".
+root/event/e22 create.
+root print: "Testing e12. Should be received by e11, e12 and root, in any order".
+root/event/e12 create.
+

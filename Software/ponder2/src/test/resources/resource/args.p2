@@ -1,0 +1,11 @@
+
+array := root argsAsArray.
+hash := root argsAsHash.
+
+root print: "Array has " + array size + " elements".
+array do: [ :value | root print: "array: " + value].
+
+
+root print: "Hash has " + hash size + " elements".
+hash do: [ :name :value | root print: name + " => " + value].
+

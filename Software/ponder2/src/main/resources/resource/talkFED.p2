@@ -1,0 +1,6 @@
+pondertalk := root load: "PonderTalk".
+root/factory at: "PonderTalk" put: pondertalk.
+// Create an instance waiting on the RMI port PlanetLab
+pondertalk := root/factory/PonderTalk create.
+// The managed object *must* be put into a domain otherwise events will not be sent
+root at: "pondertalk" put: pondertalk.

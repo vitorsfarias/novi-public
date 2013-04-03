@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="MacRoman"?>
+<jardesc>
+<jar path="Ponder2/lib/ponder2.jar"/>
+<options buildIfNeeded="true" compress="true" descriptionLocation="/Ponder2/lib/ponder2.jardesc" exportErrors="true" exportWarnings="true" includeDirectoryEntries="true" overwrite="true" saveDescription="true" storeRefactorings="false" useSourceFolders="false"/>
+<storedRefactorings deprecationInfo="true" structuralOnly="false"/>
+<selectedProjects/>
+<manifest generateManifest="true" mainClassHandleIdentifier="=Ponder2/src\/main\/java&lt;net.ponder2{SelfManagedCell.java[SelfManagedCell" manifestLocation="" manifestVersion="1.0" reuseManifest="false" saveManifest="false" usesManifest="true">
+<sealing sealJar="false">
+<packagesToSeal/>
+<packagesToUnSeal/>
+</sealing>
+</manifest>
+<selectedElements exportClassFiles="true" exportJavaFiles="false" exportOutputFolder="false">
+<javaElement handleIdentifier="=Ponder2/src\/main\/resources"/>
+<javaElement handleIdentifier="=Ponder2/src\/main\/java"/>
+<folder path="/Ponder2/META-INF"/>
+<javaElement handleIdentifier="=Ponder2/apt_generated"/>
+<javaElement handleIdentifier="=QDParser/src\/main\/java"/>
+</selectedElements>
+</jardesc>

@@ -1,0 +1,55 @@
+EEEEE
+======================================================================
+ERROR: test_IM_domainsfeatures (__main__.Test)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test.py", line 28, in setUp
+    dim_ipaddress = self.MS_planetlab.dm['IPAddress']
+  File "/home/laki/work/NOVI/MonitoringJYTHON_130118/Mon2/DataProcessing/Dimension.py", line 302, in __getitem__
+    raise DimensionError("Dimension with reference %s not found" % reference)
+DimensionError: Dimension with reference IPAddress not found
+
+======================================================================
+ERROR: test_IM_task (__main__.Test)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test.py", line 28, in setUp
+    dim_ipaddress = self.MS_planetlab.dm['IPAddress']
+  File "/home/laki/work/NOVI/MonitoringJYTHON_130118/Mon2/DataProcessing/Dimension.py", line 302, in __getitem__
+    raise DimensionError("Dimension with reference %s not found" % reference)
+DimensionError: Dimension with reference IPAddress not found
+
+======================================================================
+ERROR: test_managers (__main__.Test)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test.py", line 28, in setUp
+    dim_ipaddress = self.MS_planetlab.dm['IPAddress']
+  File "/home/laki/work/NOVI/MonitoringJYTHON_130118/Mon2/DataProcessing/Dimension.py", line 302, in __getitem__
+    raise DimensionError("Dimension with reference %s not found" % reference)
+DimensionError: Dimension with reference IPAddress not found
+
+======================================================================
+ERROR: test_owlexamples (__main__.Test)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test.py", line 28, in setUp
+    dim_ipaddress = self.MS_planetlab.dm['IPAddress']
+  File "/home/laki/work/NOVI/MonitoringJYTHON_130118/Mon2/DataProcessing/Dimension.py", line 302, in __getitem__
+    raise DimensionError("Dimension with reference %s not found" % reference)
+DimensionError: Dimension with reference IPAddress not found
+
+======================================================================
+ERROR: test_taskBYuri (__main__.Test)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test.py", line 28, in setUp
+    dim_ipaddress = self.MS_planetlab.dm['IPAddress']
+  File "/home/laki/work/NOVI/MonitoringJYTHON_130118/Mon2/DataProcessing/Dimension.py", line 302, in __getitem__
+    raise DimensionError("Dimension with reference %s not found" % reference)
+DimensionError: Dimension with reference IPAddress not found
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.014s
+
+FAILED (errors=5)

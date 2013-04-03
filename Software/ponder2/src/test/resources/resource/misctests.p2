@@ -1,0 +1,26 @@
+// Test code for Ponder2
+
+t := (root load: "Timer") create.
+root at: "timer" put: t.
+
+event := root/factory/event create: #( "count" ).
+
+eca := root/factory/ecapolicy create.
+eca event: event.
+eca action: [ :count | root print: "Got event " + count ].
+eca active: true.
+
+t1 := t repeat: 1000 event: event.
+
+t2 := t repeat: "0:3" event: event.
+
+root sleep: 4.
+
+t stop: t1.
+
+root sleep: 6.
+
+t cancel: t2.
+t start: t1.
+
+
